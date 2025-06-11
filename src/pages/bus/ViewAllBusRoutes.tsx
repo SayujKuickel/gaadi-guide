@@ -4,7 +4,6 @@ import stopsData from "@/data/stops_data.json";
 import PageLayout from "@/layout/PageLayout";
 import ContainerLayout from "@/layout/ContainerLayout";
 // components
-import BusRoutes from "@/data/route_data.json";
 import Heading from "@/components/common/Heading";
 import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
@@ -24,7 +23,7 @@ const ViewAllBusRoutes = () => {
             All Bus Routes
           </Heading>
 
-          <section className="grid grid-cols-2 mb-4">
+          <section className="grid md:grid-cols-2 mb-4">
             <SearchableCombobox
               selected={selectedStop}
               onChange={(opt) => setSelectedStop(opt)}
@@ -33,15 +32,19 @@ const ViewAllBusRoutes = () => {
             />
           </section>
 
-          <div className="space-y-2">
-            {filteredRoutes.map((route) => (
-              <ViewRouteDetails
-                priorityStop={selectedStop?.id}
-                key={route.id}
-                route={route}
-              />
-            ))}
-          </div>
+          {filteredRoutes.length > 0 ? (
+            <div className="space-y-2">
+              {filteredRoutes.map((route) => (
+                <ViewRouteDetails
+                  priorityStop={selectedStop?.id}
+                  key={route.id}
+                  route={route}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="text-offText">Selected stop is not in any routes!</p>
+          )}
         </ContainerLayout>
       </PageLayout>
     </>

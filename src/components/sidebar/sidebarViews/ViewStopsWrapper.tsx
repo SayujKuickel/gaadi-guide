@@ -70,8 +70,6 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
     return null;
   }
 
-  console.log(selectedStop);
-
   return (
     <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76 relative">
       <Button
@@ -87,16 +85,11 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
         level={4}
         className="mb-4"
       />
-
       <section className="relative">
-        <div className="overflow-y-scroll  scrollbar-sa h-48 md:h-64 relative rounded-lg">
-          <div className="absolute left-[0px] bottom-[0px] z-10 w-full h-6 bg-gradient-to-t from-background to-transparent"></div>
+        <div className="absolute left-[0px] bottom-[0px] z-10 w-full h-6 bg-gradient-to-t from-surface to-transparent"></div>
 
-          <BusStops
-            handleStopSelect={handleStopSelect}
-            routeId={routeData?.id}
-            stopsArray={routeData?.stops}
-          />
+        <div className="overflow-y-scroll scrollbar-sa h-48 md:h-64 pb-6">
+          <BusStops routeId={routeData?.id} stopsArray={routeData?.stops} />
         </div>
       </section>
     </div>

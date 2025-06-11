@@ -7,8 +7,8 @@ const SearchWrapper = () => {
         Search
       </Heading>
 
-      <div className="h-32 bg-accent/50 border border-accent rounded-lg p-3 ">
-        //--In progress!
+      <div className="py-12 text-center bg-accent/15 border border-accent/50 rounded-lg">
+        To be Implemented
       </div>
     </div>
   );
