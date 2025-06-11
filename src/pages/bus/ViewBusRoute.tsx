@@ -51,7 +51,7 @@ const ViewBusRoute = () => {
               level={2}
             />
 
-            <BusStops stopsArray={route?.stops} />
+            <BusStops routeId={id} stopsArray={route?.stops} />
             <span className="block ml-1 mt-3 text-sm text-text/75">
               Total {route?.stops?.length} stops
             </span>

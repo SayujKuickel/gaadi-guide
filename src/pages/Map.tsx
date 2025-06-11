@@ -63,7 +63,9 @@ const Map = () => {
               setSidebarIndex={setSidebarIndex}
             />
           )}
+
           {sideBarIndex === 1 && <SearchWrapper />}
+
           {sideBarIndex === 2 && (
             <ViewStopsWrapper
               selectedStop={selectedStop}
@@ -73,7 +75,7 @@ const Map = () => {
           )}
         </MapSidebar>
 
-        <BaseMapLayer className="relative pb-18 md:p-0 md:pl-20">
+        <BaseMapLayer className="relative pb-20 md:p-0 md:pl-20">
           <LayerView tileMapKey={tileMapKey} />
 
           <ShowRouteView fitRouteToWindow={fitRouteToWindow} />

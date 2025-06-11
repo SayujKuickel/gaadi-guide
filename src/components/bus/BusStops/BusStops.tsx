@@ -1,20 +1,17 @@
 import Button from "@/components/common/Button";
 import stops_data from "@/data/stops_data.json";
-import type { IStopOption } from "@/types/stopOptions.types";
 import { Link } from "react-router-dom";
 
 interface ViewRouteDetailsProps {
   stopsArray: string[];
   itemsToShow?: number;
   routeId?: string;
-  handleStopSelect: (stop: IStopOption) => void;
 }
 
 const BusStops: React.FC<ViewRouteDetailsProps> = ({
   stopsArray,
   itemsToShow,
   routeId,
-  handleStopSelect,
 }) => {
   const toShow =
     itemsToShow && itemsToShow > 0 ? itemsToShow : stopsArray.length;
