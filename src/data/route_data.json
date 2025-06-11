@@ -1,7 +1,7 @@
 [
   {
     "id": "22bda2",
-    "name": "Purano Bus Park-Thimi",
+    "name": "Purano Bus Park to Thimi",
     "lineColor": "#233263",
     "stops": [
       "4bf28194",
@@ -24,7 +24,7 @@
   },
   {
     "id": "22be87",
-    "name": "Shobhabhagwati-Koteshwore",
+    "name": "Shobhabhagwati to Kamaladi Road (कमलादी) stop",
     "lineColor": "#5e1e1e",
     "stops": [
       "1001aec0",
@@ -38,7 +38,7 @@
   },
   {
     "id": "22bf5c",
-    "name": "Koteshwor - Ratna Park",
+    "name": "Purano Bus Park to Gairigaun Stop",
     "lineColor": "#134d4e",
     "stops": [
       "4bf28194",
@@ -55,7 +55,7 @@
   },
   {
     "id": "22d22f",
-    "name": "Ratna Park - Kirtipur",
+    "name": "Purano Bus Park to Panga Dobato",
     "lineColor": "#58721e",
     "stops": [
       "4bf28194",
@@ -74,7 +74,7 @@
   },
   {
     "id": "22d275",
-    "name": "Ratna Park - Sundarijal",
+    "name": "Purano Bus Park to Gokarna Bus Stop",
     "lineColor": "#796213",
     "stops": [
       "4bf28194",
@@ -98,7 +98,7 @@
   },
   {
     "id": "23015b",
-    "name": "Ratna Park-Gwarko",
+    "name": "Gwarko Chowk Stop to Ratna Park",
     "lineColor": "#670f74",
     "stops": [
       "58c5d0fe",
@@ -120,7 +120,7 @@
   },
   {
     "id": "230188",
-    "name": "Ratna Park-Lagankhel",
+    "name": "Purano Bus Park to Lagankhel Stop",
     "lineColor": "#106eab",
     "stops": [
       "4bf28194",
@@ -141,7 +141,7 @@
   },
   {
     "id": "2307b6",
-    "name": "Ratna Park-Budhanilkantha School",
+    "name": "Ratna Park to Budhanilkantha School Blue Micro Stand",
     "lineColor": "#17447e",
     "stops": [
       "3838cbe9",
@@ -161,7 +161,7 @@
   },
   {
     "id": "2307d8",
-    "name": "Ratnapark-Mangal Bazaar",
+    "name": "Ratna Park to Mangalbazar",
     "lineColor": "#2d173c",
     "stops": [
       "3838cbe9",
@@ -181,7 +181,7 @@
   },
   {
     "id": "23085e",
-    "name": "KattyaniChowk-Sundhara",
+    "name": "KattyaniChowk Stop to Sundhara Stop",
     "lineColor": "#871037",
     "stops": [
       "743fcf6c",
@@ -204,7 +204,7 @@
   },
   {
     "id": "23085f",
-    "name": "Sundhara-Milanchowk-KattyaniChowk",
+    "name": "Sundhara Stop to KattyaniChowk Stop",
     "lineColor": "#41173a",
     "stops": [
       "6d1cfd8d",
@@ -229,7 +229,7 @@
   },
   {
     "id": "230885",
-    "name": "Old Baneshwar-Sundhara",
+    "name": "Tempo Stop Near Old Baneshwar to Sundhara Stop",
     "lineColor": "#732843",
     "stops": [
       "53699126",
@@ -253,7 +253,7 @@
   },
   {
     "id": "230886",
-    "name": "Sundhara-Purano Baneshwar",
+    "name": "Sundhara Stop to Tempo Stop Near Old Baneshwar",
     "lineColor": "#643819",
     "stops": [
       "6d1cfd8d",
@@ -279,7 +279,7 @@
   },
   {
     "id": "2308a6",
-    "name": "Purano Bus Park-Nakhipot",
+    "name": "Purano Bus Park to Chapgaun",
     "lineColor": "#194624",
     "stops": [
       "4bf28194",
@@ -304,7 +304,7 @@
   },
   {
     "id": "2308b2",
-    "name": "Sundhara-Shankhamul",
+    "name": "Sundhara Stop to Sankhamul Stop",
     "lineColor": "#21514e",
     "stops": [
       "6d1cfd8d",
@@ -322,7 +322,7 @@
   },
   {
     "id": "231ce9",
-    "name": "MAV School-Purano Buspark",
+    "name": "MAV School to Purano Bus Park",
     "lineColor": "#2f1247",
     "stops": [
       "4be7bc81",
@@ -351,7 +351,7 @@
   },
   {
     "id": "231d15",
-    "name": "Purano Bus Park-Shivapuri",
+    "name": "Purano Bus Park to Shivapuri Park Stop",
     "lineColor": "#8c261c",
     "stops": [
       "4bf28194",
@@ -374,7 +374,7 @@
   },
   {
     "id": "231d16",
-    "name": "Shivapuri-Purano Bus Park",
+    "name": "Shivapuri Park Stop to Purano Bus Park",
     "lineColor": "#06374c",
     "stops": [
       "158080ae",
@@ -395,7 +395,7 @@
   },
   {
     "id": "231d4f",
-    "name": "Chakrapath Parikrama",
+    "name": "Naya Bus Park to Balaju",
     "lineColor": "#371a7c",
     "stops": [
       "788eeaee",
@@ -428,7 +428,7 @@
   },
   {
     "id": "231d7a",
-    "name": "Balkumari-Gopi Krishna",
+    "name": "Balkumari Stop to Gopi Krishna Stop",
     "lineColor": "#48124c",
     "stops": [
       "8daf79b2",
@@ -458,7 +458,7 @@
   },
   {
     "id": "231d9e",
-    "name": "Purano Bus Park- Patan Dhoka",
+    "name": "Patan Dhoka to Naxal Bhagwati",
     "lineColor": "#491366",
     "stops": [
       "19ed3ebd",
@@ -482,7 +482,7 @@
   },
   {
     "id": "231dad",
-    "name": "Naya Baneshwor-Teaching",
+    "name": "New Baneshwor to Chabahil",
     "lineColor": "#61154e",
     "stops": [
       "7036380f",
@@ -499,7 +499,7 @@
   },
   {
     "id": "231dae",
-    "name": "Teaching-NayaBaneshwar",
+    "name": "Teaching Hospital stop to ShivaDarshan Hall Stop",
     "lineColor": "#2121a0",
     "stops": [
       "8cad8b75",
@@ -521,7 +521,7 @@
   },
   {
     "id": "2322d2",
-    "name": "Naikap-Koteshwor",
+    "name": "Naya Naikap to Koteshwor Stop",
     "lineColor": "#105121",
     "stops": [
       "2b66bb5b",
@@ -540,7 +540,7 @@
   },
   {
     "id": "2373b5",
-    "name": "Budhanilkantha School- Ratna Park",
+    "name": "Budhanilkantha School Blue Micro Stand to Ratna Park",
     "lineColor": "#521d1d",
     "stops": [
       "6d1c3f58",
@@ -562,7 +562,7 @@
   },
   {
     "id": "2c6667",
-    "name": "Kamalbinayak-Ratnapark",
+    "name": "Kamal Binayak to Bagbazar Stop",
     "lineColor": "#7d0d0b",
     "stops": [
       "1dc8764",
@@ -599,7 +599,7 @@
   },
   {
     "id": "2d67a1",
-    "name": "Purano Buspark - Chabahil",
+    "name": "Purano Bus Park to Narayan Gopal Chowk",
     "lineColor": "#660a35",
     "stops": [
       "4bf28194",
@@ -626,7 +626,7 @@
   },
   {
     "id": "2d9b06",
-    "name": "Ratnapark-Dadhikot",
+    "name": "Purano Bus Park to Thimi",
     "lineColor": "#341e83",
     "stops": [
       "4bf28194",
@@ -649,7 +649,7 @@
   },
   {
     "id": "2d9b09",
-    "name": "Purano Bus Park - Sakhu",
+    "name": "Purano Bus Park to Sakhu Stop",
     "lineColor": "#442d6d",
     "stops": [
       "4bf28194",
@@ -676,7 +676,7 @@
   },
   {
     "id": "2d9b0a",
-    "name": "Purano Bus Park- Budhanilkantha",
+    "name": "Purano Bus Park to Budhanilkantha Stop",
     "lineColor": "#145525",
     "stops": [
       "4bf28194",
@@ -698,7 +698,7 @@
   },
   {
     "id": "2d9b23",
-    "name": "Ratna Park - Thankot",
+    "name": "Ratna Park to Thankot Checkpost",
     "lineColor": "#61197f",
     "stops": [
       "3838cbe9",
@@ -713,7 +713,7 @@
   },
   {
     "id": "2d9b24",
-    "name": "Thankot - Ratna Park",
+    "name": "Thankot to Ratna Park",
     "lineColor": "#151d72",
     "stops": [
       "22c80c9",
@@ -729,7 +729,7 @@
   },
   {
     "id": "2d9b5a",
-    "name": "Bagbazaar-Kamalbinayak",
+    "name": "Bagbazar Stop to Kamal Binayak",
     "lineColor": "#106c71",
     "stops": [
       "88953096",
@@ -761,7 +761,7 @@
   },
   {
     "id": "2d9b5b",
-    "name": "Panauti - Ratnapark",
+    "name": "Panauti to Purano Bus Park",
     "lineColor": "#7c502d",
     "stops": [
       "214ae1e4",
@@ -795,7 +795,7 @@
   },
   {
     "id": "2d9b5d",
-    "name": "Ratnapark-Changu",
+    "name": "Bagbazar Stop to Changu Narayan",
     "lineColor": "#156d1a",
     "stops": [
       "88953096",
@@ -826,7 +826,7 @@
   },
   {
     "id": "2d9bb7",
-    "name": "Chyamasingh to Ratnapark",
+    "name": "Chyamasingh to Purano Bus Park",
     "lineColor": "#378961",
     "stops": [
       "1dc88f2",
@@ -867,7 +867,7 @@
   },
   {
     "id": "2d9bc1",
-    "name": "Ratnapark - Dhulikhel",
+    "name": "Dhulikhel Stop to Purano Bus Park",
     "lineColor": "#477420",
     "stops": [
       "11a9cc28",
@@ -901,7 +901,7 @@
   },
   {
     "id": "2d9bd4",
-    "name": "Ratna Park - Daksinkali",
+    "name": "Purano Bus Park to Chobhar Gate",
     "lineColor": "#131146",
     "stops": [
       "4bf28194",
@@ -916,7 +916,7 @@
   },
   {
     "id": "2d9be3",
-    "name": "Changu-Ratnapark",
+    "name": "Changu Narayan to Bagbazar Stop",
     "lineColor": "#3a1f4e",
     "stops": [
       "62bd1510",
@@ -952,7 +952,7 @@
   },
   {
     "id": "2d9bec",
-    "name": "Purano Bus Park - jorpati",
+    "name": "Purano Bus Park to Jorpati",
     "lineColor": "#184675",
     "stops": [
       "4bf28194",
@@ -978,7 +978,7 @@
   },
   {
     "id": "2d9bfc",
-    "name": "Ratna Park - Chyamasingh",
+    "name": "Purano Bus Park to Chyamasingh",
     "lineColor": "#834a25",
     "stops": [
       "4bf28194",
@@ -1012,7 +1012,7 @@
   },
   {
     "id": "2d9c12",
-    "name": "Sakhu - Purano Bus Park",
+    "name": "Sakhu Stop to Purano Bus Park",
     "lineColor": "#6c7a26",
     "stops": [
       "226ba49e",
@@ -1032,7 +1032,7 @@
   },
   {
     "id": "2d9c13",
-    "name": "Jorpati - Purano Bus Park",
+    "name": "Jorpati to Purano Bus Park",
     "lineColor": "#95880f",
     "stops": [
       "157fedf7",
@@ -1051,7 +1051,7 @@
   },
   {
     "id": "2dff33",
-    "name": "Bhaktapur-Purano Thimi- Purano Bus Park",
+    "name": "Bhaktapur Bus Park to Bagbazar Stop",
     "lineColor": "#56132d",
     "stops": [
       "8c7971ef",
@@ -1077,13 +1077,13 @@
   },
   {
     "id": "2e158e",
-    "name": "Gothatar-Purano Buspark",
+    "name": "Gothatar to Koteshwor Stop",
     "lineColor": "#95215e",
     "stops": ["6d6618e8", "214afa1a", "1dc8360"]
   },
   {
     "id": "2e15b4",
-    "name": "Dhokashi- Chobar gate- Ratnapark",
+    "name": "Dhokashi to Balkhu",
     "lineColor": "#0d5e34",
     "stops": [
       "3672cf2a",
@@ -1096,19 +1096,19 @@
   },
   {
     "id": "2e15b5",
-    "name": "Ratna Park - Panga Dobato- Dhokashi",
+    "name": "Purano Bus Park to Balkhu",
     "lineColor": "#670e82",
     "stops": ["4bf28194", "6b7ff2ef", "12bf5294", "219fc346"]
   },
   {
     "id": "2e15c7",
-    "name": "Ratna Park - Panga Dobato- Nagaun- Bhatkepati",
+    "name": "Purano Bus Park to Balkhu",
     "lineColor": "#633818",
     "stops": ["4bf28194", "6b7ff2ef", "12bf5294", "219fc346"]
   },
   {
     "id": "2e15d4",
-    "name": "Attrekhle-Purano Buspark",
+    "name": "Purano Bus Park to attarkhel",
     "lineColor": "#4c1c3d",
     "stops": [
       "4bf28194",
@@ -1135,7 +1135,7 @@
   },
   {
     "id": "2e346d",
-    "name": "Balaju-Ratnapark",
+    "name": "Balaju to Jamal",
     "lineColor": "#591742",
     "stops": [
       "1dda790",
@@ -1150,7 +1150,7 @@
   },
   {
     "id": "2eba25",
-    "name": "Balkhu-NayaBaneshwor-Sankhamul",
+    "name": "Balkhu to Sankhamul Stop",
     "lineColor": "#788e2a",
     "stops": [
       "219fc346",
@@ -1167,19 +1167,19 @@
   },
   {
     "id": "2ed006",
-    "name": "Bagbazaar- Ratnapark",
+    "name": "Bagbazar Stop to Ratna Park",
     "lineColor": "#4b1a1c",
     "stops": ["88953096", "3838cbe9"]
   },
   {
     "id": "2ed007",
-    "name": "Purano Bus Park-Ratnapark",
+    "name": "Purano Bus Park to Ratna Park",
     "lineColor": "#7e5530",
     "stops": ["4bf28194", "3838cbe9"]
   },
   {
     "id": "2ed278",
-    "name": "Kalanki- Lagankhel",
+    "name": "Kalanki to Lagankhel",
     "lineColor": "#991092",
     "stops": [
       "12b05015",
@@ -1192,7 +1192,7 @@
   },
   {
     "id": "2ed284",
-    "name": "Lagankhel - Kalanki",
+    "name": "Lagankhel to Kalanki",
     "lineColor": "#871337",
     "stops": [
       "4be7bb35",
@@ -1205,7 +1205,7 @@
   },
   {
     "id": "2ed6b5",
-    "name": "Balkhu-NayaBaneshwor-Shantinagar-Bhatkya Pul",
+    "name": "Balkhu to Tinkune Subidhanagar",
     "lineColor": "#a81a8b",
     "stops": [
       "219fc346",
@@ -1224,7 +1224,7 @@
   },
   {
     "id": "2ed931",
-    "name": "kalanki-Balkumari",
+    "name": "Kalanki to Balkumari Stop",
     "lineColor": "#8b8516",
     "stops": [
       "12b05015",
@@ -1245,7 +1245,7 @@
   },
   {
     "id": "2ed936",
-    "name": "Kalanki-Pepsacola",
+    "name": "Kalanki to Pepsi Cola Chowk",
     "lineColor": "#522c6b",
     "stops": [
       "12b05015",
@@ -1266,7 +1266,7 @@
   },
   {
     "id": "2ed988",
-    "name": "Kausaltar-Naikap",
+    "name": "kaushaltar to Nikap",
     "lineColor": "#1d2948",
     "stops": [
       "7a418531",
@@ -1289,7 +1289,7 @@
   },
   {
     "id": "2eddaa",
-    "name": "Gokarna-Chabahil-Naya_Bus_Park-Balaju-kalanki",
+    "name": "Gokarna Bus Stop to Kalanki",
     "lineColor": "#0f7615",
     "stops": [
       "15804893",
@@ -1312,7 +1312,7 @@
   },
   {
     "id": "2ede4a",
-    "name": "Naya Baneshwor, Koteshwor, Satdobato, Lagankhel, Jaulakhel, Kupandol, Naya Baneshwor",
+    "name": "Babarmahal Stop to Maitighar",
     "lineColor": "#254878",
     "stops": [
       "6b977374",
@@ -1344,7 +1344,7 @@
   },
   {
     "id": "2ee39c",
-    "name": "Matathirtha-Naikap-Thapathali-KrishnaPauroti-Ratopul-Chabahil-kapan",
+    "name": "Matatirtha Stop to Kapan Stop",
     "lineColor": "#3a5122",
     "stops": [
       "635dcdb6",
@@ -1372,7 +1372,7 @@
   },
   {
     "id": "2ee89a",
-    "name": "kapan-Chabahil-Mitidevi-Ratnapark",
+    "name": "Kapan Stop to Ratna Park",
     "lineColor": "#83128d",
     "stops": [
       "8dc05f64",

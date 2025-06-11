@@ -23,7 +23,7 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({ setSidebarIndex }) => {
         options={RouteData.map((rt) => ({ id: rt.id, name: rt.name }))}
         selected={selectedOption}
         onChange={(opt) => handleRouteSelect(opt)}
-        placeholder="rnac-sundarijal"
+        placeholder="Type here to search..."
       />
 
       {selectedOption && (

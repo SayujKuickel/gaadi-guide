@@ -1,4 +1,6 @@
 import Button from "@/components/common/Button";
+import Footer from "@/components/common/global/Footer";
+import Header from "@/components/common/global/Header";
 import { Link } from "react-router-dom";
 
 interface NotFoundProps {
@@ -8,7 +10,7 @@ interface NotFoundProps {
 const NotFound: React.FC<NotFoundProps> = ({ title }) => {
   return (
     <main className="bg-background text-text min-h-screen">
-      {/* <Header /> */}
+      <Header />
 
       <div className="my-64">
         <h1 className="heading-1 text-center font-extrabold mb-6">
@@ -19,6 +21,7 @@ const NotFound: React.FC<NotFoundProps> = ({ title }) => {
           <Link to={"/"}>
             <Button
               iconStyle={"fi fi-rr-map"}
+              ariaLabel="Go to map page"
               title={"Map"}
               className={"mx-auto"}
             />
@@ -26,6 +29,7 @@ const NotFound: React.FC<NotFoundProps> = ({ title }) => {
 
           <Link to={"/bus"}>
             <Button
+              ariaLabel="Go to bus routes page"
               iconStyle="fi fi-rr-track"
               title={"Bus Routes"}
               className={"mx-auto"}
@@ -33,6 +37,8 @@ const NotFound: React.FC<NotFoundProps> = ({ title }) => {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 };

@@ -30,14 +30,16 @@ const ViewBusRoute = () => {
 
   return (
     <PageLayout>
-      <Link to={"/bus"} className="block w-fit absolute left-4 top-4">
-        <Button
-          ariaLabel="Go back to previous page button"
-          title="Back"
-          iconStyle="fi fi-rr-angle-small-left"
-          className="text-sm mb-6"
-        />
-      </Link>
+      <ContainerLayout isSmall={false} className="pt-4">
+        <Link to={"/bus"} className="">
+          <Button
+            ariaLabel="Go back to previous page button"
+            title="Back"
+            iconStyle="fi fi-rr-angle-small-left"
+            className="text-sm mb-6"
+          />
+        </Link>
+      </ContainerLayout>
 
       <ContainerLayout className="pt-18 md:pt-12">
         {route ? (
@@ -46,7 +48,9 @@ const ViewBusRoute = () => {
               className="mb-3"
               lineColor={route?.lineColor}
               name={route?.name}
+              level={2}
             />
+
             <BusStops stopsArray={route?.stops} />
             <span className="block ml-1 mt-3 text-sm text-text/75">
               Total {route?.stops?.length} stops

@@ -25,6 +25,7 @@ const MapSidebar: React.FC<MapSidebarProps> = ({
           className="w-16 aspect-square"
           width={100}
           height={100}
+          alt="logo for kathmandu bus routes"
         />
       </div>
 

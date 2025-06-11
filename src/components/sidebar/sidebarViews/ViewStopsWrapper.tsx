@@ -1,8 +1,11 @@
+// \react
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 // \data
 import RouteData from "@/data/route_data.json";
+// \type
 import type { IRoute } from "@/types/route.types";
+// \components
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 import BusLineTitle from "@/components/bus/BusLineTitle";
@@ -79,7 +82,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
       />
 
       <section className="relative">
-        <div className="overflow-y-scroll h-48 md:h-64 relative rounded-lg">
+        <div className="overflow-y-scroll  scrollbar-sa h-48 md:h-64 relative rounded-lg">
           <div className="absolute left-[0px] bottom-[0px] z-10 w-full h-6 bg-gradient-to-t from-background to-transparent"></div>
           <BusStops stopsArray={routeData?.stops} />
         </div>

@@ -16,8 +16,10 @@ const LayerToggleOptions: React.FC<LayerToggleOptionsProps> = ({
         return (
           <li
             key={item}
-            className={`bg-surface-1 flex items-center gap-2 p-2 rounded-lg outline-2 cursor-pointer transition-colors ${
-              item === tileMapKey ? "outline-green-800" : "outline-transparent"
+            className={`bg-surface-1 flex items-center gap-2 p-2 rounded-lg outline-2 cursor-pointer transition-colors  ${
+              item === tileMapKey
+                ? "outline-green-800 text-on-surface"
+                : "outline-transparent text-on-surface/75"
             }`}
             onClick={() => setTileMapKey(item)}
           >

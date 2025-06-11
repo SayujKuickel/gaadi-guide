@@ -122,7 +122,7 @@ const SearchableCombobox = ({
 
       {isOpen && (
         <div
-          className={`absolute z-10 w-full rounded-md shadow-lg max-h-60 overflow-auto bg-surface-3 ${
+          className={`absolute z-10 w-full rounded-md shadow-lg max-h-60 scrollbar-sa overflow-auto bg-surface-3 ${
             dropdownAbove ? "bottom-full mb-1" : "top-full mt-1"
           }`}
         >

@@ -13,8 +13,8 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
     itemsToShow && itemsToShow > 0 ? itemsToShow : stopsArray.length;
 
   return (
-    <div className="">
-      <ul className="overflow-y-scroll scrollbar-sa flex flex-col gap-4">
+    <div>
+      <ul className="flex flex-col gap-4">
         {stopsArray?.slice(0, toShow)?.map((item, key) => {
           const stop = stops_data.find((el) => el.id === item);
 
