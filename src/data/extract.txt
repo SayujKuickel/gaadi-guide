@@ -1,0 +1,86 @@
+const processedRoutes = temp0.routes.map(route => ({
+  id: Number(route.id).toString(16),
+  name: route.name,
+  stops: route.stops.map(stop => ( Number(stop.id).toString(16) ))
+}));
+
+const jsonStr = JSON.stringify(processedRoutes, null, 2);
+
+const blob = new Blob([jsonStr], { type: "application/json" });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = 'routes_hex.json';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+///
+
+const processedStops = temp0.allStops().map(stop => ({
+  id: Number(stop.id).toString(16),
+  name: stop.name,
+  lat: Number(stop.lat),
+  lng: Number(stop.lng)
+}));
+
+const jsonStr = JSON.stringify(processedStops, null, 2);
+
+const blob = new Blob([jsonStr], { type: "application/json" });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = 'allStops_hex.json';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+
+///
+
+
+function generateRandomHexColor() {
+  const hue = Math.random() * 360; // Random hue (0-360)
+  const saturation = Math.random() * (85 - 40) + 40; 
+  const lightness = Math.random() * (38 - 15) + 15; 
+
+  const c = (1 - Math.abs(2 * lightness / 100 - 1)) * (saturation / 100);
+  const x = c * (1 - Math.abs(((hue / 60) % 2) - 1));
+  const m = lightness / 100 - c / 2;
+
+  let r, g, b;
+  const h = hue / 60;
+  if (h >= 0 && h < 1) { r = c; g = x; b = 0; }
+  else if (h >= 1 && h < 2) { r = x; g = c; b = 0; }
+  else if (h >= 2 && h < 3) { r = 0; g = c; b = x; }
+  else if (h >= 3 && h < 4) { r = 0; g = x; b = c; }
+  else if (h >= 4 && h < 5) { r = x; g = 0; b = c; }
+  else { r = c; g = 0; b = x; }
+
+  r = Math.round((r + m) * 255);
+  g = Math.round((g + m) * 255);
+  b = Math.round((b + m) * 255);
+
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
+
+const processedRoutes = temp0.routes.map(route => ({
+  id: Number(route.id).toString(16),
+  name: route.name,
+  lineColor: generateRandomHexColor(), // Assign random color
+  stops: route.stops.map(stop => ( Number(stop.id).toString(16)))
+}));
+
+const jsonStr = JSON.stringify(processedRoutes, null, 2);
+
+const blob = new Blob([jsonStr], { type: "application/json" });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = 'routes_hex.json';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);

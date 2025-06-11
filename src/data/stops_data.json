@@ -1,0 +1,1244 @@
+[
+  {
+    "id": "1d95042",
+    "name": "Hyatt Regency",
+    "lat": 27.7194001,
+    "lng": 85.3541091
+  },
+  {
+    "id": "1d952d6",
+    "name": "Lainchour Chowk Bus Stop",
+    "lat": 27.7170479,
+    "lng": 85.3160463
+  },
+  {
+    "id": "1db4634",
+    "name": "Airport Bus Station",
+    "lat": 27.7007282,
+    "lng": 85.3536657
+  },
+  {
+    "id": "1db4aaf",
+    "name": "Dillibazaar stop",
+    "lat": 27.7053698,
+    "lng": 85.3267594
+  },
+  {
+    "id": "1db4ab7",
+    "name": "Putalisadak chowk",
+    "lat": 27.7056942,
+    "lng": 85.3228482
+  },
+  {
+    "id": "1db521a",
+    "name": "KMC stop",
+    "lat": 27.6958336,
+    "lng": 85.3527914
+  },
+  {
+    "id": "1db5223",
+    "name": "Sinamangal",
+    "lat": 27.6984315,
+    "lng": 85.3485208
+  },
+  {
+    "id": "1db5233",
+    "name": "Old Baneshwor",
+    "lat": 27.7015201,
+    "lng": 85.3402035
+  },
+  {
+    "id": "1db5248",
+    "name": "Sinamangal/Ring Road Stop सिनामंगल",
+    "lat": 27.6952641,
+    "lng": 85.3550236
+  },
+  {
+    "id": "1db557b",
+    "name": "Chabahil चाबाहील",
+    "lat": 27.7166411,
+    "lng": 85.3463953
+  },
+  {
+    "id": "1db57d6",
+    "name": "Samakhusi Stop",
+    "lat": 27.7356178,
+    "lng": 85.3208814
+  },
+  {
+    "id": "1dc8360",
+    "name": "Koteshwor Stop",
+    "lat": 27.6789154,
+    "lng": 85.3495276
+  },
+  {
+    "id": "1dc8764",
+    "name": "Kamal Binayak",
+    "lat": 27.6773274,
+    "lng": 85.4369166
+  },
+  {
+    "id": "1dc886a",
+    "name": "Chunudevi",
+    "lat": 27.6670973,
+    "lng": 85.4167103
+  },
+  {
+    "id": "1dc88f2",
+    "name": "Chyamasingh",
+    "lat": 27.6734269,
+    "lng": 85.4383679
+  },
+  {
+    "id": "1dc8bca",
+    "name": "Gairigaun Stop",
+    "lat": 27.6872755,
+    "lng": 85.3505597
+  },
+  {
+    "id": "1dc9100",
+    "name": "Bir Hospital",
+    "lat": 27.7057227,
+    "lng": 85.3140743
+  },
+  {
+    "id": "1dda790",
+    "name": "Balaju",
+    "lat": 27.727061,
+    "lng": 85.3046132
+  },
+  {
+    "id": "22c80c9",
+    "name": "Thankot",
+    "lat": 27.7066268,
+    "lng": 85.20574
+  },
+  {
+    "id": "f1780d0",
+    "name": "attarkhel",
+    "lat": 27.7345484,
+    "lng": 85.3824524
+  },
+  {
+    "id": "f179aab",
+    "name": "Mangalbazar",
+    "lat": 27.6726408,
+    "lng": 85.32499
+  },
+  {
+    "id": "ffb23cb",
+    "name": "Sorhakhutte",
+    "lat": 27.7189672,
+    "lng": 85.3096191
+  },
+  {
+    "id": "ffb243d",
+    "name": "Balaju Chowk Bus Stop",
+    "lat": 27.7261654,
+    "lng": 85.3049748
+  },
+  {
+    "id": "ffe0d1c",
+    "name": "Gairidhara",
+    "lat": 27.717774,
+    "lng": 85.3278923
+  },
+  {
+    "id": "ffe0d2d",
+    "name": "Tangal",
+    "lat": 27.7172017,
+    "lng": 85.3304487
+  },
+  {
+    "id": "ffe0d31",
+    "name": "Police Headquarter Stop",
+    "lat": 27.7166335,
+    "lng": 85.3302144
+  },
+  {
+    "id": "ffe0e05",
+    "name": "Batuk Bhairav",
+    "lat": 27.6644749,
+    "lng": 85.3240029
+  },
+  {
+    "id": "1001aec0",
+    "name": "Shobhabhagwati",
+    "lat": 27.7182038,
+    "lng": 85.3121379
+  },
+  {
+    "id": "11a9cc28",
+    "name": "Dhulikhel Stop",
+    "lat": 27.6184151,
+    "lng": 85.5540152
+  },
+  {
+    "id": "12aa2523",
+    "name": "Naxal Bhagwati",
+    "lat": 27.7126983,
+    "lng": 85.3286914
+  },
+  {
+    "id": "12b05015",
+    "name": "Kalanki",
+    "lat": 27.6933793,
+    "lng": 85.2817107
+  },
+  {
+    "id": "12b600e7",
+    "name": "Jamal",
+    "lat": 27.708829,
+    "lng": 85.315292
+  },
+  {
+    "id": "12bf5294",
+    "name": "Kalimati",
+    "lat": 27.6984303,
+    "lng": 85.2994397
+  },
+  {
+    "id": "12ed277c",
+    "name": "Thapathali",
+    "lat": 27.6917733,
+    "lng": 85.3180108
+  },
+  {
+    "id": "12ed278a",
+    "name": "UN Stop",
+    "lat": 27.6781007,
+    "lng": 85.3163695
+  },
+  {
+    "id": "140aa07d",
+    "name": "Chobhar Gate",
+    "lat": 27.6704494,
+    "lng": 85.2906221
+  },
+  {
+    "id": "1539b16f",
+    "name": "Nikap",
+    "lat": 27.6860909,
+    "lng": 85.2622904
+  },
+  {
+    "id": "1539b175",
+    "name": "Sataungal",
+    "lat": 27.6869877,
+    "lng": 85.2506003
+  },
+  {
+    "id": "1539b183",
+    "name": "Thankot Checkpost",
+    "lat": 27.6890018,
+    "lng": 85.2272286
+  },
+  {
+    "id": "15793586",
+    "name": "Chapgaun",
+    "lat": 27.5929413,
+    "lng": 85.3244031
+  },
+  {
+    "id": "1579e16c",
+    "name": "Gwarko Chowk Stop",
+    "lat": 27.6668183,
+    "lng": 85.3319371
+  },
+  {
+    "id": "157c1d61",
+    "name": "Lalitpur Industrial Estate",
+    "lat": 27.6673117,
+    "lng": 85.3222558
+  },
+  {
+    "id": "157c1d73",
+    "name": "Lagankhel Stop",
+    "lat": 27.667053,
+    "lng": 85.3225628
+  },
+  {
+    "id": "157c4257",
+    "name": "Khasibazaar",
+    "lat": 27.6893141,
+    "lng": 85.2841807
+  },
+  {
+    "id": "157fc7a1",
+    "name": "Apex College Stop",
+    "lat": 27.6990701,
+    "lng": 85.3383269
+  },
+  {
+    "id": "157fc7a7",
+    "name": "SchEMS",
+    "lat": 27.6943342,
+    "lng": 85.3371545
+  },
+  {
+    "id": "157fe36a",
+    "name": "saat tale chowk",
+    "lat": 27.7269595,
+    "lng": 85.350484
+  },
+  {
+    "id": "157fedf7",
+    "name": "Jorpati",
+    "lat": 27.7217627,
+    "lng": 85.3726321
+  },
+  {
+    "id": "15804893",
+    "name": "Gokarna Bus Stop",
+    "lat": 27.7403061,
+    "lng": 85.3907196
+  },
+  {
+    "id": "158080ae",
+    "name": "Shivapuri Park Stop",
+    "lat": 27.7910669,
+    "lng": 85.3704099
+  },
+  {
+    "id": "1582bd38",
+    "name": "Thimi",
+    "lat": 27.673232,
+    "lng": 85.3854248
+  },
+  {
+    "id": "18c4d6c7",
+    "name": "Singha Durbar East Stop",
+    "lat": 27.6966083,
+    "lng": 85.3281501
+  },
+  {
+    "id": "1958751b",
+    "name": "Mahapal",
+    "lat": 27.6735497,
+    "lng": 85.3238901
+  },
+  {
+    "id": "19587540",
+    "name": "Gahabahal",
+    "lat": 27.674297,
+    "lng": 85.3210465
+  },
+  {
+    "id": "1958e627",
+    "name": "Natole",
+    "lat": 27.6760652,
+    "lng": 85.3182015
+  },
+  {
+    "id": "1959abae",
+    "name": "Jawalakhel",
+    "lat": 27.6731745,
+    "lng": 85.3135275
+  },
+  {
+    "id": "19ed3ebd",
+    "name": "Patan Dhoka",
+    "lat": 27.6797052,
+    "lng": 85.3204857
+  },
+  {
+    "id": "1b4184bd",
+    "name": "Adarsha",
+    "lat": 27.6664631,
+    "lng": 85.4330927
+  },
+  {
+    "id": "214ae1e4",
+    "name": "Panauti",
+    "lat": 27.5871361,
+    "lng": 85.5133345
+  },
+  {
+    "id": "214ae228",
+    "name": "Banepa",
+    "lat": 27.6300471,
+    "lng": 85.523985
+  },
+  {
+    "id": "214afa1a",
+    "name": "Pepsi Cola Chowk",
+    "lat": 27.6892092,
+    "lng": 85.3603535
+  },
+  {
+    "id": "214afa1b",
+    "name": "Lainchaur stop",
+    "lat": 27.7187572,
+    "lng": 85.3176972
+  },
+  {
+    "id": "21688e5d",
+    "name": "Boudha",
+    "lat": 27.7207198,
+    "lng": 85.3617598
+  },
+  {
+    "id": "219fc346",
+    "name": "Balkhu",
+    "lat": 27.6849952,
+    "lng": 85.2982204
+  },
+  {
+    "id": "226ba49e",
+    "name": "Sakhu Stop",
+    "lat": 27.7276836,
+    "lng": 85.4616684
+  },
+  {
+    "id": "27f9534e",
+    "name": "Kupondole stop",
+    "lat": 27.6879741,
+    "lng": 85.3163053
+  },
+  {
+    "id": "2b440c08",
+    "name": "Jwagal",
+    "lat": 27.6855629,
+    "lng": 85.3181634
+  },
+  {
+    "id": "2b66bb5b",
+    "name": "Naya Naikap",
+    "lat": 27.7012827,
+    "lng": 85.2891812
+  },
+  {
+    "id": "2b66bf29",
+    "name": "ASCOL Stop",
+    "lat": 27.7173801,
+    "lng": 85.3148107
+  },
+  {
+    "id": "36715a0c",
+    "name": "TU Gate",
+    "lat": 27.6788796,
+    "lng": 85.2972123
+  },
+  {
+    "id": "36715a2d",
+    "name": "Panga Dobato",
+    "lat": 27.6747581,
+    "lng": 85.2804077
+  },
+  {
+    "id": "36715aa7",
+    "name": "Tinkune",
+    "lat": 27.676654,
+    "lng": 85.2835434
+  },
+  {
+    "id": "3672cf2a",
+    "name": "Dhokashi",
+    "lat": 27.670661,
+    "lng": 85.2790338
+  },
+  {
+    "id": "3838cbe9",
+    "name": "Ratna Park",
+    "lat": 27.7067052,
+    "lng": 85.3152489
+  },
+  {
+    "id": "3a457e3d",
+    "name": "BishnuDevi Health Centre",
+    "lat": 27.680562,
+    "lng": 85.2764393
+  },
+  {
+    "id": "3a45a4cc",
+    "name": "Shahid Gate",
+    "lat": 27.6997186,
+    "lng": 85.3147572
+  },
+  {
+    "id": "4304f1c1",
+    "name": "Nagaon Dobato",
+    "lat": 27.6747945,
+    "lng": 85.2777568
+  },
+  {
+    "id": "4be5e4b2",
+    "name": "Kamaladi Road (कमलादी) stop",
+    "lat": 27.7079971,
+    "lng": 85.3212825
+  },
+  {
+    "id": "4be62952",
+    "name": "Babarmahal",
+    "lat": 27.6925789,
+    "lng": 85.3239053
+  },
+  {
+    "id": "4be7bb35",
+    "name": "Lagankhel",
+    "lat": 27.6624613,
+    "lng": 85.3239461
+  },
+  {
+    "id": "4be7bb36",
+    "name": "Kumaripati",
+    "lat": 27.6708396,
+    "lng": 85.3200979
+  },
+  {
+    "id": "4be7bbd6",
+    "name": "Patan Hospital",
+    "lat": 27.6684893,
+    "lng": 85.3216418
+  },
+  {
+    "id": "4be7bc81",
+    "name": "MAV School",
+    "lat": 27.6570679,
+    "lng": 85.3262883
+  },
+  {
+    "id": "4bf28194",
+    "name": "Purano Bus Park",
+    "lat": 27.7037097,
+    "lng": 85.3164292
+  },
+  {
+    "id": "4c2d1efe",
+    "name": "Basundhara",
+    "lat": 27.7406158,
+    "lng": 85.3293507
+  },
+  {
+    "id": "4c3bb30b",
+    "name": "Damkal",
+    "lat": 27.6757962,
+    "lng": 85.3157473
+  },
+  {
+    "id": "4c3f03aa",
+    "name": "Krishna Pauroti Stop",
+    "lat": 27.7103689,
+    "lng": 85.322281
+  },
+  {
+    "id": "4c3f0408",
+    "name": "Bal Mandir",
+    "lat": 27.7144861,
+    "lng": 85.3294256
+  },
+  {
+    "id": "4c5dd8fc",
+    "name": "Maiti Devi chowk",
+    "lat": 27.7039436,
+    "lng": 85.3326817
+  },
+  {
+    "id": "4c5dd8fe",
+    "name": "Ratopul",
+    "lat": 27.7081167,
+    "lng": 85.3364277
+  },
+  {
+    "id": "4c5dd968",
+    "name": "Ratopul Stop",
+    "lat": 27.7081009,
+    "lng": 85.3374841
+  },
+  {
+    "id": "4c5de42c",
+    "name": "Thapagaun Stop",
+    "lat": 27.6911328,
+    "lng": 85.3340314
+  },
+  {
+    "id": "4c5de448",
+    "name": "Ratna Rajya Stop",
+    "lat": 27.6956673,
+    "lng": 85.3376196
+  },
+  {
+    "id": "4e81041a",
+    "name": "Balkumari Bridge Stop",
+    "lat": 27.6737617,
+    "lng": 85.3425079
+  },
+  {
+    "id": "4e811f04",
+    "name": "Milan Chowk Stop",
+    "lat": 27.6951694,
+    "lng": 85.3406376
+  },
+  {
+    "id": "4e811f23",
+    "name": "Sangam Chowk Stop",
+    "lat": 27.6931956,
+    "lng": 85.3405019
+  },
+  {
+    "id": "5206da6d",
+    "name": "Golfutar stop",
+    "lat": 27.7514403,
+    "lng": 85.3459686
+  },
+  {
+    "id": "526c391c",
+    "name": "Shantinagar Stop",
+    "lat": 27.6871526,
+    "lng": 85.3408193
+  },
+  {
+    "id": "531f6eca",
+    "name": "Bhimsengola stop",
+    "lat": 27.7003775,
+    "lng": 85.3432561
+  },
+  {
+    "id": "5326f2ff",
+    "name": "JayaBageshwari Stop",
+    "lat": 27.7119891,
+    "lng": 85.3449986
+  },
+  {
+    "id": "53699126",
+    "name": "Tempo Stop Near Old Baneshwar",
+    "lat": 27.700669,
+    "lng": 85.3396774
+  },
+  {
+    "id": "58c5d0fe",
+    "name": "Gwarko Chowk Stop",
+    "lat": 27.6666661,
+    "lng": 85.3321608
+  },
+  {
+    "id": "58c5d1a5",
+    "name": "B & B Hospital/KCM Stop",
+    "lat": 27.6642208,
+    "lng": 85.3301515
+  },
+  {
+    "id": "58d32bd3",
+    "name": "Ciy Center Stop",
+    "lat": 27.7098189,
+    "lng": 85.3269842
+  },
+  {
+    "id": "5934643f",
+    "name": "Sanepa height",
+    "lat": 27.6744676,
+    "lng": 85.3022166
+  },
+  {
+    "id": "5acc027a",
+    "name": "Gopi Krishna Stop",
+    "lat": 27.7226748,
+    "lng": 85.3453352
+  },
+  {
+    "id": "5acc9aff",
+    "name": "Budhanilkantha Stop",
+    "lat": 27.7767777,
+    "lng": 85.3621005
+  },
+  {
+    "id": "62bd1510",
+    "name": "Changu Narayan",
+    "lat": 27.7163215,
+    "lng": 85.43078
+  },
+  {
+    "id": "62e8e572",
+    "name": "Dhungedhara",
+    "lat": 27.7234101,
+    "lng": 85.2946749
+  },
+  {
+    "id": "635dc81f",
+    "name": "Satdobato Chowk Stop",
+    "lat": 27.6587797,
+    "lng": 85.3247842
+  },
+  {
+    "id": "635dcdb6",
+    "name": "Matatirtha Stop",
+    "lat": 27.6805772,
+    "lng": 85.2328579
+  },
+  {
+    "id": "69e68230",
+    "name": "Chakrapath Stop- South",
+    "lat": 27.7398348,
+    "lng": 85.336915
+  },
+  {
+    "id": "69e6839e",
+    "name": "Lazimpat stop",
+    "lat": 27.7225227,
+    "lng": 85.3209237
+  },
+  {
+    "id": "6b6dafdf",
+    "name": "Bansbari stop",
+    "lat": 27.745758,
+    "lng": 85.3423734
+  },
+  {
+    "id": "6b7ff2ef",
+    "name": "Tripureshwor",
+    "lat": 27.6943809,
+    "lng": 85.3141694
+  },
+  {
+    "id": "6b9712c3",
+    "name": "Singha Durbar West Stop",
+    "lat": 27.6965549,
+    "lng": 85.3212565
+  },
+  {
+    "id": "6b97133a",
+    "name": "Bhadrakali",
+    "lat": 27.6993518,
+    "lng": 85.3177129
+  },
+  {
+    "id": "6b97418e",
+    "name": "Maitighar",
+    "lat": 27.693915,
+    "lng": 85.3209936
+  },
+  {
+    "id": "6b974192",
+    "name": "Maitighar",
+    "lat": 27.6940159,
+    "lng": 85.32093
+  },
+  {
+    "id": "6b9741bd",
+    "name": "Singha Durbar West Stop",
+    "lat": 27.696626,
+    "lng": 85.3211991
+  },
+  {
+    "id": "6b977353",
+    "name": "Naya Baneshwor Bus Station",
+    "lat": 27.6885732,
+    "lng": 85.3347414
+  },
+  {
+    "id": "6b977374",
+    "name": "Babarmahal Stop",
+    "lat": 27.6903197,
+    "lng": 85.328762
+  },
+  {
+    "id": "6ba66194",
+    "name": "Kantipath",
+    "lat": 27.7089122,
+    "lng": 85.3146069
+  },
+  {
+    "id": "6ba66195",
+    "name": "Ghantaghar (घण्टाघर) stop",
+    "lat": 27.7080425,
+    "lng": 85.3171161
+  },
+  {
+    "id": "6c4dcab5",
+    "name": "Tinkune Stop",
+    "lat": 27.6861178,
+    "lng": 85.3456043
+  },
+  {
+    "id": "6c4dcabd",
+    "name": "Shantinagar Stop",
+    "lat": 27.6870857,
+    "lng": 85.3413721
+  },
+  {
+    "id": "6c5224d3",
+    "name": "Maitighar Stop-South",
+    "lat": 27.694102,
+    "lng": 85.3193019
+  },
+  {
+    "id": "6ca48579",
+    "name": "Lokanthali",
+    "lat": 27.6747493,
+    "lng": 85.3599341
+  },
+  {
+    "id": "6caacfd4",
+    "name": "SanoThimi",
+    "lat": 27.6826801,
+    "lng": 85.3723428
+  },
+  {
+    "id": "6cba1c2c",
+    "name": "Baakha Bazaar",
+    "lat": 27.6828794,
+    "lng": 85.3858308
+  },
+  {
+    "id": "6cd7312a",
+    "name": "Gyaneshwor Chowk",
+    "lat": 27.7086869,
+    "lng": 85.3318256
+  },
+  {
+    "id": "6cd85366",
+    "name": "Suryabinayek",
+    "lat": 27.6656687,
+    "lng": 85.4242154
+  },
+  {
+    "id": "6d0e1898",
+    "name": "Saughal",
+    "lat": 27.670479,
+    "lng": 85.3272192
+  },
+  {
+    "id": "6d0e189b",
+    "name": "Tyogal",
+    "lat": 27.6686312,
+    "lng": 85.3298476
+  },
+  {
+    "id": "6d1c3f54",
+    "name": "Budhanilkantha Micro Stand",
+    "lat": 27.7764591,
+    "lng": 85.3619335
+  },
+  {
+    "id": "6d1c3f58",
+    "name": "Budhanilkantha School Blue Micro Stand",
+    "lat": 27.778969,
+    "lng": 85.3589983
+  },
+  {
+    "id": "6d1cb6ca",
+    "name": "Deuba Chowk stop",
+    "lat": 27.7737563,
+    "lng": 85.36033
+  },
+  {
+    "id": "6d1cfd8d",
+    "name": "Sundhara Stop",
+    "lat": 27.7005417,
+    "lng": 85.3135033
+  },
+  {
+    "id": "6d1df44e",
+    "name": "Anamnagar Stop",
+    "lat": 27.6994877,
+    "lng": 85.3286001
+  },
+  {
+    "id": "6d1df451",
+    "name": "Bhrikuti Mandap Stop",
+    "lat": 27.7021221,
+    "lng": 85.318738
+  },
+  {
+    "id": "6d1df454",
+    "name": "Hanumanthan Stop",
+    "lat": 27.6935216,
+    "lng": 85.3276028
+  },
+  {
+    "id": "6d1df457",
+    "name": "Naya Baneshwor Tempo Stop",
+    "lat": 27.6903727,
+    "lng": 85.3358296
+  },
+  {
+    "id": "6d1df45a",
+    "name": "Tourism Board Stop",
+    "lat": 27.7023323,
+    "lng": 85.3167996
+  },
+  {
+    "id": "6d1df464",
+    "name": "New Plaza Stop",
+    "lat": 27.7009514,
+    "lng": 85.3229183
+  },
+  {
+    "id": "6d1e71b2",
+    "name": "Bhadrakali",
+    "lat": 27.6991375,
+    "lng": 85.318307
+  },
+  {
+    "id": "6d39bcd8",
+    "name": "Buddhanagar Stop",
+    "lat": 27.6906252,
+    "lng": 85.3279258
+  },
+  {
+    "id": "6d41252b",
+    "name": "Gaushala Chowk Stop",
+    "lat": 27.708061,
+    "lng": 85.3434291
+  },
+  {
+    "id": "6d6618e8",
+    "name": "Gothatar",
+    "lat": 27.703133,
+    "lng": 85.3694428
+  },
+  {
+    "id": "6d66efa8",
+    "name": "Dhumbarahi",
+    "lat": 27.7317994,
+    "lng": 85.3443707
+  },
+  {
+    "id": "6d6a7e43",
+    "name": "Nikosera",
+    "lat": 27.6800543,
+    "lng": 85.3984502
+  },
+  {
+    "id": "6e02e539",
+    "name": "ShivaDarshan Hall Stop",
+    "lat": 27.6923364,
+    "lng": 85.3362165
+  },
+  {
+    "id": "6e05b90f",
+    "name": "Bijulibazar Stop",
+    "lat": 27.692332,
+    "lng": 85.3296148
+  },
+  {
+    "id": "6e21381d",
+    "name": "Jawlakhel Stop",
+    "lat": 27.6725769,
+    "lng": 85.3141739
+  },
+  {
+    "id": "700f889e",
+    "name": "UN Stop",
+    "lat": 27.6781066,
+    "lng": 85.3162853
+  },
+  {
+    "id": "703484de",
+    "name": "Sankhamul Stop",
+    "lat": 27.6811284,
+    "lng": 85.3315875
+  },
+  {
+    "id": "7036380f",
+    "name": "New Baneshwor",
+    "lat": 27.6903265,
+    "lng": 85.3359541
+  },
+  {
+    "id": "73fc94e1",
+    "name": "Narayan Gopal Chowk",
+    "lat": 27.7400221,
+    "lng": 85.3372009
+  },
+  {
+    "id": "743fcf6c",
+    "name": "KattyaniChowk Stop",
+    "lat": 27.6953656,
+    "lng": 85.344466
+  },
+  {
+    "id": "74d3e168",
+    "name": "kaushaltar",
+    "lat": 27.6744801,
+    "lng": 85.3642698
+  },
+  {
+    "id": "74de95c6",
+    "name": "Naya Bato",
+    "lat": 27.6761142,
+    "lng": 85.2938967
+  },
+  {
+    "id": "74de9630",
+    "name": "Kumari Club",
+    "lat": 27.682663,
+    "lng": 85.2985992
+  },
+  {
+    "id": "752961be",
+    "name": "Naya Bazar",
+    "lat": 27.6771493,
+    "lng": 85.2813895
+  },
+  {
+    "id": "76a83512",
+    "name": "Jagati",
+    "lat": 27.6664628,
+    "lng": 85.4364631
+  },
+  {
+    "id": "77d6572b",
+    "name": "Gopi Krishna Stop",
+    "lat": 27.7206294,
+    "lng": 85.3460992
+  },
+  {
+    "id": "788eeaee",
+    "name": "Naya Bus Park",
+    "lat": 27.7352541,
+    "lng": 85.3076282
+  },
+  {
+    "id": "7a41852d",
+    "name": "Lokanthali",
+    "lat": 27.674908,
+    "lng": 85.3597899
+  },
+  {
+    "id": "7a41852e",
+    "name": "Srijana nagar",
+    "lat": 27.6728652,
+    "lng": 85.4049715
+  },
+  {
+    "id": "7a41852f",
+    "name": "Thimi",
+    "lat": 27.6733207,
+    "lng": 85.3854065
+  },
+  {
+    "id": "7a418530",
+    "name": "gathaghar",
+    "lat": 27.6740598,
+    "lng": 85.3733041
+  },
+  {
+    "id": "7a418531",
+    "name": "kaushaltar",
+    "lat": 27.6746027,
+    "lng": 85.3644278
+  },
+  {
+    "id": "7a418539",
+    "name": "Chardobato",
+    "lat": 27.673553,
+    "lng": 85.3817169
+  },
+  {
+    "id": "7a6ef504",
+    "name": "Sanga",
+    "lat": 27.6419155,
+    "lng": 85.4776795
+  },
+  {
+    "id": "7c091e28",
+    "name": "Suryabinayek",
+    "lat": 27.6658114,
+    "lng": 85.4242078
+  },
+  {
+    "id": "7c091e3c",
+    "name": "Chunudevi",
+    "lat": 27.667152,
+    "lng": 85.4170241
+  },
+  {
+    "id": "7c091e48",
+    "name": "Sallaghari Stop",
+    "lat": 27.669934,
+    "lng": 85.4111597
+  },
+  {
+    "id": "88953095",
+    "name": "Babarmahal Stop",
+    "lat": 27.6923373,
+    "lng": 85.3243999
+  },
+  {
+    "id": "88953096",
+    "name": "Bagbazar Stop",
+    "lat": 27.7058275,
+    "lng": 85.3172038
+  },
+  {
+    "id": "88953097",
+    "name": "Baneshwor Bus Station",
+    "lat": 27.688231,
+    "lng": 85.3357479
+  },
+  {
+    "id": "88953099",
+    "name": "Buddhanagar Stop",
+    "lat": 27.6893299,
+    "lng": 85.331039
+  },
+  {
+    "id": "8895309a",
+    "name": "Byasi Stop",
+    "lat": 27.6748038,
+    "lng": 85.4274435
+  },
+  {
+    "id": "8895309b",
+    "name": "gathaghar",
+    "lat": 27.6739692,
+    "lng": 85.3730508
+  },
+  {
+    "id": "8895309c",
+    "name": "Jadibuti",
+    "lat": 27.6751899,
+    "lng": 85.3539203
+  },
+  {
+    "id": "8895309e",
+    "name": "Mahakali Stop",
+    "lat": 27.6759638,
+    "lng": 85.4318311
+  },
+  {
+    "id": "8895309f",
+    "name": "Mahalaxmi Stop",
+    "lat": 27.6761023,
+    "lng": 85.4337685
+  },
+  {
+    "id": "889530a0",
+    "name": "Minbhawan",
+    "lat": 27.6876537,
+    "lng": 85.3384755
+  },
+  {
+    "id": "889530a1",
+    "name": "Putalisadak Stop",
+    "lat": 27.7056901,
+    "lng": 85.3225524
+  },
+  {
+    "id": "889530a2",
+    "name": "Radhe Radhe",
+    "lat": 27.6745899,
+    "lng": 85.3974795
+  },
+  {
+    "id": "889530a3",
+    "name": "Sallaghari Stop",
+    "lat": 27.6740754,
+    "lng": 85.4099231
+  },
+  {
+    "id": "889530a4",
+    "name": "Srijananagar",
+    "lat": 27.6729111,
+    "lng": 85.4042665
+  },
+  {
+    "id": "889530a5",
+    "name": "Thimi Stop",
+    "lat": 27.6733356,
+    "lng": 85.3862931
+  },
+  {
+    "id": "889530a6",
+    "name": "Tinkune Bhaktapur",
+    "lat": 27.6722127,
+    "lng": 85.4068271
+  },
+  {
+    "id": "889530a7",
+    "name": "Tinkune Subidhanagar",
+    "lat": 27.6860559,
+    "lng": 85.3456619
+  },
+  {
+    "id": "8b4ad9d1",
+    "name": "Pingalasthan",
+    "lat": 27.7058076,
+    "lng": 85.3471055
+  },
+  {
+    "id": "8b4b5122",
+    "name": "Barahi Movies",
+    "lat": 27.6659165,
+    "lng": 85.4214928
+  },
+  {
+    "id": "8b4b5123",
+    "name": "Barahi Movies",
+    "lat": 27.6660167,
+    "lng": 85.4218225
+  },
+  {
+    "id": "8b4b5124",
+    "name": "Sallaghari Stop",
+    "lat": 27.6708871,
+    "lng": 85.409412
+  },
+  {
+    "id": "8b4b5125",
+    "name": "Tinkune Bhaktapur",
+    "lat": 27.6723655,
+    "lng": 85.4068295
+  },
+  {
+    "id": "8bb61f13",
+    "name": "Bhaktapur Hospital Stop",
+    "lat": 27.6719882,
+    "lng": 85.4224082
+  },
+  {
+    "id": "8c7971ef",
+    "name": "Bhaktapur Bus Park",
+    "lat": 27.6713069,
+    "lng": 85.4224157
+  },
+  {
+    "id": "8cad8b75",
+    "name": "Teaching Hospital stop",
+    "lat": 27.7345232,
+    "lng": 85.3307108
+  },
+  {
+    "id": "8d767c58",
+    "name": "Tripureshwor",
+    "lat": 27.6934485,
+    "lng": 85.3145773
+  },
+  {
+    "id": "8da154a9",
+    "name": "Balkhu Stop",
+    "lat": 27.6847979,
+    "lng": 85.2985923
+  },
+  {
+    "id": "8dae2cb7",
+    "name": "Jadibuti",
+    "lat": 27.6754586,
+    "lng": 85.3516003
+  },
+  {
+    "id": "8daf79b2",
+    "name": "Balkumari Stop",
+    "lat": 27.6736699,
+    "lng": 85.3424814
+  },
+  {
+    "id": "8db96f28",
+    "name": "Naya Baneshwor Tampoo Station",
+    "lat": 27.688586,
+    "lng": 85.3346886
+  },
+  {
+    "id": "8dc05f64",
+    "name": "Kapan Stop",
+    "lat": 27.7294183,
+    "lng": 85.3540637
+  },
+  {
+    "id": "8dfd33a2",
+    "name": "Chardobato",
+    "lat": 27.673424,
+    "lng": 85.3811209
+  }
+]
