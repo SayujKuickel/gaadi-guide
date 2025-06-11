@@ -33,7 +33,7 @@ const ViewAllBusRoutes = () => {
           </section>
 
           {filteredRoutes.length > 0 ? (
-            <div className="space-y-2">
+            <div className="space-y-10">
               {filteredRoutes.map((route) => (
                 <ViewRouteDetails
                   priorityStop={selectedStop?.id}

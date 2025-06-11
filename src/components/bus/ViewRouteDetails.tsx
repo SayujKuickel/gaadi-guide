@@ -15,7 +15,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
   priorityStop,
 }) => {
   return (
-    <section className="p-3 rounded-lg bg-surface-1/25  mb-12">
+    <section className="p-3 rounded-lg bg-surface-1/25">
       <BusLineTitle
         className="mb-3"
         lineColor={route?.lineColor}

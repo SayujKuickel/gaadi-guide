@@ -158,3 +158,17 @@ body {
     display: block;
   }
 }
+
+.animate-in-fade {
+  animation: animateInFade 0.25s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes animateInFade {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
