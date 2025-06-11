@@ -1,22 +1,24 @@
-// \React
 import { useState, useRef, useEffect } from "react";
-// \Types
-import type { IRouteOption } from "@/types/routeOptions.types";
 import Button from "./Button";
 
-interface Props {
-  options: IRouteOption[];
-  selected: IRouteOption | null;
-  onChange: (option: IRouteOption) => void;
+interface BaseOption {
+  id: string | number;
+  name: string;
+}
+
+interface Props<T extends BaseOption> {
+  options: T[];
+  selected: T | null;
+  onChange: (option: T) => void;
   placeholder?: string;
 }
 
-const SearchableCombobox = ({
+const SearchableCombobox = <T extends BaseOption>({
   options,
   selected,
   onChange,
   placeholder = "Select an option",
-}: Props) => {
+}: Props<T>) => {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
@@ -52,7 +54,6 @@ const SearchableCombobox = ({
     }
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -66,21 +67,18 @@ const SearchableCombobox = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Sync query when selected prop changes
   useEffect(() => {
     if (selected) {
       setQuery(selected.name);
     }
   }, [selected]);
 
-  // Prevent out-of-bounds highlight index
   useEffect(() => {
     if (highlightedIndex >= filteredOptions.length) {
       setHighlightedIndex(0);
     }
   }, [filteredOptions, highlightedIndex]);
 
-  // Detect dropdown position based on viewport space
   useEffect(() => {
     if (!isOpen || !containerRef.current) return;
 

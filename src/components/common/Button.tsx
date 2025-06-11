@@ -4,16 +4,20 @@ interface ButtonProps {
   iconStyle?: string;
   className?: string;
   ariaLabel: string;
+  type?: "button" | "submit" | "reset" | undefined;
 }
+
 const Button: React.FC<ButtonProps> = ({
   onClick,
   title,
   iconStyle,
   className = "",
+  type = "button",
   ariaLabel,
 }) => {
   return (
     <button
+      type={type}
       aria-label={ariaLabel}
       onClick={onClick}
       className={`flex items-center gap-2 px-2 py-2 rounded-lg cursor-pointer bg-surface-3 hover:bg-surface-2 transition-all hover:text-on-surface text-text border border-surface ${className}`}

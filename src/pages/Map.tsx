@@ -36,13 +36,6 @@ const Map = () => {
   return (
     <>
       <TopRightFixedContainer>
-        <Link to="/bus">
-          <Button
-            iconStyle="text-xl fi fi-rr-bus-alt"
-            ariaLabel="Navigate to bus routes"
-          />
-        </Link>
-
         <LayerSwitcher setTileMapKey={setTileMapKey} tileMapKey={tileMapKey} />
 
         <UserLocation

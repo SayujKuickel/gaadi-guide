@@ -7,9 +7,13 @@ import { Link } from "react-router-dom";
 
 interface ViewRouteDetailsProps {
   route: IRoute;
+  priorityStop?: string;
 }
 
-const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({ route }) => {
+const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
+  route,
+  priorityStop,
+}) => {
   return (
     <section className="p-3 rounded-lg bg-surface-1/25  mb-12">
       <BusLineTitle
@@ -18,7 +22,12 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({ route }) => {
         name={route?.name}
       />
 
-      <BusStops routeId={route?.id} stopsArray={route?.stops} itemsToShow={3} />
+      <BusStops
+        routeId={route?.id}
+        stopsArray={route?.stops}
+        priorityStop={priorityStop}
+        itemsToShow={3}
+      />
 
       <div className="flex md:items-center flex-col md:flex-row gap-2 mt-8">
         <Link className="block w-fit" to={`/bus/${route?.id}`}>

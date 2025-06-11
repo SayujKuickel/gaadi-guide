@@ -12,6 +12,7 @@ import RouteData from "@/data/route_data.json";
 // /types
 import type { IRoute } from "@/types/route.types";
 import Button from "@/components/common/Button";
+import GoBackButtonSection from "@/components/bus/GoBackButtonWrapper";
 
 const ViewBusRoute = () => {
   const { id } = useParams();
@@ -30,18 +31,7 @@ const ViewBusRoute = () => {
 
   return (
     <PageLayout>
-      <ContainerLayout isSmall={false} className="pt-4">
-        <Link to={"/bus"} className="">
-          <Button
-            ariaLabel="Go back to previous page button"
-            title="Back"
-            iconStyle="fi fi-rr-angle-small-left"
-            className="text-sm mb-6"
-          />
-        </Link>
-      </ContainerLayout>
-
-      <ContainerLayout className="pt-18 md:pt-12">
+      <ContainerLayout className="">
         {route ? (
           <>
             <BusLineTitle
@@ -50,6 +40,14 @@ const ViewBusRoute = () => {
               name={route?.name}
               level={2}
             />
+
+            <Link className="block w-fit mb-4" to={`/?route=${route?.id}`}>
+              <Button
+                ariaLabel="View route map"
+                iconStyle="fi fi-rr-map"
+                title="View in Map"
+              />
+            </Link>
 
             <BusStops routeId={id} stopsArray={route?.stops} />
             <span className="block ml-1 mt-3 text-sm text-text/75">

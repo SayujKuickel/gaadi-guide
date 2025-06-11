@@ -6,33 +6,43 @@ interface ViewRouteDetailsProps {
   stopsArray: string[];
   itemsToShow?: number;
   routeId?: string;
+  priorityStop?: string;
 }
 
 const BusStops: React.FC<ViewRouteDetailsProps> = ({
   stopsArray,
   itemsToShow,
   routeId,
+  priorityStop,
 }) => {
+  const reorderedStops = [
+    ...(priorityStop && stopsArray.includes(priorityStop)
+      ? [priorityStop]
+      : []),
+    ...stopsArray.filter((stopId) => stopId !== priorityStop),
+  ];
+
   const toShow =
-    itemsToShow && itemsToShow > 0 ? itemsToShow : stopsArray.length;
+    itemsToShow && itemsToShow > 0 ? itemsToShow : reorderedStops.length;
 
   return (
     <>
       <ul className="flex flex-col gap-4">
-        {stopsArray?.slice(0, toShow)?.map((item, key) => {
+        {reorderedStops.slice(0, toShow).map((item, key) => {
           const stop = stops_data.find((el) => el.id === item);
-
           if (!stop) return null;
 
           return (
             <li
               key={key}
-              className="flex items-center gap-1.5 relative no-scrollbar"
+              className={`flex items-center gap-1.5 relative no-scrollbar `}
             >
               <i
                 className={`${
-                  key > 0 && key < stopsArray?.length - 1
+                  key > 0 && key < reorderedStops.length - 1
                     ? "fi fi-rr-circle"
+                    : stop.id === priorityStop
+                    ? "fi fi-rr-land-layer-location"
                     : "fi fi-rr-dot-circle"
                 } w-3 flex text-xs relative`}
               >
@@ -42,12 +52,17 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
                   </span>
                 )}
               </i>
-              <p className="flex-1 flex items-center gap-1 justify-between ml-2 px-2 py-1.5 bg-surface-1/25 border border-neutral-100/20 rounded-lg text-neutral-100/80 whitespace-nowrap overflow-x-scroll no-scrollbar">
-                {stop?.name}
+
+              <p
+                className={`flex-1 flex items-center gap-1 justify-between ml-2 px-2 py-1.5 bg-surface-1/25 border border-neutral-100/20 rounded-lg text-neutral-100/80 whitespace-nowrap overflow-x-scroll no-scrollbar ${
+                  priorityStop === stop.id && "outline outline-green-600/30"
+                }`}
+              >
+                {stop.name}
               </p>
 
               {routeId && (
-                <Link to={`/?route=${routeId}&stop=${stop?.id}`}>
+                <Link to={`/?route=${routeId}&stop=${stop.id}`}>
                   <Button
                     iconStyle="fi fi-rr-eye"
                     ariaLabel={`Navigate to ${stop.name}`}
