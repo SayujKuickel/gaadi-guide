@@ -40,7 +40,12 @@ const MapSidebar: React.FC<MapSidebarProps> = ({
         ))}
       </ul>
 
-      <div className="absolute left-0 bottom-18 w-full md:top-0 md:left-20 md:h-fit md:w-fit z-[99999] px-2 pb-2 md:px-0 md:pb-0 md:pl-2 md:pt-2 ">
+      <div
+        className="absolute left-0 bottom-18 w-full md:top-0 md:left-20 md:h-fit md:w-fit z-[99999] 
+      pl-2 pr-2 pt-0 pb-2
+      md:pl-2 md:pr-0 md:pt-2 md:pb-0
+      "
+      >
         {children}
       </div>
     </aside>

@@ -15,12 +15,12 @@ const BusLineTitle: React.FC<BusLineTitleProps> = ({
 }) => {
   return (
     <Heading className={`text-offText ${className}`} level={level}>
-      <span
-        style={{
-          background: lineColor,
-        }}
-        className={"w-6 aspect-square rounded-full inline-block"}
-      />
+      <span className="inline-block">
+        <i
+          className="fi fi-rr-circle rounded-full flex w-fit"
+          style={{ background: lineColor, color: lineColor }}
+        />
+      </span>
 
       <span className="ml-1">{name}</span>
     </Heading>

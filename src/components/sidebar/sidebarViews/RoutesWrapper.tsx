@@ -4,29 +4,33 @@ import SearchableCombobox from "@/components/common/SearchableCombobox";
 // /data
 import RouteData from "@/data/route_data.json";
 // /hooks
-import useSelectRoute from "@/hooks/useSelectRoute";
+import type { IRouteOption } from "@/types/routeOptions.types";
 
 interface RoutesWrapperProps {
+  selectedRoute: IRouteOption | null;
+  handleRouteSelect: (route: IRouteOption) => void;
   setSidebarIndex: (key: number) => void;
 }
 
-const RoutesWrapper: React.FC<RoutesWrapperProps> = ({ setSidebarIndex }) => {
-  const { selectedOption, handleRouteSelect } = useSelectRoute();
-
+const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
+  selectedRoute,
+  handleRouteSelect,
+  setSidebarIndex,
+}) => {
   return (
-    <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-72">
+    <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76">
       <Heading className="mb-3" level={4}>
         Select Route
       </Heading>
 
       <SearchableCombobox
         options={RouteData.map((rt) => ({ id: rt.id, name: rt.name }))}
-        selected={selectedOption}
+        selected={selectedRoute}
         onChange={(opt) => handleRouteSelect(opt)}
         placeholder="Type here to search..."
       />
 
-      {selectedOption && (
+      {selectedRoute && (
         <Button
           onClick={() => setSidebarIndex(2)}
           ariaLabel="Show Stops button"

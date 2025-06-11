@@ -6,14 +6,14 @@ export const useUserLocation = () => {
   );
   const [isSearchingLocation, setIsSearchingLocation] = useState(false);
 
-  useEffect(() => {
-    const lat = sessionStorage.getItem("user-latitude");
-    const lon = sessionStorage.getItem("user-longitude");
+  // useEffect(() => {
+  //   const lat = sessionStorage.getItem("user-latitude");
+  //   const lon = sessionStorage.getItem("user-longitude");
 
-    if (lat !== null && lon !== null) {
-      setUserLocation([parseFloat(lat), parseFloat(lon)]);
-    }
-  }, []);
+  //   if (lat !== null && lon !== null) {
+  //     setUserLocation([parseFloat(lat), parseFloat(lon)]);
+  //   }
+  // }, []);
 
   const getUserLocation = () => {
     if (isSearchingLocation) {
@@ -36,7 +36,7 @@ export const useUserLocation = () => {
         console.error("Geolocation error:", err);
         setIsSearchingLocation(false);
         console.warn(
-          "Failed to get your location. Please enable location services."
+          "[w] Failed to get your location. Please enable location services."
         );
       },
       { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }

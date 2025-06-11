@@ -20,7 +20,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         sideBarIndex === item?.key && "bg-primary/10"
       }`}
     >
-      <i className={`flex text-lg md:text-2xl ${item?.icon}`} />
+      <i className={`flex text-3xl md:text-2xl ${item?.icon}`} />
 
       <span className={`text-xs md:text-sm pointer-events-none`}>
         {item.name}

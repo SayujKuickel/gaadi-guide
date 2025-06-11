@@ -7,9 +7,11 @@ import BusLineTitle from "@/components/bus/BusLineTitle";
 import BusStops from "@/components/bus/BusStops/BusStops";
 import RouteView from "./RouteView";
 
-interface ShowRouteViewProps {}
+interface ShowRouteViewProps {
+  fitRouteToWindow?: boolean;
+}
 
-const ShowRouteView: React.FC<ShowRouteViewProps> = () => {
+const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
   const [searchParams] = useSearchParams();
   const [routeData, setRouteData] = useState<IRoute | null>(null);
 
@@ -38,7 +40,7 @@ const ShowRouteView: React.FC<ShowRouteViewProps> = () => {
   return (
     <RouteView
       stopIds={routeData?.stops}
-      fitToScreen={true}
+      fitToScreen={fitRouteToWindow}
       lineColor={routeData?.lineColor}
     />
   );

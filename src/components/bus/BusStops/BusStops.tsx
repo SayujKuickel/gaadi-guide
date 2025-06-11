@@ -1,22 +1,31 @@
+import Button from "@/components/common/Button";
 import stops_data from "@/data/stops_data.json";
+import type { IStopOption } from "@/types/stopOptions.types";
+import { Link } from "react-router-dom";
 
 interface ViewRouteDetailsProps {
   stopsArray: string[];
   itemsToShow?: number;
+  routeId?: string;
+  handleStopSelect: (stop: IStopOption) => void;
 }
 
 const BusStops: React.FC<ViewRouteDetailsProps> = ({
   stopsArray,
   itemsToShow,
+  routeId,
+  handleStopSelect,
 }) => {
   const toShow =
     itemsToShow && itemsToShow > 0 ? itemsToShow : stopsArray.length;
 
   return (
-    <div>
+    <>
       <ul className="flex flex-col gap-4">
         {stopsArray?.slice(0, toShow)?.map((item, key) => {
           const stop = stops_data.find((el) => el.id === item);
+
+          if (!stop) return null;
 
           return (
             <li
@@ -36,10 +45,18 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
                   </span>
                 )}
               </i>
-
-              <p className="flex-1 flex items-center gap-1 justify-between ml-2 px-2 py-1.5 bg-surface-1/25 border border-neutral-100/20 rounded-lg text-neutral-100/80 whitespace-nowrap overflow-scroll no-scrollbar">
+              <p className="flex-1 flex items-center gap-1 justify-between ml-2 px-2 py-1.5 bg-surface-1/25 border border-neutral-100/20 rounded-lg text-neutral-100/80 whitespace-nowrap overflow-x-scroll no-scrollbar">
                 {stop?.name}
               </p>
+
+              {routeId && (
+                <Link to={`/?route=${routeId}&stop=${stop?.id}`}>
+                  <Button
+                    iconStyle="fi fi-rr-eye"
+                    ariaLabel={`Navigate to ${stop.name}`}
+                  />
+                </Link>
+              )}
             </li>
           );
         })}
@@ -50,7 +67,7 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
           Showing {itemsToShow} of {stopsArray.length} Bus Stops.
         </span>
       )}
-    </div>
+    </>
   );
 };
 

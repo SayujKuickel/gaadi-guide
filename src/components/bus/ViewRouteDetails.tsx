@@ -18,18 +18,27 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({ route }) => {
         name={route?.name}
       />
 
-      <BusStops stopsArray={route?.stops} itemsToShow={3} />
+      <BusStops routeId={route?.id} stopsArray={route?.stops} itemsToShow={3} />
 
-      <br />
+      <div className="flex md:items-center flex-col md:flex-row gap-2 mt-8">
+        <Link className="block w-fit" to={`/bus/${route?.id}`}>
+          <Button
+            ariaLabel="View All Stops"
+            title="View All Stops"
+            className="text-sm"
+            iconStyle="fi fi-rr-eye"
+          />
+        </Link>
 
-      <Link className="block w-fit" to={`/bus/${route?.id}`}>
-        <Button
-          ariaLabel="View All Stops"
-          title="View All"
-          className="text-sm mb-6"
-          iconStyle="fi fi-rr-eye"
-        />
-      </Link>
+        <Link className="block w-fit" to={`/?route=${route?.id}`}>
+          <Button
+            ariaLabel="View in map"
+            title="View in Map"
+            className="text-sm"
+            iconStyle="fi fi-rr-map"
+          />
+        </Link>
+      </div>
     </section>
   );
 };

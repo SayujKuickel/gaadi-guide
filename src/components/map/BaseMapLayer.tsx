@@ -9,6 +9,7 @@ import {
   MAX_ZOOM_OUT,
 } from "@/constants/mapSettings";
 import type { ReactNode } from "react";
+import { useSearchParams } from "react-router-dom";
 // import { useEffect, useState } from "react";
 
 interface BaseMapLayerProps {
@@ -33,7 +34,6 @@ const BaseMapLayer = ({ children, className }: BaseMapLayerProps) => {
   //     setMapCenter(MAP_CENTER);
   //   }
   // }, []);
-  // if (!mapCenter) return null;
 
   return (
     <div className={`w-full h-full ${className}`}>
