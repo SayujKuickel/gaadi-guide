@@ -23,7 +23,6 @@ const FlyToStop = () => {
       return;
     }
 
-    console.log("flying to", [stopData.lat, stopData.lng]);
     map.flyTo([stopData.lat, stopData.lng], DEFAULT_FLY_TO_POSITION_ZOOM);
   }, [stop, map]);
 

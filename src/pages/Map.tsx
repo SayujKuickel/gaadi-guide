@@ -8,19 +8,18 @@ import useRoute from "@/hooks/useSelectRoute";
 // \utils
 import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
 // \components
-import Button from "@/components/common/Button";
 import TopRightFixedContainer from "@/components/containers/TopRightFixedContainer";
 import BaseMapLayer from "@/components/map/BaseMapLayer";
-import LayerSwitcher from "@/components/map/MapControls/LayerSwticher/LayerSwitcher";
-import LayerView from "@/components/map/MapControlViews/TileLayerView";
+import LayerSwitcher from "@/components/map/controls/LayerSwitcher/LayerSwitcher";
+import LayerView from "@/components/map/views/TileLayerView";
 import MapSidebar from "@/components/sidebar/MapSidebar";
 import RoutesWrapper from "@/components/sidebar/sidebarViews/RoutesWrapper";
 import SearchWrapper from "@/components/sidebar/sidebarViews/SearchWrapper";
 import ViewStopsWrapper from "@/components/sidebar/sidebarViews/ViewStopsWrapper";
 import ShowRouteView from "@/components/map/route/ShowRouteView";
 import FlyToStop from "@/components/map/stop/FlyToStop";
-import UserLocationMarkerView from "@/components/map/MapControlViews/UserLocationMarkerView";
-import UserLocation from "@/components/map/MapControls/UserLocation/UserLocation";
+import UserLocationMarkerView from "@/components/map/views/UserLocationMarkerView";
+import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 
 const Map = () => {
   const [searchParams] = useSearchParams();

@@ -20,12 +20,12 @@ const ScrollToTopButton = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-2 right-2 md:bottom-8 md:right-8 z-[99999]">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[99999]">
       <Button
         onClick={handleScrollToTop}
         ariaLabel="Scroll to top"
-        iconStyle="fi fi-rr-angle-small-up animate-in-fade"
-        className="flex-col items-center "
+        iconStyle="fi fi-rr-angle-small-up text-xl"
+        className="animate-in-fade"
       />
     </div>
   );

@@ -22,9 +22,9 @@ const routes: Route[] = [
   },
   {
     name: "About",
-    path: "https://sayuj.com.np",
+    path: "/about",
     icon: "fi fi-rr-user",
-    newTab: true,
+    // newTab: true,
   },
   {
     name: "Contact",

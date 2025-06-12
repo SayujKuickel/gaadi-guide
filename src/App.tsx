@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import ViewBusRoute from "@/pages/bus/ViewBusRoute";
 import ViewAllBusRoutes from "@/pages/bus/ViewAllBusRoutes";
 import Contact from "@/pages/Contact";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       </Route>
 
       <Route index path="/contact" element={<Contact />} />
+      <Route index path="/about" element={<About />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
