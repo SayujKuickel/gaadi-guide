@@ -1,10 +1,11 @@
 interface ButtonProps {
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   title?: string;
   iconStyle?: string;
   className?: string;
   ariaLabel: string;
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset";
+  variant?: "primary" | "secondary" | "error";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,16 +15,24 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   type = "button",
   ariaLabel,
+  variant = "primary",
 }) => {
+  const variantStyles = {
+    primary:
+      "bg-surface-3 hover:bg-surface-2 text-on-surface text-text border-surface",
+    secondary:
+      "outline-2 outline-surface-3 hover:border-surface-3 hover:bg-surface-2 ",
+    error: "",
+  };
+
   return (
     <button
       type={type}
       aria-label={ariaLabel}
       onClick={onClick}
-      className={`flex items-center gap-2 px-2 py-2 rounded-lg cursor-pointer bg-surface-3 hover:bg-surface-2 transition-all hover:text-on-surface text-text border border-surface ${className}`}
+      className={`flex items-center gap-2 px-2 py-2 rounded-lg cursor-pointer transition-all ${variantStyles[variant]} ${className}`}
     >
       {iconStyle && <i className={`flex ${iconStyle}`} />}
-
       {title && <>{title}</>}
     </button>
   );

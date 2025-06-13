@@ -1,37 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { headerItems } from "@/constants/headerItems";
+
 import Button from "../Button";
-
-interface Route {
-  name: string;
-  path: string;
-  icon: string;
-  newTab?: boolean;
-}
-
-const routes: Route[] = [
-  {
-    name: "Map",
-    path: "/",
-    icon: "fi fi-rr-map",
-  },
-  {
-    name: "Bus Routes",
-    path: "/bus",
-    icon: "fi fi-rr-map-location-track",
-  },
-  {
-    name: "About",
-    path: "/about",
-    icon: "fi fi-rr-user",
-    // newTab: true,
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-    icon: "fi fi-rr-comment-alt",
-  },
-];
 
 const Header = () => {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
@@ -66,7 +37,7 @@ const Header = () => {
         </div>
 
         <ul className="flex items-center gap-2 hidden md:block md:flex">
-          {routes.map((route) => (
+          {headerItems.map((route) => (
             <li key={route.path}>
               <Link
                 to={route.path}
@@ -107,7 +78,7 @@ const Header = () => {
           </nav>
 
           <ul className="flex flex-col gap-2">
-            {routes.map((route) => (
+            {headerItems.map((route) => (
               <li key={route.path}>
                 <Link
                   to={route.path}

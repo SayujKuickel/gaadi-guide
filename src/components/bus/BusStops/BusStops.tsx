@@ -65,6 +65,7 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
                 <Link to={`/?route=${routeId}&stop=${stop.id}`}>
                   <Button
                     iconStyle="fi fi-rr-eye"
+                    variant="secondary"
                     ariaLabel={`Navigate to ${stop.name}`}
                   />
                 </Link>

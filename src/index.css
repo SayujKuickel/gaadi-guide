@@ -20,7 +20,8 @@
 
   /* Primary and Accent */
   --color-primary: #bc2c36;
-  --color-accent: #d5b63e;
+  --color-secondary: #6fb3de;
+  --color-accent: #547c97;
 
   /* Text on Surfaces */
   --color-on-primary: #ffffff;

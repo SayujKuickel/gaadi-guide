@@ -25,10 +25,11 @@ const ViewAllBusRoutes = () => {
 
           <section className="grid md:grid-cols-2 mb-4">
             <SearchableCombobox
+              label="Select Stop"
               selected={selectedStop}
               onChange={(opt) => setSelectedStop(opt)}
               options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
-              placeholder="Select your closest stop..."
+              placeholder="Ratopul stop"
             />
           </section>
 

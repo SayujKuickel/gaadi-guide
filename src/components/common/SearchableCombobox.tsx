@@ -10,7 +10,9 @@ interface Props<T extends BaseOption> {
   options: T[];
   selected: T | null;
   onChange: (option: T) => void;
+  className?: string;
   placeholder?: string;
+  label: string;
 }
 
 const SearchableCombobox = <T extends BaseOption>({
@@ -18,6 +20,8 @@ const SearchableCombobox = <T extends BaseOption>({
   selected,
   onChange,
   placeholder = "Select an option",
+  label,
+  className,
 }: Props<T>) => {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -90,32 +94,40 @@ const SearchableCombobox = <T extends BaseOption>({
   }, [isOpen, filteredOptions.length]);
 
   return (
-    <div className="relative w-full" ref={containerRef}>
-      <div className="flex items-center gap-1">
-        <input
-          type="text"
-          className="w-full p-2 rounded-lg bg-surface-3 border-0 outline-0 focus:outline"
-          placeholder={placeholder}
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setIsOpen(true);
-          }}
-          onKeyDown={handleKeyDown}
-          onClick={() => setIsOpen(true)}
-        />
+    <div className={`relative w-full ${className}`} ref={containerRef}>
+      <div className="">
+        <label className="text-sm capitalize text-offText/80" htmlFor={label}>
+          {label}
+        </label>
 
-        {query && (
-          <Button
-            onClick={() => {
-              setQuery("");
+        <div className="flex items-center gap-1">
+          <input
+            type="text"
+            className="w-full p-2 rounded-lg bg-surface-3 border-0 outline-0 focus:outline"
+            placeholder={placeholder}
+            value={query}
+            name={label}
+            onChange={(e) => {
+              setQuery(e.target.value);
               setIsOpen(true);
             }}
-            iconStyle="fi fi-rr-trash"
-            className="h-full hover:text-primary"
-            ariaLabel="Clear Select"
+            onKeyDown={handleKeyDown}
+            onClick={() => setIsOpen(true)}
           />
-        )}
+
+          {query && (
+            <Button
+              onClick={() => {
+                setQuery("");
+                setIsOpen(true);
+              }}
+              iconStyle="fi fi-rr-trash "
+              variant="secondary"
+              ariaLabel="Clear Select"
+              className="hover:text-sa-red ml-1"
+            />
+          )}
+        </div>
       </div>
 
       {isOpen && (

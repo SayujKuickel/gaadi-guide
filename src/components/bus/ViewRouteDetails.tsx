@@ -36,6 +36,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
             title="View All Stops"
             className="text-sm"
             iconStyle="fi fi-rr-eye"
+            variant="secondary"
           />
         </Link>
 
@@ -45,6 +46,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
             title="View in Map"
             className="text-sm"
             iconStyle="fi fi-rr-map"
+            variant="secondary"
           />
         </Link>
       </div>

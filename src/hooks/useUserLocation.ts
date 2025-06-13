@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useToast } from "@/context/ToastContext";
+import { useState } from "react";
 
 export const useUserLocation = () => {
   const [userLocation, setUserLocation] = useState<[number, number] | null>(
     null
   );
   const [isSearchingLocation, setIsSearchingLocation] = useState(false);
+  const { showToast } = useToast();
 
   // useEffect(() => {
   //   const lat = sessionStorage.getItem("user-latitude");
@@ -22,7 +24,6 @@ export const useUserLocation = () => {
     }
 
     setIsSearchingLocation(true);
-
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
         setUserLocation([coords.latitude, coords.longitude]);
@@ -35,8 +36,10 @@ export const useUserLocation = () => {
       (err) => {
         console.error("Geolocation error:", err);
         setIsSearchingLocation(false);
-        console.warn(
-          "[w] Failed to get your location. Please enable location services."
+
+        showToast(
+          "Failed to get your location. Please enable location services.",
+          "error"
         );
       },
       { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }

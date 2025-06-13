@@ -24,6 +24,7 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
       </Heading>
 
       <SearchableCombobox
+        label="Route"
         options={RouteData.map((rt) => ({ id: rt.id, name: rt.name }))}
         selected={selectedRoute}
         onChange={(opt) => handleRouteSelect(opt)}
