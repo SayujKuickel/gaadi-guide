@@ -180,29 +180,6 @@
     ]
   },
   {
-    "id": "23085e",
-    "name": "KattyaniChowk Stop to Sundhara Stop",
-    "lineColor": "#871037",
-    "stops": [
-      "743fcf6c",
-      "4e811f04",
-      "4e811f23",
-      "6e02e539",
-      "7036380f",
-      "6d1df457",
-      "4c5de42c",
-      "6e05b90f",
-      "6d1df454",
-      "18c4d6c7",
-      "6d1df44e",
-      "6d1df464",
-      "6d1df451",
-      "6d1df45a",
-      "3a45a4cc",
-      "6d1cfd8d"
-    ]
-  },
-  {
     "id": "23085f",
     "name": "Sundhara Stop to KattyaniChowk Stop",
     "lineColor": "#41173a",
@@ -249,32 +226,6 @@
       "6d1df45a",
       "3a45a4cc",
       "6d1cfd8d"
-    ]
-  },
-  {
-    "id": "230886",
-    "name": "Sundhara Stop to Tempo Stop Near Old Baneshwar",
-    "lineColor": "#643819",
-    "stops": [
-      "6d1cfd8d",
-      "1dc9100",
-      "3838cbe9",
-      "4bf28194",
-      "6d1df45a",
-      "6d1df451",
-      "6d1df464",
-      "6d1df44e",
-      "18c4d6c7",
-      "6d1df454",
-      "6e05b90f",
-      "4c5de42c",
-      "6d1df457",
-      "7036380f",
-      "6e02e539",
-      "157fc7a7",
-      "4c5de448",
-      "157fc7a1",
-      "53699126"
     ]
   },
   {
@@ -347,29 +298,6 @@
       "1dc9100",
       "12b600e7",
       "4bf28194"
-    ]
-  },
-  {
-    "id": "231d15",
-    "name": "Purano Bus Park to Shivapuri Park Stop",
-    "lineColor": "#8c261c",
-    "stops": [
-      "4bf28194",
-      "3a45a4cc",
-      "6d1cfd8d",
-      "1dc9100",
-      "6ba66194",
-      "1d952d6",
-      "214afa1b",
-      "69e6839e",
-      "8cad8b75",
-      "69e68230",
-      "6b6dafdf",
-      "5206da6d",
-      "6d1cb6ca",
-      "6d1c3f54",
-      "5acc9aff",
-      "158080ae"
     ]
   },
   {
@@ -539,65 +467,6 @@
     ]
   },
   {
-    "id": "2373b5",
-    "name": "Budhanilkantha School Blue Micro Stand to Ratna Park",
-    "lineColor": "#521d1d",
-    "stops": [
-      "6d1c3f58",
-      "5acc9aff",
-      "6d1c3f54",
-      "6d1cb6ca",
-      "5206da6d",
-      "6b6dafdf",
-      "73fc94e1",
-      "69e68230",
-      "8cad8b75",
-      "69e6839e",
-      "214afa1b",
-      "1d952d6",
-      "6ba66194",
-      "12b600e7",
-      "3838cbe9"
-    ]
-  },
-  {
-    "id": "2c6667",
-    "name": "Kamal Binayak to Bagbazar Stop",
-    "lineColor": "#7d0d0b",
-    "stops": [
-      "1dc8764",
-      "8895309f",
-      "8895309e",
-      "8895309a",
-      "8bb61f13",
-      "889530a3",
-      "889530a6",
-      "889530a4",
-      "889530a2",
-      "889530a5",
-      "1582bd38",
-      "8dfd33a2",
-      "8895309b",
-      "74d3e168",
-      "6ca48579",
-      "8895309c",
-      "1dc8360",
-      "889530a7",
-      "526c391c",
-      "889530a0",
-      "88953097",
-      "88953099",
-      "6d39bcd8",
-      "88953095",
-      "4be62952",
-      "6b97418e",
-      "6b9741bd",
-      "1db4ab7",
-      "889530a1",
-      "88953096"
-    ]
-  },
-  {
     "id": "2d67a1",
     "name": "Purano Bus Park to Narayan Gopal Chowk",
     "lineColor": "#660a35",
@@ -622,56 +491,6 @@
       "5acc027a",
       "6d66efa8",
       "73fc94e1"
-    ]
-  },
-  {
-    "id": "2d9b06",
-    "name": "Purano Bus Park to Thimi",
-    "lineColor": "#341e83",
-    "stops": [
-      "4bf28194",
-      "6b97133a",
-      "6b9712c3",
-      "6b974192",
-      "6b977374",
-      "8db96f28",
-      "6b977353",
-      "6c4dcabd",
-      "6c4dcab5",
-      "1dc8360",
-      "8895309c",
-      "6ca48579",
-      "74d3e168",
-      "8895309b",
-      "8dfd33a2",
-      "1582bd38"
-    ]
-  },
-  {
-    "id": "2d9b09",
-    "name": "Purano Bus Park to Sakhu Stop",
-    "lineColor": "#442d6d",
-    "stops": [
-      "4bf28194",
-      "6b97133a",
-      "6b9712c3",
-      "6b974192",
-      "6b977374",
-      "8db96f28",
-      "6b977353",
-      "6c4dcabd",
-      "6c4dcab5",
-      "1dc8bca",
-      "1db5248",
-      "1db4634",
-      "8b4ad9d1",
-      "6d41252b",
-      "5326f2ff",
-      "1db557b",
-      "1d95042",
-      "21688e5d",
-      "157fedf7",
-      "226ba49e"
     ]
   },
   {
@@ -825,47 +644,6 @@
     ]
   },
   {
-    "id": "2d9bb7",
-    "name": "Chyamasingh to Purano Bus Park",
-    "lineColor": "#378961",
-    "stops": [
-      "1dc88f2",
-      "76a83512",
-      "1b4184bd",
-      "6cd85366",
-      "8b4b5122",
-      "1dc886a",
-      "8b4b5124",
-      "889530a6",
-      "889530a4",
-      "889530a2",
-      "889530a5",
-      "1582bd38",
-      "8dfd33a2",
-      "8895309b",
-      "74d3e168",
-      "6ca48579",
-      "8895309c",
-      "1dc8360",
-      "889530a7",
-      "526c391c",
-      "889530a0",
-      "88953097",
-      "88953099",
-      "6d39bcd8",
-      "88953095",
-      "4be62952",
-      "6b97418e",
-      "6b9741bd",
-      "6d1e71b2",
-      "3a45a4cc",
-      "6d1cfd8d",
-      "1dc9100",
-      "3838cbe9",
-      "4bf28194"
-    ]
-  },
-  {
     "id": "2d9bc1",
     "name": "Dhulikhel Stop to Purano Bus Park",
     "lineColor": "#477420",
@@ -912,68 +690,6 @@
       "36715a0c",
       "74de95c6",
       "140aa07d"
-    ]
-  },
-  {
-    "id": "2d9be3",
-    "name": "Changu Narayan to Bagbazar Stop",
-    "lineColor": "#3a1f4e",
-    "stops": [
-      "62bd1510",
-      "8895309e",
-      "8895309a",
-      "8bb61f13",
-      "889530a3",
-      "889530a6",
-      "889530a4",
-      "889530a2",
-      "889530a5",
-      "1582bd38",
-      "8dfd33a2",
-      "8895309b",
-      "74d3e168",
-      "6ca48579",
-      "8895309c",
-      "1dc8360",
-      "889530a7",
-      "526c391c",
-      "889530a0",
-      "88953097",
-      "88953099",
-      "6d39bcd8",
-      "88953095",
-      "4be62952",
-      "6b97418e",
-      "6b9741bd",
-      "1db4ab7",
-      "889530a1",
-      "88953096"
-    ]
-  },
-  {
-    "id": "2d9bec",
-    "name": "Purano Bus Park to Jorpati",
-    "lineColor": "#184675",
-    "stops": [
-      "4bf28194",
-      "6b97133a",
-      "6b9712c3",
-      "6b974192",
-      "6b977374",
-      "8db96f28",
-      "6b977353",
-      "6c4dcabd",
-      "6c4dcab5",
-      "1dc8bca",
-      "1db5248",
-      "1db4634",
-      "8b4ad9d1",
-      "6d41252b",
-      "5326f2ff",
-      "1db557b",
-      "1d95042",
-      "21688e5d",
-      "157fedf7"
     ]
   },
   {
@@ -1101,12 +817,6 @@
     "stops": ["4bf28194", "6b7ff2ef", "12bf5294", "219fc346"]
   },
   {
-    "id": "2e15c7",
-    "name": "Purano Bus Park to Balkhu",
-    "lineColor": "#633818",
-    "stops": ["4bf28194", "6b7ff2ef", "12bf5294", "219fc346"]
-  },
-  {
     "id": "2e15d4",
     "name": "Purano Bus Park to Attarkhel",
     "lineColor": "#4c1c3d",
@@ -1188,19 +898,6 @@
       "5934643f",
       "635dc81f",
       "4be7bb35"
-    ]
-  },
-  {
-    "id": "2ed284",
-    "name": "Lagankhel to Kalanki",
-    "lineColor": "#871337",
-    "stops": [
-      "4be7bb35",
-      "635dc81f",
-      "5934643f",
-      "8da154a9",
-      "157c4257",
-      "12b05015"
     ]
   },
   {

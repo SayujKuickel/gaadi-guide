@@ -26,15 +26,17 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     <li
       aria-label={`Sidebar button for ${item?.name}`}
       onClick={handleSidebarClick}
-      className={`p-2 rounded-lg flex flex-col gap-1 items-center cursor-pointer text-offText hover:text-on-surface transition-all  ${
-        sideBarIndex === item?.key && "bg-primary/10"
-      }`}
+      className={`p-2 rounded-lg flex flex-col gap-1 items-center cursor-pointer text-offText hover:text-on-surface transition-all`}
     >
-      <i className={`flex text-3xl md:text-2xl ${item?.icon}`} />
+      <i
+        className={`flex text-3xl md:text-2xl ${
+          sideBarIndex === item?.key
+            ? item?.icon.replace("rr", "sr")
+            : item?.icon
+        }`}
+      />
 
-      <span className={`text-xs md:text-sm pointer-events-none`}>
-        {item.name}
-      </span>
+      <span className={`text-xs pointer-events-none`}>{item.name}</span>
     </li>
   );
 };
