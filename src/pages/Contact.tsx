@@ -1,4 +1,3 @@
-import GoBackButtonSection from "@/components/bus/GoBackButtonWrapper";
 import PageLayout from "@/layout/PageLayout";
 
 const Contact = () => {

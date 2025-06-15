@@ -20,9 +20,13 @@ import ShowRouteView from "@/components/map/route/ShowRouteView";
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import UserLocationMarkerView from "@/components/map/views/UserLocationMarkerView";
 import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
+import { useState } from "react";
+import RouteView from "@/components/map/route/RouteView";
 
 const Map = () => {
   const [searchParams] = useSearchParams();
+
+  const [segments, setSegments] = useState(null);
 
   const { tileMap: tileMapKey, setTileMapKey } = useTileMap();
   const { userLocation, isSearchingLocation, getUserLocation } =
@@ -32,6 +36,8 @@ const Map = () => {
     useRoute();
 
   const fitRouteToWindow = checkIfNeedsTofit(searchParams);
+
+  console.log(segments);
   return (
     <>
       <TopRightFixedContainer>
@@ -56,7 +62,7 @@ const Map = () => {
             />
           )}
 
-          {sideBarIndex === 1 && <SearchWrapper />}
+          {sideBarIndex === 1 && <SearchWrapper setSegments={setSegments} />}
 
           {sideBarIndex === 2 && (
             <ViewStopsWrapper
@@ -74,6 +80,19 @@ const Map = () => {
 
           {userLocation && <UserLocationMarkerView position={userLocation} />}
 
+          {/* {segments && (
+            <>
+              {segments?.segments?.map((segment) => (
+                <>
+                  <RouteView
+                    stopIds={segment?.stops}
+                    fitToScreen={false}
+                    lineColor={segment?.lineColor}
+                  />
+                </>
+              ))}
+            </>
+          )} */}
           <FlyToStop />
         </BaseMapLayer>
       </div>

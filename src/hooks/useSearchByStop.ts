@@ -1,9 +1,9 @@
 import type { IStopOption } from "@/types/stopOptions.types";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
 import stopsData from "@/data/stops_data.json";
 import { useToast } from "@/context/ToastContext";
+import searchRouteSegments from "@/utils/searchRouteSegments";
 
 const useSearchByStop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -45,7 +45,7 @@ const useSearchByStop = () => {
     }
   }, [searchParams]);
 
-  const handleSearchByStop = () => {
+  const handleSearchByStop = async () => {
     const from = searchParams.get("from");
     const to = searchParams.get("to");
 
@@ -54,9 +54,10 @@ const useSearchByStop = () => {
       return;
     }
 
-    showToast(`The search feature is being implemented!`, "information");
+    // showToast(`The search feature is being implemented!`, "information");
+    const segments = await searchRouteSegments(from, to);
 
-    console.log("Ready to search from", from, "to", to);
+    return segments;
   };
 
   return {

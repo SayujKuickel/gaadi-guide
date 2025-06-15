@@ -16,7 +16,7 @@ export const tileLayerOptions: Record<string, mapLayer> = {
     mapTypeLabel: "Detailed",
     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://project-osrm.org/">OSRM</a> | ♡ <a href="https://sayuj.com.np">Sayuj Kuickel</a>`,
-    icon: "/assets/layerMaps/openstreetmap-sm.jpg",
+    icon: "/tiles/openstreetmap.jpg",
   },
   "carto-light": {
     id: "carto-light",
@@ -24,7 +24,7 @@ export const tileLayerOptions: Record<string, mapLayer> = {
     mapTypeLabel: "Light Minimal",
     attribution: `&copy; <a href="https://carto.com/attributions">CARTO</a> | <a href="https://project-osrm.org/">OSRM</a> | ♡ <a href="https://sayuj.com.np">Sayuj Kuickel</a>`,
     url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-    icon: "/assets/layerMaps/carto-light-sm.jpg",
+    icon: "/tiles/carto-light.jpg",
   },
   "carto-dark": {
     id: "carto-dark",
@@ -32,6 +32,6 @@ export const tileLayerOptions: Record<string, mapLayer> = {
     mapTypeLabel: "Dark Minimal",
     attribution: `&copy; <a href="https://carto.com/attributions">CARTO</a> | <a href="https://project-osrm.org/">OSRM</a> | ♡ <a href="https://sayuj.com.np">Sayuj Kuickel</a>`,
     url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-    icon: "/assets/layerMaps/carto-dark-sm.jpg",
+    icon: "/tiles/carto-dark.jpg",
   },
 };

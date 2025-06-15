@@ -3,8 +3,9 @@ import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import stopsData from "@/data/stops_data.json";
 import useSearchByStop from "@/hooks/useSearchByStop";
+import { useEffect } from "react";
 
-const SearchWrapper = () => {
+const SearchWrapper = ({ setSegments }) => {
   const {
     selectedStartStop,
     selectedDestinationStop,
@@ -12,6 +13,22 @@ const SearchWrapper = () => {
     setSelectedDestinationStop,
     handleSearchByStop,
   } = useSearchByStop();
+
+  async function handleSearch() {
+    const segments = await handleSearchByStop();
+    if (segments) {
+      setSegments(segments);
+    } else {
+      console.log("no segments");
+    }
+  }
+
+  // remove segments if any on unmount
+  useEffect(() => {
+    return () => {
+      setSegments(null);
+    };
+  }, []);
 
   return (
     <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76">
@@ -41,7 +58,7 @@ const SearchWrapper = () => {
         iconStyle="fi fi-rr-search"
         title="Search"
         ariaLabel="search"
-        onClick={handleSearchByStop}
+        onClick={handleSearch}
       />
     </div>
   );
