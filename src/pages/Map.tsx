@@ -22,11 +22,12 @@ import UserLocationMarkerView from "@/components/map/views/UserLocationMarkerVie
 import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 import { useState } from "react";
 import RouteView from "@/components/map/route/RouteView";
+import { type IRouteSegment } from "@/utils/searchRouteSegments";
 
 const Map = () => {
   const [searchParams] = useSearchParams();
 
-  const [segments, setSegments] = useState(null);
+  const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
 
   const { tileMap: tileMapKey, setTileMapKey } = useTileMap();
   const { userLocation, isSearchingLocation, getUserLocation } =
@@ -37,7 +38,6 @@ const Map = () => {
 
   const fitRouteToWindow = checkIfNeedsTofit(searchParams);
 
-  console.log(segments);
   return (
     <>
       <TopRightFixedContainer>
@@ -80,19 +80,18 @@ const Map = () => {
 
           {userLocation && <UserLocationMarkerView position={userLocation} />}
 
-          {/* {segments && (
+          {segments && (
             <>
-              {segments?.segments?.map((segment) => (
-                <>
-                  <RouteView
-                    stopIds={segment?.stops}
-                    fitToScreen={false}
-                    lineColor={segment?.lineColor}
-                  />
-                </>
+              {segments?.map((segment) => (
+                <RouteView
+                  key={segment.id}
+                  stopIds={segment?.stops}
+                  fitToScreen={false}
+                  lineColor={segment?.lineColor}
+                />
               ))}
             </>
-          )} */}
+          )}
           <FlyToStop />
         </BaseMapLayer>
       </div>

@@ -5,7 +5,7 @@ import stopsData from "@/data/stops_data.json";
 import useSearchByStop from "@/hooks/useSearchByStop";
 import { useEffect } from "react";
 
-const SearchWrapper = ({ setSegments }) => {
+const SearchWrapper = ({ setSegments }: any) => {
   const {
     selectedStartStop,
     selectedDestinationStop,
@@ -16,8 +16,10 @@ const SearchWrapper = ({ setSegments }) => {
 
   async function handleSearch() {
     const segments = await handleSearchByStop();
-    if (segments) {
-      setSegments(segments);
+    if (segments && segments.segments) {
+      console.log("adding");
+
+      setSegments(segments.segments);
     } else {
       console.log("no segments");
     }
@@ -26,6 +28,7 @@ const SearchWrapper = ({ setSegments }) => {
   // remove segments if any on unmount
   useEffect(() => {
     return () => {
+      console.log("remobind");
       setSegments(null);
     };
   }, []);

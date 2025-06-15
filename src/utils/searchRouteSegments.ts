@@ -11,7 +11,7 @@ interface Graph {
   [key: string]: GraphNode[];
 }
 
-interface RouteSegment {
+export interface IRouteSegment {
   id: string;
   name: string;
   lineColor: string;
@@ -19,7 +19,7 @@ interface RouteSegment {
 }
 
 interface SearchResult {
-  segments: RouteSegment | RouteSegment[] | null;
+  segments: IRouteSegment[] | null;
   error: string | null;
 }
 
@@ -59,12 +59,14 @@ async function searchRouteSegments(
       const endIndex = directRoute.stops.indexOf(toStopId);
       const segmentStops = directRoute.stops.slice(startIndex, endIndex + 1);
       return {
-        segments: {
-          id: directRoute.id,
-          name: directRoute.name,
-          lineColor: directRoute.lineColor,
-          stops: segmentStops,
-        },
+        segments: [
+          {
+            id: directRoute.id,
+            name: directRoute.name,
+            lineColor: directRoute.lineColor,
+            stops: segmentStops,
+          },
+        ],
         error: null,
       };
     }
@@ -88,7 +90,7 @@ async function searchRouteSegments(
 
       if (stop === toStopId) {
         // Build result with minimized segments
-        const routeSegments: RouteSegment[] = [];
+        const routeSegments: IRouteSegment[] = [];
         let currentSegmentStops: string[] = [path[0].stop];
         let currentSegmentRouteId: string | null = null;
 
@@ -149,8 +151,7 @@ async function searchRouteSegments(
         }
 
         return {
-          segments:
-            routeSegments.length === 1 ? routeSegments[0] : routeSegments,
+          segments: routeSegments,
           error: null,
         };
       }
