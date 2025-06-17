@@ -71,14 +71,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
   }
 
   return (
-    <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76 relative">
-      <Button
-        onClick={() => setSidebarIndex(-1)}
-        ariaLabel="Close Sidebar View"
-        iconStyle="fi fi-rr-cross-small"
-        className="absolute -right-1 -top-1"
-      />
-
+    <>
       <BusLineTitle
         lineColor={routeData.lineColor}
         name={routeData.name}
@@ -92,7 +85,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
           <BusStops routeId={routeData?.id} stopsArray={routeData?.stops} />
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

@@ -39,11 +39,13 @@ async function searchRouteSegments(
     if (!fromStopId || !toStopId) {
       throw new Error("Start and destination stop IDs are required");
     }
+
     if (fromStopId === toStopId) {
       throw new Error("Start and destination cannot be the same");
     }
+
     if (!graph[fromStopId] || !graph[toStopId]) {
-      throw new Error("Invalid stop IDs");
+      throw new Error("No valid routes found");
     }
 
     // Check for direct route first

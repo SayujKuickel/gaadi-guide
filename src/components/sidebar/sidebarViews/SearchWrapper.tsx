@@ -12,13 +12,13 @@ const SearchWrapper = ({ setSegments }: any) => {
     setSelectedStartStop,
     setSelectedDestinationStop,
     handleSearchByStop,
+    isSearchingForStops,
   } = useSearchByStop();
 
   async function handleSearch() {
     const segments = await handleSearchByStop();
-    if (segments && segments.segments) {
-      console.log("adding");
 
+    if (segments && segments.segments) {
       setSegments(segments.segments);
     } else {
       console.log("no segments");
@@ -28,13 +28,12 @@ const SearchWrapper = ({ setSegments }: any) => {
   // remove segments if any on unmount
   useEffect(() => {
     return () => {
-      console.log("remobind");
       setSegments(null);
     };
   }, []);
 
   return (
-    <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76">
+    <>
       <Heading className="mb-3" level={4}>
         Search
       </Heading>
@@ -44,7 +43,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         selected={selectedStartStop}
         onChange={(opt) => setSelectedStartStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
-        placeholder="Select your closest stop..."
+        placeholder="Select your closest stop."
         className="mb-2"
       />
 
@@ -53,17 +52,25 @@ const SearchWrapper = ({ setSegments }: any) => {
         selected={selectedDestinationStop}
         onChange={(opt) => setSelectedDestinationStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
-        placeholder="Select your closest stop..."
+        placeholder="Select your Destination stop."
         className="mb-6"
       />
 
       <Button
-        iconStyle="fi fi-rr-search"
-        title="Search"
+        iconStyle={
+          isSearchingForStops
+            ? "fi fi-rr-loading animate-spin"
+            : "fi fi-rr-search"
+        }
+        title={isSearchingForStops ? "Searching..." : "Search"}
         ariaLabel="search"
         onClick={handleSearch}
       />
-    </div>
+
+      <p className="mt-4 text-xs text-on-surface/60">
+        Note: This feature is still under development. There may be bugs!
+      </p>
+    </>
   );
 };
 

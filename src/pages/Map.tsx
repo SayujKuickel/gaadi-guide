@@ -23,6 +23,7 @@ import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 import { useState } from "react";
 import RouteView from "@/components/map/route/RouteView";
 import { type IRouteSegment } from "@/utils/searchRouteSegments";
+import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
 
 const Map = () => {
   const [searchParams] = useSearchParams();
@@ -55,21 +56,31 @@ const Map = () => {
           setSidebarIndex={setSidebarIndex}
         >
           {sideBarIndex === 0 && (
-            <RoutesWrapper
-              selectedRoute={selectedRoute}
-              handleRouteSelect={handleRouteSelect}
-              setSidebarIndex={setSidebarIndex}
-            />
+            <ViewWrapper setSidebarIndex={setSidebarIndex}>
+              <RoutesWrapper
+                selectedRoute={selectedRoute}
+                handleRouteSelect={handleRouteSelect}
+                setSidebarIndex={setSidebarIndex}
+              />
+            </ViewWrapper>
           )}
 
-          {sideBarIndex === 1 && <SearchWrapper setSegments={setSegments} />}
+          {sideBarIndex === 1 && (
+            <>
+              <ViewWrapper setSidebarIndex={setSidebarIndex}>
+                <SearchWrapper setSegments={setSegments} />
+              </ViewWrapper>
+            </>
+          )}
 
           {sideBarIndex === 2 && (
-            <ViewStopsWrapper
-              selectedStop={selectedStop}
-              handleStopSelect={handleStopSelect}
-              setSidebarIndex={setSidebarIndex}
-            />
+            <ViewWrapper setSidebarIndex={setSidebarIndex}>
+              <ViewStopsWrapper
+                selectedStop={selectedStop}
+                handleStopSelect={handleStopSelect}
+                setSidebarIndex={setSidebarIndex}
+              />
+            </ViewWrapper>
           )}
         </MapSidebar>
 

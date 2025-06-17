@@ -13,6 +13,8 @@ const useSearchByStop = () => {
     useState<IStopOption | null>(null);
   const [selectedDestinationStop, setSelectedDestinationStop] =
     useState<IStopOption | null>(null);
+  const [isSearchingForStops, setIsSearchingForStops] =
+    useState<boolean>(false);
 
   useEffect(() => {
     if (selectedStartStop && selectedDestinationStop) {
@@ -54,9 +56,19 @@ const useSearchByStop = () => {
       return;
     }
 
+    setIsSearchingForStops(true);
+
     // showToast(`The search feature is being implemented!`, "information");
     const segments = await searchRouteSegments(from, to);
 
+    if (segments.error) {
+      showToast(
+        `${segments.error}\n (Search is currently being developed. There may be errors!)`,
+        "error"
+      );
+    }
+
+    setIsSearchingForStops(false);
     return segments;
   };
 
@@ -66,6 +78,7 @@ const useSearchByStop = () => {
     setSelectedStartStop,
     setSelectedDestinationStop,
     handleSearchByStop,
+    isSearchingForStops,
   };
 };
 

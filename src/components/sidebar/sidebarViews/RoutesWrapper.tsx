@@ -18,7 +18,7 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
   setSidebarIndex,
 }) => {
   return (
-    <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76">
+    <>
       <Heading className="mb-3" level={4}>
         Select Route
       </Heading>
@@ -40,7 +40,7 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
           title="View Stops"
         />
       )}
-    </div>
+    </>
   );
 };
 
