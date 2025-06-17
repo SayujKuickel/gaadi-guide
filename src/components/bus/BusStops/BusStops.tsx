@@ -7,6 +7,7 @@ interface ViewRouteDetailsProps {
   itemsToShow?: number;
   routeId?: string;
   priorityStop?: string;
+  mode: "search" | "route";
 }
 
 const BusStops: React.FC<ViewRouteDetailsProps> = ({
@@ -14,6 +15,7 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
   itemsToShow,
   routeId,
   priorityStop,
+  mode = "route",
 }) => {
   const reorderedStops = [
     ...(priorityStop && stopsArray.includes(priorityStop)
@@ -62,7 +64,13 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
               </p>
 
               {routeId && (
-                <Link to={`/?route=${routeId}&stop=${stop.id}`}>
+                <Link
+                  to={
+                    mode === "search"
+                      ? `/search/?stop=${stop.id}`
+                      : `/routes/?route=${routeId}&stop=${stop.id}`
+                  }
+                >
                   <Button
                     iconStyle="fi fi-rr-eye"
                     variant="secondary"

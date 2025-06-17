@@ -3,9 +3,10 @@ import { useState, type ReactNode } from "react";
 
 interface ViewWrapperProps {
   children: ReactNode;
+  hiddenBtn?: ReactNode;
 }
 
-const ViewWrapper: React.FC<ViewWrapperProps> = ({ children }) => {
+const ViewWrapper: React.FC<ViewWrapperProps> = ({ children, hiddenBtn }) => {
   const [isShown, setIsShown] = useState<boolean>(true);
 
   if (isShown)
@@ -23,6 +24,10 @@ const ViewWrapper: React.FC<ViewWrapperProps> = ({ children }) => {
         </div>
       </>
     );
+
+  return (
+    <>{hiddenBtn && <div onClick={() => setIsShown(true)}>{hiddenBtn}</div>}</>
+  );
 };
 
 export default ViewWrapper;

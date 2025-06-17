@@ -12,9 +12,8 @@ import RouteData from "@/data/route_data.json";
 // /types
 import type { IRoute } from "@/types/route.types";
 import Button from "@/components/common/Button";
-import GoBackButtonSection from "@/components/bus/GoBackButtonWrapper";
 
-const ViewBusRoute = ({ idPassed }) => {
+const ViewBusRoute = ({}) => {
   const { id } = useParams();
   const [route, setRoute] = useState<IRoute | null>(null);
 
@@ -41,7 +40,10 @@ const ViewBusRoute = ({ idPassed }) => {
               level={2}
             />
 
-            <Link className="block w-fit mb-4" to={`/?route=${route?.id}`}>
+            <Link
+              className="block w-fit mb-4"
+              to={`/routes/?route=${route?.id}`}
+            >
               <Button
                 ariaLabel="View route map"
                 iconStyle="fi fi-rr-map"

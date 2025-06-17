@@ -2,22 +2,35 @@ import BusLineTitle from "@/components/bus/BusLineTitle";
 import BusStops from "@/components/bus/BusStops/BusStops";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
 
-const ViewSearchedStops = ({ segments }: IRouteSegment[]) => {
+interface ViewSearchedStopsProps {
+  segments: IRouteSegment[];
+  headingLevel?: 1 | 2 | 3 | 4 | 5;
+  mode: "search";
+}
+const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
+  segments,
+  headingLevel,
+  mode,
+}) => {
   console.log(segments);
 
   return (
-    <ul className="space-y-4 max-h-64 overflow-auto scrollbar-sa">
+    <ul className="space-y-4 max-h-64 overflow-auto scrollbar-sa pb-6">
       {segments.map((segment: IRouteSegment) => (
-        <div>
+        <>
           <BusLineTitle
             name={segment.name}
-            level={4}
+            level={headingLevel ? headingLevel : 4}
             lineColor={segment.lineColor}
-            className="mb-4"
+            className="mb-3"
           />
 
-          <BusStops routeId={segment.id} stopsArray={segment.stops} />
-        </div>
+          <BusStops
+            mode={mode}
+            routeId={segment.id}
+            stopsArray={segment.stops}
+          />
+        </>
       ))}
     </ul>
   );

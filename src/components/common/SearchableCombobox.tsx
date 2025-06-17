@@ -104,6 +104,7 @@ const SearchableCombobox = <T extends BaseOption>({
           <input
             type="text"
             className="w-full p-2 rounded-lg bg-surface-3 border-0 outline-0 focus:outline"
+            autoComplete="off"
             placeholder={placeholder}
             value={query}
             name={label}

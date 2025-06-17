@@ -27,7 +27,7 @@ const SearchWrapper = ({ setSegments }: any) => {
 
   return (
     <>
-      <Heading className="mb-3" level={4}>
+      <Heading className="mb-3" level={5}>
         Search
       </Heading>
 
@@ -37,7 +37,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         onChange={(opt) => setSelectedStartStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
         placeholder="Select your closest stop."
-        className="mb-2"
+        className="mb-1"
       />
 
       <SearchableCombobox
@@ -46,7 +46,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         onChange={(opt) => setSelectedDestinationStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
         placeholder="Select your Destination stop."
-        className="mb-6"
+        className="mb-4"
       />
 
       <Button
@@ -60,7 +60,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         onClick={handleSearch}
       />
 
-      <p className="mt-4 text-xs text-on-surface/60">
+      <p className="mt-4 text-[10px] text-on-surface/60">
         Note: This feature is still under development. There may be bugs!
       </p>
     </>

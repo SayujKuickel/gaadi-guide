@@ -5,6 +5,9 @@ import ViewBusRoute from "@/pages/bus/ViewBusRoute";
 import ViewAllBusRoutes from "@/pages/bus/ViewAllBusRoutes";
 import Contact from "@/pages/Contact";
 import About from "./pages/About";
+import RoutesPage from "./pages/RoutesPage";
+import StopsPage from "./pages/StopsPage";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
@@ -18,6 +21,9 @@ const App = () => {
 
       <Route index path="/contact" element={<Contact />} />
       <Route index path="/about" element={<About />} />
+      <Route index path="/routes" element={<RoutesPage />} />
+      <Route index path="/stops" element={<StopsPage />} />
+      <Route index path="/search" element={<SearchPage />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -18,22 +18,21 @@ import SearchWrapper from "@/components/sidebar/sidebarViews/SearchWrapper";
 import ViewStopsWrapper from "@/components/sidebar/sidebarViews/ViewStopsWrapper";
 import ShowRouteView from "@/components/map/route/ShowRouteView";
 import FlyToStop from "@/components/map/stop/FlyToStop";
-import UserLocationMarkerView from "@/components/map/views/UserLocationMarkerView";
 import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 import { useState } from "react";
 import RouteView from "@/components/map/route/RouteView";
 import { type IRouteSegment } from "@/utils/searchRouteSegments";
 import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
 import ViewSearchedStops from "@/components/sidebar/sidebarViews/ViewSearchedStops";
+import Button from "@/components/common/Button";
 
-const Map = () => {
+const RoutesPage = () => {
   const [searchParams] = useSearchParams();
-  const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
 
   const { tileMap: tileMapKey, setTileMapKey } = useTileMap();
   const { userLocation, isSearchingLocation, getUserLocation } =
     useUserLocation();
-  const { sideBarIndex, setSidebarIndex } = useSidebar();
+
   const { selectedRoute, handleRouteSelect, selectedStop, handleStopSelect } =
     useRoute();
 
@@ -51,44 +50,29 @@ const Map = () => {
       </TopRightFixedContainer>
 
       <div className="w-screen h-screen overflow-hidden">
-        <MapSidebar
-          sideBarIndex={sideBarIndex}
-          setSidebarIndex={setSidebarIndex}
-        >
-          {sideBarIndex === 0 && (
-            <ViewWrapper>
-              <RoutesWrapper
-                selectedRoute={selectedRoute}
-                handleRouteSelect={handleRouteSelect}
-                setSidebarIndex={setSidebarIndex}
-              />
-            </ViewWrapper>
-          )}
+        <MapSidebar>
+          <ViewWrapper
+            hiddenBtn={
+              <Button iconStyle="fi fi-rr-car-journey" ariaLabel="show route" />
+            }
+          >
+            <RoutesWrapper
+              selectedRoute={selectedRoute}
+              handleRouteSelect={handleRouteSelect}
+            />
+          </ViewWrapper>
 
-          {sideBarIndex === 1 && (
-            <div className="flex flex-col gap-2">
-              <ViewWrapper>
-                <SearchWrapper setSegments={setSegments} />
-              </ViewWrapper>
-
-              {segments && (
-                <ViewWrapper>
-                  <ViewSearchedStops segments={segments} />
-                </ViewWrapper>
-              )}
-            </div>
-          )}
-
-          {sideBarIndex === 2 && (
-            <>
-              <ViewWrapper>
-                <ViewStopsWrapper
-                  selectedStop={selectedStop}
-                  handleStopSelect={handleStopSelect}
-                  setSidebarIndex={setSidebarIndex}
+          {selectedRoute && (
+            <ViewWrapper
+              hiddenBtn={
+                <Button
+                  iconStyle="fi fi-rr-land-layer-location"
+                  ariaLabel="show route"
                 />
-              </ViewWrapper>
-            </>
+              }
+            >
+              <ViewStopsWrapper />
+            </ViewWrapper>
           )}
         </MapSidebar>
 
@@ -99,19 +83,6 @@ const Map = () => {
         >
           <ShowRouteView fitRouteToWindow={fitRouteToWindow} />
 
-          {segments && (
-            <>
-              {segments?.map((segment) => (
-                <RouteView
-                  key={segment.id}
-                  stopIds={segment?.stops}
-                  fitToScreen={false}
-                  lineColor={segment?.lineColor}
-                />
-              ))}
-            </>
-          )}
-
           <FlyToStop />
         </BaseMapLayer>
       </div>
@@ -119,4 +90,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default RoutesPage;

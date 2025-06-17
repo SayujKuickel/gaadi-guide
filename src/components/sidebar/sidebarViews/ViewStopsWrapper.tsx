@@ -10,19 +10,9 @@ import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 import BusLineTitle from "@/components/bus/BusLineTitle";
 import BusStops from "@/components/bus/BusStops/BusStops";
-import type { IStopOption } from "@/types/stopOptions.types";
+interface ViewStopsWrapperProps {}
 
-interface ViewStopsWrapperProps {
-  selectedStop: IStopOption | null;
-  setSidebarIndex: (key: number) => void;
-  handleStopSelect: (stop: IStopOption) => void;
-}
-
-const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
-  selectedStop,
-  handleStopSelect,
-  setSidebarIndex,
-}) => {
+const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
   const [searchParams] = useSearchParams();
   const [routeData, setRouteData] = useState<IRoute | null>(null);
   const [error, setError] = useState<string>("");
@@ -57,7 +47,6 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
         </Heading>
 
         <Button
-          onClick={() => setSidebarIndex(0)}
           ariaLabel="Select Route Tab"
           title="Choose Route"
           className="mx-auto"
@@ -66,9 +55,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
     );
   }
 
-  if (!routeData) {
-    return null;
-  }
+  if (!routeData) return null;
 
   return (
     <>
@@ -81,7 +68,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({
       <section className="relative">
         <div className="absolute left-[0px] bottom-[0px] z-10 w-full h-6 bg-gradient-to-t from-surface to-transparent"></div>
 
-        <div className="overflow-y-scroll scrollbar-sa h-48 md:h-64 pb-6">
+        <div className="overflow-y-scroll scrollbar-sa h-32 md:h-48 pb-6">
           <BusStops routeId={routeData?.id} stopsArray={routeData?.stops} />
         </div>
       </section>

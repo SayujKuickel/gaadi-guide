@@ -1,23 +1,13 @@
 import { sidebarItems } from "@/constants/sidebarItems";
 import SidebarItem from "./SidebarItem";
 import type { ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface MapSidebarProps {
-  setSidebarIndex: (index: number) => void;
-  sideBarIndex: number;
   className?: string;
   children?: ReactNode;
 }
 
-const MapSidebar: React.FC<MapSidebarProps> = ({
-  setSidebarIndex,
-  sideBarIndex,
-  className,
-  children,
-}) => {
-  const navigate = useNavigate();
-
+const MapSidebar: React.FC<MapSidebarProps> = ({ className, children }) => {
   return (
     <aside
       className={`fixed bg-surface border-t-2 border-t-surface-3 border-r-0 md:border-t-0 md:border-r-2 md:border-r-surface-3 ${className} w-screen h-20 pb-2 left-0 bottom-0 md:top-0 z-[99999] md:w-20 md:h-screen`}
@@ -33,22 +23,15 @@ const MapSidebar: React.FC<MapSidebarProps> = ({
       </div>
 
       <ul className="flex flex-row items-center justify-around md:justify-start md:flex-col gap-1 p-2">
-        {sidebarItems.map((item) => (
-          <SidebarItem
-            key={item?.key}
-            item={item}
-            sideBarIndex={sideBarIndex}
-            setSidebarIndex={setSidebarIndex}
-            navigate={navigate}
-          />
+        {sidebarItems.map((item, index) => (
+          <SidebarItem key={index} item={item} sideBarIndex={-1} />
         ))}
       </ul>
 
       <div
         className="absolute left-0 bottom-20 w-full md:top-0 md:left-20 md:h-fit md:w-fit z-[99999] 
       pl-2 pr-2 pt-0 pb-2
-      md:pl-2 md:pr-0 md:pt-2 md:pb-0
-      "
+      md:pl-2 md:pr-0 md:pt-2 md:pb-0 space-y-2"
       >
         {children}
       </div>

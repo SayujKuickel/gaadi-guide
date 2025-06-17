@@ -40,14 +40,14 @@ const useRoute = () => {
 
     setSelectedRoute(route);
     setSelectedStop(null);
-    navigate(`/?route=${route.id}`);
+    navigate(`/routes/?route=${route.id}`);
   }
 
   function handleStopSelect(stop: IStopOption) {
     if (stop.id === selectedStop?.id) return;
 
     setSelectedStop(stop);
-    navigate(`/?route=${selectedRoute?.id}&stop=${stop.id}`);
+    navigate(`/routes/?route=${selectedRoute?.id}&stop=${stop.id}`);
   }
 
   return { selectedRoute, handleRouteSelect, selectedStop, handleStopSelect };

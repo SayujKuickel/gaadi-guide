@@ -3,9 +3,16 @@ import { useEffect, useState } from "react";
 import { type IRoute } from "@/types/route.types";
 import { type IStopOption } from "@/types/stopOptions.types";
 //
+import BusStops from "@/data/stops_data.json";
+//
 import routeData from "@/data/route_data.json";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import type { IStop } from "@/types/stop.types";
 
 const useFilterRoutesBySearch = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
   const [selectedStop, setSelectedStop] = useState<IStopOption | null>(null);
   const [filteredRoutes, setFilteredRoutes] = useState<IRoute[] | null>(
     routeData
@@ -13,9 +20,30 @@ const useFilterRoutesBySearch = () => {
 
   function handleSearch(stopId: string) {
     const filtered = routeData.filter((route) => route.stops.includes(stopId));
-
     setFilteredRoutes(filtered);
   }
+
+  function handlSsetSelectedStop(stop: IStopOption) {
+    if (!stop.id || !stop) return;
+
+    setSelectedStop(stop);
+    navigate(`/stops/?stop=${stop.id}`);
+  }
+
+  useEffect(() => {
+    const stopId = searchParams.get("stop");
+
+    if (stopId) {
+      const selStop = BusStops.find((el: IStop) => el.id === stopId);
+      if (selStop) {
+        setSelectedStop({ id: selStop.id, name: selStop.name });
+      }
+    }
+
+    return () => {
+      setFilteredRoutes(null);
+    };
+  }, [searchParams]);
 
   useEffect(() => {
     if (!selectedStop) return;
@@ -23,7 +51,12 @@ const useFilterRoutesBySearch = () => {
     handleSearch(selectedStop?.id);
   }, [selectedStop]);
 
-  return { selectedStop, setSelectedStop, filteredRoutes };
+  return {
+    selectedStop,
+    setSelectedStop,
+    handlSsetSelectedStop,
+    filteredRoutes,
+  };
 };
 
 export default useFilterRoutesBySearch;

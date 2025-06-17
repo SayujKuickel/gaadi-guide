@@ -9,15 +9,23 @@ import {
   MAX_ZOOM_OUT,
 } from "@/constants/mapSettings";
 import type { ReactNode } from "react";
-import { useSearchParams } from "react-router-dom";
+import TileLayerView from "./views/TileLayerView";
+import UserLocationMarkerView from "./views/UserLocationMarkerView";
 // import { useEffect, useState } from "react";
 
 interface BaseMapLayerProps {
   children: ReactNode;
   className?: string;
+  userLocation: [number, number] | null;
+  tileMapKey: string;
 }
 
-const BaseMapLayer = ({ children, className }: BaseMapLayerProps) => {
+const BaseMapLayer = ({
+  tileMapKey,
+  children,
+  className,
+  userLocation,
+}: BaseMapLayerProps) => {
   /* 
   Uncomment this to fix the map to the user position if the user location is 
   stored in the sesssion
@@ -49,6 +57,12 @@ const BaseMapLayer = ({ children, className }: BaseMapLayerProps) => {
         style={{ height: "100%", width: "100%" }}
       >
         {children}
+
+        {/* shows User location marker */}
+        {userLocation && <UserLocationMarkerView position={userLocation} />}
+
+        {/* Toggles between different layers */}
+        <TileLayerView tileMapKey={tileMapKey} />
 
         {/* This is controlled by css to show and hide for mobile and desktop  */}
         <ZoomControl position="topleft" />

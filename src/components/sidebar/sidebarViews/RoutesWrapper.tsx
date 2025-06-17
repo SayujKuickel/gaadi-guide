@@ -9,18 +9,16 @@ import type { IRouteOption } from "@/types/routeOptions.types";
 interface RoutesWrapperProps {
   selectedRoute: IRouteOption | null;
   handleRouteSelect: (route: IRouteOption) => void;
-  setSidebarIndex: (key: number) => void;
 }
 
 const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
   selectedRoute,
   handleRouteSelect,
-  setSidebarIndex,
 }) => {
   return (
     <>
-      <Heading className="mb-3" level={4}>
-        Select Route
+      <Heading className="mb-3" level={5}>
+        Search Routes
       </Heading>
 
       <SearchableCombobox
@@ -31,15 +29,14 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
         placeholder="Type here to search..."
       />
 
-      {selectedRoute && (
+      {/* {selectedRoute && (
         <Button
-          onClick={() => setSidebarIndex(2)}
           ariaLabel="Show Stops button"
           className="text-sm font-[500] mt-4"
           iconStyle="fi fi-rr-land-layer-location"
           title="View Stops"
         />
-      )}
+      )} */}
     </>
   );
 };
