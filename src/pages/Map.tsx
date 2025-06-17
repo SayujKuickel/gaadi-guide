@@ -24,6 +24,7 @@ import { useState } from "react";
 import RouteView from "@/components/map/route/RouteView";
 import { type IRouteSegment } from "@/utils/searchRouteSegments";
 import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
+import ViewSearchedStops from "@/components/sidebar/sidebarViews/ViewSearchedStops";
 
 const Map = () => {
   const [searchParams] = useSearchParams();
@@ -56,7 +57,7 @@ const Map = () => {
           setSidebarIndex={setSidebarIndex}
         >
           {sideBarIndex === 0 && (
-            <ViewWrapper setSidebarIndex={setSidebarIndex}>
+            <ViewWrapper>
               <RoutesWrapper
                 selectedRoute={selectedRoute}
                 handleRouteSelect={handleRouteSelect}
@@ -66,21 +67,29 @@ const Map = () => {
           )}
 
           {sideBarIndex === 1 && (
-            <>
-              <ViewWrapper setSidebarIndex={setSidebarIndex}>
+            <div className="flex flex-col gap-2">
+              <ViewWrapper>
                 <SearchWrapper setSegments={setSegments} />
               </ViewWrapper>
-            </>
+
+              {segments && (
+                <ViewWrapper>
+                  <ViewSearchedStops segments={segments} />
+                </ViewWrapper>
+              )}
+            </div>
           )}
 
           {sideBarIndex === 2 && (
-            <ViewWrapper setSidebarIndex={setSidebarIndex}>
-              <ViewStopsWrapper
-                selectedStop={selectedStop}
-                handleStopSelect={handleStopSelect}
-                setSidebarIndex={setSidebarIndex}
-              />
-            </ViewWrapper>
+            <>
+              <ViewWrapper>
+                <ViewStopsWrapper
+                  selectedStop={selectedStop}
+                  handleStopSelect={handleStopSelect}
+                  setSidebarIndex={setSidebarIndex}
+                />
+              </ViewWrapper>
+            </>
           )}
         </MapSidebar>
 
@@ -103,6 +112,7 @@ const Map = () => {
               ))}
             </>
           )}
+
           <FlyToStop />
         </BaseMapLayer>
       </div>

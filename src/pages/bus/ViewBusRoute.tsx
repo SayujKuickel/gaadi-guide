@@ -14,7 +14,7 @@ import type { IRoute } from "@/types/route.types";
 import Button from "@/components/common/Button";
 import GoBackButtonSection from "@/components/bus/GoBackButtonWrapper";
 
-const ViewBusRoute = () => {
+const ViewBusRoute = ({ idPassed }) => {
   const { id } = useParams();
   const [route, setRoute] = useState<IRoute | null>(null);
 
@@ -50,6 +50,7 @@ const ViewBusRoute = () => {
             </Link>
 
             <BusStops routeId={id} stopsArray={route?.stops} />
+
             <span className="block ml-1 mt-3 text-sm text-text/75">
               Total {route?.stops?.length} stops
             </span>

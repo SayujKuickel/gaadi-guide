@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import RouteData from "@/data/route_data.json";
 import type { IRoute } from "@/types/route.types";
-import Button from "@/components/common/Button";
-import BusLineTitle from "@/components/bus/BusLineTitle";
-import BusStops from "@/components/bus/BusStops/BusStops";
 import RouteView from "./RouteView";
+import BusStopView from "../stop/BusStopView";
+import ShowAllStops from "../stop/ShowAllStops";
 
 interface ShowRouteViewProps {
   fitRouteToWindow?: boolean;
@@ -35,6 +34,7 @@ const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
     setRouteData(route);
   }, [searchParams]);
 
+  // if (!routeData) return <ShowAllStops />;
   if (!routeData) return null;
 
   return (

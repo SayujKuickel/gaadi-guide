@@ -22,6 +22,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       navigate(item?.url);
     }
   }
+
   return (
     <li
       aria-label={`Sidebar button for ${item?.name}`}

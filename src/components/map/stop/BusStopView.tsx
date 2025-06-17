@@ -35,7 +35,7 @@ const BusStopView: React.FC<BusStopViewProps> = ({
     html: `<i style="background-color: ${lineColor}; outline-color: ${lineColor}" class="w-6 aspect-square rounded-full text-white outline-2 grid place-items-center fi fi-rr-bus-alt"></i>`,
   });
 
-  return zoom > 15 ? (
+  return zoom > 0 ? (
     <Marker position={position} icon={customMarker}>
       {stopName && <Popup>{stopName}</Popup>}
     </Marker>

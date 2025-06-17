@@ -25,13 +25,6 @@ const SearchWrapper = ({ setSegments }: any) => {
     }
   }
 
-  // remove segments if any on unmount
-  useEffect(() => {
-    return () => {
-      setSegments(null);
-    };
-  }, []);
-
   return (
     <>
       <Heading className="mb-3" level={4}>
