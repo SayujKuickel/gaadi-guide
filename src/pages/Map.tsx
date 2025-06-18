@@ -1,121 +1,38 @@
-// \react
-import { Link, useSearchParams } from "react-router-dom";
-// \hooks
-import useTileMap from "@/hooks/useTileMap";
-import { useUserLocation } from "@/hooks/useUserLocation";
-import useSidebar from "@/hooks/useSidebar";
-import useRoute from "@/hooks/useSelectRoute";
-// \utils
-import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
-// \components
-import TopRightFixedContainer from "@/components/containers/TopRightFixedContainer";
-import BaseMapLayer from "@/components/map/BaseMapLayer";
-import LayerSwitcher from "@/components/map/controls/LayerSwitcher/LayerSwitcher";
-import LayerView from "@/components/map/views/TileLayerView";
-import MapSidebar from "@/components/sidebar/MapSidebar";
-import RoutesWrapper from "@/components/sidebar/sidebarViews/RoutesWrapper";
-import SearchWrapper from "@/components/sidebar/sidebarViews/SearchWrapper";
-import ViewStopsWrapper from "@/components/sidebar/sidebarViews/ViewStopsWrapper";
-import ShowRouteView from "@/components/map/route/ShowRouteView";
-import FlyToStop from "@/components/map/stop/FlyToStop";
-import UserLocationMarkerView from "@/components/map/views/UserLocationMarkerView";
-import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
-import { useState } from "react";
-import RouteView from "@/components/map/route/RouteView";
-import { type IRouteSegment } from "@/utils/searchRouteSegments";
-import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
-import ViewSearchedStops from "@/components/sidebar/sidebarViews/ViewSearchedStops";
+import Button from "@/components/common/Button";
+import Heading from "@/components/common/Heading";
+import PageLayout from "@/layout/PageLayout";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Map = () => {
-  const [searchParams] = useSearchParams();
-  const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
+  const navigate = useNavigate();
 
-  const { tileMap: tileMapKey, setTileMapKey } = useTileMap();
-  const { userLocation, isSearchingLocation, getUserLocation } =
-    useUserLocation();
-  const { sideBarIndex, setSidebarIndex } = useSidebar();
-  const { selectedRoute, handleRouteSelect, selectedStop, handleStopSelect } =
-    useRoute();
-
-  const fitRouteToWindow = checkIfNeedsTofit(searchParams);
+  useEffect(() => {
+    navigate("/routes");
+  });
 
   return (
-    <>
-      <TopRightFixedContainer>
-        <LayerSwitcher setTileMapKey={setTileMapKey} tileMapKey={tileMapKey} />
+    <main>
+      <PageLayout showBackBtn={false}>
+        <Heading className="w-fit text-center mx-auto mt-18 mb-8" level={1}>
+          Welcome to Kathmandu Bus Routes
+        </Heading>
 
-        <UserLocation
-          isSearchingLocation={isSearchingLocation}
-          getUserLocation={getUserLocation}
-        />
-      </TopRightFixedContainer>
+        <div className="flex items-center justify-center gap-2 ">
+          <Link to={"/routes"}>
+            <Button title="Routes" ariaLabel="Go to routes page" />
+          </Link>
 
-      <div className="w-screen h-screen overflow-hidden">
-        <MapSidebar
-          sideBarIndex={sideBarIndex}
-          setSidebarIndex={setSidebarIndex}
-        >
-          {sideBarIndex === 0 && (
-            <ViewWrapper>
-              <RoutesWrapper
-                selectedRoute={selectedRoute}
-                handleRouteSelect={handleRouteSelect}
-                setSidebarIndex={setSidebarIndex}
-              />
-            </ViewWrapper>
-          )}
+          <Link to={"/about"}>
+            <Button title="About" ariaLabel="Go to About page" />
+          </Link>
 
-          {sideBarIndex === 1 && (
-            <div className="flex flex-col gap-2">
-              <ViewWrapper>
-                <SearchWrapper setSegments={setSegments} />
-              </ViewWrapper>
-
-              {segments && (
-                <ViewWrapper>
-                  <ViewSearchedStops segments={segments} />
-                </ViewWrapper>
-              )}
-            </div>
-          )}
-
-          {sideBarIndex === 2 && (
-            <>
-              <ViewWrapper>
-                <ViewStopsWrapper
-                  selectedStop={selectedStop}
-                  handleStopSelect={handleStopSelect}
-                  setSidebarIndex={setSidebarIndex}
-                />
-              </ViewWrapper>
-            </>
-          )}
-        </MapSidebar>
-
-        <BaseMapLayer
-          tileMapKey={tileMapKey}
-          userLocation={userLocation}
-          className="relative pb-20 md:p-0 md:pl-20"
-        >
-          <ShowRouteView fitRouteToWindow={fitRouteToWindow} />
-
-          {segments && (
-            <>
-              {segments?.map((segment) => (
-                <RouteView
-                  key={segment.id}
-                  stopIds={segment?.stops}
-                  fitToScreen={false}
-                  lineColor={segment?.lineColor}
-                />
-              ))}
-            </>
-          )}
-
-          <FlyToStop />
-        </BaseMapLayer>
-      </div>
-    </>
+          <Link to={"/bus"}>
+            <Button title="Details" ariaLabel="Go to Details page" />
+          </Link>
+        </div>
+      </PageLayout>
+    </main>
   );
 };
 

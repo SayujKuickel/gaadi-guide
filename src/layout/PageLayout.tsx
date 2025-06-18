@@ -7,9 +7,10 @@ import ScrollToTopButton from "@/components/common/ScrollToTopButton";
 
 interface PageLayoutProps {
   children: ReactNode;
+  showBackBtn?: boolean;
 }
 
-const PageLayout = ({ children }: PageLayoutProps) => {
+const PageLayout = ({ children, showBackBtn = true }: PageLayoutProps) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,7 +18,8 @@ const PageLayout = ({ children }: PageLayoutProps) => {
   return (
     <main className="bg-background text-text min-h-screen">
       <Header />
-      <GoBackButtonSection />
+
+      {showBackBtn && <GoBackButtonSection />}
 
       <article className="relative">
         <ScrollToTopButton />

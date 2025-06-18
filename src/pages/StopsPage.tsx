@@ -47,7 +47,14 @@ const StopsPage = () => {
 
       <div className="w-screen h-screen overflow-hidden">
         <MapSidebar>
-          <ViewWrapper>
+          <ViewWrapper
+            hiddenBtn={
+              <Button
+                ariaLabel="Show search stops modal"
+                iconStyle="fi fi-rr-land-layer-location"
+              />
+            }
+          >
             <Heading className="mb-3" level={5}>
               Search Stops
             </Heading>
@@ -68,7 +75,7 @@ const StopsPage = () => {
               }
             >
               {filteredRoutes.length > 0 ? (
-                <div className="max-h-48 overflow-auto scrollbar-sa">
+                <div className="max-h-32 overflow-auto scrollbar-sa">
                   <Heading className="mb-3" level={5}>
                     Lines for this stop
                   </Heading>

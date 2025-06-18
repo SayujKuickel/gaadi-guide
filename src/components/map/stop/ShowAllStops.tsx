@@ -10,7 +10,7 @@ function mulberry32(seed: number) {
   };
 }
 
-function getSeededColor(randomFn) {
+function getSeededColor(randomFn: () => number) {
   const letters = "0123456789ABCDEF";
   let color = "#";
   for (let i = 0; i < 6; i++) {
@@ -21,7 +21,7 @@ function getSeededColor(randomFn) {
 }
 
 const ShowAllStops = () => {
-  const seed = 69;
+  const seed = 27;
   const rng = mulberry32(seed);
 
   return (

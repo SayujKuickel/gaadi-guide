@@ -12,10 +12,8 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
   headingLevel,
   mode,
 }) => {
-  console.log(segments);
-
   return (
-    <ul className="space-y-4 max-h-64 overflow-auto scrollbar-sa pb-6">
+    <ul className="space-y-4 max-h-32 lg:max-h-52  overflow-auto scrollbar-sa pb-6">
       {segments.map((segment: IRouteSegment) => (
         <>
           <BusLineTitle

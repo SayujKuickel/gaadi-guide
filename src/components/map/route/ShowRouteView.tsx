@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import RouteData from "@/data/route_data.json";
+import Route_data from "@/data/route_data.json";
 import type { IRoute } from "@/types/route.types";
 import RouteView from "./RouteView";
-import BusStopView from "../stop/BusStopView";
-import ShowAllStops from "../stop/ShowAllStops";
 
 interface ShowRouteViewProps {
   fitRouteToWindow?: boolean;
@@ -23,7 +21,7 @@ const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
       return;
     }
 
-    const route = RouteData.find((rt) => rt.id === routekey);
+    const route = Route_data.find((rt) => rt.id === routekey);
 
     if (!route) {
       console.warn("Route not found.");

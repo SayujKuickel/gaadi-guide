@@ -45,6 +45,14 @@
   ],
   "53699126": [
     {
+      "stop": "4c5dd8fc",
+      "routeId": "22bf5c"
+    },
+    {
+      "stop": "531f6eca",
+      "routeId": "22bf5c"
+    },
+    {
       "stop": "157fc7a1",
       "routeId": "230885"
     },
@@ -57,12 +65,41 @@
       "routeId": "231dad"
     },
     {
-      "stop": "1db5233",
+      "stop": "6d41252b",
       "routeId": "231dae"
     },
     {
       "stop": "157fc7a1",
       "routeId": "231dae"
+    },
+    {
+      "stop": "6d41252b",
+      "routeId": "2d9c12"
+    },
+    {
+      "stop": "4c5dd8fc",
+      "routeId": "2d9c12"
+    },
+    {
+      "stop": "6d41252b",
+      "routeId": "2d9c13"
+    },
+    {
+      "stop": "4c5dd8fc",
+      "routeId": "2d9c13"
+    },
+    {
+      "stop": "6d41252b",
+      "routeId": "2ee89a"
+    },
+    {
+      "stop": "4c5dd8fc",
+      "routeId": "2ee89a"
+    },
+    {
+      "stop": "53699126",
+      "routeId": "230885",
+      "isTransfer": true
     },
     {
       "stop": "53699126",
@@ -76,21 +113,98 @@
     },
     {
       "stop": "53699126",
+      "routeId": "2d9c12",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c13",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2ee89a",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "231dad",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
       "routeId": "231dae",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c12",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c13",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2ee89a",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "231dae",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c12",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c13",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2ee89a",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c12",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c13",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2ee89a",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2d9c13",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2ee89a",
+      "isTransfer": true
+    },
+    {
+      "stop": "53699126",
+      "routeId": "2ee89a",
       "isTransfer": true
     }
   ],
   "88953095": [
     {
       "stop": "6d39bcd8",
-      "routeId": "2dff33"
-    },
-    {
-      "stop": "88953095",
-      "routeId": "2dff33"
-    },
-    {
-      "stop": "88953095",
       "routeId": "2dff33"
     },
     {
@@ -148,12 +262,84 @@
   ],
   "88953097": [
     {
+      "stop": "8db96f28",
+      "routeId": "22bda2"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "22bda2"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2308b2"
+    },
+    {
+      "stop": "703484de",
+      "routeId": "2308b2"
+    },
+    {
       "stop": "889530a0",
       "routeId": "231d7a"
     },
     {
       "stop": "7036380f",
       "routeId": "231d7a"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2322d2"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2322d2"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2d67a1"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2d67a1"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2d9b5a"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2d9b5a"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2d9b5b"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2d9b5b"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2d9b5d"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2d9b5d"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2d9bc1"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2d9bc1"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2d9bfc"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2d9bfc"
     },
     {
       "stop": "889530a0",
@@ -164,8 +350,824 @@
       "routeId": "2dff33"
     },
     {
+      "stop": "8db96f28",
+      "routeId": "2e15d4"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2e15d4"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2eba25"
+    },
+    {
+      "stop": "703484de",
+      "routeId": "2eba25"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2ed6b5"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2ed6b5"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2ed931"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2ed931"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2ed936"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2ed936"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2ed988"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2ed988"
+    },
+    {
+      "stop": "8db96f28",
+      "routeId": "2ede4a"
+    },
+    {
+      "stop": "6c4dcabd",
+      "routeId": "2ede4a"
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2308b2",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "231d7a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2322d2",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d67a1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5b",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
       "stop": "88953097",
       "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "231d7a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2322d2",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d67a1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5b",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2322d2",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d67a1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5b",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d67a1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5b",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5b",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5b",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9b5d",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bc1",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2d9bfc",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2dff33",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2e15d4",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2eba25",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed6b5",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed931",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed936",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ed988",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
+      "isTransfer": true
+    },
+    {
+      "stop": "88953097",
+      "routeId": "2ede4a",
       "isTransfer": true
     }
   ],
@@ -237,11 +1239,11 @@
       "routeId": "2308b2"
     },
     {
-      "stop": "6ba66194",
+      "stop": "12b600e7",
       "routeId": "231ce9"
     },
     {
-      "stop": "6ba66194",
+      "stop": "12b600e7",
       "routeId": "231d16"
     },
     {
@@ -4627,7 +5629,7 @@
       "routeId": "22bda2"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "22bda2"
     },
     {
@@ -4635,7 +5637,7 @@
       "routeId": "2308b2"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2308b2"
     },
     {
@@ -4643,7 +5645,7 @@
       "routeId": "2322d2"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2322d2"
     },
     {
@@ -4651,7 +5653,7 @@
       "routeId": "2d67a1"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d67a1"
     },
     {
@@ -4659,11 +5661,11 @@
       "routeId": "2d9b5a"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9b5a"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9b5b"
     },
     {
@@ -4675,11 +5677,11 @@
       "routeId": "2d9b5d"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9b5d"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9bc1"
     },
     {
@@ -4691,7 +5693,7 @@
       "routeId": "2d9bfc"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9bfc"
     },
     {
@@ -4699,7 +5701,7 @@
       "routeId": "2e15d4"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2e15d4"
     },
     {
@@ -4707,7 +5709,7 @@
       "routeId": "2eba25"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2eba25"
     },
     {
@@ -4715,7 +5717,7 @@
       "routeId": "2ed6b5"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed6b5"
     },
     {
@@ -4723,7 +5725,7 @@
       "routeId": "2ed931"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed931"
     },
     {
@@ -4731,11 +5733,11 @@
       "routeId": "2ed936"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed936"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed988"
     },
     {
@@ -4747,7 +5749,7 @@
       "routeId": "2ede4a"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ede4a"
     },
     {
@@ -5347,743 +6349,13 @@
     },
     {
       "stop": "8db96f28",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    }
-  ],
-  "6b977353": [
-    {
-      "stop": "8db96f28",
-      "routeId": "22bda2"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "22bda2"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2308b2"
-    },
-    {
-      "stop": "703484de",
-      "routeId": "2308b2"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2322d2"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2322d2"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2d67a1"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2d67a1"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2d9b5a"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2d9b5a"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2d9b5b"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2d9b5b"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2d9b5d"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2d9b5d"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2d9bc1"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2d9bc1"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2d9bfc"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2d9bfc"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2e15d4"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2e15d4"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2eba25"
-    },
-    {
-      "stop": "703484de",
-      "routeId": "2eba25"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2ed6b5"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2ed6b5"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2ed931"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2ed931"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2ed936"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2ed936"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2ed988"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2ed988"
-    },
-    {
-      "stop": "8db96f28",
-      "routeId": "2ede4a"
-    },
-    {
-      "stop": "6c4dcabd",
-      "routeId": "2ede4a"
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2308b2",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2322d2",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d67a1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5b",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2322d2",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d67a1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5b",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d67a1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5b",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5b",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5b",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9b5d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bc1",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2d9bfc",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2e15d4",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2eba25",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed6b5",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed931",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed936",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ed988",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
-      "routeId": "2ede4a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6b977353",
       "routeId": "2ede4a",
       "isTransfer": true
     }
   ],
   "6c4dcabd": [
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "22bda2"
     },
     {
@@ -6099,7 +6371,7 @@
       "routeId": "231d7a"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2322d2"
     },
     {
@@ -6107,7 +6379,7 @@
       "routeId": "2322d2"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d67a1"
     },
     {
@@ -6115,7 +6387,7 @@
       "routeId": "2d67a1"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9b5a"
     },
     {
@@ -6127,11 +6399,11 @@
       "routeId": "2d9b5b"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9b5b"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9b5d"
     },
     {
@@ -6143,11 +6415,11 @@
       "routeId": "2d9bc1"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9bc1"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2d9bfc"
     },
     {
@@ -6163,7 +6435,7 @@
       "routeId": "2dff33"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2e15d4"
     },
     {
@@ -6171,7 +6443,7 @@
       "routeId": "2e15d4"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed6b5"
     },
     {
@@ -6179,7 +6451,7 @@
       "routeId": "2ed6b5"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed931"
     },
     {
@@ -6187,7 +6459,7 @@
       "routeId": "2ed931"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed936"
     },
     {
@@ -6199,11 +6471,11 @@
       "routeId": "2ed988"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ed988"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2ede4a"
     },
     {
@@ -6902,14 +7174,6 @@
     },
     {
       "stop": "6c4dcabd",
-      "routeId": "2ed6b5"
-    },
-    {
-      "stop": "889530a7",
-      "routeId": "2ed6b5"
-    },
-    {
-      "stop": "889530a7",
       "routeId": "2ed6b5"
     },
     {
@@ -8647,7 +8911,7 @@
       "routeId": "22bda2"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "22bda2"
     },
     {
@@ -8655,11 +8919,11 @@
       "routeId": "2d9b5a"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5a"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5b"
     },
     {
@@ -8671,11 +8935,11 @@
       "routeId": "2d9b5d"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5d"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bc1"
     },
     {
@@ -8687,7 +8951,7 @@
       "routeId": "2d9bfc"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc"
     },
     {
@@ -8766,7 +9030,7 @@
       "isTransfer": true
     }
   ],
-  "7a41852f": [
+  "889530a5": [
     {
       "stop": "8dfd33a2",
       "routeId": "22bda2"
@@ -8812,77 +9076,77 @@
       "routeId": "2d9bfc"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5a",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5b",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5d",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bc1",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5b",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5d",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bc1",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5d",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bc1",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bc1",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc",
       "isTransfer": true
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc",
       "isTransfer": true
     }
@@ -9060,15 +9324,7 @@
       "routeId": "22be87"
     },
     {
-      "stop": "6ba66194",
-      "routeId": "22be87"
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "22be87"
-    },
-    {
-      "stop": "6ba66195",
+      "stop": "12b600e7",
       "routeId": "22be87"
     },
     {
@@ -9080,27 +9336,11 @@
       "routeId": "2307b6"
     },
     {
-      "stop": "1dc9100",
-      "routeId": "231ce9"
-    },
-    {
-      "stop": "4bf28194",
-      "routeId": "231ce9"
-    },
-    {
       "stop": "1d952d6",
       "routeId": "231d16"
     },
     {
-      "stop": "6ba66194",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "4bf28194",
+      "stop": "12b600e7",
       "routeId": "231d16"
     },
     {
@@ -9124,46 +9364,12 @@
       "routeId": "2e346d"
     },
     {
-      "stop": "6ba66194",
-      "routeId": "2e346d"
-    },
-    {
-      "stop": "6ba66194",
+      "stop": "12b600e7",
       "routeId": "2e346d"
     },
     {
       "stop": "6ba66194",
       "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231ce9",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231d9e",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "2d9b0a",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "2e346d",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231ce9",
       "isTransfer": true
     },
     {
@@ -9237,9 +9443,69 @@
       "isTransfer": true
     }
   ],
-  "6ba66195": [
+  "12b600e7": [
     {
       "stop": "6ba66194",
+      "routeId": "22be87"
+    },
+    {
+      "stop": "6ba66195",
+      "routeId": "22be87"
+    },
+    {
+      "stop": "1dc9100",
+      "routeId": "231ce9"
+    },
+    {
+      "stop": "4bf28194",
+      "routeId": "231ce9"
+    },
+    {
+      "stop": "6ba66194",
+      "routeId": "231d16"
+    },
+    {
+      "stop": "4bf28194",
+      "routeId": "231d16"
+    },
+    {
+      "stop": "6ba66194",
+      "routeId": "2e346d"
+    },
+    {
+      "stop": "12b600e7",
+      "routeId": "231ce9",
+      "isTransfer": true
+    },
+    {
+      "stop": "12b600e7",
+      "routeId": "231d16",
+      "isTransfer": true
+    },
+    {
+      "stop": "12b600e7",
+      "routeId": "2e346d",
+      "isTransfer": true
+    },
+    {
+      "stop": "12b600e7",
+      "routeId": "231d16",
+      "isTransfer": true
+    },
+    {
+      "stop": "12b600e7",
+      "routeId": "2e346d",
+      "isTransfer": true
+    },
+    {
+      "stop": "12b600e7",
+      "routeId": "2e346d",
+      "isTransfer": true
+    }
+  ],
+  "6ba66195": [
+    {
+      "stop": "12b600e7",
       "routeId": "22be87"
     },
     {
@@ -9283,14 +9549,6 @@
       "routeId": "2d9c12"
     },
     {
-      "stop": "889530a1",
-      "routeId": "2d9c12"
-    },
-    {
-      "stop": "889530a1",
-      "routeId": "2d9c12"
-    },
-    {
       "stop": "4bf28194",
       "routeId": "2d9c12"
     },
@@ -9299,27 +9557,11 @@
       "routeId": "2d9c13"
     },
     {
-      "stop": "889530a1",
-      "routeId": "2d9c13"
-    },
-    {
-      "stop": "889530a1",
-      "routeId": "2d9c13"
-    },
-    {
       "stop": "4bf28194",
       "routeId": "2d9c13"
     },
     {
       "stop": "6b9741bd",
-      "routeId": "2dff33"
-    },
-    {
-      "stop": "889530a1",
-      "routeId": "2dff33"
-    },
-    {
-      "stop": "889530a1",
       "routeId": "2dff33"
     },
     {
@@ -9336,14 +9578,6 @@
     },
     {
       "stop": "1db4aaf",
-      "routeId": "2ee89a"
-    },
-    {
-      "stop": "889530a1",
-      "routeId": "2ee89a"
-    },
-    {
-      "stop": "889530a1",
       "routeId": "2ee89a"
     },
     {
@@ -9561,159 +9795,67 @@
       "routeId": "22bf5c"
     },
     {
-      "stop": "1db5233",
+      "stop": "53699126",
       "routeId": "22bf5c"
-    },
-    {
-      "stop": "1db5233",
-      "routeId": "2d9c12"
-    },
-    {
-      "stop": "1db4aaf",
-      "routeId": "2d9c12"
-    },
-    {
-      "stop": "1db5233",
-      "routeId": "2d9c13"
-    },
-    {
-      "stop": "1db4aaf",
-      "routeId": "2d9c13"
-    },
-    {
-      "stop": "1db5233",
-      "routeId": "2ee89a"
-    },
-    {
-      "stop": "1db4aaf",
-      "routeId": "2ee89a"
-    },
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "2d9c12",
-      "isTransfer": true
-    },
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "2d9c13",
-      "isTransfer": true
-    },
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "2ee89a",
-      "isTransfer": true
-    },
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "2d9c13",
-      "isTransfer": true
-    },
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "2ee89a",
-      "isTransfer": true
-    },
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "2ee89a",
-      "isTransfer": true
-    }
-  ],
-  "1db5233": [
-    {
-      "stop": "4c5dd8fc",
-      "routeId": "22bf5c"
-    },
-    {
-      "stop": "531f6eca",
-      "routeId": "22bf5c"
-    },
-    {
-      "stop": "6d41252b",
-      "routeId": "231dae"
     },
     {
       "stop": "53699126",
-      "routeId": "231dae"
-    },
-    {
-      "stop": "6d41252b",
       "routeId": "2d9c12"
     },
     {
-      "stop": "4c5dd8fc",
+      "stop": "1db4aaf",
       "routeId": "2d9c12"
     },
     {
-      "stop": "6d41252b",
+      "stop": "53699126",
       "routeId": "2d9c13"
     },
     {
-      "stop": "4c5dd8fc",
+      "stop": "1db4aaf",
       "routeId": "2d9c13"
     },
     {
-      "stop": "6d41252b",
+      "stop": "53699126",
+      "routeId": "2ee89a"
+    },
+    {
+      "stop": "1db4aaf",
       "routeId": "2ee89a"
     },
     {
       "stop": "4c5dd8fc",
-      "routeId": "2ee89a"
-    },
-    {
-      "stop": "1db5233",
-      "routeId": "231dae",
-      "isTransfer": true
-    },
-    {
-      "stop": "1db5233",
       "routeId": "2d9c12",
       "isTransfer": true
     },
     {
-      "stop": "1db5233",
+      "stop": "4c5dd8fc",
       "routeId": "2d9c13",
       "isTransfer": true
     },
     {
-      "stop": "1db5233",
+      "stop": "4c5dd8fc",
       "routeId": "2ee89a",
       "isTransfer": true
     },
     {
-      "stop": "1db5233",
-      "routeId": "2d9c12",
-      "isTransfer": true
-    },
-    {
-      "stop": "1db5233",
+      "stop": "4c5dd8fc",
       "routeId": "2d9c13",
       "isTransfer": true
     },
     {
-      "stop": "1db5233",
+      "stop": "4c5dd8fc",
       "routeId": "2ee89a",
       "isTransfer": true
     },
     {
-      "stop": "1db5233",
-      "routeId": "2d9c13",
-      "isTransfer": true
-    },
-    {
-      "stop": "1db5233",
-      "routeId": "2ee89a",
-      "isTransfer": true
-    },
-    {
-      "stop": "1db5233",
+      "stop": "4c5dd8fc",
       "routeId": "2ee89a",
       "isTransfer": true
     }
   ],
   "531f6eca": [
     {
-      "stop": "1db5233",
+      "stop": "53699126",
       "routeId": "22bf5c"
     },
     {
@@ -10757,23 +10899,23 @@
       "routeId": "22d22f"
     },
     {
-      "stop": "4304f1c1",
-      "routeId": "22d22f"
-    }
-  ],
-  "4304f1c1": [
-    {
-      "stop": "3a457e3d",
-      "routeId": "22d22f"
-    },
-    {
       "stop": "36715a2d",
       "routeId": "22d22f"
     }
   ],
   "36715a2d": [
     {
+      "stop": "3a457e3d",
+      "routeId": "22d22f"
+    },
+    {
       "stop": "4304f1c1",
+      "routeId": "22d22f"
+    }
+  ],
+  "4304f1c1": [
+    {
+      "stop": "36715a2d",
       "routeId": "22d22f"
     }
   ],
@@ -10911,7 +11053,7 @@
       "routeId": "22d275"
     },
     {
-      "stop": "4c5dd8fe",
+      "stop": "4c5dd968",
       "routeId": "22d275"
     },
     {
@@ -10919,41 +11061,18 @@
       "routeId": "2ee39c"
     },
     {
-      "stop": "4c5dd8fe",
-      "routeId": "2ee39c"
-    },
-    {
-      "stop": "6cd7312a",
-      "routeId": "2ee39c",
-      "isTransfer": true
-    }
-  ],
-  "4c5dd8fe": [
-    {
-      "stop": "6cd7312a",
-      "routeId": "22d275"
-    },
-    {
-      "stop": "4c5dd968",
-      "routeId": "22d275"
-    },
-    {
-      "stop": "6cd7312a",
-      "routeId": "2ee39c"
-    },
-    {
       "stop": "4c5dd968",
       "routeId": "2ee39c"
     },
     {
-      "stop": "4c5dd8fe",
+      "stop": "6cd7312a",
       "routeId": "2ee39c",
       "isTransfer": true
     }
   ],
   "4c5dd968": [
     {
-      "stop": "4c5dd8fe",
+      "stop": "6cd7312a",
       "routeId": "22d275"
     },
     {
@@ -10969,7 +11088,7 @@
       "routeId": "231dad"
     },
     {
-      "stop": "4c5dd8fe",
+      "stop": "6cd7312a",
       "routeId": "2ee39c"
     },
     {
@@ -11022,7 +11141,7 @@
       "routeId": "231dae"
     },
     {
-      "stop": "1db5233",
+      "stop": "53699126",
       "routeId": "231dae"
     },
     {
@@ -11038,7 +11157,7 @@
       "routeId": "2d9c12"
     },
     {
-      "stop": "1db5233",
+      "stop": "53699126",
       "routeId": "2d9c12"
     },
     {
@@ -11046,7 +11165,7 @@
       "routeId": "2d9c13"
     },
     {
-      "stop": "1db5233",
+      "stop": "53699126",
       "routeId": "2d9c13"
     },
     {
@@ -11070,7 +11189,7 @@
       "routeId": "2ee89a"
     },
     {
-      "stop": "1db5233",
+      "stop": "53699126",
       "routeId": "2ee89a"
     },
     {
@@ -12277,14 +12396,6 @@
     }
   ],
   "58c5d0fe": [
-    {
-      "stop": "58c5d0fe",
-      "routeId": "23015b"
-    },
-    {
-      "stop": "58c5d0fe",
-      "routeId": "23015b"
-    },
     {
       "stop": "6d0e189b",
       "routeId": "23015b"
@@ -14763,39 +14874,15 @@
       "routeId": "230188"
     },
     {
-      "stop": "157c1d73",
-      "routeId": "230188"
-    },
-    {
-      "stop": "157c1d73",
-      "routeId": "230188"
-    },
-    {
       "stop": "4be7bbd6",
       "routeId": "2308a6"
     },
     {
-      "stop": "157c1d73",
-      "routeId": "2308a6"
-    },
-    {
-      "stop": "157c1d73",
-      "routeId": "2308a6"
-    },
-    {
       "stop": "ffe0e05",
       "routeId": "2308a6"
     },
     {
       "stop": "ffe0e05",
-      "routeId": "231ce9"
-    },
-    {
-      "stop": "157c1d73",
-      "routeId": "231ce9"
-    },
-    {
-      "stop": "157c1d73",
       "routeId": "231ce9"
     },
     {
@@ -14804,14 +14891,6 @@
     },
     {
       "stop": "ffe0e05",
-      "routeId": "2ede4a"
-    },
-    {
-      "stop": "157c1d73",
-      "routeId": "2ede4a"
-    },
-    {
-      "stop": "157c1d73",
       "routeId": "2ede4a"
     },
     {
@@ -14949,7 +15028,7 @@
       "routeId": "231d16"
     },
     {
-      "stop": "ffe0d31",
+      "stop": "ffe0d2d",
       "routeId": "231d7a"
     },
     {
@@ -15049,27 +15128,11 @@
       "routeId": "231d7a"
     },
     {
-      "stop": "73fc94e1",
-      "routeId": "231d7a"
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231d7a"
-    },
-    {
       "stop": "6d66efa8",
       "routeId": "231d7a"
     },
     {
       "stop": "8cad8b75",
-      "routeId": "231dae"
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231dae"
-    },
-    {
-      "stop": "73fc94e1",
       "routeId": "231dae"
     },
     {
@@ -15366,14 +15429,6 @@
       "routeId": "2307b6"
     },
     {
-      "stop": "6d1c3f54",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "6d1c3f58",
       "routeId": "2307b6"
     },
@@ -15382,27 +15437,11 @@
       "routeId": "231d16"
     },
     {
-      "stop": "6d1c3f54",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "231d16"
-    },
-    {
       "stop": "6d1cb6ca",
       "routeId": "231d16"
     },
     {
       "stop": "6d1cb6ca",
-      "routeId": "2d9b0a"
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "2d9b0a"
-    },
-    {
-      "stop": "6d1c3f54",
       "routeId": "2d9b0a"
     },
     {
@@ -15600,7 +15639,7 @@
       "routeId": "231ce9"
     },
     {
-      "stop": "6ba66194",
+      "stop": "12b600e7",
       "routeId": "231ce9"
     },
     {
@@ -16518,11 +16557,11 @@
   ],
   "703484de": [
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2308b2"
     },
     {
-      "stop": "6b977353",
+      "stop": "88953097",
       "routeId": "2eba25"
     },
     {
@@ -17001,26 +17040,10 @@
       "routeId": "231d4f"
     },
     {
-      "stop": "8daf79b2",
-      "routeId": "231d4f"
-    },
-    {
-      "stop": "8daf79b2",
-      "routeId": "231d4f"
-    },
-    {
       "stop": "58c5d0fe",
       "routeId": "231d4f"
     },
     {
-      "stop": "8daf79b2",
-      "routeId": "231d7a"
-    },
-    {
-      "stop": "8daf79b2",
-      "routeId": "231d7a"
-    },
-    {
       "stop": "1dc8360",
       "routeId": "231d7a"
     },
@@ -17029,23 +17052,7 @@
       "routeId": "2ed931"
     },
     {
-      "stop": "8daf79b2",
-      "routeId": "2ed931"
-    },
-    {
-      "stop": "8daf79b2",
-      "routeId": "2ed931"
-    },
-    {
       "stop": "1dc8360",
-      "routeId": "2ede4a"
-    },
-    {
-      "stop": "8daf79b2",
-      "routeId": "2ede4a"
-    },
-    {
-      "stop": "8daf79b2",
       "routeId": "2ede4a"
     },
     {
@@ -17475,7 +17482,7 @@
       "routeId": "231d7a"
     },
     {
-      "stop": "ffe0d31",
+      "stop": "ffe0d2d",
       "routeId": "231d7a"
     },
     {
@@ -17483,7 +17490,7 @@
       "routeId": "231d9e"
     },
     {
-      "stop": "ffe0d31",
+      "stop": "ffe0d2d",
       "routeId": "231d9e"
     },
     {
@@ -17492,7 +17499,7 @@
       "isTransfer": true
     }
   ],
-  "ffe0d31": [
+  "ffe0d2d": [
     {
       "stop": "ffe0d1c",
       "routeId": "231d7a"
@@ -17510,15 +17517,7 @@
       "routeId": "231d9e"
     },
     {
-      "stop": "ffe0d31",
-      "routeId": "231d9e"
-    },
-    {
-      "stop": "4c3f0408",
-      "routeId": "231d9e"
-    },
-    {
-      "stop": "ffe0d31",
+      "stop": "ffe0d2d",
       "routeId": "231d9e",
       "isTransfer": true
     }
@@ -17526,6 +17525,16 @@
   "19ed3ebd": [
     {
       "stop": "2b440c08",
+      "routeId": "231d9e"
+    }
+  ],
+  "ffe0d31": [
+    {
+      "stop": "ffe0d2d",
+      "routeId": "231d9e"
+    },
+    {
+      "stop": "4c3f0408",
       "routeId": "231d9e"
     }
   ],
@@ -17842,7 +17851,7 @@
   ],
   "889530a4": [
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5a"
     },
     {
@@ -17854,11 +17863,11 @@
       "routeId": "2d9b5b"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5b"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9b5d"
     },
     {
@@ -17870,11 +17879,11 @@
       "routeId": "2d9bc1"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bc1"
     },
     {
-      "stop": "7a41852f",
+      "stop": "889530a5",
       "routeId": "2d9bfc"
     },
     {
