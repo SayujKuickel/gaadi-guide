@@ -17,7 +17,7 @@ const BusLineTitle: React.FC<BusLineTitleProps> = ({
     <Heading className={`text-offText ${className}`} level={level}>
       <span className="inline-block">
         <i
-          className="fi fi-rr-circle rounded-full flex w-fit"
+          className="fi fi-rr-circle rounded-full w-fit aspect-square grid place-items-center"
           style={{ background: lineColor, color: lineColor }}
         />
       </span>

@@ -7,7 +7,7 @@ interface ViewRouteDetailsProps {
   itemsToShow?: number;
   routeId?: string;
   priorityStop?: string;
-  mode: "search" | "route";
+  mode?: "search" | "route";
 }
 
 const BusStops: React.FC<ViewRouteDetailsProps> = ({

@@ -29,7 +29,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
         itemsToShow={3}
       />
 
-      <div className="flex md:items-center flex-col md:flex-row gap-2 mt-8">
+      <div className="flex md:items-center flex-row gap-2 mt-8">
         <Link className="block w-fit" to={`/bus/${route?.id}`}>
           <Button
             ariaLabel="View All Stops"
@@ -40,7 +40,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
           />
         </Link>
 
-        <Link className="block w-fit" to={`/?route=${route?.id}`}>
+        <Link className="block w-fit" to={`/routes/?route=${route?.id}`}>
           <Button
             ariaLabel="View in map"
             title="View in Map"

@@ -12,7 +12,7 @@ const ViewWrapper: React.FC<ViewWrapperProps> = ({ children, hiddenBtn }) => {
   if (isShown)
     return (
       <>
-        <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-76 relative">
+        <div className="px-4 py-3 bg-surface rounded-lg w-full sm:w-76 relative">
           <Button
             onClick={() => setIsShown(false)}
             ariaLabel="Close Sidebar View"
