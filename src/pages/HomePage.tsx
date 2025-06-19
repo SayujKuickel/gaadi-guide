@@ -4,7 +4,7 @@ import PageLayout from "@/layout/PageLayout";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Map = () => {
+const HomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,4 +36,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default HomePage;

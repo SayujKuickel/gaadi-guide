@@ -75,12 +75,12 @@ const StopsPage = () => {
               }
             >
               {filteredRoutes.length > 0 ? (
-                <div className="max-h-32 overflow-auto scrollbar-sa">
+                <div className="">
                   <Heading className="mb-3" level={5}>
                     Lines for this stop
                   </Heading>
 
-                  <ul className="space-y-4">
+                  <ul className="max-h-32 overflow-auto scrollbar-sa space-y-4">
                     {filteredRoutes.map((route, i) => (
                       <li key={i}>
                         <BusLineTitle

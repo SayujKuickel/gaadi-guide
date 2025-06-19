@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Map from "@/pages/Map";
 import NotFound from "@/pages/NotFound";
 import ViewBusRoute from "@/pages/bus/ViewBusRoute";
 import ViewAllBusRoutes from "@/pages/bus/ViewAllBusRoutes";
@@ -8,11 +7,12 @@ import About from "./pages/About";
 import RoutesPage from "./pages/RoutesPage";
 import StopsPage from "./pages/StopsPage";
 import SearchPage from "./pages/SearchPage";
+import HomePage from "@/pages/HomePage";
 
 const App = () => {
   return (
     <Routes>
-      <Route index path="/" element={<Map />} />
+      <Route index path="/" element={<HomePage />} />
 
       <Route path="bus">
         <Route index element={<ViewAllBusRoutes />} />

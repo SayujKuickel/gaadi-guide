@@ -3,15 +3,12 @@ import PageLayout from "@/layout/PageLayout";
 const Contact = () => {
   return (
     <PageLayout>
-      <div className="container-small mx-auto px-5 my-8 h-screen rounded-2xl">
+      <div className="container-small mx-auto px-5 my-8 h-[200dvh] rounded-2xl">
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLScK5KYuMGoyg-t-FNYI85wHtpCcYiwb67RLtX86kPiRY1c39Q/viewform?embedded=true"
+          src="https://garrulous-belly-2d2.notion.site/ebd/2172054224e680209d1dd7541bc86f48"
           width="100%"
           height="100%"
-          className="bg-surface rounded-2xl"
-        >
-          Loading…
-        </iframe>
+        />
       </div>
     </PageLayout>
   );
