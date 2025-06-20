@@ -3,7 +3,6 @@ import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import stopsData from "@/data/stops_data.json";
 import useSearchByStop from "@/hooks/useSearchByStop";
-import { useEffect } from "react";
 
 const SearchWrapper = ({ setSegments }: any) => {
   const {
@@ -27,7 +26,7 @@ const SearchWrapper = ({ setSegments }: any) => {
 
   return (
     <>
-      <Heading className="mb-3" level={5}>
+      <Heading className="mb-3" level={4}>
         Search
       </Heading>
 

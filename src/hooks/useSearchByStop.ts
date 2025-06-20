@@ -1,6 +1,6 @@
 import type { IStopOption } from "@/types/stopOptions.types";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import stopsData from "@/data/stops_data.json";
 import { useToast } from "@/context/ToastContext";
 import searchRouteSegments from "@/utils/searchRouteSegments";
@@ -8,6 +8,7 @@ import searchRouteSegments from "@/utils/searchRouteSegments";
 const useSearchByStop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { showToast } = useToast();
+  const navigate = useNavigate();
 
   const [selectedStartStop, setSelectedStartStop] =
     useState<IStopOption | null>(null);
@@ -23,9 +24,13 @@ const useSearchByStop = () => {
         return;
       }
 
+      const stopId = searchParams.get("stop");
+      if (!stopId) return;
+
       setSearchParams({
         from: selectedStartStop.id,
         to: selectedDestinationStop.id,
+        stop: stopId,
       });
     }
   }, [selectedStartStop, selectedDestinationStop, setSearchParams]);
@@ -36,14 +41,16 @@ const useSearchByStop = () => {
 
     if (fromId) {
       const foundFrom = stopsData.find((stop) => stop.id === fromId);
-      if (foundFrom)
+      if (foundFrom) {
         setSelectedStartStop({ id: foundFrom.id, name: foundFrom.name });
+      }
     }
 
     if (toId) {
       const foundTo = stopsData.find((stop) => stop.id === toId);
-      if (foundTo)
+      if (foundTo) {
         setSelectedDestinationStop({ id: foundTo.id, name: foundTo.name });
+      }
     }
   }, [searchParams]);
 
@@ -58,7 +65,6 @@ const useSearchByStop = () => {
 
     setIsSearchingForStops(true);
 
-    // showToast(`The search feature is being implemented!`, "information");
     const segments = await searchRouteSegments(from, to);
 
     if (segments.error) {
@@ -68,6 +74,7 @@ const useSearchByStop = () => {
       );
     }
 
+    navigate(`/search/?from=${from}&to=${to}&stop=${from}`);
     setIsSearchingForStops(false);
     return segments;
   };

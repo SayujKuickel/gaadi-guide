@@ -37,7 +37,7 @@ const StopsPage = () => {
                 />
               }
             >
-              <Heading className="mb-3" level={5}>
+              <Heading className="mb-3" level={4}>
                 Search Stops
               </Heading>
 

@@ -21,8 +21,8 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
 
   return (
     <div className="">
-      <Heading className="mb-3" level={5}>
-        Lines for this stop
+      <Heading className="mb-3" level={4}>
+        Routes for this stop.
       </Heading>
 
       <ul className="max-h-32 overflow-auto scrollbar-sa space-y-4">

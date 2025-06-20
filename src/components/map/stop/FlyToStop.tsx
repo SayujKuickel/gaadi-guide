@@ -8,7 +8,6 @@ import BusStops from "@/data/stops_data.json";
 const FlyToStop = () => {
   const [searchParams] = useSearchParams();
   const stop = searchParams.get("stop");
-
   const map = useMap();
 
   useEffect(() => {
