@@ -1,3 +1,4 @@
+import "leaflet/dist/leaflet.css";
 import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import TileLayerView from "@/components/map/views/TileLayerView";
@@ -316,8 +317,9 @@ const AddNewRoute = () => {
                 className="h-full w-full"
                 ref={mapRef}
               >
-                <TileLayerView tileMapKey="" />
+                <TileLayerView tileMapKey="openstreetmap" />
                 {tempMarkerPos && <Marker position={tempMarkerPos} />}
+
                 <MapClickHandler onMapClick={handleMapClick} />
               </MapContainer>
             </div>
@@ -455,7 +457,7 @@ const AddNewRoute = () => {
                 color={routeData.routeColor || "#000000"}
               />
             )}
-            <TileLayerView tileMapKey="" />
+            <TileLayerView tileMapKey="openstreetmap" />
           </MapContainer>
         </div>
 
@@ -588,7 +590,7 @@ const AddNewRoute = () => {
               <div className="">
                 <Heading level={5}>Click to add</Heading>
 
-                <div className="w-full md:w-300px h-[300px]">
+                <div className="w-full md:w-300px h-[500px]">
                   <MapContainer
                     center={MAP_CENTER}
                     zoom={DEFAULT_ZOOM}
@@ -596,7 +598,7 @@ const AddNewRoute = () => {
                     className="h-full w-full"
                     ref={mapRef}
                   >
-                    <TileLayerView tileMapKey="" />
+                    <TileLayerView tileMapKey="openstreetmap" />
                     {tempMarkerPos && <Marker position={tempMarkerPos} />}
                     <MapClickHandler onMapClick={handleMapClick} />
                   </MapContainer>
