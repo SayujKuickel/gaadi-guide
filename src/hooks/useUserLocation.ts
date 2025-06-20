@@ -1,21 +1,25 @@
 import { useToast } from "@/context/ToastContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useUserLocation = () => {
   const [userLocation, setUserLocation] = useState<[number, number] | null>(
     null
   );
   const [isSearchingLocation, setIsSearchingLocation] = useState(false);
+  const [flyToPos, setFlyToPos] = useState(false);
+
   const { showToast } = useToast();
 
-  // useEffect(() => {
-  //   const lat = sessionStorage.getItem("user-latitude");
-  //   const lon = sessionStorage.getItem("user-longitude");
+  useEffect(() => {
+    const lat = sessionStorage.getItem("user-latitude");
+    const lon = sessionStorage.getItem("user-longitude");
 
-  //   if (lat !== null && lon !== null) {
-  //     setUserLocation([parseFloat(lat), parseFloat(lon)]);
-  //   }
-  // }, []);
+    if (lat !== null && lon !== null) {
+      setFlyToPos(false);
+
+      setUserLocation([parseFloat(lat), parseFloat(lon)]);
+    }
+  }, []);
 
   const getUserLocation = () => {
     if (isSearchingLocation) {
@@ -24,6 +28,7 @@ export const useUserLocation = () => {
     }
 
     setIsSearchingLocation(true);
+    setFlyToPos(true);
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
         setUserLocation([coords.latitude, coords.longitude]);
@@ -53,5 +58,6 @@ export const useUserLocation = () => {
     setUserLocation,
     startLocationSearch: () => setIsSearchingLocation(true),
     stopLocationSearch: () => setIsSearchingLocation(false),
+    flyToPos,
   };
 };

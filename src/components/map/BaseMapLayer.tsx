@@ -18,12 +18,14 @@ interface BaseMapLayerProps {
   className?: string;
   userLocation: [number, number] | null;
   tileMapKey: string;
+  flyToPos: boolean;
 }
 
 const BaseMapLayer = ({
   tileMapKey,
   children,
   className,
+  flyToPos,
   userLocation,
 }: BaseMapLayerProps) => {
   /* 
@@ -59,7 +61,9 @@ const BaseMapLayer = ({
         {children}
 
         {/* shows User location marker */}
-        {userLocation && <UserLocationMarkerView position={userLocation} />}
+        {userLocation && (
+          <UserLocationMarkerView flyToPos={flyToPos} position={userLocation} />
+        )}
 
         {/* Toggles between different layers */}
         <TileLayerView tileMapKey={tileMapKey} />

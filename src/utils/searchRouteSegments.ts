@@ -1,5 +1,6 @@
 import { type IRoute } from "@/types/route.types";
 import routes from "@/data/route_data.json";
+import graphData from "@/data/graph.json";
 
 interface GraphNode {
   stop: string;
@@ -28,14 +29,6 @@ async function searchRouteSegments(
   toStopId: string
 ): Promise<SearchResult> {
   try {
-    // Load graph from public directory
-    const response = await fetch("/graph.json");
-    if (!response.ok) {
-      throw new Error("Failed to load graph");
-    }
-    const graph: Graph = await response.json();
-
-    // Validate inputs
     if (!fromStopId || !toStopId) {
       throw new Error("Start and destination stop IDs are required");
     }
@@ -43,6 +36,8 @@ async function searchRouteSegments(
     if (fromStopId === toStopId) {
       throw new Error("Start and destination cannot be the same");
     }
+
+    const graph: Graph = graphData;
 
     if (!graph[fromStopId] || !graph[toStopId]) {
       throw new Error("No valid routes found");

@@ -5,15 +5,19 @@ import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/mapSettings";
 
 interface UserLocationMarkerViewProps {
   position: [number, number];
+  flyToPos: boolean;
 }
 
 const UserLocationMarkerView: React.FC<UserLocationMarkerViewProps> = ({
   position,
+  flyToPos,
 }) => {
   const map = useMap();
 
   useEffect(() => {
-    map.flyTo(position, DEFAULT_FLY_TO_POSITION_ZOOM);
+    if (flyToPos) {
+      map.flyTo(position, DEFAULT_FLY_TO_POSITION_ZOOM);
+    }
   }, [position, map]);
 
   const customMarker = L.divIcon({
