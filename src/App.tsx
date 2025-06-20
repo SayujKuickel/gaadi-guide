@@ -8,6 +8,7 @@ const ViewAllBusRoutes = lazy(() => import("@/pages/bus/ViewAllBusRoutes"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));
 const RoutesPage = lazy(() => import("@/pages/RoutesPage"));
+const HomePage = lazy(() => import("@/pages/HomePage"));
 const StopsPage = lazy(() => import("@/pages/StopsPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 
@@ -22,7 +23,7 @@ const App = () => {
     >
       <Routes>
         <Route element={<MapSidebarLayout />}>
-          <Route index path="/" element={<RoutesPage />} />
+          <Route index path="/" element={<HomePage />} />
 
           <Route path="/routes" element={<RoutesPage />} />
           <Route path="/stops" element={<StopsPage />} />

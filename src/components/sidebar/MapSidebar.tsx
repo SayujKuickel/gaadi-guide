@@ -1,14 +1,10 @@
-import { sidebarItems } from "@/constants/sidebarItems";
-import SidebarItem from "./SidebarItem";
 import type { ReactNode } from "react";
 
 interface MapSidebarContentsProps {
-  className?: string;
   children?: ReactNode;
 }
 
 const MapSidebarContents: React.FC<MapSidebarContentsProps> = ({
-  className,
   children,
 }) => {
   if (!children) return null;

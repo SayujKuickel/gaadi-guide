@@ -1,6 +1,6 @@
 // \react
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 // \data
 import RouteData from "@/data/route_data.json";
 // \type
@@ -40,18 +40,10 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
 
   if (error) {
     return (
-      <div className="px-4 py-3 bg-surface rounded-lg w-full md:w-72">
-        <Heading className="mb-3 text-center" level={4}>
-          <i className="fi fi-rr-triangle-warning block text-4xl" />
-          {error}
-        </Heading>
-
-        <Button
-          ariaLabel="Select Route Tab"
-          title="Choose Route"
-          className="mx-auto"
-        />
-      </div>
+      <Heading className="mb-3 text-center" level={4}>
+        <i className="fi fi-rr-triangle-warning block text-4xl" />
+        {error}
+      </Heading>
     );
   }
 
@@ -65,6 +57,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
         level={4}
         className="mb-4"
       />
+
       <section className="relative">
         <div className="absolute left-[0px] bottom-[0px] z-10 w-full h-6 bg-gradient-to-t from-surface to-transparent"></div>
 

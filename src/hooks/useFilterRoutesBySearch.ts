@@ -10,8 +10,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import type { IStop } from "@/types/stop.types";
 
 const useFilterRoutesBySearch = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [selectedStop, setSelectedStop] = useState<IStopOption | null>(null);
   const [filteredRoutes, setFilteredRoutes] = useState<IRoute[] | null>(
@@ -27,7 +26,9 @@ const useFilterRoutesBySearch = () => {
     if (!stop.id || !stop) return;
 
     setSelectedStop(stop);
-    navigate(`/stops/?stop=${stop.id}`);
+    setSearchParams({
+      stop: stop.id,
+    });
   }
 
   useEffect(() => {

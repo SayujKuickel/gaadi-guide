@@ -59,7 +59,6 @@ const useSearchByStop = () => {
     const to = searchParams.get("to");
 
     if (!from?.trim() || !to?.trim()) {
-      showToast("Please Enter Both Start and Destination stops!", "error");
       return;
     }
 
@@ -74,7 +73,11 @@ const useSearchByStop = () => {
       );
     }
 
-    navigate(`/search/?from=${from}&to=${to}&stop=${from}`);
+    setSearchParams({
+      from: from,
+      to: to,
+      stop: from,
+    });
     setIsSearchingForStops(false);
     return segments;
   };

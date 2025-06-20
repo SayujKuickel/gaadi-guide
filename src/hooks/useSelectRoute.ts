@@ -10,7 +10,7 @@ import type { IStop } from "@/types/stop.types";
 
 const useRoute = () => {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedRoute, setSelectedRoute] = useState<IRouteOption | null>(null);
   const [selectedStop, setSelectedStop] = useState<IStopOption | null>(null);
 
@@ -40,14 +40,14 @@ const useRoute = () => {
 
     setSelectedRoute(route);
     setSelectedStop(null);
-    navigate(`/routes/?route=${route.id}`);
+    setSearchParams({ route: route.id });
   }
 
   function handleStopSelect(stop: IStopOption) {
-    if (stop.id === selectedStop?.id) return;
+    if (!selectedRoute || stop.id === selectedStop?.id) return;
 
     setSelectedStop(stop);
-    navigate(`/routes/?route=${selectedRoute?.id}&stop=${stop.id}`);
+    setSearchParams({ route: selectedRoute?.id, stop: stop.id });
   }
 
   return { selectedRoute, handleRouteSelect, selectedStop, handleStopSelect };

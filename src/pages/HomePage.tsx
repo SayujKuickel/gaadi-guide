@@ -8,8 +8,8 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate("/routes");
-  });
+    navigate("/routes", { replace: true });
+  }, [navigate]);
 
   return (
     <main>
