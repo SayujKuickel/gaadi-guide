@@ -38,6 +38,7 @@ async function searchRouteSegments(
     }
 
     const graph: Graph = graphData;
+    console.log(graph);
 
     if (!graph[fromStopId] || !graph[toStopId]) {
       throw new Error("No valid routes found");

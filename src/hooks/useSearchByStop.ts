@@ -25,12 +25,11 @@ const useSearchByStop = () => {
       }
 
       const stopId = searchParams.get("stop");
-      if (!stopId) return;
 
       setSearchParams({
         from: selectedStartStop.id,
         to: selectedDestinationStop.id,
-        stop: stopId,
+        stop: stopId ? stopId : "",
       });
     }
   }, [selectedStartStop, selectedDestinationStop, setSearchParams]);

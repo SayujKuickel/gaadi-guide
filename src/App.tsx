@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import MapSidebarLayout from "@/layout/MapSidebarLayout";
+import HomePage from "@/pages/HomePage";
+import RoutesPage from "@/pages/RoutesPage";
 import NotFound from "@/pages/NotFound";
 
 const ViewBusRoute = lazy(() => import("@/pages/bus/ViewBusRoute"));
 const ViewAllBusRoutes = lazy(() => import("@/pages/bus/ViewAllBusRoutes"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));
-const RoutesPage = lazy(() => import("@/pages/RoutesPage"));
-const HomePage = lazy(() => import("@/pages/HomePage"));
 const StopsPage = lazy(() => import("@/pages/StopsPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 
