@@ -3,7 +3,6 @@ import { lazy, Suspense } from "react";
 import MapSidebarLayout from "@/layout/MapSidebarLayout";
 import HomePage from "@/pages/HomePage";
 import RoutesPage from "@/pages/RoutesPage";
-import NotFound from "@/pages/NotFound";
 
 const ViewBusRoute = lazy(() => import("@/pages/bus/ViewBusRoute"));
 const ViewAllBusRoutes = lazy(() => import("@/pages/bus/ViewAllBusRoutes"));
@@ -11,6 +10,8 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));
 const StopsPage = lazy(() => import("@/pages/StopsPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
+const AddNewRoute = lazy(() => import("@/pages/AddNewRoute"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 const App = () => {
   return (
@@ -37,6 +38,8 @@ const App = () => {
           <Route index element={<ViewAllBusRoutes />} />
           <Route path=":id" element={<ViewBusRoute />} />
         </Route>
+
+        <Route path="/add-route" element={<AddNewRoute />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
