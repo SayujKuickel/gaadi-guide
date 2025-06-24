@@ -16,17 +16,15 @@ const PageLayout = ({ children, showBackBtn = true }: PageLayoutProps) => {
   }, []);
 
   return (
-    <main className="bg-background text-text min-h-screen">
+    <main className="bg-background text-text min-h-screen relative">
       <Header />
 
       {showBackBtn && <GoBackButtonSection />}
-
       <article className="relative">
         <ScrollToTopButton />
 
         {children}
       </article>
-
       <div className="my-24"></div>
       <Footer />
     </main>

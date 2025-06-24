@@ -45,16 +45,15 @@ body {
   @apply bg-background text-text;
 }
 
-html,
-body {
+.map-layout {
   height: 100dvh;
   overflow: hidden;
   position: fixed;
   width: 100%;
 }
 
-#root,
-#__next {
+.map-layout #root,
+.map-layout #__next {
   height: 100dvh;
   overflow: hidden;
 }
@@ -206,15 +205,15 @@ body {
 
 .pulse-ring {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 0.75rem;
   background-color: #3b82f6;
   border-radius: 50%;
   opacity: 0.75;
   transform: translate(-50%, -50%);
-  animation: slowPulse 2s ease-in-out 3;
+  animation: slowPulse 3s ease-in-out;
   animation-fill-mode: forwards;
 }
 
