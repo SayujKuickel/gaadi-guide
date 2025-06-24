@@ -17,8 +17,16 @@ const App = () => {
   return (
     <Suspense
       fallback={
-        <main className="grid w-full min-h-screen  place-items-center">
-          <h1 className="text-4xl font-bold">Loading...</h1>
+        <main className="grid w-full min-h-screen place-items-center">
+          <div className="flex flex-col text-center items-center ">
+            <img
+              src="/favicon-96x96.png"
+              width={100}
+              height={100}
+              alt="Loading logo"
+              className="w-32 h-32 animate-in-fade block"
+            />
+          </div>
         </main>
       }
     >

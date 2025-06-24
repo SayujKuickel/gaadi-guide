@@ -22,8 +22,6 @@ const StopsPage = () => {
     filteredRoutes,
   } = useFilterRoutesBySearch();
 
-  if (!filteredRoutes) return null;
-
   return (
     <>
       <MapPagesLayout
@@ -38,7 +36,7 @@ const StopsPage = () => {
               }
             >
               <Heading className="mb-3" level={4}>
-                Search Stops
+                Stops
               </Heading>
 
               <SearchableCombobox

@@ -1,6 +1,7 @@
 import BusLineTitle from "@/components/bus/BusLineTitle";
 import BusStops from "@/components/bus/BusStops/BusStops";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
+import React from "react";
 
 interface ViewSearchedStopsProps {
   segments: IRouteSegment[];
@@ -13,9 +14,9 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
   mode,
 }) => {
   return (
-    <ul className="space-y-4 max-h-32 lg:max-h-52  overflow-auto scrollbar-sa pb-6">
-      {segments.map((segment: IRouteSegment) => (
-        <>
+    <ul className="space-y-4  max-h-32 md:max-h-52 overflow-auto scrollbar-sa pb-6">
+      {segments.map((segment: IRouteSegment, i) => (
+        <React.Fragment key={i}>
           <BusLineTitle
             name={segment.name}
             level={headingLevel ? headingLevel : 4}
@@ -28,7 +29,7 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
             routeId={segment.id}
             stopsArray={segment.stops}
           />
-        </>
+        </React.Fragment>
       ))}
     </ul>
   );

@@ -17,7 +17,7 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
   return (
     <>
       <Heading className="mb-3" level={4}>
-        Search Routes
+        Routes
       </Heading>
 
       <SearchableCombobox
@@ -27,15 +27,6 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
         onChange={(opt) => handleRouteSelect(opt)}
         placeholder="Type here to search..."
       />
-
-      {/* {selectedRoute && (
-        <Button
-          ariaLabel="Show Stops button"
-          className="text-sm font-[500] mt-4"
-          iconStyle="fi fi-rr-land-layer-location"
-          title="View Stops"
-        />
-      )} */}
     </>
   );
 };

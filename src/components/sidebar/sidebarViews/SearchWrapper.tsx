@@ -56,12 +56,9 @@ const SearchWrapper = ({ setSegments }: any) => {
         }
         title={isSearchingForStops ? "Searching..." : "Search"}
         ariaLabel="search"
+        className="text-sm"
         onClick={handleSearch}
       />
-
-      <p className="mt-4 text-[10px] text-on-surface/60">
-        Note: This feature is still under development. There may be bugs!
-      </p>
     </>
   );
 };

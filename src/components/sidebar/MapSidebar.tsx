@@ -10,11 +10,7 @@ const MapSidebarContents: React.FC<MapSidebarContentsProps> = ({
   if (!children) return null;
 
   return (
-    <div
-      className="absolute left-0 bottom-20 w-full md:top-0 md:left-20 sm:h-fit sm:w-fit z-[99999] 
-      pl-2 pr-2 pt-0 pb-2
-      md:pl-2 md:pr-0 md:pt-2 md:pb-0 space-y-2"
-    >
+    <div className="absolute z-[1000] bottom-0 left-0 md:top-0 md:left-0 w-full sm:w-fit h-fit">
       {children}
     </div>
   );

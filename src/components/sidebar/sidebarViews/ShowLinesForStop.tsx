@@ -25,23 +25,29 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
         Routes for this stop.
       </Heading>
 
-      <ul className="max-h-32 overflow-auto scrollbar-sa space-y-4">
+      <ul className="max-h-32 md:max-h-52 overflow-auto scrollbar-sa">
         {filteredRoutes.map((route, i) => (
-          <li key={i}>
-            <BusLineTitle
-              name={route.name}
-              lineColor={route.lineColor}
-              level={5}
-              className="mb-3"
-            />
+          <li
+            key={i}
+            className="border-y border-y-surface-3/75 hover:bg-surface-3/25 first:border-t-0 last:border-b-0"
+          >
+            <Link
+              className="w-full h-full block py-2"
+              to={`/routes/?route=${route.id}`}
+            >
+              <BusLineTitle
+                name={route.name}
+                lineColor={route.lineColor}
+                level={5}
+                className=""
+              />
 
-            <Link className="block w-fit" to={`/routes/?route=${route.id}`}>
-              <Button
-                title="Show Route"
+              {/* <Button
+                title="View"
                 iconStyle="fi fi-rr-eye"
                 className="text-xs"
                 ariaLabel={`View ${route.name} in its own page`}
-              />
+              /> */}
             </Link>
           </li>
         ))}

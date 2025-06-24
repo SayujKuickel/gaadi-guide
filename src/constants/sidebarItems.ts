@@ -25,11 +25,11 @@ export const sidebarItems: sidebarItem[] = [
     icon: "fi fi-rr-search",
     url: "/search",
   },
-  {
-    key: 3,
-    name: "Details",
-    icon: "fi fi-rr-features",
-    type: "redirect",
-    url: "/bus",
-  },
+  // {
+  //   key: 3,
+  //   name: "Details",
+  //   icon: "fi fi-rr-features",
+  //   type: "redirect",
+  //   url: "/bus",
+  // },
 ];

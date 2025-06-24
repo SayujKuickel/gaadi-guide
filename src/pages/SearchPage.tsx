@@ -19,33 +19,31 @@ const SearchPage = () => {
       <MapPagesLayout
         sidebarContent={
           <>
-            <div className="flex flex-col gap-2">
+            <ViewWrapper
+              hiddenBtn={
+                <Button iconStyle="fi fi-rr-search" ariaLabel="show stops" />
+              }
+            >
+              <SearchWrapper setSegments={setSegments} />
+            </ViewWrapper>
+
+            {segments && (
               <ViewWrapper
                 hiddenBtn={
-                  <Button iconStyle="fi fi-rr-search" ariaLabel="show stops" />
+                  <Button iconStyle="fi fi-rr-route" ariaLabel="show stops" />
                 }
               >
-                <SearchWrapper setSegments={setSegments} />
+                <Heading className="mb-4" level={5}>
+                  Follow the Route!
+                </Heading>
+
+                <ViewSearchedStops
+                  mode="search"
+                  headingLevel={5}
+                  segments={segments}
+                />
               </ViewWrapper>
-
-              {segments && (
-                <ViewWrapper
-                  hiddenBtn={
-                    <Button iconStyle="fi fi-rr-route" ariaLabel="show stops" />
-                  }
-                >
-                  <Heading className="mb-4" level={5}>
-                    Follow the Route!
-                  </Heading>
-
-                  <ViewSearchedStops
-                    mode="search"
-                    headingLevel={5}
-                    segments={segments}
-                  />
-                </ViewWrapper>
-              )}
-            </div>
+            )}
           </>
         }
         mapContent={

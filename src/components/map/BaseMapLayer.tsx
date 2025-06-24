@@ -8,7 +8,7 @@ import {
   MAP_CENTER,
   MAX_ZOOM_OUT,
 } from "@/constants/mapSettings";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import TileLayerView from "./views/TileLayerView";
 import UserLocationMarkerView from "./views/UserLocationMarkerView";
 // import { useEffect, useState } from "react";
@@ -39,14 +39,21 @@ const BaseMapLayer = ({
   //   const lat = sessionStorage.getItem("user-latitude");
   //   const lon = sessionStorage.getItem("user-longitude");
   //   if (lat !== null && lon !== null) {
-  //     setMapCenter([parseFloat(lat), parseFloat(lon)]);
+  //     setTimeout(() => {
+  //       setMapCenter([parseFloat(lat), parseFloat(lon)]);
+  //     }, 1000);
   //   } else {
   //     setMapCenter(MAP_CENTER);
   //   }
   // }, []);
 
+  // if (!mapCenter)
+  //   return (
+  //     <div className="grid place-items-center w-full h-full">Loading map</div>
+  //   );
+
   return (
-    <div className={`w-full h-full ${className}`}>
+    <>
       <MapContainer
         center={MAP_CENTER}
         zoom={DEFAULT_ZOOM}
@@ -72,7 +79,7 @@ const BaseMapLayer = ({
         <ZoomControl position="topleft" />
         <ZoomControl position="bottomright" />
       </MapContainer>
-    </div>
+    </>
   );
 };
 

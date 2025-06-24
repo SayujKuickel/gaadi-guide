@@ -3,10 +3,10 @@ import BaseMapLayer from "@/components/map/BaseMapLayer";
 import LayerSwitcher from "@/components/map/controls/LayerSwitcher/LayerSwitcher";
 import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 import FlyToStop from "@/components/map/stop/FlyToStop";
+import MapSidebarContents from "@/components/sidebar/MapSidebar";
 import useTileMap from "@/hooks/useTileMap";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import React, { type ReactNode } from "react";
-import MapSidebarContents from "@/components/sidebar/MapSidebar";
 
 interface MapPagesLayoutProps {
   sidebarContent: ReactNode;
@@ -24,7 +24,7 @@ const MapPagesLayout: React.FC<MapPagesLayoutProps> = ({
     useUserLocation();
 
   return (
-    <>
+    <div className="flex-1 relative">
       <TopRightFixedContainer>
         <LayerSwitcher setTileMapKey={setTileMapKey} tileMapKey={tileMapKey} />
 
@@ -34,7 +34,8 @@ const MapPagesLayout: React.FC<MapPagesLayoutProps> = ({
         />
       </TopRightFixedContainer>
 
-      <div className="w-screen h-screen overflow-hidden">
+      <div className="w-full h-full">
+        <div className="absolute bottom-0 left-0 z-[1000] w-fit"></div>
         <MapSidebarContents>{sidebarContent}</MapSidebarContents>
 
         <BaseMapLayer
@@ -48,7 +49,7 @@ const MapPagesLayout: React.FC<MapPagesLayoutProps> = ({
           <FlyToStop />
         </BaseMapLayer>
       </div>
-    </>
+    </div>
   );
 };
 
