@@ -10,7 +10,7 @@ export const sidebarItems: sidebarItem[] = [
   {
     key: 0,
     name: "Routes",
-    icon: "fi fi-rr-car-journey",
+    icon: "fi fi-rr-track",
     url: "/routes",
   },
   {

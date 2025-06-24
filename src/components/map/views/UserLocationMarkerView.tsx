@@ -25,7 +25,7 @@ const UserLocationMarkerView: React.FC<UserLocationMarkerViewProps> = ({
     iconSize: [24, 24],
     iconAnchor: [12, 24],
     popupAnchor: [0, -24],
-    html: `<i class="fi fi-rr-marker grid place-items-center text-xl w-8 aspect-square bg-red-100 rounded-2xl text-on-surface outline-2" style="background-color: #024885bb; outline-color: #024885"></i>`,
+    html: `<div class="marker-container"> <i class="fi fi-rr-marker text-2xl marker-icon"></i> <div class="pulse-ring"></div> </div>`,
   });
 
   return (

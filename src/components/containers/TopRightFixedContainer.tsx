@@ -10,7 +10,7 @@ const TopRightFixedContainer = ({ children }: any) => {
         <Button
           className="text-xl"
           ariaLabel="Go to bus details page"
-          iconStyle="fi fi-rr-bus"
+          iconStyle="fi fi-rr-track"
         />
       </Link>
     </aside>

@@ -1,6 +1,6 @@
 {
   "name": "Kathmandu Bus Routes",
-  "short_name": "Bus Routes Ktm",
+  "short_name": "Kathmandu Bus",
   "description": "Navigate Kathmandu with ease! Find comprehensive bus routes, stops, and up-to-date fare information for public transport in Nepal's capital. Your essential guide for locals and tourists alike.",
   "start_url": "/",
   "display": "standalone",

@@ -14,8 +14,8 @@ const UserLocation: React.FC<UserLocationProps> = ({
       onClick={getUserLocation}
       iconStyle={`text-xl ${
         isSearchingLocation
-          ? "fi fi-rr-loading animate-spin"
-          : "fi fi-rr-marker"
+          ? "fi fi-rr-spinner animate-spin"
+          : "fi fi-rr-location-crosshairs"
       }`}
       ariaLabel="Locate me"
     />
