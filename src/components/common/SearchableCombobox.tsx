@@ -96,14 +96,17 @@ const SearchableCombobox = <T extends BaseOption>({
   return (
     <div className={`relative w-full ${className}`} ref={containerRef}>
       <div className="">
-        <label className="text-sm capitalize text-offText/80" htmlFor={label}>
+        <label
+          className="text-sm capitalize text-offText/75 mb-1 block"
+          htmlFor={label}
+        >
           {label}
         </label>
 
         <div className="flex items-center gap-1">
           <input
             type="text"
-            className="w-full p-2 rounded-lg bg-surface-3 border-0 outline-0 focus:outline"
+            className="w-full p-2 rounded-lg bg-surface-3/25 border-2 border-surface-2 outline-0 focus:outline"
             autoComplete="off"
             placeholder={placeholder}
             value={query}
@@ -122,7 +125,7 @@ const SearchableCombobox = <T extends BaseOption>({
                 setQuery("");
                 setIsOpen(true);
               }}
-              iconStyle="fi fi-rr-trash "
+              iconStyle="fi fi-rr-trash"
               variant="secondary"
               ariaLabel="Clear Select"
               className="hover:text-sa-red ml-1"

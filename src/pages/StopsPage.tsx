@@ -47,7 +47,7 @@ const StopsPage = () => {
                   id: stp.id,
                   name: stp.name,
                 }))}
-                placeholder="Ratopul stop"
+                placeholder="e.g. Ratopul Stop"
               />
             </ViewWrapper>
 

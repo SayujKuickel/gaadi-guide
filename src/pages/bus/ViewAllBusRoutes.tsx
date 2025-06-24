@@ -23,13 +23,17 @@ const ViewAllBusRoutes = () => {
             All Bus Routes
           </Heading>
 
-          <section className="grid md:grid-cols-2 mb-4">
+          <section className="grid md:grid-cols-4 mb-4">
             <SearchableCombobox
-              label="Stop"
+              label="Bus Stop"
               selected={selectedStop}
               onChange={(opt) => setSelectedStop(opt)}
-              options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
-              placeholder="Ratopul stop"
+              options={stopsData.map((stp) => ({
+                id: stp.id,
+                name: stp.name,
+              }))}
+              placeholder="e.g. Gaushala Stop"
+              className="col-span-4 md:col-span-3 lg:col-span-2"
             />
           </section>
 

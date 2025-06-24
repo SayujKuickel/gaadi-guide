@@ -7,7 +7,7 @@ interface SidebarItemProps {
   sideBarIndex: number;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ item, sideBarIndex }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ item }) => {
   return (
     <li
       aria-label={`Sidebar button for ${item?.name}`}
@@ -17,14 +17,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, sideBarIndex }) => {
         className="w-full h-full  flex flex-col items-center text-center justify-center md:py-2"
         to={item?.url ? item?.url : "/"}
       >
-        <i
-          className={`flex text-3xl md:text-2xl mb-2 ${
-            sideBarIndex === item?.key
-              ? item?.icon.replace("rr", "sr")
-              : item?.icon
-          }`}
-        />
-
+        <i className={`flex text-3xl md:text-2xl mb-2 ${item?.icon} `} />
         <span className={`text-xs capitalize pointer-events-none text-inherit`}>
           {item.name}
         </span>

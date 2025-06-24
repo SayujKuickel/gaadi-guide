@@ -24,7 +24,7 @@ const App = () => {
               width={100}
               height={100}
               alt="Loading logo"
-              className="w-32 h-32 animate-in-fade block"
+              className="w-32 h-32 animate-in-fade  block"
             />
           </div>
         </main>

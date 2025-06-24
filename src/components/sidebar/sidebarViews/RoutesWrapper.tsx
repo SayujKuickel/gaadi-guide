@@ -25,7 +25,7 @@ const RoutesWrapper: React.FC<RoutesWrapperProps> = ({
         options={RouteData.map((rt) => ({ id: rt.id, name: rt.name }))}
         selected={selectedRoute}
         onChange={(opt) => handleRouteSelect(opt)}
-        placeholder="Type here to search..."
+        placeholder="e.g. Ratna Park to Mangalbazar"
       />
     </>
   );

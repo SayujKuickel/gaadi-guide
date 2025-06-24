@@ -40,8 +40,23 @@
   --s5: calc(16px + var(--ratio));
   --s6: calc(14px + var(--ratio));
 }
+
 body {
   @apply bg-background text-text;
+}
+
+html,
+body {
+  height: 100dvh;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+#root,
+#__next {
+  height: 100dvh;
+  overflow: hidden;
 }
 
 /* Custom scrollbar */
@@ -173,5 +188,3 @@ body {
     opacity: 1;
   }
 }
-
-/* * { outline: 1px solid red; } */

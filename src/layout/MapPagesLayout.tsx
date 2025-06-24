@@ -34,8 +34,7 @@ const MapPagesLayout: React.FC<MapPagesLayoutProps> = ({
         />
       </TopRightFixedContainer>
 
-      <div className="w-full h-full">
-        <div className="absolute bottom-0 left-0 z-[1000] w-fit"></div>
+      <div className="w-full h-full relative">
         <MapSidebarContents>{sidebarContent}</MapSidebarContents>
 
         <BaseMapLayer

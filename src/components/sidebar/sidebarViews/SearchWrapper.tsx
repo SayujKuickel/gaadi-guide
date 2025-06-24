@@ -35,7 +35,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         selected={selectedStartStop}
         onChange={(opt) => setSelectedStartStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
-        placeholder="Select your closest stop."
+        placeholder="e.g. Sundhara"
         className="mb-1"
       />
 
@@ -44,7 +44,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         selected={selectedDestinationStop}
         onChange={(opt) => setSelectedDestinationStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
-        placeholder="Select your Destination stop."
+        placeholder="e.g. Kalanki"
         className="mb-4"
       />
 

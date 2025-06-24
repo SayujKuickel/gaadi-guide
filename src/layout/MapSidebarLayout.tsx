@@ -4,13 +4,13 @@ import { Link, Outlet } from "react-router-dom";
 
 const MapSidebarLayout = () => {
   return (
-    <main className="w-screen h-screen overflow-hidden flex flex-col-reverse md:flex-row">
+    <main className="w-full h-full overflow-hidden flex flex-col-reverse md:flex-row">
       <aside
-        className={`bg-surface border-t-2 border-t-surface-3 border-r-0 md:border-t-0 md:border-r-2 md:border-r-surface-3 w-screen pt-2 pb-6 md:p-0 left-0 bottom-0 md:top-0 z-[99999] md:w-20 md:h-screen`}
+        className={` bg-surface border-t-2 border-t-surface-3 border-r-0 md:border-t-0 md:border-r-2 md:border-r-surface-3 w-screen pt-2 pb-4 md:p-0 md:w-20 md:h-screen`}
       >
         <Link
           to="/"
-          className="block w-full place-items-center my-6 hidden md:visible md:grid"
+          className="hidden w-full place-items-center my-6 md:visible md:grid"
         >
           <img
             src="/web-app-manifest-192x192.png"
