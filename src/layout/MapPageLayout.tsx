@@ -5,12 +5,12 @@ import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 import ZoomControlHandler from "@/components/map/controls/ZoomControlHandler/ZoomControlHandler";
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import ZoomControlHandlerView from "@/components/map/views/ZoomControlHandlerView";
-import MapSidebarContents from "@/components/sidebar/MapSidebar";
+import MapSidebarContents from "@/components/containers/MapSidebarContainer";
 import useTileMap from "@/hooks/useTileMap";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import React, { useState, useCallback, type ReactNode } from "react";
 
-interface MapPagesLayoutProps {
+interface MapPageLayoutProps {
   sidebarContent: ReactNode;
   mapContent?: ReactNode;
   mapClassName?: string;
@@ -21,7 +21,7 @@ interface ZoomFunctions {
   zoomOut: () => void;
 }
 
-const MapPagesLayout: React.FC<MapPagesLayoutProps> = ({
+const MapPageLayout: React.FC<MapPageLayoutProps> = ({
   sidebarContent,
   mapContent,
   mapClassName = "relative pb-20 md:p-0 md:pl-20",
@@ -70,4 +70,4 @@ const MapPagesLayout: React.FC<MapPagesLayoutProps> = ({
   );
 };
 
-export default MapPagesLayout;
+export default MapPageLayout;

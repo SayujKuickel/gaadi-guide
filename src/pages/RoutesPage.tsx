@@ -1,12 +1,12 @@
 import { useSearchParams } from "react-router-dom";
 import useRoute from "@/hooks/useSelectRoute";
 import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
-import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
-import RoutesWrapper from "@/components/sidebar/sidebarViews/RoutesWrapper";
-import ViewStopsWrapper from "@/components/sidebar/sidebarViews/ViewStopsWrapper";
+import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
+import RoutesWrapper from "@/components/sidebar/routes/RoutesWrapper";
+import ViewStopsWrapper from "@/components/sidebar/stops/ViewStopsWrapper";
 import Button from "@/components/common/Button";
 import ShowRouteView from "@/components/map/route/ShowRouteView";
-import MapPagesLayout from "@/layout/MapPagesLayout";
+import MapPageLayout from "@/layout/MapPageLayout";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -15,7 +15,7 @@ const RoutesPage = () => {
   const fitRouteToWindow = checkIfNeedsTofit(searchParams);
 
   return (
-    <MapPagesLayout
+    <MapPageLayout
       sidebarContent={
         <>
           <ViewWrapper

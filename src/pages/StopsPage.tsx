@@ -6,12 +6,12 @@ import stopsData from "@/data/stops_data.json";
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import Heading from "@/components/common/Heading";
 import Button from "@/components/common/Button";
-import MapPagesLayout from "@/layout/MapPagesLayout";
-import ShowLinesForStop from "@/components/sidebar/sidebarViews/ShowLinesForStop";
+import MapPageLayout from "@/layout/MapPageLayout";
+import ShowLinesForStop from "@/components/sidebar/stops/ShowLinesForStop";
 
 // \components
 import ShowAllStops from "@/components/map/stop/ShowAllStops";
-import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
+import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 
 const StopsPage = () => {
@@ -24,7 +24,7 @@ const StopsPage = () => {
 
   return (
     <>
-      <MapPagesLayout
+      <MapPageLayout
         sidebarContent={
           <>
             <ViewWrapper

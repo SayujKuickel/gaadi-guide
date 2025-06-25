@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import MapSidebarLayout from "@/layout/MapSidebarLayout";
 import HomePage from "@/pages/HomePage";
 import RoutesPage from "@/pages/RoutesPage";
+import MapSidebarContentsLayout from "@/layout/MapSidebarContentsLayout";
 
 const ViewBusRoute = lazy(() => import("@/pages/bus/ViewBusRoute"));
 const ViewAllBusRoutes = lazy(() => import("@/pages/bus/ViewAllBusRoutes"));
@@ -31,7 +31,7 @@ const App = () => {
       }
     >
       <Routes>
-        <Route element={<MapSidebarLayout />}>
+        <Route element={<MapSidebarContentsLayout />}>
           <Route index path="/" element={<HomePage />} />
 
           <Route path="/routes" element={<RoutesPage />} />

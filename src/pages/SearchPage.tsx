@@ -1,22 +1,22 @@
 // \hooks
-import ViewWrapper from "@/components/sidebar/sidebarViews/ViewWrapper";
+import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 // \data
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import Heading from "@/components/common/Heading";
 import { useState } from "react";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
-import SearchWrapper from "@/components/sidebar/sidebarViews/SearchWrapper";
-import ViewSearchedStops from "@/components/sidebar/sidebarViews/ViewSearchedStops";
+import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
+import ViewSearchedStops from "@/components/sidebar/search/ViewSearchedStops";
 import Button from "@/components/common/Button";
 import RouteView from "@/components/map/route/RouteView";
-import MapPagesLayout from "@/layout/MapPagesLayout";
+import MapPageLayout from "@/layout/MapPageLayout";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
 
   return (
     <>
-      <MapPagesLayout
+      <MapPageLayout
         sidebarContent={
           <>
             <ViewWrapper

@@ -3,7 +3,7 @@ import SidebarItem from "@/components/sidebar/SidebarItem";
 import { sidebarItems } from "@/constants/sidebarItems";
 import { Link, Outlet } from "react-router-dom";
 
-const MapSidebarLayout = () => {
+const MapSidebarContentsLayout = () => {
   useEffect(() => {
     document.body.classList.add("map-layout");
     document.documentElement.classList.add("map-layout");
@@ -37,9 +37,10 @@ const MapSidebarLayout = () => {
           ))}
         </ul>
       </aside>
+
       <Outlet />
     </main>
   );
 };
 
-export default MapSidebarLayout;
+export default MapSidebarContentsLayout;
