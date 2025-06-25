@@ -10,18 +10,15 @@ import { MapContainer, Marker, Polyline, useMapEvents } from "react-leaflet";
 import stops_data from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
 
-// Define type for error messages
 interface Errors {
   routeName?: string;
   routeColor?: string;
   stops?: string;
-  newStopId?: string;
   newStopName?: string;
   newStopLat?: string;
   newStopLng?: string;
 }
 
-// Component to handle map click events for adding new stop
 const MapClickHandler = ({
   onMapClick,
 }: {
@@ -35,7 +32,18 @@ const MapClickHandler = ({
   return null;
 };
 
-const AddNewRoute = () => {
+const generateHexId = (lat: number, lng: number): string => {
+  const combined = Math.abs(lat * 1000000) + Math.abs(lng * 1000000);
+  return Math.floor(combined).toString(16).slice(-6).padStart(6, "0");
+};
+
+const generateRouteId = (stops: IStop[]): string => {
+  if (stops.length === 0) return "";
+  if (stops.length === 1) return stops[0].id;
+  return `${stops[0].id}-${stops[stops.length - 1].id}`;
+};
+
+const AddNewRoutePage = () => {
   const [stopsData, setStopsData] = useState<IStop[]>(stops_data as IStop[]);
   const [routeData, setRouteData] = useState({
     routeName: "",
@@ -47,7 +55,6 @@ const AddNewRoute = () => {
   const [errors, setErrors] = useState<Errors>({});
   const [isNewStopFormShown, setIsNewStopFormShown] = useState<boolean>(false);
   const [newStop, setNewStop] = useState<Partial<IStop>>({
-    id: "",
     name: "",
     lat: undefined,
     lng: undefined,
@@ -55,7 +62,6 @@ const AddNewRoute = () => {
   const [tempMarkerPos, setTempMarkerPos] = useState<LatLng | null>(null);
   const mapRef = useRef<L.Map | null>(null);
 
-  // Handle input changes for route
   const handleRouteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setRouteData((prev) => ({
@@ -65,7 +71,6 @@ const AddNewRoute = () => {
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  // Handle input changes for new stop
   const handleNewStopChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNewStop((prev) => ({
@@ -78,16 +83,15 @@ const AddNewRoute = () => {
           : value,
     }));
     if (name === "lat" || name === "lng") {
-      setTempMarkerPos(
-        newStop.lat !== undefined && newStop.lng !== undefined
-          ? new LatLng(newStop.lat, newStop.lng)
-          : null
-      );
+      const lat = name === "lat" ? Number(value) : newStop.lat;
+      const lng = name === "lng" ? Number(value) : newStop.lng;
+      if (lat !== undefined && lng !== undefined) {
+        setTempMarkerPos(new LatLng(lat, lng));
+      }
     }
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  // Handle map click to set new stop coordinates
   const handleMapClick = (latlng: LatLng) => {
     setNewStop((prev) => ({
       ...prev,
@@ -102,37 +106,30 @@ const AddNewRoute = () => {
     }));
   };
 
-  // Add stop to route
-  const handleAddStopToRoute = () => {
-    if (!selectedStop) {
-      setErrors((prev) => ({ ...prev, stops: "Please select a stop to add." }));
+  const handleStopSelection = (stop: IStop | null) => {
+    if (!stop) {
+      setSelectedStop(null);
       return;
     }
-    if (stops.some((stop) => stop.id === selectedStop.id)) {
+
+    if (stops.some((s) => s.id === stop.id)) {
       setErrors((prev) => ({ ...prev, stops: "This stop is already added." }));
+      setSelectedStop(null);
       return;
     }
-    setStops((prev) => [...prev, selectedStop]);
+
+    setStops((prev) => [...prev, stop]);
     setSelectedStop(null);
     setErrors((prev) => ({ ...prev, stops: undefined }));
   };
 
-  // Delete stop
   const handleDeleteStop = (stopId: string) => {
     setStops((prev) => prev.filter((stop) => stop.id !== stopId));
   };
 
-  // Add new stop
   const handleAddStop = () => {
     const newErrors: Errors = {};
-    if (!newStop.id?.trim()) {
-      newErrors.newStopId = "Stop ID is required.";
-    } else if (
-      stopsData.some((stop) => stop.id === newStop.id) ||
-      customStops.some((stop) => stop.id === newStop.id)
-    ) {
-      newErrors.newStopId = "Stop ID must be unique.";
-    }
+
     if (!newStop.name?.trim()) {
       newErrors.newStopName = "Stop name is required.";
     }
@@ -158,21 +155,26 @@ const AddNewRoute = () => {
       return;
     }
 
+    const generatedId = generateHexId(newStop.lat!, newStop.lng!);
+
     const newStopData: IStop = {
-      id: `sa-${newStop.id!}`,
+      id: `new-${generatedId}`,
       name: newStop.name!,
       lat: newStop.lat!,
       lng: newStop.lng!,
     };
+
     setCustomStops((prev) => [...prev, newStopData]);
     setStopsData((prev) => [newStopData, ...prev]);
-    setNewStop({ id: "", name: "", lat: undefined, lng: undefined });
+
+    setStops((prev) => [...prev, newStopData]);
+
+    setNewStop({ name: "", lat: undefined, lng: undefined });
     setTempMarkerPos(null);
     setIsNewStopFormShown(false);
     setErrors({});
   };
 
-  // Move stop up or down
   const handleMoveStop = (index: number, direction: "up" | "down") => {
     const newStops = [...stops];
     if (direction === "up" && index > 0) {
@@ -189,7 +191,6 @@ const AddNewRoute = () => {
     setStops(newStops);
   };
 
-  // Validate and submit form
   const handleSubmit = () => {
     const newErrors: Errors = {};
     if (!routeData.routeName.trim()) {
@@ -207,7 +208,13 @@ const AddNewRoute = () => {
       return;
     }
 
-    const route = { ...routeData, stops };
+    const routeId = generateRouteId(stops);
+    const route = {
+      id: routeId,
+      ...routeData,
+      stops,
+    };
+
     const jsonString = JSON.stringify(route, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -237,23 +244,6 @@ const AddNewRoute = () => {
             <Heading level={4} className="mb-4">
               Add New Stop
             </Heading>
-            <div className="mb-3">
-              <label htmlFor="id" className="block text-sm font-medium">
-                Stop ID
-              </label>
-              <input
-                type="text"
-                id="id"
-                name="id"
-                value={newStop.id || ""}
-                onChange={handleNewStopChange}
-                className="w-full p-2 outline-none rounded bg-surface-3"
-                placeholder="Enter stop ID"
-              />
-              {errors.newStopId && (
-                <p className="text-red-500 text-sm mt-1">{errors.newStopId}</p>
-              )}
-            </div>
             <div className="mb-3">
               <label htmlFor="name" className="block text-sm font-medium">
                 Name
@@ -319,7 +309,6 @@ const AddNewRoute = () => {
               >
                 <TileLayerView tileMapKey="openstreetmap" />
                 {tempMarkerPos && <Marker position={tempMarkerPos} />}
-
                 <MapClickHandler onMapClick={handleMapClick} />
               </MapContainer>
             </div>
@@ -334,12 +323,7 @@ const AddNewRoute = () => {
               <button
                 type="button"
                 onClick={() => {
-                  setNewStop({
-                    id: "",
-                    name: "",
-                    lat: undefined,
-                    lng: undefined,
-                  });
+                  setNewStop({ name: "", lat: undefined, lng: undefined });
                   setTempMarkerPos(null);
                   setErrors({});
                 }}
@@ -402,31 +386,21 @@ const AddNewRoute = () => {
         <SearchableCombobox
           label="Stop"
           selected={selectedStop}
-          onChange={(opt: IStop | null) => setSelectedStop(opt)}
+          onChange={handleStopSelection}
           options={[...stopsData, ...customStops]}
-          placeholder="Select stop to add"
+          placeholder="Select stop to add automatically"
           className="mb-4"
         />
         {errors.stops && (
           <p className="text-red-500 text-sm mt-1">{errors.stops}</p>
         )}
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={handleAddStopToRoute}
-            disabled={!selectedStop}
-            className="px-4 py-2 bg-surface-3 hover:bg-surface-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Add Stop
-          </button>
-          <button
-            type="button"
-            onClick={() => setIsNewStopFormShown(true)}
-            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
-          >
-            Add New Stop
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setIsNewStopFormShown(true)}
+          className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
+        >
+          Add New Stop
+        </button>
 
         <hr className="my-8" />
 
@@ -441,7 +415,7 @@ const AddNewRoute = () => {
 
       <section className="flex flex-col-reverse md:flex-col">
         <div className="h-[500px] py-4">
-          <Heading level={3}>Preview: </Heading>
+          <Heading level={3}>Preview</Heading>
           <MapContainer
             center={MAP_CENTER}
             zoom={DEFAULT_ZOOM}
@@ -462,14 +436,17 @@ const AddNewRoute = () => {
         </div>
 
         <ul className="space-y-2 mt-10">
-          <Heading level={4}>Stops</Heading>
+          <Heading level={4}>Stops ({stops.length})</Heading>
           {stops.length === 0 && <p>No stops added yet.</p>}
           {stops.map((stop, index) => (
             <li
               key={stop.id}
               className="bg-surface-1/40 rounded-lg p-2 flex items-center justify-between"
             >
-              <p>{stop.name}</p>
+              <div>
+                <p className="font-medium">{stop.name}</p>
+                <p className="text-sm text-gray-500">ID: {stop.id}</p>
+              </div>
               <div className="flex gap-2">
                 <button
                   type="button"
@@ -497,39 +474,27 @@ const AddNewRoute = () => {
               </div>
             </li>
           ))}
+          {stops.length > 0 && (
+            <div className="mt-4 p-2 bg-blue-50 rounded-lg">
+              <p className="text-sm text-blue-700">
+                <strong>Route ID:</strong> {generateRouteId(stops)}
+              </p>
+            </div>
+          )}
         </ul>
       </section>
 
       {isNewStopFormShown && (
-        <div className="fixed top-0 left-0 z-[1000]  px-4 w-screen h-screen bg-surface-2/50 backdrop-blur-2xl grid place-items-center">
+        <div className="fixed top-0 left-0 z-[1000] px-4 w-screen h-screen bg-surface-2/50 backdrop-blur-2xl grid place-items-center">
           <form className="p-4 bg-background rounded-lg w-full lg:w-2/3">
             <Heading level={4} className="mb-4">
               Add New Stop
-            </Heading>{" "}
+            </Heading>
             <section className="grid md:grid-cols-2 gap-4 my-8">
               <div className="space-y-3">
                 <div>
-                  <label htmlFor="id" className="block text-sm font-medium">
-                    Stop ID
-                  </label>
-                  <input
-                    type="text"
-                    id="id"
-                    name="id"
-                    value={newStop.id || ""}
-                    onChange={handleNewStopChange}
-                    className="w-full p-2 outline-none rounded bg-surface-3"
-                    placeholder="Enter stop ID"
-                  />
-                  {errors.newStopId && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.newStopId}
-                    </p>
-                  )}
-                </div>
-                <div>
                   <label htmlFor="name" className="block text-sm font-medium">
-                    Name
+                    Stop Name
                   </label>
                   <input
                     type="text"
@@ -586,11 +551,18 @@ const AddNewRoute = () => {
                     </p>
                   )}
                 </div>
+                {newStop.lat !== undefined && newStop.lng !== undefined && (
+                  <div className="p-2 bg-blue-50 rounded">
+                    <p className="text-sm text-blue-700">
+                      <strong>Generated ID:</strong>{" "}
+                      {generateHexId(newStop.lat, newStop.lng)}
+                    </p>
+                  </div>
+                )}
               </div>
-              <div className="">
-                <Heading level={5}>Click to add</Heading>
-
-                <div className="w-full md:w-300px h-[500px]">
+              <div>
+                <Heading level={5}>Click map to set coordinates</Heading>
+                <div className="w-full h-[400px]">
                   <MapContainer
                     center={MAP_CENTER}
                     zoom={DEFAULT_ZOOM}
@@ -611,18 +583,13 @@ const AddNewRoute = () => {
                 onClick={handleAddStop}
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
               >
-                Save Stop
+                Save & Add Stop
               </button>
               <button
                 type="button"
                 onClick={() => {
                   setIsNewStopFormShown(false);
-                  setNewStop({
-                    id: "",
-                    name: "",
-                    lat: undefined,
-                    lng: undefined,
-                  });
+                  setNewStop({ name: "", lat: undefined, lng: undefined });
                   setTempMarkerPos(null);
                   setErrors({});
                 }}
@@ -638,4 +605,4 @@ const AddNewRoute = () => {
   );
 };
 
-export default AddNewRoute;
+export default AddNewRoutePage;

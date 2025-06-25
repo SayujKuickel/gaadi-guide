@@ -10,7 +10,7 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));
 const StopsPage = lazy(() => import("@/pages/StopsPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
-const AddNewRoute = lazy(() => import("@/pages/AddNewRoute"));
+const AddNewRoutePage = lazy(() => import("@/pages/AddNewRoutePage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 const App = () => {
@@ -33,7 +33,6 @@ const App = () => {
       <Routes>
         <Route element={<MapSidebarContentsLayout />}>
           <Route index path="/" element={<HomePage />} />
-
           <Route path="/routes" element={<RoutesPage />} />
           <Route path="/stops" element={<StopsPage />} />
           <Route path="/search" element={<SearchPage />} />
@@ -47,7 +46,7 @@ const App = () => {
           <Route path=":id" element={<ViewBusRoute />} />
         </Route>
 
-        <Route path="/add-route" element={<AddNewRoute />} />
+        <Route path="/add-route" element={<AddNewRoutePage />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
