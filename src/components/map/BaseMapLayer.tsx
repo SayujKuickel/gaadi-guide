@@ -11,7 +11,13 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 import TileLayerView from "./views/TileLayerView";
 import UserLocationMarkerView from "./views/UserLocationMarkerView";
+import ZoomControlHandlerView from "./views/ZoomControlHandlerView";
 // import { useEffect, useState } from "react";
+
+interface ZoomFunctions {
+  zoomIn: () => void;
+  zoomOut: () => void;
+}
 
 interface BaseMapLayerProps {
   children: ReactNode;
@@ -19,6 +25,7 @@ interface BaseMapLayerProps {
   userLocation: [number, number] | null;
   tileMapKey: string;
   flyToPos: boolean;
+  onZoomFunctionsReady?: (functions: ZoomFunctions) => void;
 }
 
 const BaseMapLayer = ({
@@ -27,6 +34,7 @@ const BaseMapLayer = ({
   className,
   flyToPos,
   userLocation,
+  onZoomFunctionsReady,
 }: BaseMapLayerProps) => {
   /* 
   Uncomment this to fix the map to the user position if the user location is 
@@ -75,9 +83,7 @@ const BaseMapLayer = ({
         {/* Toggles between different layers */}
         <TileLayerView tileMapKey={tileMapKey} />
 
-        {/* This is controlled by css to show and hide for mobile and desktop  */}
-        <ZoomControl position="topleft" />
-        <ZoomControl position="bottomright" />
+        <ZoomControlHandlerView onZoomFunctionsReady={onZoomFunctionsReady} />
       </MapContainer>
     </>
   );

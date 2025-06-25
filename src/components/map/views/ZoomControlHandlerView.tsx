@@ -1,19 +1,40 @@
-// import { useMap } from "react-leaflet";
+import { useMap } from "react-leaflet";
+import { useEffect } from "react";
 
-// const ZoomControlHandlerView = () => {
-//   const map = useMap();
+interface ZoomFunctions {
+  zoomIn: () => void;
+  zoomOut: () => void;
+}
 
-//   const handleZoomIn = () => {
-//     const currentZoom = map.getZoom();
-//     map.setZoom(currentZoom + 1);
-//   };
+interface ZoomControlHandlerViewProps {
+  onZoomFunctionsReady?: (functions: ZoomFunctions) => void;
+}
 
-//   const handleZoomOut = () => {
-//     const currentZoom = map.getZoom();
-//     map.setZoom(currentZoom - 1);
-//   };
+const ZoomControlHandlerView: React.FC<ZoomControlHandlerViewProps> = ({
+  onZoomFunctionsReady,
+}) => {
+  const map = useMap();
 
-//   return null;
-// };
+  const handleZoomIn = () => {
+    const currentZoom = map.getZoom();
+    map.setZoom(currentZoom + 1);
+  };
 
-// export default ZoomControlHandlerView;
+  const handleZoomOut = () => {
+    const currentZoom = map.getZoom();
+    map.setZoom(currentZoom - 1);
+  };
+
+  useEffect(() => {
+    if (map && onZoomFunctionsReady) {
+      onZoomFunctionsReady({
+        zoomIn: handleZoomIn,
+        zoomOut: handleZoomOut,
+      });
+    }
+  }, [map, onZoomFunctionsReady]);
+
+  return null;
+};
+
+export default ZoomControlHandlerView;

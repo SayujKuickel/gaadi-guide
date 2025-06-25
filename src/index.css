@@ -156,24 +156,22 @@ body {
 }
 
 /*  */
-.leaflet-control-container .leaflet-bottom.leaflet-right {
-  display: block;
+.marker-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.leaflet-control-container .leaflet-top.leaflet-left {
-  display: none;
+.marker-icon {
+  font-size: 1.5rem;
+  color: #2563eb;
+  position: relative;
+  z-index: 10;
 }
 
-@media (max-width: 768px) {
-  .leaflet-control-container .leaflet-bottom.leaflet-right {
-    display: none;
-  }
-
-  .leaflet-control-container .leaflet-top.leaflet-left {
-    display: block;
-  }
-}
-
+/*  */
+/*  */
 .animate-in-fade {
   animation: animateInFade 0.25s cubic-bezier(0.4, 0, 0.6, 1);
 }
@@ -189,21 +187,9 @@ body {
 }
 
 /*  */
-.marker-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/*  */
 
-.marker-icon {
-  font-size: 1.5rem;
-  color: #2563eb;
-  position: relative;
-  z-index: 10;
-}
-
-.pulse-ring {
+.animate-pulse-ring {
   position: absolute;
   top: 70%;
   left: 50%;
