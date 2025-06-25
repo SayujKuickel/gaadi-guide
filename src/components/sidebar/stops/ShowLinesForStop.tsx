@@ -25,7 +25,7 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
         Routes for this stop.
       </Heading>
 
-      <ul className="max-h-32 md:max-h-52 overflow-auto scrollbar-sa">
+      <ul className="overflow-auto scrollbar-sa">
         {filteredRoutes.map((route, i) => (
           <li
             key={i}

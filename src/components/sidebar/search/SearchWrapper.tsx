@@ -4,7 +4,7 @@ import SearchableCombobox from "@/components/common/SearchableCombobox";
 import stopsData from "@/data/stops_data.json";
 import useSearchByStop from "@/hooks/useSearchByStop";
 
-const SearchWrapper = ({ setSegments }: any) => {
+const SearchWrapper = ({ setSegments, setShowResults }: any) => {
   const {
     selectedStartStop,
     selectedDestinationStop,
@@ -19,8 +19,7 @@ const SearchWrapper = ({ setSegments }: any) => {
 
     if (segments && segments.segments) {
       setSegments(segments.segments);
-    } else {
-      console.log("no segments");
+      setShowResults(true);
     }
   }
 
@@ -56,7 +55,7 @@ const SearchWrapper = ({ setSegments }: any) => {
         }
         title={isSearchingForStops ? "Searching..." : "Search"}
         ariaLabel="search"
-        className="text-sm"
+        className="text-xs"
         onClick={handleSearch}
       />
     </>

@@ -14,9 +14,9 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
   mode,
 }) => {
   return (
-    <ul className="space-y-4  max-h-32 md:max-h-52 overflow-auto scrollbar-sa pb-6">
+    <ul className="space-y-4 overflow-auto scrollbar-sa">
       {segments.map((segment: IRouteSegment, i) => (
-        <React.Fragment key={i}>
+        <div key={i} className="mb-4">
           <BusLineTitle
             name={segment.name}
             level={headingLevel ? headingLevel : 4}
@@ -29,7 +29,7 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
             routeId={segment.id}
             stopsArray={segment.stops}
           />
-        </React.Fragment>
+        </div>
       ))}
     </ul>
   );

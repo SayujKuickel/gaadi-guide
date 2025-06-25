@@ -9,10 +9,10 @@ import type { IStopOption } from "@/types/stopOptions.types";
 import type { IStop } from "@/types/stop.types";
 
 const useRoute = () => {
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedRoute, setSelectedRoute] = useState<IRouteOption | null>(null);
   const [selectedStop, setSelectedStop] = useState<IStopOption | null>(null);
+  const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
     const routeId = searchParams.get("route");
@@ -41,6 +41,7 @@ const useRoute = () => {
     setSelectedRoute(route);
     setSelectedStop(null);
     setSearchParams({ route: route.id });
+    setShowResults(true);
   }
 
   function handleStopSelect(stop: IStopOption) {
@@ -50,7 +51,14 @@ const useRoute = () => {
     setSearchParams({ route: selectedRoute?.id, stop: stop.id });
   }
 
-  return { selectedRoute, handleRouteSelect, selectedStop, handleStopSelect };
+  return {
+    selectedRoute,
+    handleRouteSelect,
+    selectedStop,
+    handleStopSelect,
+    showResults,
+    setShowResults,
+  };
 };
 
 export default useRoute;

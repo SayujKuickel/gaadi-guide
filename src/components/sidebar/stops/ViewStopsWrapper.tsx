@@ -58,7 +58,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
         className="mb-4"
       />
 
-      <div className="overflow-y-scroll scrollbar-sa max-h-32 md:max-h-52">
+      <div className="overflow-y-scroll scrollbar-sa">
         <BusStops routeId={routeData?.id} stopsArray={routeData?.stops} />
       </div>
     </>

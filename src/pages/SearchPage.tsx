@@ -7,33 +7,29 @@ import { useState } from "react";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
 import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
 import ViewSearchedStops from "@/components/sidebar/search/ViewSearchedStops";
-import Button from "@/components/common/Button";
 import RouteView from "@/components/map/route/RouteView";
 import MapPageLayout from "@/layout/MapPageLayout";
+import ResultsWrapper from "@/components/sidebar/wrappers/ResultsWrapper";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
+  const [showResults, setShowResults] = useState(false);
 
   return (
     <>
       <MapPageLayout
         sidebarContent={
           <>
-            <ViewWrapper
-              hiddenBtn={
-                <Button iconStyle="fi fi-rr-search" ariaLabel="show stops" />
-              }
-            >
-              <SearchWrapper setSegments={setSegments} />
+            <ViewWrapper>
+              <SearchWrapper
+                setShowResults={setShowResults}
+                setSegments={setSegments}
+              />
             </ViewWrapper>
 
-            {segments && (
-              <ViewWrapper
-                hiddenBtn={
-                  <Button iconStyle="fi fi-rr-route" ariaLabel="show stops" />
-                }
-              >
-                <Heading className="mb-4" level={5}>
+            {showResults && segments && (
+              <ResultsWrapper onClose={() => setShowResults(false)}>
+                <Heading className="mb-4" level={4}>
                   Follow the Route!
                 </Heading>
 
@@ -42,7 +38,7 @@ const SearchPage = () => {
                   headingLevel={5}
                   segments={segments}
                 />
-              </ViewWrapper>
+              </ResultsWrapper>
             )}
           </>
         }

@@ -13,28 +13,29 @@ import ShowLinesForStop from "@/components/sidebar/stops/ShowLinesForStop";
 import ShowAllStops from "@/components/map/stop/ShowAllStops";
 import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
+import ResultsWrapper from "@/components/sidebar/wrappers/ResultsWrapper";
 
 const StopsPage = () => {
   const {
     selectedStop,
-    setSelectedStop,
-    handlSsetSelectedStop,
+    handleSetSelectedStop,
     filteredRoutes,
+    showResults,
+    setShowResults,
   } = useFilterRoutesBySearch();
+
+  function handleShowResults() {
+    if (!selectedStop || !selectedStop.id) return null;
+
+    setShowResults(true);
+  }
 
   return (
     <>
       <MapPageLayout
         sidebarContent={
           <>
-            <ViewWrapper
-              hiddenBtn={
-                <Button
-                  ariaLabel="Show search stops modal"
-                  iconStyle="fi fi-rr-land-layer-location"
-                />
-              }
-            >
+            <ViewWrapper>
               <Heading className="mb-3" level={4}>
                 Stops
               </Heading>
@@ -42,23 +43,28 @@ const StopsPage = () => {
               <SearchableCombobox
                 label="Select Stop"
                 selected={selectedStop}
-                onChange={(opt) => handlSsetSelectedStop(opt)}
+                onChange={(opt) => handleSetSelectedStop(opt)}
                 options={stopsData.map((stp) => ({
                   id: stp.id,
                   name: stp.name,
                 }))}
                 placeholder="e.g. Ratopul Stop"
+                className="mb-4"
+              />
+
+              <Button
+                iconStyle={"fi fi-rr-search"}
+                title={"Search"}
+                ariaLabel="search"
+                className="text-xs"
+                onClick={handleShowResults}
               />
             </ViewWrapper>
 
-            {selectedStop?.id && (
-              <ViewWrapper
-                hiddenBtn={
-                  <Button ariaLabel="show modal" iconStyle="fi fi-rr-eye" />
-                }
-              >
+            {showResults && (
+              <ResultsWrapper onClose={() => setShowResults(false)}>
                 <ShowLinesForStop filteredRoutes={filteredRoutes} />
-              </ViewWrapper>
+              </ResultsWrapper>
             )}
           </>
         }
