@@ -6,9 +6,10 @@ import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/mapSettings";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { LatLng } from "leaflet";
 import { useState, useRef } from "react";
-import { MapContainer, Marker, Polyline, useMapEvents } from "react-leaflet";
+import { MapContainer, Polyline, useMapEvents } from "react-leaflet";
 import stops_data from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
+import BusStopView from "@/components/map/stop/BusStopView";
 
 interface Errors {
   routeName?: string;
@@ -308,7 +309,13 @@ const AddNewRoutePage = () => {
                 ref={mapRef}
               >
                 <TileLayerView tileMapKey="openstreetmap" />
-                {tempMarkerPos && <Marker position={tempMarkerPos} />}
+                {tempMarkerPos && (
+                  <BusStopView
+                    position={[tempMarkerPos.lat, tempMarkerPos.lng]}
+                    stopName="Temporary Stop"
+                    lineColor="#5F05B1"
+                  />
+                )}
                 <MapClickHandler onMapClick={handleMapClick} />
               </MapContainer>
             </div>
@@ -423,7 +430,12 @@ const AddNewRoutePage = () => {
             className="h-full w-full"
           >
             {stops.map((stop) => (
-              <Marker key={stop.id} position={[stop.lat, stop.lng]} />
+              <BusStopView
+                key={stop.id}
+                position={[stop.lat, stop.lng]}
+                stopName="Temporary Stop"
+                lineColor="#5F05B1"
+              />
             ))}
             {stops.length > 1 && (
               <Polyline
@@ -571,7 +583,14 @@ const AddNewRoutePage = () => {
                     ref={mapRef}
                   >
                     <TileLayerView tileMapKey="openstreetmap" />
-                    {tempMarkerPos && <Marker position={tempMarkerPos} />}
+                    {tempMarkerPos && (
+                      <BusStopView
+                        position={[tempMarkerPos.lat, tempMarkerPos.lng]}
+                        stopName="Temporary Stop"
+                        lineColor="#5F05B1"
+                      />
+                    )}
+
                     <MapClickHandler onMapClick={handleMapClick} />
                   </MapContainer>
                 </div>
