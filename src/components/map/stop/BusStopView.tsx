@@ -1,7 +1,7 @@
 // \react
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 // \leaflet
-import { Circle, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
+import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
 interface BusStopViewProps {
@@ -15,35 +15,39 @@ const BusStopView: React.FC<BusStopViewProps> = ({
   stopName,
   lineColor = "#ff0000",
 }) => {
-  const map = useMap();
-  const [zoom, setZoom] = useState(0);
+  // const map = useMap();
+  // const [zoom, setZoom] = useState(0);
 
-  useEffect(() => {
-    setZoom(map.getZoom());
-  }, [map]);
+  // useEffect(() => {
+  //   setZoom(map.getZoom());
+  // }, [map]);
 
-  useMapEvents({
-    zoomend: (e) => setZoom(e.target._zoom),
-    move: (e) => setZoom(e.target._zoom),
-  });
+  // useMapEvents({
+  //   zoomend: (e) => setZoom(e.target._zoom),
+  //   move: (e) => setZoom(e.target._zoom),
+  // });
 
   const customMarker = L.divIcon({
     className: "custom-marker",
-    iconSize: [24, 24],
-    iconAnchor: [12, 24],
-    popupAnchor: [0, -24],
-    html: `<i style="background-color: ${lineColor}; outline-color: ${lineColor}" class="w-6 aspect-square rounded-full text-white outline-2 grid place-items-center fi fi-rr-bus-alt"></i>`,
+    iconSize: [28, 36],
+    iconAnchor: [14, 36],
+    popupAnchor: [0, -36],
+    html: `<div style="position: relative;width: 28px;height: 36px;display: flex;flex-direction: column;align-items: center;justify-content: center;"><div style="background-color: ${lineColor};color: white;width: 28px;height: 28px;border-radius: 50%;display: flex;align-items: center;justify-content: center;font-size: 14px;box-shadow: 0 0 0 2px white, 0 2px 6px rgba(0,0,0,0.3);"><i class="fi fi-rr-bus-alt flex"></i></div><div style="width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-top: 8px solid ${lineColor};margin-top: -4px;"></div></div>`,
   });
 
-  return zoom > 0 ? (
+  return (
     <Marker position={position} icon={customMarker}>
       {stopName && <Popup>{stopName}</Popup>}
     </Marker>
-  ) : (
-    <Circle center={position} radius={20} pathOptions={{ color: lineColor }}>
-      {stopName && <Popup>{stopName}</Popup>}
-    </Circle>
   );
+
+  // return zoom > 0 ? (
+  // <<!marker here!>>
+  // ) : (
+  //   <Circle center={position} radius={20} pathOptions={{ color: lineColor }}>
+  //     {stopName && <Popup>{stopName}</Popup>}
+  //   </Circle>
+  // );
 };
 
 export default BusStopView;

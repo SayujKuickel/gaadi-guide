@@ -485,7 +485,7 @@ const AddNewRoutePage = () => {
       </section>
 
       {isNewStopFormShown && (
-        <div className="fixed top-0 left-0 z-[1000] px-4 w-screen h-screen bg-surface-2/50 backdrop-blur-2xl grid place-items-center">
+        <div className="fixed top-0 left-0 z-[1111] px-4 w-screen h-screen bg-surface-2/50 backdrop-blur-2xl grid place-items-center">
           <form className="p-4 bg-background rounded-lg w-full lg:w-2/3">
             <Heading level={4} className="mb-4">
               Add New Stop

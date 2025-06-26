@@ -20,7 +20,7 @@ const ScrollToTopButton = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 md:bottom-8 md:right-8 z-[99999]">
+    <div className="fixed bottom-8 right-8 md:bottom-8 md:right-8 z-[5555]">
       <Button
         onClick={handleScrollToTop}
         ariaLabel="Scroll to top"

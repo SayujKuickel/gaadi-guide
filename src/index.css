@@ -218,10 +218,13 @@ body {
 
 /*  */
 .animate-slide-up-mobile {
-  animation: slideUpMobile 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-@keyframes slideUpMobile {
+@keyframes slideUp {
   0% {
     opacity: 0;
     transform: translateY(100%);

@@ -10,28 +10,28 @@ function mulberry32(seed: number) {
   };
 }
 
-function getSeededColor(randomFn: () => number) {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    const index = Math.floor(randomFn() * 16);
-    color += letters[index];
-  }
-  return color;
+function getSeededColorFromHexId(hexId: string) {
+  const seed = parseInt(hexId, 16);
+  const rng = mulberry32(seed);
+
+  const hueSteps = 12;
+  const hue = Math.floor(rng() * hueSteps) * 30;
+
+  const saturation = 40 + rng() * 20; // 40% to 60%
+  const lightness = 35 + rng() * 10; // 35% to 45%
+
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
 const ShowAllStops = () => {
-  const seed = 27;
-  const rng = mulberry32(seed);
-
   return (
     <>
       {stops_data.map((stop) => {
-        const randClr = getSeededColor(rng);
+        const color = getSeededColorFromHexId(stop.id);
         return (
           <BusStopView
             key={stop.id}
-            lineColor={randClr}
+            lineColor={color}
             stopName={stop.name}
             position={[stop.lat, stop.lng]}
           />

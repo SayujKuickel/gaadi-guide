@@ -73,28 +73,37 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
 
       {isShown && toastInfo && (
-        <div className="fixed z-[999999] top-0 right-0 w-full md:w-fit p-2 md:p-4">
-          <div className="bg-background outline-2 outline-surface-3 shadow-xl shadow-surface-3/50 rounded-md overflow-hidden animate-in-fade">
-            <div className="flex gap-2 px-2 py-3 items-start">
-              <div className="grid  place-items-center">
-                <i
-                  style={{ color: `${colors[toastInfo.type]}` }}
-                  className={`${
-                    toastInfo.customFavicon || icons[toastInfo.type]
-                  } flex text-xl`}
-                />
+        <section className="fixed z-[999999] top-0 right-0 w-full md:w-fit p-2 md:p-4">
+          <div className="bg-background text-white rounded-2xl shadow-2xl p-4 max-w-sm animate-slide-up">
+            <div className="flex items-center gap-3">
+              <div
+                className="w-2 h-8 rounded-full flex-shrink-0 opacity-80"
+                style={{ backgroundColor: colors[toastInfo.type] }}
+              />
+              <div className="flex-1">
+                <p className="text-offText/75 text-sm font-medium leading-snug">
+                  {toastInfo.message}
+                </p>
               </div>
-
-              <span className="text-sm text-offText/80 max-w-[20rem]">
-                {toastInfo.message}
-              </span>
-
-              <div onClick={() => setIsShown(false)}>
-                <i className="fi fi-rr-cross-small flex cursor-pointer" />
-              </div>
+              <button
+                onClick={() => setIsShown(false)}
+                className="py-2 cursor-pointer hover:text-white transition-colors ml-2"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-        </div>
+        </section>
       )}
     </ToastContext.Provider>
   );

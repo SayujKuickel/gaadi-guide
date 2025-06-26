@@ -32,7 +32,7 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
             className="border-y border-y-surface-3/75 hover:bg-surface-3/25 first:border-t-0 last:border-b-0"
           >
             <Link
-              className="w-full h-full block py-2"
+              className="w-full h-full block py-2 sm:flex sm:items-center sm:justify-between"
               to={`/routes/?route=${route.id}`}
             >
               <BusLineTitle
@@ -42,12 +42,12 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
                 className=""
               />
 
-              {/* <Button
+              <Button
                 title="View"
-                iconStyle="fi fi-rr-eye"
-                className="text-xs"
+                iconStyle="fi fi-rr-map"
+                className="text-xs mt-2 md:hidden sm:mt-0"
                 ariaLabel={`View ${route.name} in its own page`}
-              /> */}
+              />
             </Link>
           </li>
         ))}
