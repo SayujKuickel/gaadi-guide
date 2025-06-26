@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:sitemap": "node generate-sitemap.cjs"
+    "sitemap": "node generate-sitemap.cjs",
+    "clean-route": "node .utilities/clean_route/index.cjs"
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^3.3.1",

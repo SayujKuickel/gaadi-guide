@@ -4,6 +4,7 @@ import HomePage from "@/pages/HomePage";
 import RoutesPage from "@/pages/RoutesPage";
 import MapSidebarContentsLayout from "@/layout/MapSidebarContentsLayout";
 
+const PageLayout = lazy(() => import("@/layout/PageLayout"));
 const ViewBusRoute = lazy(() => import("@/pages/bus/ViewBusRoute"));
 const ViewAllBusRoutes = lazy(() => import("@/pages/bus/ViewAllBusRoutes"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -48,7 +49,14 @@ const App = () => {
 
         <Route path="/add-route" element={<AddNewRoutePage />} />
 
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="*"
+          element={
+            <PageLayout>
+              <NotFound />
+            </PageLayout>
+          }
+        />
       </Routes>
     </Suspense>
   );

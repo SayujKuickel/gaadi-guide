@@ -1,7 +1,7 @@
 // graph creator/graph.js
 const fs = require("fs");
 const path = require("path");
-const routes = require("./route_data.json");
+const routes = require("../../src/data/route_data.json");
 
 function buildGraph(routes) {
   const graph = {};
@@ -40,7 +40,6 @@ function buildGraph(routes) {
   return graph;
 }
 
-// Ensure public directory exists
 const outputDir = path.join(process.cwd(), "public");
 try {
   if (!fs.existsSync(outputDir)) {
@@ -48,13 +47,11 @@ try {
     console.log(`Created directory: ${outputDir}`);
   }
 
-  // Generate and save graph
   const graph = buildGraph(routes);
   console.log(`Graph contains ${Object.keys(graph).length} stops`);
   const outputPath = path.join(outputDir, "graph.json");
   fs.writeFileSync(outputPath, JSON.stringify(graph, null, 2), "utf-8");
 
-  // Verify file was created
   if (fs.existsSync(outputPath)) {
     console.log(`Graph successfully saved to ${outputPath}`);
   } else {
