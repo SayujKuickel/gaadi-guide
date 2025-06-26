@@ -55,14 +55,38 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
         lineColor={routeData.lineColor}
         name={routeData.name}
         level={4}
-        className="mb-4"
+        className="mb-2"
       />
 
-      <div className="overflow-y-scroll scrollbar-sa">
+      {routeData.operator && (
+        <p className="flex items-center gap-1 text-offText/80 text-sm">
+          <i className="fi fi-rr-bus flex" />
+          {routeData.operator}
+        </p>
+      )}
+
+      {routeData.duration && (
+        <p className="flex items-center gap-1 text-offText/80 text-sm">
+          <i className="fi fi-rr-clock flex" />
+          est: {formatTime(routeData.duration)}
+        </p>
+      )}
+
+      <div className="overflow-y-scroll scrollbar-sa mt-4">
         <BusStops routeId={routeData?.id} stopsArray={routeData?.stops} />
       </div>
     </>
   );
+};
+
+const formatTime = (time: number) => {
+  const min = time % 60;
+  const hr = Math.floor(time / 60);
+
+  const hrStr = hr > 0 ? `${hr} hour${hr > 1 ? "s" : ""}` : "";
+  const minStr = min > 0 ? `${min} min${min > 1 ? "s" : ""}` : "";
+
+  return [hrStr, minStr].filter(Boolean).join(" ");
 };
 
 export default ViewStopsWrapper;

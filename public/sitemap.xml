@@ -29,6 +29,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/157c1d73-to-de5596baf5</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/226ba49e-to-f4c8421c39</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/157c1d73-to-6d1c3f54</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/6b7ff2ef-to-a62a2c9fb8</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/f4c8421c39-to-792adc08eb</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/22c80c9-to-1db4634</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/22c80c9-to-6d1c3f54</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/12b600e7-to-367bffd8c5</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/22bda2</loc>
     <priority>0.6</priority>
   </url>
@@ -150,10 +182,6 @@
   </url>
   <url>
     <loc>https://bus-routes.sayuj.com.np/bus/2d9bfc</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2d9c12</loc>
     <priority>0.6</priority>
   </url>
   <url>

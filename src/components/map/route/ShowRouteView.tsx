@@ -1,7 +1,7 @@
+import type { IRoute } from "@/types/route.types";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Route_data from "@/data/route_data.json";
-import type { IRoute } from "@/types/route.types";
 import RouteView from "./RouteView";
 
 interface ShowRouteViewProps {
@@ -32,7 +32,6 @@ const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
     setRouteData(route);
   }, [searchParams]);
 
-  // if (!routeData) return <ShowAllStops />;
   if (!routeData) return null;
 
   return (

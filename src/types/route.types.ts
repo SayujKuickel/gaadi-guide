@@ -3,4 +3,6 @@ export interface IRoute {
   name: string;
   lineColor: string;
   stops: string[];
+  duration?: number;
+  operator?: string;
 }

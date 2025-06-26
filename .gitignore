@@ -31,4 +31,5 @@ coords_extractor/busindices.txt
 coords_extractor/busStops.txt
 
 .utilities/clean_route/route_cleaned.json
+.utilities/clean_route/route.json
 .utilities/clean_route/stops_data_cleaned.json
