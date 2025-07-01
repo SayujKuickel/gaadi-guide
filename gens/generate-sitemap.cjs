@@ -12,8 +12,12 @@ const staticRoutes = [
   "bus",
 ];
 
-const routeDataPath = path.join(__dirname, "src", "data", "route_data.json");
-const routeData = JSON.parse(fs.readFileSync(routeDataPath, "utf-8"));
+const routeData = JSON.parse(
+  fs.readFileSync(
+    path.resolve(__dirname, "../src/data/route_data.json"),
+    "utf-8"
+  )
+);
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
@@ -28,7 +32,7 @@ routeData.forEach((route) => {
 
 xml += `</urlset>`;
 
-const outputPath = path.join(__dirname, "public", "sitemap.xml");
+const outputPath = path.join(__dirname, "../public", "sitemap.xml");
 fs.writeFileSync(outputPath, xml, "utf-8");
 
 console.log("Generated sitemap!");

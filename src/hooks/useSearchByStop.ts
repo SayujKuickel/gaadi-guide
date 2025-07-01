@@ -1,28 +1,31 @@
 import type { IStopOption } from "@/types/stopOptions.types";
 import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import stopsData from "@/data/stops_data.json";
+import stops_data from "@/data/stops_data.json";
 import { useToast } from "@/context/ToastContext";
 import searchRouteSegments from "@/utils/searchRouteSegments";
+import { useUserLocation } from "./useUserLocation";
 
 const useSearchByStop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { showToast } = useToast();
+  const { userLocation, getUserLocation } = useUserLocation();
 
   const [selectedStartStop, setSelectedStartStop] =
     useState<IStopOption | null>(null);
   const [selectedDestinationStop, setSelectedDestinationStop] =
     useState<IStopOption | null>(null);
-  const [isSearchingForStops, setIsSearchingForStops] =
-    useState<boolean>(false);
+  const [isSearchingForStops, setIsSearchingForStops] = useState(false);
 
+  // Find stop by id
   const findStopById = useCallback((id: string): IStopOption | null => {
-    const stop = stopsData.find((stop) => stop.id === id);
+    const stop = stops_data.find((stop) => stop.id === id);
     return stop ? { id: stop.id, name: stop.name } : null;
   }, []);
 
+  // Validation
   const validateStops = useCallback(
-    (start: IStopOption, destination: IStopOption): boolean => {
+    (start: IStopOption, destination: IStopOption) => {
       if (start.id === destination.id) {
         showToast("Start and destination cannot be the same", "error");
         return false;
@@ -32,54 +35,77 @@ const useSearchByStop = () => {
     [showToast]
   );
 
-  const updateSearchParams = useCallback(
-    (startStop: IStopOption, destinationStop: IStopOption) => {
-      if (!validateStops(startStop, destinationStop)) return;
+  // Get closest stop from coordinates
+  const getClosestStop = (lat: number, lng: number): IStopOption | null => {
+    let minDist = Infinity;
+    let closest: IStopOption | null = null;
 
-      const currentStopId = searchParams.get("stop") || "";
-      setSearchParams({
-        from: startStop.id,
-        to: destinationStop.id,
-        stop: currentStopId,
-      });
-    },
-    [searchParams, setSearchParams, validateStops]
-  );
+    for (const stop of stops_data) {
+      const dx = stop.lat - lat;
+      const dy = stop.lng - lng;
+      const dist = dx * dx + dy * dy;
 
+      if (dist < minDist) {
+        minDist = dist;
+        closest = { id: stop.id, name: stop.name };
+      }
+    }
+
+    return closest;
+  };
+
+  // Initialize from searchParams on first load only
   useEffect(() => {
     const fromId = searchParams.get("from");
     const toId = searchParams.get("to");
 
     if (fromId) {
-      const startStop = findStopById(fromId);
-      if (startStop) setSelectedStartStop(startStop);
+      const stop = findStopById(fromId);
+      if (stop) setSelectedStartStop(stop);
     }
 
     if (toId) {
-      const destinationStop = findStopById(toId);
-      if (destinationStop) setSelectedDestinationStop(destinationStop);
+      const stop = findStopById(toId);
+      if (stop) setSelectedDestinationStop(stop);
     }
-  }, [searchParams, findStopById]);
+    // Only on mount: don't include state setters or this useEffect will loop
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  // Auto-set starting stop from closest stop if available
   useEffect(() => {
-    if (selectedStartStop && selectedDestinationStop) {
-      updateSearchParams(selectedStartStop, selectedDestinationStop);
+    const lat = sessionStorage.getItem("user-latitude");
+    const lng = sessionStorage.getItem("user-longitude");
+
+    if (!lat || !lng) {
+      getUserLocation();
+      return;
     }
-  }, [selectedStartStop, selectedDestinationStop, updateSearchParams]);
+
+    if (userLocation) {
+      const [latitude, longitude] = userLocation;
+      const closest = getClosestStop(latitude, longitude);
+      if (closest && !selectedStartStop) {
+        setSelectedStartStop(closest);
+      }
+    }
+  }, [userLocation, getUserLocation, selectedStartStop]);
 
   const handleSearchByStop = useCallback(async () => {
-    const from = searchParams.get("from");
-    const to = searchParams.get("to");
-
-    if (!from?.trim() || !to?.trim()) {
+    if (!selectedStartStop || !selectedDestinationStop) {
       showToast("Please select both start and destination stops", "error");
       return;
     }
 
+    if (!validateStops(selectedStartStop, selectedDestinationStop)) return;
+
     setIsSearchingForStops(true);
 
     try {
-      const segments = await searchRouteSegments(from, to);
+      const segments = await searchRouteSegments(
+        selectedStartStop.id,
+        selectedDestinationStop.id
+      );
 
       if (segments.error) {
         showToast(
@@ -88,20 +114,26 @@ const useSearchByStop = () => {
         );
       } else {
         setSearchParams({
-          from,
-          to,
-          stop: from,
+          from: selectedStartStop.id,
+          to: selectedDestinationStop.id,
+          stop: selectedStartStop.id,
         });
       }
 
       return segments;
     } catch (error) {
-      showToast("An unexpected error occurred during search", "error");
       console.error("Search error:", error);
+      showToast("An unexpected error occurred during search", "error");
     } finally {
       setIsSearchingForStops(false);
     }
-  }, [searchParams, setSearchParams, showToast]);
+  }, [
+    selectedStartStop,
+    selectedDestinationStop,
+    setSearchParams,
+    showToast,
+    validateStops,
+  ]);
 
   return {
     selectedStartStop,

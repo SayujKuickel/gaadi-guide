@@ -31,14 +31,13 @@
 }
 
 :root {
-  --ratio: 0.15vw;
-
-  --s1: calc(40px + var(--ratio));
-  --s2: calc(32px + var(--ratio));
-  --s3: calc(24px + var(--ratio));
-  --s4: calc(20px + var(--ratio));
-  --s5: calc(16px + var(--ratio));
-  --s6: calc(14px + var(--ratio));
+  /* Fixed font sizes for stable webapp */
+  --s1: 36px; /* heading-1 */
+  --s2: 28px; /* heading-2 */
+  --s3: 22px; /* heading-3 */
+  --s4: 18px; /* heading-4 */
+  --s5: 16px; /* heading-5 */
+  --s6: 14px; /* body text */
 }
 
 body {
@@ -97,7 +96,7 @@ body {
   font-style: normal;
 }
 
-/*  */
+/* Typography with fixed sizes */
 .heading-1 {
   font-size: var(--s1);
   font-weight: 700;
@@ -128,35 +127,28 @@ body {
   line-height: 1.5;
 }
 
-/*  */
 .container-small {
   width: 100%;
+  max-width: 1200px;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
   .container-small {
-    max-width: 490px;
+    max-width: 100%;
+    padding: 0 0.75rem;
+  }
+
+  :root {
+    --s1: 32px;
+    --s2: 24px;
+    --s3: 20px;
+    --s4: 16px;
+    --s5: 14px;
+    --s6: 13px;
   }
 }
 
-@media (min-width: 768px) {
-  .container-small {
-    max-width: 618px;
-  }
-}
-@media (min-width: 1024px) {
-  .container-small {
-    max-width: 874px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container-small {
-    max-width: 1030px;
-  }
-}
-
-/*  */
+/* Marker styles */
 .marker-container {
   position: relative;
   display: flex;
@@ -171,8 +163,7 @@ body {
   z-index: 10;
 }
 
-/*  */
-/*  */
+/* Animations */
 .animate-in-fade {
   animation: animateInFade 0.25s cubic-bezier(0.4, 0, 0.6, 1);
 }
@@ -186,9 +177,6 @@ body {
     opacity: 1;
   }
 }
-
-/*  */
-/*  */
 
 .animate-pulse-ring {
   position: absolute;
@@ -216,7 +204,6 @@ body {
   }
 }
 
-/*  */
 .animate-slide-up-mobile {
   animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
