@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useMap } from "react-leaflet";
 import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/mapSettings";
 import type { IStop } from "@/types/stop.types";
-import BusStops from "@/data/stops_data.json";
+import stops_data from "@/data/stops_data.json";
 
 const FlyToStop = () => {
   const [searchParams] = useSearchParams();
@@ -11,11 +11,9 @@ const FlyToStop = () => {
   const map = useMap();
 
   useEffect(() => {
-    if (!stop) {
-      return;
-    }
+    if (!stop) return;
 
-    const stopData = BusStops.find((item: IStop) => item.id === stop);
+    const stopData = stops_data.find((item: IStop) => item.id === stop);
 
     if (!stopData) {
       console.info("[W] Invalid stop id found in url");

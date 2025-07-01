@@ -70,7 +70,6 @@ const StopsPage = () => {
         }
         mapContent={
           <>
-            {" "}
             <ShowAllStops />
             <FlyToStop />
           </>

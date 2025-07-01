@@ -1,6 +1,6 @@
 import type { IStopOption } from "@/types/stopOptions.types";
-import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import stopsData from "@/data/stops_data.json";
 import { useToast } from "@/context/ToastContext";
 import searchRouteSegments from "@/utils/searchRouteSegments";
@@ -8,7 +8,6 @@ import searchRouteSegments from "@/utils/searchRouteSegments";
 const useSearchByStop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { showToast } = useToast();
-  const navigate = useNavigate();
 
   const [selectedStartStop, setSelectedStartStop] =
     useState<IStopOption | null>(null);
@@ -17,69 +16,92 @@ const useSearchByStop = () => {
   const [isSearchingForStops, setIsSearchingForStops] =
     useState<boolean>(false);
 
-  useEffect(() => {
-    if (selectedStartStop && selectedDestinationStop) {
-      if (selectedStartStop.id === selectedDestinationStop.id) {
+  const findStopById = useCallback((id: string): IStopOption | null => {
+    const stop = stopsData.find((stop) => stop.id === id);
+    return stop ? { id: stop.id, name: stop.name } : null;
+  }, []);
+
+  const validateStops = useCallback(
+    (start: IStopOption, destination: IStopOption): boolean => {
+      if (start.id === destination.id) {
         showToast("Start and destination cannot be the same", "error");
-        return;
+        return false;
       }
+      return true;
+    },
+    [showToast]
+  );
 
-      const stopId = searchParams.get("stop");
+  const updateSearchParams = useCallback(
+    (startStop: IStopOption, destinationStop: IStopOption) => {
+      if (!validateStops(startStop, destinationStop)) return;
 
+      const currentStopId = searchParams.get("stop") || "";
       setSearchParams({
-        from: selectedStartStop.id,
-        to: selectedDestinationStop.id,
-        stop: stopId ? stopId : "",
+        from: startStop.id,
+        to: destinationStop.id,
+        stop: currentStopId,
       });
-    }
-  }, [selectedStartStop, selectedDestinationStop, setSearchParams]);
+    },
+    [searchParams, setSearchParams, validateStops]
+  );
 
   useEffect(() => {
     const fromId = searchParams.get("from");
     const toId = searchParams.get("to");
 
     if (fromId) {
-      const foundFrom = stopsData.find((stop) => stop.id === fromId);
-      if (foundFrom) {
-        setSelectedStartStop({ id: foundFrom.id, name: foundFrom.name });
-      }
+      const startStop = findStopById(fromId);
+      if (startStop) setSelectedStartStop(startStop);
     }
 
     if (toId) {
-      const foundTo = stopsData.find((stop) => stop.id === toId);
-      if (foundTo) {
-        setSelectedDestinationStop({ id: foundTo.id, name: foundTo.name });
-      }
+      const destinationStop = findStopById(toId);
+      if (destinationStop) setSelectedDestinationStop(destinationStop);
     }
-  }, [searchParams]);
+  }, [searchParams, findStopById]);
 
-  const handleSearchByStop = async () => {
+  useEffect(() => {
+    if (selectedStartStop && selectedDestinationStop) {
+      updateSearchParams(selectedStartStop, selectedDestinationStop);
+    }
+  }, [selectedStartStop, selectedDestinationStop, updateSearchParams]);
+
+  const handleSearchByStop = useCallback(async () => {
     const from = searchParams.get("from");
     const to = searchParams.get("to");
 
     if (!from?.trim() || !to?.trim()) {
+      showToast("Please select both start and destination stops", "error");
       return;
     }
 
     setIsSearchingForStops(true);
 
-    const segments = await searchRouteSegments(from, to);
+    try {
+      const segments = await searchRouteSegments(from, to);
 
-    if (segments.error) {
-      showToast(
-        `${segments.error}\n (Search is currently being developed. There may be errors!)`,
-        "error"
-      );
+      if (segments.error) {
+        showToast(
+          `${segments.error}\n(Search is currently being developed. There may be errors!)`,
+          "error"
+        );
+      } else {
+        setSearchParams({
+          from,
+          to,
+          stop: from,
+        });
+      }
+
+      return segments;
+    } catch (error) {
+      showToast("An unexpected error occurred during search", "error");
+      console.error("Search error:", error);
+    } finally {
+      setIsSearchingForStops(false);
     }
-
-    setSearchParams({
-      from: from,
-      to: to,
-      stop: from,
-    });
-    setIsSearchingForStops(false);
-    return segments;
-  };
+  }, [searchParams, setSearchParams, showToast]);
 
   return {
     selectedStartStop,

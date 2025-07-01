@@ -40,7 +40,7 @@ const RouteView: React.FC<RouteViewProps> = ({
       lineOptions: {
         styles: [{ color: lineColor, weight: 5, opacity: 0.75 }],
         extendToWaypoints: true,
-        missingRouteTolerance: 10,
+        missingRouteTolerance: 100,
       },
       containerClassName: "hidden",
     });
