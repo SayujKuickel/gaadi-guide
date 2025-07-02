@@ -13,7 +13,6 @@ import React, { useState, useCallback, type ReactNode } from "react";
 interface MapPageLayoutProps {
   sidebarContent: ReactNode;
   mapContent?: ReactNode;
-  mapClassName?: string;
 }
 
 interface ZoomFunctions {
@@ -24,7 +23,6 @@ interface ZoomFunctions {
 const MapPageLayout: React.FC<MapPageLayoutProps> = ({
   sidebarContent,
   mapContent,
-  mapClassName = "relative pb-20 md:p-0 md:pl-20",
 }) => {
   const { tileMap: tileMapKey, setTileMapKey } = useTileMap();
   const { userLocation, isSearchingLocation, getUserLocation, flyToPos } =
@@ -52,20 +50,19 @@ const MapPageLayout: React.FC<MapPageLayoutProps> = ({
         onZoomIn={zoomFunctions.zoomIn}
         onZoomOut={zoomFunctions.zoomOut}
       />
-      <div className="w-full h-full relative">
-        <MapSidebarContents>{sidebarContent}</MapSidebarContents>
-        <BaseMapLayer
-          tileMapKey={tileMapKey}
-          userLocation={userLocation}
-          flyToPos={flyToPos}
-          className={mapClassName}
-          onZoomFunctionsReady={handleZoomFunctionsReady}
-        >
-          {mapContent}
 
-          <FlyToStop />
-        </BaseMapLayer>
-      </div>
+      <MapSidebarContents>{sidebarContent} </MapSidebarContents>
+
+      <BaseMapLayer
+        tileMapKey={tileMapKey}
+        userLocation={userLocation}
+        flyToPos={flyToPos}
+        onZoomFunctionsReady={handleZoomFunctionsReady}
+      >
+        {mapContent}
+
+        <FlyToStop />
+      </BaseMapLayer>
     </div>
   );
 };

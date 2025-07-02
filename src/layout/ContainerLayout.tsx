@@ -15,7 +15,7 @@ const ContainerLayout: React.FC<ContainerLayoutProps> = ({
 }) => {
   return (
     <div
-      className={` px-4 
+      className={`px-4 
         ${isSmall ? "container-small" : "container"} 
         ${isCenter ? "mx-auto" : ""} 
         ${className}`}

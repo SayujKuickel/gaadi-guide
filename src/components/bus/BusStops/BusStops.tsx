@@ -35,10 +35,7 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
           if (!stop) return null;
 
           return (
-            <li
-              key={key}
-              className={`flex items-center gap-1.5 relative no-scrollbar `}
-            >
+            <li key={key} className={`flex items-center gap-1.5 relative pr-1`}>
               <i
                 className={`${
                   key > 0 && key < reorderedStops.length - 1
@@ -67,8 +64,8 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
                 <Link
                   to={
                     mode === "search"
-                      ? `/search/?stop=${stop.id}`
-                      : `/routes/?route=${routeId}&stop=${stop.id}`
+                      ? `/search?stop=${stop.id}`
+                      : `/routes?route=${routeId}&stop=${stop.id}`
                   }
                 >
                   <Button

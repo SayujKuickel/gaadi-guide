@@ -33,10 +33,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/226ba49e-to-f4c8421c39</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/157c1d73-to-6d1c3f54</loc>
     <priority>0.6</priority>
   </url>
@@ -58,6 +54,10 @@
   </url>
   <url>
     <loc>https://bus-routes.sayuj.com.np/bus/12b600e7-to-367bffd8c5</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/226ba49e-to-f4c8421c39</loc>
     <priority>0.6</priority>
   </url>
   <url>

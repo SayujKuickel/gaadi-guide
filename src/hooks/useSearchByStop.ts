@@ -7,8 +7,8 @@ import searchRouteSegments from "@/utils/searchRouteSegments";
 import { useUserLocation } from "./useUserLocation";
 
 const useSearchByStop = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
   const { showToast } = useToast();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { userLocation, getUserLocation } = useUserLocation();
 
   const [selectedStartStop, setSelectedStartStop] =
@@ -54,7 +54,7 @@ const useSearchByStop = () => {
     return closest;
   };
 
-  // Initialize from searchParams on first load only
+  // get the to and from params from the url and set them as the selected item
   useEffect(() => {
     const fromId = searchParams.get("from");
     const toId = searchParams.get("to");
@@ -68,29 +68,29 @@ const useSearchByStop = () => {
       const stop = findStopById(toId);
       if (stop) setSelectedDestinationStop(stop);
     }
-    // Only on mount: don't include state setters or this useEffect will loop
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Auto-set starting stop from closest stop if available
+  // Get location to set the start stop closest to user.
   useEffect(() => {
     const lat = sessionStorage.getItem("user-latitude");
     const lng = sessionStorage.getItem("user-longitude");
+    const permissionDenied = sessionStorage.getItem(
+      "location-permission-denied"
+    );
 
-    if (!lat || !lng) {
-      getUserLocation();
-      return;
-    }
+    if (permissionDenied === "true") return;
+
+    if (!lat || !lng) return getUserLocation();
 
     if (userLocation) {
       const [latitude, longitude] = userLocation;
       const closest = getClosestStop(latitude, longitude);
-      if (closest && !selectedStartStop) {
-        setSelectedStartStop(closest);
-      }
+
+      if (closest && !selectedStartStop) setSelectedStartStop(closest);
     }
   }, [userLocation, getUserLocation, selectedStartStop]);
 
+  // handles the search when user clicks search button.
   const handleSearchByStop = useCallback(async () => {
     if (!selectedStartStop || !selectedDestinationStop) {
       showToast("Please select both start and destination stops", "error");
@@ -116,7 +116,6 @@ const useSearchByStop = () => {
         setSearchParams({
           from: selectedStartStop.id,
           to: selectedDestinationStop.id,
-          stop: selectedStartStop.id,
         });
       }
 

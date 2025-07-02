@@ -21,7 +21,7 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
 
   return (
     <div className="">
-      <Heading className="mb-3" level={4}>
+      <Heading className="mb-3" level={2}>
         Routes for this stop.
       </Heading>
 
@@ -33,7 +33,7 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
           >
             <Link
               className="w-full h-full block py-2 sm:flex sm:items-center sm:justify-between"
-              to={`/routes/?route=${route.id}`}
+              to={`/routes?route=${route.id}`}
             >
               <BusLineTitle
                 name={route.name}

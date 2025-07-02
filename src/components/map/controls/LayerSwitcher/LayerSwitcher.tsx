@@ -44,7 +44,7 @@ const LayerSwitcher: React.FC<LayerSwitcherProps> = ({
 
       {isOpen && (
         <div className="absolute bg-surface top-0 right-full -translate-x-2 text-text px-4 py-3 rounded-lg w-52 shadow-lg z-[1111]">
-          <Heading level={4} className="mb-4">
+          <Heading level={3} className="mb-4">
             Select Theme
           </Heading>
 

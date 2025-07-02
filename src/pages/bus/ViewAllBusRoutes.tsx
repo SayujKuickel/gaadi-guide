@@ -18,12 +18,12 @@ const ViewAllBusRoutes = () => {
   return (
     <>
       <PageLayout>
-        <ContainerLayout className="">
+        <ContainerLayout isSmall={true} className="">
           <Heading level={1} className="mb-6">
             All Bus Routes
           </Heading>
 
-          <section className="grid md:grid-cols-4 mb-4">
+          <section className="grid md:grid-cols-4 mb-8">
             <SearchableCombobox
               label="Bus Stop"
               selected={selectedStop}
@@ -38,7 +38,7 @@ const ViewAllBusRoutes = () => {
           </section>
 
           {filteredRoutes.length > 0 ? (
-            <div className="space-y-10">
+            <div className="space-y-5">
               {filteredRoutes.map((route) => (
                 <ViewRouteDetails
                   priorityStop={selectedStop?.id}

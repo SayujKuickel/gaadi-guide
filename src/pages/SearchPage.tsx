@@ -36,59 +36,57 @@ const SearchPage = () => {
   }, [stop]);
 
   return (
-    <>
-      <MapPageLayout
-        sidebarContent={
-          <>
-            <ViewWrapper>
-              <SearchWrapper
-                setShowResults={setShowResults}
-                setSegments={setSegments}
+    <MapPageLayout
+      sidebarContent={
+        <>
+          <ViewWrapper>
+            <SearchWrapper
+              setShowResults={setShowResults}
+              setSegments={setSegments}
+            />
+          </ViewWrapper>
+
+          {showResults && segments && (
+            <ResultsWrapper onClose={() => setShowResults(false)}>
+              <Heading className="mb-4" level={2}>
+                Follow the Route!
+              </Heading>
+
+              <ViewSearchedStops
+                mode="search"
+                headingLevel={3}
+                segments={segments}
               />
-            </ViewWrapper>
-
-            {showResults && segments && (
-              <ResultsWrapper onClose={() => setShowResults(false)}>
-                <Heading className="mb-4" level={4}>
-                  Follow the Route!
-                </Heading>
-
-                <ViewSearchedStops
-                  mode="search"
-                  headingLevel={5}
-                  segments={segments}
+            </ResultsWrapper>
+          )}
+        </>
+      }
+      mapContent={
+        <>
+          {segments && (
+            <>
+              {segments?.map((segment) => (
+                <RouteView
+                  key={segment.id}
+                  stopIds={segment?.stops}
+                  fitToScreen={false}
+                  lineColor={segment?.lineColor}
                 />
-              </ResultsWrapper>
-            )}
-          </>
-        }
-        mapContent={
-          <>
-            {segments && (
-              <>
-                {segments?.map((segment) => (
-                  <RouteView
-                    key={segment.id}
-                    stopIds={segment?.stops}
-                    fitToScreen={false}
-                    lineColor={segment?.lineColor}
-                  />
-                ))}
-              </>
-            )}
+              ))}
+            </>
+          )}
 
-            {paramsStop && !segments && (
-              <BusStopView
-                position={[paramsStop.lat, paramsStop.lng]}
-                lineColor="#bc2c36"
-                stopName={paramsStop.name}
-              />
-            )}
-            <FlyToStop />
-          </>
-        }
-      />
-    </>
+          {paramsStop && !segments && (
+            <BusStopView
+              position={[paramsStop.lat, paramsStop.lng]}
+              lineColor="#bc2c36"
+              stopName={paramsStop.name}
+            />
+          )}
+          <FlyToStop />
+        </>
+      }
+    />
   );
 };
 

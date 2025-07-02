@@ -31,7 +31,6 @@ interface BaseMapLayerProps {
 const BaseMapLayer = ({
   tileMapKey,
   children,
-  className,
   flyToPos,
   userLocation,
   onZoomFunctionsReady,
@@ -71,7 +70,7 @@ const BaseMapLayer = ({
           new LatLngBounds(MAP_BOUNDS_TOP_LEFT, MAP_BOUNDS_BOTTOM_RIGHT)
         }
         maxBoundsViscosity={1.0}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", flex: "1" }}
       >
         {children}
 

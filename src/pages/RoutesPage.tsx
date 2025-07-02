@@ -32,7 +32,7 @@ const RoutesPage = () => {
       sidebarContent={
         <>
           <ViewWrapper>
-            <Heading className="mb-3" level={4}>
+            <Heading className="mb-3" level={2}>
               Routes
             </Heading>
 
@@ -45,13 +45,15 @@ const RoutesPage = () => {
               className="mb-4"
             />
 
-            <Button
-              iconStyle={"fi fi-rr-search"}
-              title={selectedRoute ? "Show Stops" : "Search"}
-              ariaLabel="search"
-              className="text-xs"
-              onClick={handleShowResults}
-            />
+            {selectedRoute && !showResults && (
+              <Button
+                iconStyle={"fi fi-rr-eye"}
+                title={"View Stops"}
+                ariaLabel="search"
+                className="text-xs"
+                onClick={handleShowResults}
+              />
+            )}
           </ViewWrapper>
 
           {showResults && (

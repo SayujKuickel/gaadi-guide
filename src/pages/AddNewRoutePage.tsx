@@ -250,7 +250,7 @@ const AddNewRoutePage = () => {
             No stops available. Please add a new stop.
           </p>
           <form className="p-4 bg-background rounded-lg space-y-4">
-            <Heading level={4} className="mb-4">
+            <Heading level={2} className="mb-4">
               Add New Stop
             </Heading>
             <div className="mb-3">
@@ -456,7 +456,7 @@ const AddNewRoutePage = () => {
         </div>
 
         <ul className="space-y-2 mt-10">
-          <Heading level={4}>Stops ({stops.length})</Heading>
+          <Heading level={2}>Stops ({stops.length})</Heading>
           {stops.length === 0 && <p>No stops added yet.</p>}
           {[...stops].reverse().map((stop, reversedIndex) => {
             const actualIndex = stops.length - 1 - reversedIndex;
@@ -513,7 +513,7 @@ const AddNewRoutePage = () => {
         <div className="fixed top-0 left-0 z-[1111] px-4 w-screen h-screen bg-surface-2/50 backdrop-blur-2xl grid place-items-center">
           <div className="p-4 bg-background rounded-lg w-full lg:w-4/5 xl:w-3/4 max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
-              <Heading level={4}>Add New Stop</Heading>
+              <Heading level={2}>Add New Stop</Heading>
               <button
                 type="button"
                 onClick={closeNewStopForm}

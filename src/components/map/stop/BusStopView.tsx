@@ -1,26 +1,18 @@
 import { Marker, Popup } from "react-leaflet";
-
 import L from "leaflet";
-
 import type { ReactNode } from "react";
 
 interface BusStopViewProps {
   position: [number, number];
-
-  stopName: string;
-
+  stopName?: string;
   lineColor: string;
-
   popupContent?: ReactNode;
 }
 
 const BusStopView: React.FC<BusStopViewProps> = ({
   position,
-
   stopName,
-
   lineColor = "#ff0000",
-
   popupContent,
 }) => {
   const customMarker = L.divIcon({
@@ -35,8 +27,8 @@ const BusStopView: React.FC<BusStopViewProps> = ({
     <Marker position={position} icon={customMarker}>
       {(stopName || popupContent) && (
         <Popup>
-          {stopName} <br />
-          {popupContent}
+          {stopName && stopName}
+          {popupContent && popupContent}
         </Popup>
       )}
     </Marker>

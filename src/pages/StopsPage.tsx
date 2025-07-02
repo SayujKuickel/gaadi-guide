@@ -36,7 +36,7 @@ const StopsPage = () => {
         sidebarContent={
           <>
             <ViewWrapper>
-              <Heading className="mb-3" level={4}>
+              <Heading className="mb-3" level={2}>
                 Stops
               </Heading>
 
@@ -52,13 +52,15 @@ const StopsPage = () => {
                 className="mb-4"
               />
 
-              <Button
-                iconStyle={"fi fi-rr-search"}
-                title={"Search"}
-                ariaLabel="search"
-                className="text-xs"
-                onClick={handleShowResults}
-              />
+              {selectedStop && !showResults && (
+                <Button
+                  iconStyle={"fi fi-rr-eye"}
+                  title={"View Routes"}
+                  ariaLabel="View Routes"
+                  className="text-xs"
+                  onClick={handleShowResults}
+                />
+              )}
             </ViewWrapper>
 
             {showResults && (

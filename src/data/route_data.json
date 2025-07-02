@@ -27,34 +27,6 @@
     ]
   },
   {
-    "id": "226ba49e-to-f4c8421c39",
-    "name": "Sankhu - RNAC",
-    "lineColor": "#4627A8",
-    "duration": 105,
-    "stops": [
-      "226ba49e",
-      "9946de269c",
-      "7081e6f358",
-      "7c08e50371",
-      "0dfbc669b2",
-      "79103ad2a4",
-      "aac73dbfdc",
-      "157fedf7",
-      "21688e5d",
-      "1db557b",
-      "5326f2ff",
-      "6d41252b",
-      "4c5dd968",
-      "8317671114",
-      "1db4aaf",
-      "889530a1",
-      "88953096",
-      "4bf28194",
-      "6d1cfd8d",
-      "f4c8421c39"
-    ]
-  },
-  {
     "id": "157c1d73-to-6d1c3f54",
     "name": "Lagankhel - Budhanilkantha",
     "lineColor": "#49ab4b",
@@ -203,6 +175,34 @@
       "ce4960487c",
       "813d11f484",
       "367bffd8c5"
+    ]
+  },
+  {
+    "id": "226ba49e-to-f4c8421c39",
+    "name": "Sankhu - RNAC",
+    "lineColor": "#4627A8",
+    "duration": 105,
+    "stops": [
+      "226ba49e",
+      "9946de269c",
+      "7081e6f358",
+      "7c08e50371",
+      "0dfbc669b2",
+      "79103ad2a4",
+      "aac73dbfdc",
+      "157fedf7",
+      "21688e5d",
+      "1db557b",
+      "5326f2ff",
+      "6d41252b",
+      "4c5dd968",
+      "8317671114",
+      "1db4aaf",
+      "889530a1",
+      "88953096",
+      "4bf28194",
+      "6d1cfd8d",
+      "f4c8421c39"
     ]
   },
   {

@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 
 @theme {
   --color-text: #bcbcbc;
@@ -8,22 +8,18 @@
   --color-sa-blue: #024885;
   --color-sa-yellow: #d5b63e;
 
-  /* Base Colors */
   --color-background: #121212;
   --color-text: #e0e0e0;
 
-  /* Surface Layers */
   --color-surface: #1e1e1e;
   --color-surface-1: #2a2a2a;
   --color-surface-2: #333333;
   --color-surface-3: #3d3d3d;
 
-  /* Primary and Accent */
   --color-primary: #bc2c36;
   --color-secondary: #6fb3de;
   --color-accent: #547c97;
 
-  /* Text on Surfaces */
   --color-on-primary: #ffffff;
   --color-on-accent: #1e1e1e;
   --color-on-surface: #e0e0e0;
@@ -31,19 +27,22 @@
 }
 
 :root {
-  /* Fixed font sizes for stable webapp */
-  --s1: 36px; /* heading-1 */
-  --s2: 28px; /* heading-2 */
-  --s3: 22px; /* heading-3 */
-  --s4: 18px; /* heading-4 */
-  --s5: 16px; /* heading-5 */
-  --s6: 14px; /* body text */
+  --s1: 28px;
+  --s2: 22px;
+  --s3: 18px;
+  --s4: 16px;
+  --s5: 16px;
+  --s6: 14px;
 }
 
 body {
-  @apply bg-background text-text;
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: var(--s5);
 }
 
+/* --- Map Layout for map Pages --- */
 .map-layout {
   height: 100dvh;
   overflow: hidden;
@@ -89,14 +88,7 @@ body {
   }
 }
 
-/* default styles */
-body {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-/* Typography with fixed sizes */
+/* --- Typography --- */
 .heading-1 {
   font-size: var(--s1);
   font-weight: 700;
@@ -127,6 +119,7 @@ body {
   line-height: 1.5;
 }
 
+/* --- Container Small --- */
 .container-small {
   width: 100%;
   max-width: 1200px;
@@ -148,7 +141,7 @@ body {
   }
 }
 
-/* Marker styles */
+/* --- Marker styles --- */
 .marker-container {
   position: relative;
   display: flex;
@@ -163,21 +156,7 @@ body {
   z-index: 10;
 }
 
-/* Animations */
-.animate-in-fade {
-  animation: animateInFade 0.25s cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-@keyframes animateInFade {
-  0% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
+/* --- Animations --- */
 .animate-pulse-ring {
   position: absolute;
   top: 70%;
@@ -192,6 +171,27 @@ body {
   animation-fill-mode: forwards;
 }
 
+.animate-slide-up-mobile {
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.animate-in-fade {
+  animation: animateInFade 0.25s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes animateInFade {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes slowPulse {
   0%,
   100% {
@@ -202,13 +202,6 @@ body {
     transform: translate(-50%, -50%) scale(1.5);
     opacity: 0.3;
   }
-}
-
-.animate-slide-up-mobile {
-  animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.animate-slide-up {
-  animation: slideUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes slideUp {
@@ -226,9 +219,11 @@ body {
   }
 }
 
-/* Only apply on mobile (below md breakpoint) */
+/* --- Animation Classes --- */
 @media (min-width: 768px) {
   .animate-slide-up-mobile {
     animation: none;
   }
 }
+
+/* * {outline: 1px solid red;} */

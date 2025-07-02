@@ -25,7 +25,7 @@ const SearchWrapper = ({ setSegments, setShowResults }: any) => {
 
   return (
     <>
-      <Heading className="mb-3" level={4}>
+      <Heading className="mb-3" level={2}>
         Search
       </Heading>
 
@@ -35,7 +35,7 @@ const SearchWrapper = ({ setSegments, setShowResults }: any) => {
         onChange={(opt) => setSelectedStartStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
         placeholder="e.g. Sundhara"
-        className="mb-1"
+        className="mb-3"
       />
 
       <SearchableCombobox
@@ -44,7 +44,7 @@ const SearchWrapper = ({ setSegments, setShowResults }: any) => {
         onChange={(opt) => setSelectedDestinationStop(opt)}
         options={stopsData.map((stp) => ({ id: stp.id, name: stp.name }))}
         placeholder="e.g. Kalanki"
-        className="mb-4"
+        className="mb-5"
       />
 
       <Button

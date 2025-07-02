@@ -40,7 +40,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
 
   if (error) {
     return (
-      <Heading className="mb-3 text-center" level={4}>
+      <Heading className="mb-3 text-center" level={2}>
         <i className="fi fi-rr-triangle-warning block text-4xl" />
         {error}
       </Heading>
@@ -54,7 +54,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
       <BusLineTitle
         lineColor={routeData.lineColor}
         name={routeData.name}
-        level={4}
+        level={2}
         className="mb-2"
       />
 

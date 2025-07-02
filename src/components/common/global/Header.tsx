@@ -29,7 +29,7 @@ const Header = () => {
               <Link
                 to={path}
                 target={newTab ? "_blank" : undefined}
-                className="hover:bg-surface-3 px-3 py-2 rounded-lg transition-colors"
+                className="block hover:underline transition-all"
               >
                 {name}
               </Link>
@@ -54,7 +54,7 @@ const Header = () => {
       {isMobileMenuShown && (
         <aside className="fixed inset-0 z-[99999] h-screen bg-background p-4 md:hidden">
           <nav className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-4">
               <Link to="/" className="block w-14 aspect-square">
                 <img src="/web-app-manifest-512x512.png" alt="logo" />
               </Link>

@@ -15,9 +15,9 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
   priorityStop,
 }) => {
   return (
-    <section className="p-3 rounded-lg bg-surface-1/25">
+    <section className="p-4 rounded-lg bg-surface-1/25">
       <BusLineTitle
-        className="mb-3"
+        className="mb-4"
         lineColor={route?.lineColor}
         name={route?.name}
       />
@@ -26,7 +26,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
         routeId={route?.id}
         stopsArray={route?.stops}
         priorityStop={priorityStop}
-        itemsToShow={3}
+        itemsToShow={4}
       />
 
       <div className="flex md:items-center flex-row gap-2 mt-8">
@@ -40,7 +40,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
           />
         </Link>
 
-        <Link className="block w-fit" to={`/routes/?route=${route?.id}`}>
+        <Link className="block w-fit" to={`/routes?route=${route?.id}`}>
           <Button
             ariaLabel="View in map"
             title="View in Map"

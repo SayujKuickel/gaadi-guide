@@ -56,12 +56,6 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
     []
   );
 
-  const icons = {
-    information: "fi fi-rr-exclamation",
-    success: "fi fi-rr-check-circle",
-    error: "fi fi-rr-cross-circle",
-  };
-
   const colors = {
     information: "#d5b63e",
     success: "#12a82e",
@@ -73,21 +67,21 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
 
       {isShown && toastInfo && (
-        <section className="fixed z-[999999] top-0 right-0 w-full md:w-fit p-2 md:p-4">
+        <section className="fixed z-[999999] top-0 right-0 w-full md:w-fit p-2 md:p-3">
           <div className="bg-background text-white rounded-2xl shadow-2xl p-4 max-w-sm animate-slide-up">
             <div className="flex items-center gap-3">
               <div
-                className="w-2 h-8 rounded-full flex-shrink-0 opacity-80"
+                className="w-2 h-6 rounded-full flex-shrink-0 opacity-80"
                 style={{ backgroundColor: colors[toastInfo.type] }}
               />
               <div className="flex-1">
-                <p className="text-offText/75 text-sm font-medium leading-snug">
+                <p className="text-offText/80 text-sm font-medium leading-snug">
                   {toastInfo.message}
                 </p>
               </div>
               <button
                 onClick={() => setIsShown(false)}
-                className="py-2 cursor-pointer hover:text-white transition-colors ml-2"
+                className="py-1 cursor-pointer hover:text-white transition-colors ml-2"
               >
                 <svg
                   className="w-4 h-4"

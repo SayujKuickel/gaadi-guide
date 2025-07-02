@@ -42,6 +42,8 @@ export const useUserLocation = () => {
         console.error("Geolocation error:", err);
         setIsSearchingLocation(false);
 
+        sessionStorage.setItem("location-permission-denied", "true");
+
         showToast(
           "Failed to get your location. Please enable location services.",
           "error"

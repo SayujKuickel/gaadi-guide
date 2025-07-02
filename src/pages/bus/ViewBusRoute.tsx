@@ -44,7 +44,7 @@ const ViewBusRoute = ({}) => {
 
               <Link
                 className="block w-fit mb-4"
-                to={`/routes/?route=${route?.id}`}
+                to={`/routes?route=${route?.id}`}
               >
                 <Button
                   ariaLabel="View route map"
