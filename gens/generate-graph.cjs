@@ -63,5 +63,3 @@ try {
   console.error("Error generating graph:", error.message);
   process.exit(1);
 }
-
-// src\data\graph.json

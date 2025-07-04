@@ -5,4 +5,5 @@ export interface IRoute {
   stops: string[];
   duration?: number;
   operator?: string;
+  isVerifiedRoute?: boolean;
 }

@@ -16,12 +16,31 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
 }) => {
   return (
     <section className="p-4 rounded-lg bg-surface-1/25">
-      <BusLineTitle
-        className="mb-4"
-        lineColor={route?.lineColor}
-        name={route?.name}
-      />
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+        <BusLineTitle
+          className="mb-4"
+          lineColor={route?.lineColor}
+          name={route?.name}
+        />
 
+        <p
+          className={`flex items-center gap-1 text-offText/80 text-sm mb-2 ${
+            route.isVerifiedRoute ? "text-sa-green" : "text-red-400"
+          }`}
+        >
+          {route.isVerifiedRoute ? (
+            <>
+              <i className="fi fi-rr-shield-trust flex" />
+              <span>Verified</span>
+            </>
+          ) : (
+            <>
+              <i className="fi fi-rr-exclamation flex" />
+              <span>Unverified</span>
+            </>
+          )}
+        </p>
+      </div>
       <BusStops
         routeId={route?.id}
         stopsArray={route?.stops}

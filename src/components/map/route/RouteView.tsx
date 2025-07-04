@@ -38,9 +38,9 @@ const RouteView: React.FC<RouteViewProps> = ({
       show: false,
       createMarker: () => null,
       lineOptions: {
-        styles: [{ color: lineColor, weight: 5, opacity: 0.75 }],
+        styles: [{ color: lineColor, weight: 6, opacity: 0.75 }],
         extendToWaypoints: true,
-        missingRouteTolerance: 100,
+        missingRouteTolerance: 500,
       },
       containerClassName: "hidden",
     });

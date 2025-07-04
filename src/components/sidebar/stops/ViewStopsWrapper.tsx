@@ -55,18 +55,41 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
         lineColor={routeData.lineColor}
         name={routeData.name}
         level={2}
-        className="mb-2"
+        className="mb-4"
       />
 
+      <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
+        {routeData.isVerifiedRoute ? (
+          <>
+            <i className="fi fi-rr-shield-trust flex text-sa-green" />
+            <span>Verified Route</span>
+          </>
+        ) : (
+          <>
+            <i className="fi fi-rr-exclamation flex text-sa-red" />
+            <span>Unverified Route</span>
+            <Link
+              to={
+                "https://garrulous-belly-2d2.notion.site/2172054224e680209d1dd7541bc86f48?pvs=105"
+              }
+              target="_blank"
+              className="text-xs text-text"
+            >
+              Please Report Bugs Here*
+            </Link>
+          </>
+        )}
+      </p>
+
       {routeData.operator && (
-        <p className="flex items-center gap-1 text-offText/80 text-sm">
+        <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
           <i className="fi fi-rr-bus flex" />
           {routeData.operator}
         </p>
       )}
 
       {routeData.duration && (
-        <p className="flex items-center gap-1 text-offText/80 text-sm">
+        <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
           <i className="fi fi-rr-clock flex" />
           est: {formatTime(routeData.duration)}
         </p>

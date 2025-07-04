@@ -11,7 +11,7 @@ import RouteView from "@/components/map/route/RouteView";
 import MapPageLayout from "@/layout/MapPageLayout";
 import ResultsWrapper from "@/components/sidebar/wrappers/ResultsWrapper";
 import BusStopView from "@/components/map/stop/BusStopView";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import type { IStop } from "@/types/stop.types";
 import stops_data from "@/data/stops_data.json";
 
@@ -44,6 +44,20 @@ const SearchPage = () => {
               setShowResults={setShowResults}
               setSegments={setSegments}
             />
+
+            <span className="text-xs leading-tight block text-offText/75 mt-2">
+              This feature is under development. If you find any bugs, please
+              report{" "}
+              <Link
+                className="text-text"
+                to={
+                  "https://garrulous-belly-2d2.notion.site/ebd/2172054224e680209d1dd7541bc86f48?pvs=143"
+                }
+                target="_blank"
+              >
+                here.
+              </Link>
+            </span>
           </ViewWrapper>
 
           {showResults && segments && (
@@ -75,7 +89,6 @@ const SearchPage = () => {
               ))}
             </>
           )}
-
           {paramsStop && !segments && (
             <BusStopView
               position={[paramsStop.lat, paramsStop.lng]}

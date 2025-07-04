@@ -65,10 +65,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/22be87</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/22bf5c</loc>
     <priority>0.6</priority>
   </url>
@@ -133,31 +129,11 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/231dad</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/231dae</loc>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bus-routes.sayuj.com.np/bus/2322d2</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2d67a1</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2d9b0a</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2d9b23</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2d9b24</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -185,27 +161,11 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2d9c13</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/2dff33</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2e158e</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/2e15b4</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2e15b5</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2e15d4</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -217,11 +177,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2ed006</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2ed007</loc>
+    <loc>https://bus-routes.sayuj.com.np/bus/2e158e</loc>
     <priority>0.6</priority>
   </url>
   <url>

@@ -80,11 +80,15 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
         })}
       </ul>
 
-      {stopsArray.length > toShow && (
-        <span className="block ml-1 mt-3 text-sm text-text/75">
-          Showing {itemsToShow} of {stopsArray.length} Bus Stops.
-        </span>
-      )}
+      <span className="block ml-1 mt-3 text-sm text-text/75">
+        {stopsArray.length > toShow ? (
+          <>
+            Showing {itemsToShow} of {stopsArray.length} Bus Stops.
+          </>
+        ) : (
+          <>Total {stopsArray.length} Stops.</>
+        )}
+      </span>
     </>
   );
 };
