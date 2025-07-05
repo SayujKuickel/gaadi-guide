@@ -15,7 +15,6 @@ const MapSidebarContentsLayout = () => {
   }, []);
 
   const location = useLocation();
-  console.log(location);
 
   return (
     <main className="w-full h-full overflow-hidden flex flex-col-reverse md:flex-row">

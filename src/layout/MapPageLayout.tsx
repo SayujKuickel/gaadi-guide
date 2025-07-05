@@ -46,6 +46,7 @@ const MapPageLayout: React.FC<MapPageLayoutProps> = ({
           getUserLocation={getUserLocation}
         />
       </TopRightFixedContainer>
+
       <ZoomControlHandler
         onZoomIn={zoomFunctions.zoomIn}
         onZoomOut={zoomFunctions.zoomOut}

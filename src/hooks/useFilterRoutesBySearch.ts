@@ -41,10 +41,6 @@ const useFilterRoutesBySearch = () => {
         setSelectedStop({ id: selStop.id, name: selStop.name });
       }
     }
-
-    return () => {
-      setFilteredRoutes(null);
-    };
   }, [searchParams]);
 
   useEffect(() => {

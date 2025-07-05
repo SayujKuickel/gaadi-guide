@@ -15,7 +15,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
   priorityStop,
 }) => {
   return (
-    <section className="p-4 rounded-lg bg-surface-1/25">
+    <section className="mb-12">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
         <BusLineTitle
           className="mb-4"
@@ -41,33 +41,36 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
           )}
         </p>
       </div>
-      <BusStops
-        routeId={route?.id}
-        stopsArray={route?.stops}
-        priorityStop={priorityStop}
-        itemsToShow={4}
-      />
 
-      <div className="flex md:items-center flex-row gap-2 mt-8">
-        <Link className="block w-fit" to={`/bus/${route?.id}`}>
-          <Button
-            ariaLabel="View All Stops"
-            title="View All Stops"
-            className="text-sm"
-            iconStyle="fi fi-rr-eye"
-            variant="secondary"
-          />
-        </Link>
+      <div className="p-4 rounded-lg bg-surface-1/25">
+        <BusStops
+          routeId={route?.id}
+          stopsArray={route?.stops}
+          priorityStop={priorityStop}
+          itemsToShow={4}
+        />
 
-        <Link className="block w-fit" to={`/routes?route=${route?.id}`}>
-          <Button
-            ariaLabel="View in map"
-            title="View in Map"
-            className="text-sm"
-            iconStyle="fi fi-rr-map"
-            variant="secondary"
-          />
-        </Link>
+        <div className="flex md:items-center flex-row gap-2 mt-8">
+          <Link className="block w-fit" to={`/bus/${route?.id}`}>
+            <Button
+              ariaLabel="View All Stops"
+              title="View All Stops"
+              className="text-sm"
+              iconStyle="fi fi-rr-eye"
+              variant="secondary"
+            />
+          </Link>
+
+          <Link className="block w-fit" to={`/routes?route=${route?.id}`}>
+            <Button
+              ariaLabel="View in map"
+              title="View in Map"
+              className="text-sm"
+              iconStyle="fi fi-rr-map"
+              variant="secondary"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );

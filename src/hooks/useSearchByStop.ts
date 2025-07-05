@@ -70,7 +70,6 @@ const useSearchByStop = () => {
     }
   }, []);
 
-  // Get location to set the start stop closest to user.
   useEffect(() => {
     const lat = sessionStorage.getItem("user-latitude");
     const lng = sessionStorage.getItem("user-longitude");

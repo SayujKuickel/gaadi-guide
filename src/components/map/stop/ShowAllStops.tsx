@@ -31,41 +31,9 @@ const ShowAllStops = () => {
           <BusStopView
             key={stop.id}
             lineColor={color}
+            stopName={stop.name}
+            stopId={stop.id}
             position={[stop.lat, stop.lng]}
-            popupContent={
-              <>
-                <div className="w-[175px] ">
-                  <h4 className="text-center text-lg font-semibold leading-tight">
-                    {stop.name}
-                  </h4>
-                  <hr className="text-offText mt-1 mb-3" />
-
-                  <div className="grid grid-cols-2 gap-1">
-                    <Link
-                      style={{ color: "white" }}
-                      className="flex-1 block bg-sa-blue/80 hover:bg-sa-blue transition-all text-sm leading-tight text-center p-2 rounded-lg"
-                      to={`/search?from=${stop.id}&stop=${stop.id}`}
-                    >
-                      Start Here
-                    </Link>
-                    <Link
-                      style={{ color: "white" }}
-                      className="flex-1 block bg-sa-blue/80 hover:bg-sa-blue transition-all text-sm leading-tight text-center p-2 rounded-lg"
-                      to={`/search?to=${stop.id}&stop=${stop.id}`}
-                    >
-                      Goto Here
-                    </Link>
-                    <Link
-                      style={{ color: "white" }}
-                      className="flex-1 col-span-2 block bg-sa-blue/80 hover:bg-sa-blue transition-all text-sm leading-tight text-center p-2 rounded-lg"
-                      to={`/stops?stop=${stop.id}`}
-                    >
-                      View Routes
-                    </Link>
-                  </div>
-                </div>
-              </>
-            }
           />
         );
       })}

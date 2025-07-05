@@ -319,6 +319,7 @@ const AddNewRoutePage = () => {
                 <TileLayerView tileMapKey="openstreetmap" />
                 {tempMarkerPos && (
                   <BusStopView
+                    showDetailedPopup={false}
                     position={[tempMarkerPos.lat, tempMarkerPos.lng]}
                     stopName={newStop.name || "New Stop"}
                     lineColor="#5F05B1"
@@ -439,6 +440,7 @@ const AddNewRoutePage = () => {
           >
             {stops.map((stop) => (
               <BusStopView
+                showDetailedPopup={false}
                 key={stop.id}
                 position={[stop.lat, stop.lng]}
                 stopName={stop.name}
@@ -645,6 +647,7 @@ const AddNewRoutePage = () => {
                       {/* Show existing stops */}
                       {stops.map((stop) => (
                         <BusStopView
+                          showDetailedPopup={false}
                           key={stop.id}
                           position={[stop.lat, stop.lng]}
                           stopName={stop.name}
@@ -665,6 +668,7 @@ const AddNewRoutePage = () => {
                       {/* Show temporary new stop marker */}
                       {tempMarkerPos && (
                         <BusStopView
+                          showDetailedPopup={false}
                           position={[tempMarkerPos.lat, tempMarkerPos.lng]}
                           stopName={newStop.name || "New Stop"}
                           lineColor="#10B981"

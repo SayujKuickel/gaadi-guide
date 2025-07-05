@@ -85,15 +85,18 @@ const SearchPage = () => {
                   stopIds={segment?.stops}
                   fitToScreen={false}
                   lineColor={segment?.lineColor}
+                  showDetailedPopup={false}
                 />
               ))}
             </>
           )}
+
           {paramsStop && !segments && (
             <BusStopView
+              stopId={paramsStop.id}
+              stopName={paramsStop.name}
               position={[paramsStop.lat, paramsStop.lng]}
               lineColor="#bc2c36"
-              stopName={paramsStop.name}
             />
           )}
           <FlyToStop />

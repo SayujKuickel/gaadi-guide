@@ -13,8 +13,6 @@ const ViewAllBusRoutes = () => {
   const { selectedStop, setSelectedStop, filteredRoutes } =
     useFilterRoutesBySearch();
 
-  if (!filteredRoutes) return null;
-
   return (
     <>
       <PageLayout>
@@ -37,8 +35,8 @@ const ViewAllBusRoutes = () => {
             />
           </section>
 
-          {filteredRoutes.length > 0 ? (
-            <div className="space-y-5">
+          {filteredRoutes && filteredRoutes.length > 0 ? (
+            <>
               {filteredRoutes.map((route) => (
                 <ViewRouteDetails
                   priorityStop={selectedStop?.id}
@@ -46,7 +44,7 @@ const ViewAllBusRoutes = () => {
                   route={route}
                 />
               ))}
-            </div>
+            </>
           ) : (
             <p className="text-offText">Selected stop is not in any routes!</p>
           )}

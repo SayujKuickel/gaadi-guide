@@ -22,7 +22,7 @@ const Contact = () => {
           </div>
         )}
 
-        <div className="my-8 h-[275dvh] rounded-2xl relative">
+        <div className="my-8 h-[275dvh] rounded-2xl overflow-hidden relative">
           <iframe
             src="https://garrulous-belly-2d2.notion.site/ebd/2172054224e680209d1dd7541bc86f48"
             width="100%"
