@@ -1,18 +1,21 @@
+// \react
 import { useSearchParams } from "react-router-dom";
+// /data
+import route_data from "@/data/route_data.json";
+// \hooks
 import useRoute from "@/hooks/useSelectRoute";
+// utils
 import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
-import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import ViewStopsWrapper from "@/components/sidebar/stops/ViewStopsWrapper";
-import ShowRouteView from "@/components/map/route/ShowRouteView";
-import MapPageLayout from "@/layout/MapPageLayout";
-import ResultsWrapper from "@/components/sidebar/wrappers/ResultsWrapper";
-
+// \components
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
+import ViewWrapper from "@/components/sidebar/wrappers/SidebarPanel";
+import RouteDetails from "@/components/sidebar/routes/RouteDetails";
+import SelectedRoutePolylineView from "@/components/map/route/SelectedRoutePolylineView";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
-
-// /data
-import RouteData from "@/data/route_data.json";
+import MapControlsContainer from "@/components/containers/MapControlsContainer";
+import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
+import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -28,8 +31,8 @@ const RoutesPage = () => {
   const fitRouteToWindow = checkIfNeedsTofit(searchParams);
 
   return (
-    <MapPageLayout
-      sidebarContent={
+    <>
+      <SidebarViewsContainer>
         <>
           <ViewWrapper>
             <Heading className="mb-3" level={2}>
@@ -38,7 +41,7 @@ const RoutesPage = () => {
 
             <SearchableCombobox
               label="Route"
-              options={RouteData.map((rt) => ({ id: rt.id, name: rt.name }))}
+              options={route_data.map((rt) => ({ id: rt.id, name: rt.name }))}
               selected={selectedRoute}
               onChange={(opt) => handleRouteSelect(opt)}
               placeholder="e.g. Ratna Park to Mangalbazar"
@@ -57,18 +60,17 @@ const RoutesPage = () => {
           </ViewWrapper>
 
           {showResults && (
-            <ResultsWrapper onClose={() => setShowResults(false)}>
-              <ViewStopsWrapper />
-            </ResultsWrapper>
+            <ResultsBottomSheet onClose={() => setShowResults(false)}>
+              <RouteDetails />
+            </ResultsBottomSheet>
           )}
         </>
-      }
-      mapContent={
-        <>
-          <ShowRouteView fitRouteToWindow={fitRouteToWindow} />
-        </>
-      }
-    />
+      </SidebarViewsContainer>
+
+      <MapControlsContainer>
+        <SelectedRoutePolylineView fitRouteToWindow={fitRouteToWindow} />
+      </MapControlsContainer>
+    </>
   );
 };
 

@@ -38,7 +38,8 @@ const LayerSwitcher: React.FC<LayerSwitcherProps> = ({
     <section className="relative" ref={containerRef}>
       <Button
         onClick={() => setIsOpen((prev) => !prev)}
-        iconStyle="text-xl fi fi-rr-layers"
+        iconStyle="fi fi-rr-layers"
+        className="text-base md:text-xl"
         ariaLabel="Toggle map layers"
       />
 

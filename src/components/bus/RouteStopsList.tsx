@@ -10,7 +10,7 @@ interface ViewRouteDetailsProps {
   mode?: "search" | "route";
 }
 
-const BusStops: React.FC<ViewRouteDetailsProps> = ({
+const RouteStopsList: React.FC<ViewRouteDetailsProps> = ({
   stopsArray,
   itemsToShow,
   routeId,
@@ -93,4 +93,4 @@ const BusStops: React.FC<ViewRouteDetailsProps> = ({
   );
 };
 
-export default BusStops;
+export default RouteStopsList;

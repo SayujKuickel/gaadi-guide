@@ -1,14 +1,14 @@
 import BusLineTitle from "@/components/bus/BusLineTitle";
-import BusStops from "@/components/bus/BusStops/BusStops";
+import RouteStopsList from "@/components/bus/RouteStopsList";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
 import React from "react";
 
-interface ViewSearchedStopsProps {
+interface SearchedRouteDetailsProps {
   segments: IRouteSegment[];
   headingLevel?: 1 | 2 | 3 | 4 | 5;
   mode: "search";
 }
-const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
+const SearchedRouteDetails: React.FC<SearchedRouteDetailsProps> = ({
   segments,
   headingLevel,
   mode,
@@ -24,7 +24,7 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
             className="mb-3"
           />
 
-          <BusStops
+          <RouteStopsList
             mode={mode}
             routeId={segment.id}
             stopsArray={segment.stops}
@@ -35,4 +35,4 @@ const ViewSearchedStops: React.FC<ViewSearchedStopsProps> = ({
   );
 };
 
-export default ViewSearchedStops;
+export default SearchedRouteDetails;

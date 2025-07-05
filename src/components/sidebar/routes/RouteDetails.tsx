@@ -6,13 +6,13 @@ import RouteData from "@/data/route_data.json";
 // \type
 import type { IRoute } from "@/types/route.types";
 // \components
-import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 import BusLineTitle from "@/components/bus/BusLineTitle";
-import BusStops from "@/components/bus/BusStops/BusStops";
-interface ViewStopsWrapperProps {}
+import RouteStopsList from "@/components/bus/RouteStopsList";
+import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
+interface RouteDetailsProps {}
 
-const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
+const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
   const [searchParams] = useSearchParams();
   const [routeData, setRouteData] = useState<IRoute | null>(null);
   const [error, setError] = useState<string>("");
@@ -69,9 +69,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
             <i className="fi fi-rr-exclamation flex text-sa-red" />
             <span>Unverified Route</span>
             <Link
-              to={
-                "https://garrulous-belly-2d2.notion.site/2172054224e680209d1dd7541bc86f48?pvs=105"
-              }
+              to={SITE_SUGGESTION_REDIREECT}
               target="_blank"
               className="text-xs text-text"
             >
@@ -96,7 +94,7 @@ const ViewStopsWrapper: React.FC<ViewStopsWrapperProps> = ({}) => {
       )}
 
       <div className="overflow-y-scroll scrollbar-sa mt-4">
-        <BusStops routeId={routeData?.id} stopsArray={routeData?.stops} />
+        <RouteStopsList routeId={routeData?.id} stopsArray={routeData?.stops} />
       </div>
     </>
   );
@@ -112,4 +110,4 @@ const formatTime = (time: number) => {
   return [hrStr, minStr].filter(Boolean).join(" ");
 };
 
-export default ViewStopsWrapper;
+export default RouteDetails;

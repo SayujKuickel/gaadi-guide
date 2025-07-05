@@ -9,15 +9,15 @@ interface TileLayerViewProps {
 }
 
 const TileLayerView: React.FC<TileLayerViewProps> = ({ tileMapKey }) => {
-  const mapOverlayDetails = tileLayerOptions[tileMapKey]
-    ? tileLayerOptions[tileMapKey]
-    : tileLayerOptions[DEFAULT_MAP_TILE];
+  const mapOverlayDetails =
+    tileLayerOptions[tileMapKey] ?? tileLayerOptions[DEFAULT_MAP_TILE];
 
   return (
     <TileLayer
-      attribution={mapOverlayDetails.attribution}
       url={mapOverlayDetails.url}
+      attribution={mapOverlayDetails.attribution}
     />
   );
 };
+
 export default TileLayerView;

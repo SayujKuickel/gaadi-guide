@@ -10,7 +10,7 @@ const GoBackButtonSection = () => {
   }
 
   return (
-    <ContainerLayout isSmall={false} className="my-8">
+    <ContainerLayout size="sm" className="my-8">
       <Button
         onClick={handleGoBack}
         ariaLabel="Go back to previous page button"

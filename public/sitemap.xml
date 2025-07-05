@@ -61,6 +61,10 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/6d6618e8-to-6b974192</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/22bda2</loc>
     <priority>0.6</priority>
   </url>

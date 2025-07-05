@@ -1,7 +1,5 @@
-import Button from "@/components/common/Button";
-import Footer from "@/components/common/global/Footer";
-import Header from "@/components/common/global/Header";
 import { Link } from "react-router-dom";
+import Button from "@/components/common/Button";
 
 interface NotFoundProps {
   title?: string;

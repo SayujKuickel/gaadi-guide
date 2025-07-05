@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 import { headerItems } from "@/constants/headerItems";
 import Button from "../Button";
 
@@ -91,4 +91,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

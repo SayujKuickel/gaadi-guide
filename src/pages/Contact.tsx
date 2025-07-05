@@ -2,18 +2,19 @@ import { useState } from "react";
 import PageLayout from "@/layout/PageLayout";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { Link } from "react-router-dom";
+import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
 
 const Contact = () => {
   const [loading, setLoading] = useState(true);
 
   return (
     <PageLayout>
-      <ContainerLayout>
+      <ContainerLayout size="sm">
         {loading && (
           <div className="text-offText leading-snug">
             <p className="mb-1">The Form is loading, please wait...</p>
             <Link
-              to="https://garrulous-belly-2d2.notion.site/2172054224e680209d1dd7541bc86f48?pvs=105"
+              to={SITE_SUGGESTION_REDIREECT}
               target="_blank"
               className="text-text"
             >

@@ -1,6 +1,6 @@
 export const DEFAULT_MAP_TILE = "carto-light";
 
-export interface mapLayer {
+export interface IMapLayer {
   id: string;
   name: string;
   mapTypeLabel: string;
@@ -9,7 +9,7 @@ export interface mapLayer {
   icon: string;
 }
 
-export const tileLayerOptions: Record<string, mapLayer> = {
+export const tileLayerOptions: Record<string, IMapLayer> = {
   openstreetmap: {
     id: "openstreetmap",
     name: "Openstreetmap",

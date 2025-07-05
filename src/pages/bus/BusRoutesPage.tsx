@@ -9,14 +9,14 @@ import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 
-const ViewAllBusRoutes = () => {
+const BusRoutesPage = () => {
   const { selectedStop, setSelectedStop, filteredRoutes } =
     useFilterRoutesBySearch();
 
   return (
     <>
       <PageLayout>
-        <ContainerLayout isSmall={true} className="">
+        <ContainerLayout size="xs">
           <Heading level={1} className="mb-6">
             All Bus Routes
           </Heading>
@@ -54,4 +54,4 @@ const ViewAllBusRoutes = () => {
   );
 };
 
-export default ViewAllBusRoutes;
+export default BusRoutesPage;

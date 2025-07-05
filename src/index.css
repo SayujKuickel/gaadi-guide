@@ -120,13 +120,19 @@ body {
 }
 
 /* --- Container Small --- */
-.container-small {
+.container-sm {
   width: 100%;
   max-width: 1200px;
 }
 
+.container-xs {
+  width: 100%;
+  max-width: 1000px;
+}
+
 @media (max-width: 768px) {
-  .container-small {
+  .container-sm,
+  .container-xs {
     max-width: 100%;
     padding: 0 0.75rem;
   }
@@ -227,3 +233,7 @@ body {
 }
 
 /* * {outline: 1px solid red;} */
+
+.disable-scroll-mobile {
+  overscroll-behavior-y: contain;
+}

@@ -7,13 +7,11 @@ import BusLineTitle from "@/components/bus/BusLineTitle";
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 
-interface ShowLinesForStopProps {
+interface StopDetailsProps {
   filteredRoutes: IRoute[] | null;
 }
 
-const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
-  filteredRoutes,
-}) => {
+const StopDetails: React.FC<StopDetailsProps> = ({ filteredRoutes }) => {
   if (!filteredRoutes) return null;
 
   if (!(filteredRoutes.length > 0))
@@ -55,4 +53,4 @@ const ShowLinesForStop: React.FC<ShowLinesForStopProps> = ({
     </div>
   );
 };
-export default ShowLinesForStop;
+export default StopDetails;

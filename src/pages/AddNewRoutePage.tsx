@@ -2,14 +2,14 @@ import "leaflet/dist/leaflet.css";
 import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import TileLayerView from "@/components/map/views/TileLayerView";
-import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/mapSettings";
+import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/siteConfigs";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { LatLng } from "leaflet";
 import { useState, useRef } from "react";
 import { MapContainer, Polyline, useMapEvents } from "react-leaflet";
 import stops_data from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
-import BusStopView from "@/components/map/stop/BusStopView";
+import BusStopMarker from "@/components/map/markers/BusStopMarker";
 
 interface Errors {
   routeName?: string;
@@ -243,7 +243,7 @@ const AddNewRoutePage = () => {
 
   if (!stopsData || stopsData.length === 0) {
     return (
-      <ContainerLayout className="" isCenter={true} isSmall={false}>
+      <ContainerLayout isCenter={true} size="sm">
         <section className="space-y-4">
           <Heading level={3}>Add Route</Heading>
           <p className="text-red-500">
@@ -318,7 +318,7 @@ const AddNewRoutePage = () => {
               >
                 <TileLayerView tileMapKey="openstreetmap" />
                 {tempMarkerPos && (
-                  <BusStopView
+                  <BusStopMarker
                     showDetailedPopup={false}
                     position={[tempMarkerPos.lat, tempMarkerPos.lng]}
                     stopName={newStop.name || "New Stop"}
@@ -358,7 +358,7 @@ const AddNewRoutePage = () => {
     <ContainerLayout
       className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 mb-32"
       isCenter={true}
-      isSmall={false}
+      size="sm"
     >
       <section className="space-y-4">
         <Heading level={3}>Add Route</Heading>
@@ -439,7 +439,7 @@ const AddNewRoutePage = () => {
             className="h-full w-full"
           >
             {stops.map((stop) => (
-              <BusStopView
+              <BusStopMarker
                 showDetailedPopup={false}
                 key={stop.id}
                 position={[stop.lat, stop.lng]}
@@ -646,7 +646,7 @@ const AddNewRoutePage = () => {
 
                       {/* Show existing stops */}
                       {stops.map((stop) => (
-                        <BusStopView
+                        <BusStopMarker
                           showDetailedPopup={false}
                           key={stop.id}
                           position={[stop.lat, stop.lng]}
@@ -667,7 +667,7 @@ const AddNewRoutePage = () => {
 
                       {/* Show temporary new stop marker */}
                       {tempMarkerPos && (
-                        <BusStopView
+                        <BusStopMarker
                           showDetailedPopup={false}
                           position={[tempMarkerPos.lat, tempMarkerPos.lng]}
                           stopName={newStop.name || "New Stop"}

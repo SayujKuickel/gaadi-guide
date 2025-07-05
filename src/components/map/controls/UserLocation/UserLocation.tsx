@@ -12,11 +12,12 @@ const UserLocation: React.FC<UserLocationProps> = ({
   return (
     <Button
       onClick={getUserLocation}
-      iconStyle={`text-xl ${
+      iconStyle={`${
         isSearchingLocation
-          ? "fi fi-rr-spinner animate-spin"
+          ? "fi fi-rr-spinner flex animate-spin"
           : "fi fi-rr-location-crosshairs"
       }`}
+      className="text-base md:text-xl"
       ariaLabel="Locate me"
     />
   );

@@ -4,15 +4,12 @@ import LayerSwitcher from "@/components/map/controls/LayerSwitcher/LayerSwitcher
 import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
 import ZoomControlHandler from "@/components/map/controls/ZoomControlHandler/ZoomControlHandler";
 import FlyToStop from "@/components/map/stop/FlyToStop";
-import ZoomControlHandlerView from "@/components/map/views/ZoomControlHandlerView";
-import MapSidebarContents from "@/components/containers/MapSidebarContainer";
 import useTileMap from "@/hooks/useTileMap";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import React, { useState, useCallback, type ReactNode } from "react";
 
-interface MapPageLayoutProps {
-  sidebarContent: ReactNode;
-  mapContent?: ReactNode;
+interface MapControlsContainerProps {
+  children: ReactNode;
 }
 
 interface ZoomFunctions {
@@ -20,9 +17,8 @@ interface ZoomFunctions {
   zoomOut: () => void;
 }
 
-const MapPageLayout: React.FC<MapPageLayoutProps> = ({
-  sidebarContent,
-  mapContent,
+const MapControlsContainer: React.FC<MapControlsContainerProps> = ({
+  children,
 }) => {
   const { tileMap: tileMapKey, setTileMapKey } = useTileMap();
   const { userLocation, isSearchingLocation, getUserLocation, flyToPos } =
@@ -38,7 +34,7 @@ const MapPageLayout: React.FC<MapPageLayoutProps> = ({
   }, []);
 
   return (
-    <div className="flex-1 relative">
+    <>
       <TopRightFixedContainer>
         <LayerSwitcher setTileMapKey={setTileMapKey} tileMapKey={tileMapKey} />
         <UserLocation
@@ -52,20 +48,18 @@ const MapPageLayout: React.FC<MapPageLayoutProps> = ({
         onZoomOut={zoomFunctions.zoomOut}
       />
 
-      <MapSidebarContents>{sidebarContent} </MapSidebarContents>
-
       <BaseMapLayer
         tileMapKey={tileMapKey}
         userLocation={userLocation}
         flyToPos={flyToPos}
         onZoomFunctionsReady={handleZoomFunctionsReady}
       >
-        {mapContent}
+        {children}
 
         <FlyToStop />
       </BaseMapLayer>
-    </div>
+    </>
   );
 };
 
-export default MapPageLayout;
+export default MapControlsContainer;

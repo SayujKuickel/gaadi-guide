@@ -3,8 +3,8 @@ import "leaflet-routing-machine";
 import { useMap } from "react-leaflet";
 import { useEffect, useState, useRef } from "react";
 import stopsData from "@/data/stops_data.json";
-import BusStopView from "../stop/BusStopView";
 import type { IStop } from "@/types/stop.types";
+import BusStopMarker from "../markers/BusStopMarker";
 
 declare module "leaflet" {
   namespace Routing {
@@ -12,14 +12,14 @@ declare module "leaflet" {
   }
 }
 
-interface RouteViewProps {
+interface RoutePolyLineRendererProps {
   stopIds: string[];
   lineColor: string;
   fitToScreen?: boolean;
   showDetailedPopup?: boolean;
 }
 
-const RouteView: React.FC<RouteViewProps> = ({
+const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
   stopIds,
   lineColor,
   fitToScreen = false,
@@ -103,7 +103,7 @@ const RouteView: React.FC<RouteViewProps> = ({
   return (
     <>
       {waypoints.map((point) => (
-        <BusStopView
+        <BusStopMarker
           key={point.id}
           stopId={point.id}
           stopName={point.name}
@@ -116,4 +116,4 @@ const RouteView: React.FC<RouteViewProps> = ({
   );
 };
 
-export default RouteView;
+export default RoutePolyLineRenderer;

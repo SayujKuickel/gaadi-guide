@@ -23,11 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Extra files
-.old_data
-
-
-coords_extractor/busindices.txt 
-coords_extractor/busStops.txt
 
 /gens/export/*
+/gens/route.json

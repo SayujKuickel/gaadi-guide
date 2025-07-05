@@ -1,19 +1,18 @@
 // \hooks
 import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
-
 // \data
-import stopsData from "@/data/stops_data.json";
+import stops_data from "@/data/stops_data.json";
+// \components
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import Heading from "@/components/common/Heading";
 import Button from "@/components/common/Button";
-import MapPageLayout from "@/layout/MapPageLayout";
-import ShowLinesForStop from "@/components/sidebar/stops/ShowLinesForStop";
-
-// \components
+import MapControlsContainer from "@/components/containers/MapControlsContainer";
+import StopDetails from "@/components/sidebar/stops/StopDetails";
 import ShowAllStops from "@/components/map/stop/ShowAllStops";
-import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
+import ViewWrapper from "@/components/sidebar/wrappers/SidebarPanel";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
-import ResultsWrapper from "@/components/sidebar/wrappers/ResultsWrapper";
+import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
+import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 
 const StopsPage = () => {
   const {
@@ -32,51 +31,49 @@ const StopsPage = () => {
 
   return (
     <>
-      <MapPageLayout
-        sidebarContent={
-          <>
-            <ViewWrapper>
-              <Heading className="mb-3" level={2}>
-                Stops
-              </Heading>
+      <SidebarViewsContainer>
+        <>
+          <ViewWrapper>
+            <Heading className="mb-3" level={2}>
+              Stops
+            </Heading>
 
-              <SearchableCombobox
-                label="Select Stop"
-                selected={selectedStop}
-                onChange={(opt) => handleSetSelectedStop(opt)}
-                options={stopsData.map((stp) => ({
-                  id: stp.id,
-                  name: stp.name,
-                }))}
-                placeholder="e.g. Ratopul Stop"
-                className="mb-4"
+            <SearchableCombobox
+              label="Select Stop"
+              selected={selectedStop}
+              onChange={(opt) => handleSetSelectedStop(opt)}
+              options={stops_data.map((stp) => ({
+                id: stp.id,
+                name: stp.name,
+              }))}
+              placeholder="e.g. Ratopul Stop"
+              className="mb-4"
+            />
+
+            {selectedStop && !showResults && (
+              <Button
+                iconStyle={"fi fi-rr-eye"}
+                title={"View Routes"}
+                ariaLabel="View Routes"
+                className="text-xs"
+                onClick={handleShowResults}
               />
-
-              {selectedStop && !showResults && (
-                <Button
-                  iconStyle={"fi fi-rr-eye"}
-                  title={"View Routes"}
-                  ariaLabel="View Routes"
-                  className="text-xs"
-                  onClick={handleShowResults}
-                />
-              )}
-            </ViewWrapper>
-
-            {showResults && (
-              <ResultsWrapper onClose={() => setShowResults(false)}>
-                <ShowLinesForStop filteredRoutes={filteredRoutes} />
-              </ResultsWrapper>
             )}
-          </>
-        }
-        mapContent={
-          <>
-            <ShowAllStops />
-            <FlyToStop />
-          </>
-        }
-      />
+          </ViewWrapper>
+
+          {showResults && (
+            <ResultsBottomSheet onClose={() => setShowResults(false)}>
+              <StopDetails filteredRoutes={filteredRoutes} />
+            </ResultsBottomSheet>
+          )}
+        </>
+      </SidebarViewsContainer>
+
+      <MapControlsContainer>
+        <ShowAllStops />
+
+        <FlyToStop />
+      </MapControlsContainer>
     </>
   );
 };

@@ -2,11 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import HomePage from "@/pages/HomePage";
 import RoutesPage from "@/pages/RoutesPage";
-import MapSidebarContentsLayout from "@/layout/MapSidebarContentsLayout";
+import MapPagesLayout from "@/layout/MapPagesLayout";
 
 const PageLayout = lazy(() => import("@/layout/PageLayout"));
-const ViewBusRoute = lazy(() => import("@/pages/bus/ViewBusRoute"));
-const ViewAllBusRoutes = lazy(() => import("@/pages/bus/ViewAllBusRoutes"));
+const BusRouteDetailsPage = lazy(
+  () => import("@/pages/bus/BusRouteDetailsPage")
+);
+const BusRoutesPage = lazy(() => import("@/pages/bus/BusRoutesPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));
 const StopsPage = lazy(() => import("@/pages/StopsPage"));
@@ -32,7 +34,7 @@ const App = () => {
       }
     >
       <Routes>
-        <Route element={<MapSidebarContentsLayout />}>
+        <Route element={<MapPagesLayout />}>
           <Route index path="/" element={<HomePage />} />
           <Route path="/routes" element={<RoutesPage />} />
           <Route path="/stops" element={<StopsPage />} />
@@ -43,8 +45,8 @@ const App = () => {
         <Route index path="/about" element={<About />} />
 
         <Route path="bus">
-          <Route index element={<ViewAllBusRoutes />} />
-          <Route path=":id" element={<ViewBusRoute />} />
+          <Route index element={<BusRoutesPage />} />
+          <Route path=":id" element={<BusRouteDetailsPage />} />
         </Route>
 
         <Route path="/add-route" element={<AddNewRoutePage />} />

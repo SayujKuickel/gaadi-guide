@@ -5,17 +5,24 @@ interface ContainerLayoutProps {
   isCenter?: boolean;
   isSmall?: boolean;
   className?: string;
+  size?: "" | "xs" | "sm";
 }
+
+const containerClasses = {
+  "": "container",
+  sm: "container-sm",
+  xs: "container-xs",
+};
 
 const ContainerLayout: React.FC<ContainerLayoutProps> = ({
   children,
   isCenter = true,
-  isSmall = true,
+  size = "",
   className = "",
 }) => {
   return (
     <div
-      className={`px-4 ${isSmall ? "container-small" : "container"} ${
+      className={`px-4 ${containerClasses[size]} ${
         isCenter ? "mx-auto" : ""
       } ${className}`}
     >

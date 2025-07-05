@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import type { ReactNode } from "react";
 import Footer from "@/components/common/global/Footer";
 import Header from "@/components/common/global/Header";
@@ -10,10 +11,19 @@ interface PageLayoutProps {
   showBackBtn?: boolean;
 }
 
-const PageLayout = ({ children, showBackBtn = true }: PageLayoutProps) => {
+const PageLayout: React.FC<PageLayoutProps> = ({
+  children,
+  showBackBtn = true,
+}) => {
+  const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [location.pathname]);
 
   return (
     <main>

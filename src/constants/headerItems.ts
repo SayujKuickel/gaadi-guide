@@ -20,7 +20,6 @@ export const headerItems: IHeaderItem[] = [
     name: "About",
     path: "/about",
     icon: "fi fi-rr-user",
-    // newTab: true,
   },
   {
     name: "Message",

@@ -1,14 +1,14 @@
+import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/siteConfigs";
 import L from "leaflet";
 import { useEffect } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
-import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/mapSettings";
 
-interface UserLocationMarkerViewProps {
+interface UserLocationMarkerProps {
   position: [number, number];
   flyToPos: boolean;
 }
 
-const UserLocationMarkerView: React.FC<UserLocationMarkerViewProps> = ({
+const UserLocationMarker: React.FC<UserLocationMarkerProps> = ({
   position,
   flyToPos,
 }) => {
@@ -35,4 +35,4 @@ const UserLocationMarkerView: React.FC<UserLocationMarkerViewProps> = ({
   );
 };
 
-export default UserLocationMarkerView;
+export default UserLocationMarker;

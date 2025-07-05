@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-interface MapSidebarContainerProps {
+interface SidebarViewsContainerProps {
   children: ReactNode;
 }
 
-const MapSidebarContainer: React.FC<MapSidebarContainerProps> = ({
+const SidebarViewsContainer: React.FC<SidebarViewsContainerProps> = ({
   children,
 }) => {
   if (!children) return null;
@@ -16,4 +16,4 @@ const MapSidebarContainer: React.FC<MapSidebarContainerProps> = ({
   );
 };
 
-export default MapSidebarContainer;
+export default SidebarViewsContainer;

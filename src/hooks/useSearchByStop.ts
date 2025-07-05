@@ -35,26 +35,30 @@ const useSearchByStop = () => {
     [showToast]
   );
 
-  // Get closest stop from coordinates
-  const getClosestStop = (lat: number, lng: number): IStopOption | null => {
-    let minDist = Infinity;
-    let closest: IStopOption | null = null;
+  // Get closest stop from coordinates (lng = X, lat = Y)
+  const getClosestStop = useCallback(
+    (lat: number, lng: number): IStopOption | null => {
+      let minDist = Infinity;
+      let closest: IStopOption | null = null;
 
-    for (const stop of stops_data) {
-      const dx = stop.lat - lat;
-      const dy = stop.lng - lng;
-      const dist = dx * dx + dy * dy;
+      for (const stop of stops_data) {
+        // lng = X, lat = Y
+        const dx = stop.lng - lng;
+        const dy = stop.lat - lat;
+        const dist = dx * dx + dy * dy;
 
-      if (dist < minDist) {
-        minDist = dist;
-        closest = { id: stop.id, name: stop.name };
+        if (dist < minDist) {
+          minDist = dist;
+          closest = { id: stop.id, name: stop.name };
+        }
       }
-    }
 
-    return closest;
-  };
+      return closest;
+    },
+    []
+  );
 
-  // get the to and from params from the url and set them as the selected item
+  // Sync selected stops from URL params
   useEffect(() => {
     const fromId = searchParams.get("from");
     const toId = searchParams.get("to");
@@ -62,14 +66,27 @@ const useSearchByStop = () => {
     if (fromId) {
       const stop = findStopById(fromId);
       if (stop) setSelectedStartStop(stop);
+      else {
+        setSelectedStartStop(null);
+        showToast(`Invalid start stop ID in URL: ${fromId}`, "error");
+      }
+    } else {
+      setSelectedStartStop(null);
     }
 
     if (toId) {
       const stop = findStopById(toId);
       if (stop) setSelectedDestinationStop(stop);
+      else {
+        setSelectedDestinationStop(null);
+        showToast(`Invalid destination stop ID in URL: ${toId}`, "error");
+      }
+    } else {
+      setSelectedDestinationStop(null);
     }
-  }, []);
+  }, [searchParams, findStopById, showToast]);
 
+  // Fetch user location and set closest stop as start if not set
   useEffect(() => {
     const lat = sessionStorage.getItem("user-latitude");
     const lng = sessionStorage.getItem("user-longitude");
@@ -79,17 +96,19 @@ const useSearchByStop = () => {
 
     if (permissionDenied === "true") return;
 
-    if (!lat || !lng) return getUserLocation();
+    if (!lat || !lng) {
+      getUserLocation();
+      return;
+    }
 
-    if (userLocation) {
+    if (userLocation && !selectedStartStop) {
       const [latitude, longitude] = userLocation;
       const closest = getClosestStop(latitude, longitude);
-
-      if (closest && !selectedStartStop) setSelectedStartStop(closest);
+      if (closest) setSelectedStartStop(closest);
     }
-  }, [userLocation, getUserLocation, selectedStartStop]);
+  }, [userLocation, getUserLocation, selectedStartStop, getClosestStop]);
 
-  // handles the search when user clicks search button.
+  // Handles the search when user clicks search button.
   const handleSearchByStop = useCallback(async () => {
     if (!selectedStartStop || !selectedDestinationStop) {
       showToast("Please select both start and destination stops", "error");
@@ -112,6 +131,7 @@ const useSearchByStop = () => {
           "error"
         );
       } else {
+        // Update URL params to sync state
         setSearchParams({
           from: selectedStartStop.id,
           to: selectedDestinationStop.id,

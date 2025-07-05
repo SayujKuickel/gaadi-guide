@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useMap } from "react-leaflet";
-import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/mapSettings";
+import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/siteConfigs";
 import type { IStop } from "@/types/stop.types";
 import stops_data from "@/data/stops_data.json";
 

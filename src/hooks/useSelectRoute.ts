@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 // \data
-import BusRoutes from "@/data/route_data.json";
-import BusStops from "@/data/stops_data.json";
+import route_data from "@/data/route_data.json";
+import stops_data from "@/data/stops_data.json";
 // \types
 import type { IRouteOption } from "@/types/routeOptions.types";
 import type { IStopOption } from "@/types/stopOptions.types";
@@ -19,7 +19,7 @@ const useRoute = () => {
     const stopId = searchParams.get("stop");
 
     if (routeId) {
-      const selRoute = BusRoutes.find((el) => el.id === routeId);
+      const selRoute = route_data.find((el) => el.id === routeId);
 
       if (selRoute) {
         setSelectedRoute({ id: selRoute.id, name: selRoute.name });
@@ -27,7 +27,7 @@ const useRoute = () => {
     }
 
     if (stopId) {
-      const selStop = BusStops.find((el: IStop) => el.id === stopId);
+      const selStop = stops_data.find((el: IStop) => el.id === stopId);
 
       if (selStop) {
         setSelectedStop({ id: selStop.id, name: selStop.name });

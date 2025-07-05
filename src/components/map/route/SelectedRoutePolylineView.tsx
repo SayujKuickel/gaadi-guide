@@ -2,13 +2,15 @@ import type { IRoute } from "@/types/route.types";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Route_data from "@/data/route_data.json";
-import RouteView from "./RouteView";
+import RoutePolyLineRenderer from "./RoutePolyLineRenderer";
 
-interface ShowRouteViewProps {
+interface SelectedRoutePolylineViewProps {
   fitRouteToWindow?: boolean;
 }
 
-const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
+const SelectedRoutePolylineView: React.FC<SelectedRoutePolylineViewProps> = ({
+  fitRouteToWindow,
+}) => {
   const [searchParams] = useSearchParams();
   const [routeData, setRouteData] = useState<IRoute | null>(null);
 
@@ -35,7 +37,7 @@ const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
   if (!routeData) return null;
 
   return (
-    <RouteView
+    <RoutePolyLineRenderer
       stopIds={routeData?.stops}
       fitToScreen={fitRouteToWindow}
       lineColor={routeData?.lineColor}
@@ -43,4 +45,4 @@ const ShowRouteView: React.FC<ShowRouteViewProps> = ({ fitRouteToWindow }) => {
   );
 };
 
-export default ShowRouteView;
+export default SelectedRoutePolylineView;

@@ -1,4 +1,4 @@
-export interface sidebarItem {
+export interface ISidebarItem {
   key: number;
   name: string;
   icon: string;
@@ -6,7 +6,7 @@ export interface sidebarItem {
   url?: string;
 }
 
-export const sidebarItems: sidebarItem[] = [
+export const sidebarItems: ISidebarItem[] = [
   {
     key: 0,
     name: "Routes",
@@ -25,11 +25,4 @@ export const sidebarItems: sidebarItem[] = [
     icon: "fi fi-rr-search",
     url: "/search",
   },
-  // {
-  //   key: 3,
-  //   name: "Details",
-  //   icon: "fi fi-rr-features",
-  //   type: "redirect",
-  //   url: "/bus",
-  // },
 ];

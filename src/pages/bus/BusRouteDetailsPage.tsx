@@ -1,20 +1,22 @@
 // /react
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-// /components
-import ContainerLayout from "@/layout/ContainerLayout";
-import PageLayout from "@/layout/PageLayout";
-import NotFound from "../NotFound";
-import BusStops from "@/components/bus/BusStops/BusStops";
-import BusLineTitle from "@/components/bus/BusLineTitle";
 // /data
 import route_data from "@/data/route_data.json";
 // /types
 import type { IRoute } from "@/types/route.types";
+// \utils
+import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
+// /components
+import ContainerLayout from "@/layout/ContainerLayout";
+import PageLayout from "@/layout/PageLayout";
+import NotFound from "../NotFound";
+import BusLineTitle from "@/components/bus/BusLineTitle";
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
+import RouteStopsList from "@/components/bus/RouteStopsList";
 
-const ViewBusRoute = ({}) => {
+const BusRouteDetailsPage = ({}) => {
   const { id } = useParams();
   const [route, setRoute] = useState<IRoute | null>(null);
 
@@ -31,7 +33,7 @@ const ViewBusRoute = ({}) => {
 
   return (
     <PageLayout>
-      <ContainerLayout className="">
+      <ContainerLayout size="xs">
         {route ? (
           <div className="">
             <div className="bg-surface p-5 rounded-lg mb-8">
@@ -55,9 +57,7 @@ const ViewBusRoute = ({}) => {
                         <i className="fi fi-rr-exclamation flex text-sa-red" />
                         <span>Unverified Route</span>
                         <Link
-                          to={
-                            "https://garrulous-belly-2d2.notion.site/2172054224e680209d1dd7541bc86f48?pvs=105"
-                          }
+                          to={SITE_SUGGESTION_REDIREECT}
                           target="_blank"
                           className="text-xs text-text"
                         >
@@ -99,7 +99,7 @@ const ViewBusRoute = ({}) => {
               <Heading level={3} className="mb-3">
                 Stops
               </Heading>
-              <BusStops routeId={id} stopsArray={route?.stops} />
+              <RouteStopsList routeId={id} stopsArray={route?.stops} />
             </div>
           </div>
         ) : (
@@ -120,4 +120,4 @@ const formatTime = (time: number) => {
   return [hrStr, minStr].filter(Boolean).join(" ");
 };
 
-export default ViewBusRoute;
+export default BusRouteDetailsPage;

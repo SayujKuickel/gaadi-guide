@@ -1,9 +1,9 @@
-import type { IRoute } from "@/types/route.types";
-import BusLineTitle from "./BusLineTitle";
-import BusStops from "./BusStops/BusStops";
-import type React from "react";
-import Button from "../common/Button";
 import { Link } from "react-router-dom";
+import type React from "react";
+import type { IRoute } from "@/types/route.types";
+import Button from "../common/Button";
+import BusLineTitle from "./BusLineTitle";
+import RouteStopsList from "./RouteStopsList";
 
 interface ViewRouteDetailsProps {
   route: IRoute;
@@ -43,7 +43,7 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
       </div>
 
       <div className="p-4 rounded-lg bg-surface-1/25">
-        <BusStops
+        <RouteStopsList
           routeId={route?.id}
           stopsArray={route?.stops}
           priorityStop={priorityStop}

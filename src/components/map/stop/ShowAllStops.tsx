@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import BusStopView from "./BusStopView";
+import BusStopMarker from "../markers/BusStopMarker";
 import stops_data from "@/data/stops_data.json";
-import Heading from "@/components/common/Heading";
 
 function mulberry32(seed: number) {
   return function () {
@@ -27,8 +25,9 @@ const ShowAllStops = () => {
     <>
       {stops_data.map((stop) => {
         const color = getSeededColorFromHexId(stop.id);
+
         return (
-          <BusStopView
+          <BusStopMarker
             key={stop.id}
             lineColor={color}
             stopName={stop.name}

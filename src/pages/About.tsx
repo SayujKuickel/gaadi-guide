@@ -5,7 +5,7 @@ import PageLayout from "@/layout/PageLayout";
 const About = () => {
   return (
     <PageLayout>
-      <ContainerLayout>
+      <ContainerLayout size="sm">
         <Heading level={1}>Welcome!</Heading>
 
         <p className="mt-4 text-base leading-7 text-offText">

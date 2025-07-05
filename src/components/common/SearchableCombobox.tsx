@@ -74,6 +74,8 @@ const SearchableCombobox = <T extends BaseOption>({
   useEffect(() => {
     if (selected) {
       setQuery(selected.name);
+    } else {
+      setQuery("");
     }
   }, [selected]);
 
