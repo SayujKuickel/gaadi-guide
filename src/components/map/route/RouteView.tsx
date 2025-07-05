@@ -1,8 +1,6 @@
 import L from "leaflet";
-import "leaflet-routing-machine";
-import { useMap } from "react-leaflet";
+import { useMap, Polyline } from "react-leaflet";
 import { useEffect, useState } from "react";
-
 import stopsData from "@/data/stops_data.json";
 import BusStopView from "../stop/BusStopView";
 import type { IStop } from "@/types/stop.types";
@@ -30,32 +28,33 @@ const RouteView: React.FC<RouteViewProps> = ({
 
     setWaypoints(matchedStops);
 
-    const routingControl = L.Routing.control({
-      waypoints: matchedStops.map((point) => L.latLng(point.lat, point.lng)),
-      routeWhileDragging: false,
-      fitSelectedRoutes: fitToScreen,
-      addWaypoints: false,
-      show: false,
-      createMarker: () => null,
-      lineOptions: {
-        styles: [{ color: lineColor, weight: 6, opacity: 0.75 }],
-        extendToWaypoints: true,
-        missingRouteTolerance: 500,
-      },
-      containerClassName: "hidden",
-    });
-
-    routingControl.addTo(map);
-
-    return () => {
-      routingControl.remove();
-    };
+    if (fitToScreen && matchedStops.length > 0) {
+      const bounds = L.latLngBounds(
+        matchedStops.map((stop) => [stop.lat, stop.lng])
+      );
+      map.fitBounds(bounds, { padding: [20, 20] });
+    }
   }, [map, stopIds, lineColor, fitToScreen]);
 
   if (!waypoints.length) return null;
 
+  const routeCoordinates: [number, number][] = waypoints.map((stop) => [
+    stop.lat,
+    stop.lng,
+  ]);
+
   return (
     <>
+      {routeCoordinates.length > 1 && (
+        <Polyline
+          positions={routeCoordinates}
+          color={lineColor}
+          weight={4}
+          opacity={0.7}
+          smoothFactor={1}
+        />
+      )}
+
       {waypoints.map((point, index) => (
         <BusStopView
           key={point.id ?? index}

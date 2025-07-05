@@ -213,6 +213,27 @@
     ]
   },
   {
+    "id": "6d6618e8-to-6b974192",
+    "name": "Gothatar - Maitighar",
+    "lineColor": "#ff8040",
+    "operator": "Nepal Yatayat",
+    "stops": [
+      "6d6618e8",
+      "8dae2cb7",
+      "1dc8360",
+      "889530a7",
+      "2ad9bbac8e",
+      "18c4d6c7",
+      "889530a1",
+      "6ba66195",
+      "c62f3bc810",
+      "3a45a4cc",
+      "6b7ff2ef",
+      "12ed277c",
+      "6b974192"
+    ]
+  },
+  {
     "id": "22bda2",
     "name": "Purano Bus Park to Thimi",
     "lineColor": "#233263",

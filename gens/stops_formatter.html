@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaflet Stops Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      #map {
+        height: 100vh;
+      }
+      .leaflet-popup-content {
+        min-width: 150px;
+      }
+      .popup-button {
+        display: block;
+        margin: 5px 0;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      // Initialize map
+      const map = L.map("map").setView([0, 0], 2);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Store original and moved stops
+      let stops = [];
+      let movedStops = {};
+
+      // Load stops.json
+      fetch("./../src/data/stops_data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          stops = data;
+          loadStops();
+        })
+        .catch((error) => console.error("Error loading stops:", error));
+
+      function loadStops() {
+        stops.forEach((stop) => {
+          const marker = L.marker([stop.lat, stop.lng], {
+            draggable: true,
+          }).addTo(map);
+
+          // Store original position
+          marker.originalPosition = { lat: stop.lat, lng: stop.lng };
+          marker.stopId = stop.id;
+
+          // Create popup content
+          const popupContent = document.createElement("div");
+          const copyButton = document.createElement("button");
+          copyButton.className = "popup-button";
+          copyButton.textContent = "Copy Coordinates";
+          copyButton.onclick = () => {
+            const pos = marker.getLatLng();
+            const coords = `${pos.lat.toFixed(6)}, ${pos.lng.toFixed(6)}`;
+            navigator.clipboard
+              .writeText(coords)
+              .then(() => alert("Coordinates copied!"))
+              .catch((err) => console.error("Failed to copy:", err));
+          };
+
+          const downloadButton = document.createElement("button");
+          downloadButton.className = "popup-button";
+          downloadButton.textContent = "Download Stops";
+          downloadButton.onclick = downloadStops;
+
+          popupContent.innerHTML = `<b>${stop.name}</b><br>ID: ${stop.id}<br>`;
+          popupContent.appendChild(copyButton);
+          popupContent.appendChild(downloadButton);
+
+          marker.bindPopup(popupContent);
+
+          // Handle dragend event
+          marker.on("dragend", () => {
+            const pos = marker.getLatLng();
+            movedStops[stop.id] = { lat: pos.lat, lng: pos.lng };
+          });
+
+          // Fit map to bounds
+          if (stops.length > 0) {
+            const bounds = L.latLngBounds(stops.map((s) => [s.lat, s.lng]));
+            map.fitBounds(bounds, { padding: [50, 50] });
+          }
+        });
+      }
+
+      function downloadStops() {
+        if (Object.keys(movedStops).length === 0) {
+          alert("No stops have been moved.");
+          return;
+        }
+
+        // Create updated stops array
+        const updatedStops = stops.map((stop) => ({
+          ...stop,
+          lat: movedStops[stop.id]?.lat ?? stop.lat,
+          lng: movedStops[stop.id]?.lng ?? stop.lng,
+        }));
+
+        // Create and download JSON file
+        const dataStr = JSON.stringify(updatedStops, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "updated_stops.json";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>
