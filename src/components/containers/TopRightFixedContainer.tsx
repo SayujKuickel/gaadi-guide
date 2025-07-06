@@ -3,7 +3,7 @@ import Button from "../common/Button";
 
 const TopRightFixedContainer = ({ children }: any) => {
   return (
-    <aside className="fixed right-0 top-0 pr-2 pt-2 z-[9999] flex flex-col justify-center items-center gap-1 md:gap-2">
+    <aside className="fixed right-0 top-0 pr-2 pt-2 z-[1111] flex flex-col justify-center items-center gap-1 md:gap-2">
       {children}
 
       <Link to={"/bus"}>

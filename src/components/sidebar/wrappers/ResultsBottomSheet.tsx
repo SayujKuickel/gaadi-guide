@@ -12,12 +12,11 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
   const sheetRef = useRef<HTMLDivElement>(null);
   const startY = useRef<number | null>(null);
   const currentY = useRef(0);
-  const [translateY, setTranslateY] = useState(0);
   const dragging = useRef(false);
+  const [translateY, setTranslateY] = useState(0);
 
-  const THRESHOLD = 100; // px to trigger close
+  const THRESHOLD = 100;
 
-  // Start dragging
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length !== 1) return;
     startY.current = e.touches[0].clientY;
@@ -32,11 +31,10 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
     window.addEventListener("mouseup", handleMouseUp);
   };
 
-  // During dragging
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!dragging.current || startY.current === null) return;
     const deltaY = e.touches[0].clientY - startY.current;
-    if (deltaY < 0) return; // prevent dragging up
+    if (deltaY < 0) return;
     setTranslateY(deltaY);
     currentY.current = deltaY;
   };
@@ -49,13 +47,11 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
     currentY.current = deltaY;
   };
 
-  // End dragging
   const handleTouchEnd = () => {
     dragging.current = false;
     if (currentY.current > THRESHOLD) {
       onClose?.();
     } else {
-      // Snap back
       setTranslateY(0);
     }
     startY.current = null;
@@ -79,23 +75,27 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
   return (
     <section className="fixed inset-0 z-[99999] flex items-end md:relative md:w-85 md:pl-2 md:pt-2 ">
       <div
-        className="absolute inset-0 bg-black/25 backdrop-blur-[1px] transition-opacity duration-300 md:hidden"
+        className="absolute inset-0 bg-black/35 backdrop-blur-[2px] transition-opacity duration-300 md:hidden"
         onClick={onClose}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
       />
 
       <div
         ref={sheetRef}
         style={{ transform: `translateY(${translateY}px)` }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        onMouseDown={handleMouseDown}
         className="animate-slide-up-mobile relative w-full bg-surface rounded-t-3xl shadow-2xl transition-transform duration-300 ease-out max-h-[85vh] overflow-hidden md:rounded-lg"
       >
         <div
           onClick={onClose}
-          className="grid place-items-center py-3 md:hidden border-b border-b-surface-2 cursor-grab"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
           style={{ touchAction: "none" }}
+          className="grid place-items-center py-3 md:hidden border-b border-b-surface-2 cursor-grab"
         >
           <div className="w-10 h-1 bg-surface-3 rounded-full" />
         </div>
