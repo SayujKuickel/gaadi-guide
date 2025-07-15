@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 import HomePage from "@/pages/HomePage";
 import RoutesPage from "@/pages/RoutesPage";
 import MapPagesLayout from "@/layout/MapPagesLayout";
+import BusOperatorsPage from "./pages/operators/BusOperatorsPage";
+import BusOperatorDetailsPage from "./pages/operators/BusOperatorDetailsPage";
 
 const PageLayout = lazy(() => import("@/layout/PageLayout"));
 const BusRouteDetailsPage = lazy(
@@ -47,6 +49,11 @@ const App = () => {
         <Route path="bus">
           <Route index element={<BusRoutesPage />} />
           <Route path=":id" element={<BusRouteDetailsPage />} />
+        </Route>
+
+        <Route path="operators">
+          <Route index element={<BusOperatorsPage />} />
+          <Route path=":name" element={<BusOperatorDetailsPage />} />
         </Route>
 
         <Route path="/add-route" element={<AddNewRoutePage />} />

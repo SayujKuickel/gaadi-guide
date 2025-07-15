@@ -5,8 +5,6 @@ import { Link, useParams } from "react-router-dom";
 import route_data from "@/data/route_data.json";
 // /types
 import type { IRoute } from "@/types/route.types";
-// \utils
-import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
 // /components
 import ContainerLayout from "@/layout/ContainerLayout";
 import PageLayout from "@/layout/PageLayout";
@@ -15,6 +13,10 @@ import BusLineTitle from "@/components/bus/BusLineTitle";
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 import RouteStopsList from "@/components/bus/RouteStopsList";
+import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
+import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
+import { nameToSlug } from "@/utils/nameToSlug";
+import RouteDetailsCard from "@/components/ui/cards/RouteDetailsCard";
 
 const BusRouteDetailsPage = ({}) => {
   const { id } = useParams();
@@ -35,89 +37,89 @@ const BusRouteDetailsPage = ({}) => {
     <PageLayout>
       <ContainerLayout size="xs">
         {route ? (
-          <div className="">
-            <div className="bg-surface p-5 rounded-lg mb-8">
-              <BusLineTitle
-                lineColor={route?.lineColor}
-                name={route?.name}
-                level={1}
-                className="mb-4"
-              />
+          <>
+            <section className="mb-8">
+              <div className=" flex items-end justify-between flex-wrap gap-2 mb-6">
+                <BusLineTitle
+                  lineColor={route?.lineColor}
+                  name={route?.name}
+                  level={1}
+                />
 
-              <section className=" flex items-end justify-between flex-wrap gap-4">
-                <div className="">
-                  <p className="flex items-center gap-1 text-offText/80 text-sm mb-2">
-                    {route.isVerifiedRoute ? (
-                      <>
-                        <i className="fi fi-rr-shield-trust flex text-sa-green" />
-                        <span>Verified Route</span>
-                      </>
-                    ) : (
-                      <>
-                        <i className="fi fi-rr-exclamation flex text-sa-red" />
-                        <span>Unverified Route</span>
-                        <Link
-                          to={SITE_SUGGESTION_REDIREECT}
-                          target="_blank"
-                          className="text-xs text-text"
-                        >
-                          Please Report Bugs Here*
-                        </Link>
-                      </>
-                    )}
-                  </p>
+                <div className="flex flex-col items-end gap-1">
+                  <RouteVerificationStatus
+                    isVerified={route.isVerifiedRoute || false}
+                    showReportText={false}
+                  />
 
-                  {route.operator && (
-                    <p className="flex items-center gap-1 text-offText/80 text-sm">
-                      <i className="fi fi-rr-bus flex" />
-                      {route.operator}
-                    </p>
-                  )}
-
-                  {route.duration && (
-                    <p className="flex items-center gap-1 text-offText/80 text-sm">
-                      <i className="fi fi-rr-clock flex" />
-                      est: {formatTime(route.duration)}
-                    </p>
-                  )}
+                  <Link
+                    className="block w-fit"
+                    to={`/routes?route=${route?.id}`}
+                  >
+                    <Button
+                      ariaLabel="View route map"
+                      iconStyle="fi fi-rr-map"
+                      title="View in Map"
+                      className="text-xs"
+                    />
+                  </Link>
                 </div>
+              </div>
+            </section>
 
-                <Link
-                  className="block w-fit "
-                  to={`/routes?route=${route?.id}`}
-                >
-                  <Button
-                    ariaLabel="View route map"
-                    iconStyle="fi fi-rr-map"
-                    title="View in Map"
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 md:mb-4">
+              {route?.operator && (
+                <Link to={`/operators/${nameToSlug(route?.operator)}`}>
+                  <RouteDetailsCard
+                    label={"Operated By"}
+                    value={route?.operator}
+                    icon={"fi fi-rr-bus-alt"}
+                    lineColor={route?.lineColor}
                   />
                 </Link>
-              </section>
-            </div>
+              )}
+
+              {route?.details?.duration_mins && (
+                <RouteDetailsCard
+                  label={"Total Duration"}
+                  value={formatTime(route?.details?.duration_mins)}
+                  icon={"fi fi-rr-clock-three"}
+                  lineColor={route?.lineColor}
+                />
+              )}
+
+              {route?.details?.distance_meter && (
+                <RouteDetailsCard
+                  label={"Total Distance"}
+                  value={formatDistance(route?.details?.distance_meter)}
+                  icon={"fi fi-rr-map-location-track"}
+                  lineColor={route?.lineColor}
+                />
+              )}
+
+              {route?.details?.total_bus && (
+                <RouteDetailsCard
+                  label={"Total Bus"}
+                  value={route?.details?.total_bus}
+                  icon={"fi fi-rr-bus-alt"}
+                  lineColor={route?.lineColor}
+                />
+              )}
+            </section>
 
             <div className="bg-surface p-5 rounded-lg">
-              <Heading level={3} className="mb-3">
+              <Heading level={2} className="mb-3">
                 Stops
               </Heading>
               <RouteStopsList routeId={id} stopsArray={route?.stops} />
             </div>
-          </div>
+          </>
         ) : (
           <NotFound title="No route found with id" />
         )}
       </ContainerLayout>
     </PageLayout>
   );
-};
-
-const formatTime = (time: number) => {
-  const min = time % 60;
-  const hr = Math.floor(time / 60);
-
-  const hrStr = hr > 0 ? `${hr} hour${hr > 1 ? "s" : ""}` : "";
-  const minStr = min > 0 ? `${min} min${min > 1 ? "s" : ""}` : "";
-
-  return [hrStr, minStr].filter(Boolean).join(" ");
 };
 
 export default BusRouteDetailsPage;

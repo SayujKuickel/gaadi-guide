@@ -232,8 +232,8 @@ body {
   }
 }
 
-/* * {outline: 1px solid red;} */
-
 .disable-scroll-mobile {
   overscroll-behavior-y: contain;
 }
+
+/* * {outline: 1px solid red;} */

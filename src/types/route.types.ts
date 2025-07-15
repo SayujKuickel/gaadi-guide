@@ -3,7 +3,13 @@ export interface IRoute {
   name: string;
   lineColor: string;
   stops: string[];
-  duration?: number;
   operator?: string;
   isVerifiedRoute?: boolean;
+  details?: IRouteDetails;
+}
+
+interface IRouteDetails {
+  distance_meter?: number;
+  total_bus?: number;
+  duration_mins?: number;
 }

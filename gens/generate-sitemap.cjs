@@ -30,6 +30,16 @@ routeData.forEach((route) => {
   xml += `  <url>\n    <loc>${baseUrl}/bus/${route.id}</loc>\n    <priority>0.6</priority>\n  </url>\n`;
 });
 
+let operators = [...new Set(routeData.map((route) => route?.operator))].filter(
+  (op) => op
+);
+
+operators.forEach((operator) => {
+  xml += `  <url>\n    <loc>${baseUrl}/operators/${operator
+    .replace(" ", "-")
+    .toLowerCase()}</loc>\n    <priority>0.6</priority>\n  </url>\n`;
+});
+
 xml += `</urlset>`;
 
 const outputPath = path.join(__dirname, "../public", "sitemap.xml");

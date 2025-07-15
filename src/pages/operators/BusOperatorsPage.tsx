@@ -1,0 +1,54 @@
+import Button from "@/components/common/Button";
+import Heading from "@/components/common/Heading";
+import Route_data from "@/data/route_data.json";
+import ContainerLayout from "@/layout/ContainerLayout";
+import PageLayout from "@/layout/PageLayout";
+import { Link } from "react-router-dom";
+
+const BusOperatorsPage = () => {
+  const operators = [
+    ...new Set(Route_data.map((route) => route.operator && route.operator)),
+  ].filter((operator) => operator);
+
+  if (!operators || !(operators?.length >= 0)) return;
+
+  return (
+    <PageLayout>
+      <ContainerLayout size="xs">
+        <Heading className="mb-6" level={1}>
+          All Operators
+        </Heading>
+
+        <div className="space-y-3">
+          {operators.map((operator, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between p-4 bg-surface-1 text-on-surface rounded-lg"
+            >
+              <span className="">
+                <span className="font-bold text-xl mr-1">{index + 1}.</span>
+                <span className="font-medium">{operator}</span>
+              </span>
+              <Link
+                to={`/operators/${operator
+                  ?.split(" ")
+                  .join("-")
+                  .toLowerCase()}`}
+                className="px-3 py-1 text-sm text-blue-600 hover:text-blue-800 font-medium"
+              >
+                <Button
+                  title="View Routes"
+                  iconStyle="fi fi-rr-angle-small-right"
+                  className="flex-row-reverse text-xs"
+                  ariaLabel={`View Routes for ${operator}`}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </ContainerLayout>
+    </PageLayout>
+  );
+};
+
+export default BusOperatorsPage;

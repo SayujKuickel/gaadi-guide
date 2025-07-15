@@ -24,6 +24,68 @@ interface SearchResult {
   error: string | null;
 }
 
+interface PathNode {
+  stop: string;
+  routeId: string | null;
+}
+
+interface QueueNode {
+  stop: string;
+  routeId: string | null;
+  path: PathNode[];
+  cost: number;
+}
+
+function getCost(
+  prevRouteId: string | null,
+  currentRouteId: string | null
+): number {
+  return prevRouteId && currentRouteId && prevRouteId !== currentRouteId
+    ? 1001
+    : 1;
+}
+
+function reconstructSegments(path: PathNode[]): IRouteSegment[] {
+  const segments: IRouteSegment[] = [];
+  let currentRouteId: string | null = null;
+  let currentStops: string[] = [];
+
+  for (let i = 0; i < path.length; i++) {
+    const { stop, routeId } = path[i];
+
+    if (routeId !== currentRouteId) {
+      if (currentStops.length > 1 && currentRouteId) {
+        const route = (routes as IRoute[]).find((r) => r.id === currentRouteId);
+        if (!route) throw new Error(`Route ${currentRouteId} not found`);
+        segments.push({
+          id: route.id,
+          name: route.name,
+          lineColor: route.lineColor,
+          stops: [...currentStops],
+        });
+      }
+      currentStops = currentStops.length
+        ? [currentStops[currentStops.length - 1]]
+        : [];
+      currentRouteId = routeId;
+    }
+    currentStops.push(stop);
+  }
+
+  if (currentStops.length > 1 && currentRouteId) {
+    const route = (routes as IRoute[]).find((r) => r.id === currentRouteId);
+    if (!route) throw new Error(`Route ${currentRouteId} not found`);
+    segments.push({
+      id: route.id,
+      name: route.name,
+      lineColor: route.lineColor,
+      stops: [...currentStops],
+    });
+  }
+
+  return segments;
+}
+
 async function searchRouteSegments(
   fromStopId: string,
   toStopId: string
@@ -38,140 +100,66 @@ async function searchRouteSegments(
     }
 
     const graph: Graph = graphData;
-    console.log(graph);
 
     if (!graph[fromStopId] || !graph[toStopId]) {
       throw new Error("No valid routes found");
     }
 
-    // Check for direct route first
     const directRoute = (routes as IRoute[]).find((route) => {
-      const stopIndex = route.stops.indexOf(fromStopId);
-      if (stopIndex === -1) return false;
-      const toIndex = route.stops.indexOf(toStopId);
-      return toIndex !== -1 && toIndex > stopIndex; // Ensure toStopId is after fromStopId
+      const start = route.stops.indexOf(fromStopId);
+      const end = route.stops.indexOf(toStopId);
+      return start !== -1 && end !== -1 && start < end;
     });
 
     if (directRoute) {
-      const startIndex = directRoute.stops.indexOf(fromStopId);
-      const endIndex = directRoute.stops.indexOf(toStopId);
-      const segmentStops = directRoute.stops.slice(startIndex, endIndex + 1);
+      const start = directRoute.stops.indexOf(fromStopId);
+      const end = directRoute.stops.indexOf(toStopId);
       return {
         segments: [
           {
             id: directRoute.id,
             name: directRoute.name,
             lineColor: directRoute.lineColor,
-            stops: segmentStops,
+            stops: directRoute.stops.slice(start, end + 1),
           },
         ],
         error: null,
       };
     }
 
-    // BFS to find path maximizing stops per route if no direct route
-    const queue: {
-      stop: string;
-      path: { stop: string; routeId: string | null }[];
-      currentRouteId: string | null;
-    }[] = [
+    const queue: QueueNode[] = [
       {
         stop: fromStopId,
+        routeId: null,
         path: [{ stop: fromStopId, routeId: null }],
-        currentRouteId: null,
+        cost: 0,
       },
     ];
-    const visited = new Set([`${fromStopId}:null`]);
 
-    while (queue.length) {
-      const { stop, path, currentRouteId } = queue.shift()!;
+    const visited = new Map<string, number>();
+
+    while (queue.length > 0) {
+      queue.sort((a, b) => a.cost - b.cost);
+
+      const { stop, routeId, path, cost } = queue.shift()!;
 
       if (stop === toStopId) {
-        // Build result with minimized segments
-        const routeSegments: IRouteSegment[] = [];
-        let currentSegmentStops: string[] = [path[0].stop];
-        let currentSegmentRouteId: string | null = null;
-
-        for (let i = 1; i < path.length; i++) {
-          const { stop: nextStop, routeId } = path[i];
-          // Only split if a transfer is required (routeId changes and no direct continuation)
-          if (
-            routeId !== currentSegmentRouteId &&
-            currentSegmentRouteId !== null &&
-            isTransferRequired(path, i, graph)
-          ) {
-            const route = (routes as IRoute[]).find(
-              (r) => r.id === currentSegmentRouteId
-            );
-            if (!route) {
-              throw new Error(`Route ${currentSegmentRouteId} not found`);
-            }
-            routeSegments.push({
-              id: route.id,
-              name: route.name,
-              lineColor: route.lineColor,
-              stops: [...currentSegmentStops],
-            });
-            currentSegmentStops = [
-              currentSegmentStops[currentSegmentStops.length - 1],
-            ]; // Carry over last stop
-          }
-          currentSegmentRouteId = routeId;
-          currentSegmentStops.push(nextStop);
-        }
-
-        // Add the last segment
-        if (currentSegmentStops.length > 1) {
-          const route = (routes as IRoute[]).find(
-            (r) => r.id === currentSegmentRouteId
-          );
-          if (!route) {
-            throw new Error(`Route ${currentSegmentRouteId} not found`);
-          }
-          routeSegments.push({
-            id: route.id,
-            name: route.name,
-            lineColor: route.lineColor,
-            stops: [...currentSegmentStops],
-          });
-        }
-
-        // Ensure segments join properly
-        for (let i = 0; i < routeSegments.length - 1; i++) {
-          const currentSegment = routeSegments[i];
-          const nextSegment = routeSegments[i + 1];
-          if (
-            currentSegment.stops[currentSegment.stops.length - 1] !==
-            nextSegment.stops[0]
-          ) {
-            throw new Error("Segments do not join properly");
-          }
-        }
-
-        return {
-          segments: routeSegments,
-          error: null,
-        };
+        const segments = reconstructSegments(path);
+        return { segments, error: null };
       }
 
-      // Prioritize same routeId to maximize stops, then consider transfers
       const neighbors = graph[stop] || [];
-      neighbors.sort((a, b) => {
-        const aSameRoute = a.routeId === currentRouteId && !a.isTransfer;
-        const bSameRoute = b.routeId === currentRouteId && !b.isTransfer;
-        return aSameRoute === bSameRoute ? 0 : aSameRoute ? -1 : 1;
-      });
-
       for (const neighbor of neighbors) {
-        const { stop: nextStop, routeId, isTransfer } = neighbor;
-        const key = `${nextStop}:${routeId || "null"}`;
+        const key = `${neighbor.stop}:${neighbor.routeId}`;
+        const newCost = cost + getCost(routeId, neighbor.routeId);
 
-        if (!visited.has(key)) {
-          visited.add(key);
+        if (!visited.has(key) || visited.get(key)! > newCost) {
+          visited.set(key, newCost);
           queue.push({
-            stop: nextStop,
-            path: [...path, { stop: nextStop, routeId }],
-            currentRouteId: routeId || currentRouteId,
+            stop: neighbor.stop,
+            routeId: neighbor.routeId,
+            path: [...path, { stop: neighbor.stop, routeId: neighbor.routeId }],
+            cost: newCost,
           });
         }
       }
@@ -181,24 +169,6 @@ async function searchRouteSegments(
   } catch (error) {
     return { segments: null, error: (error as Error).message };
   }
-}
-
-// Helper function to check if a transfer is required
-function isTransferRequired(
-  path: { stop: string; routeId: string | null }[],
-  index: number,
-  graph: Graph
-): boolean {
-  const current = path[index];
-  const prev = path[index - 1];
-  if (!prev.routeId || !current.routeId || prev.routeId === current.routeId)
-    return false;
-  // Check if the current route can continue without a transfer
-  const neighbors = graph[prev.stop] || [];
-  return !neighbors.some(
-    (n) =>
-      n.stop === current.stop && n.routeId === prev.routeId && !n.isTransfer
-  );
 }
 
 export default searchRouteSegments;

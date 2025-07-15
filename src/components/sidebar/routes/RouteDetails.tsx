@@ -10,6 +10,8 @@ import Heading from "@/components/common/Heading";
 import BusLineTitle from "@/components/bus/BusLineTitle";
 import RouteStopsList from "@/components/bus/RouteStopsList";
 import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
+import { formatTime } from "@/utils/formatRouteDetails";
+import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
 interface RouteDetailsProps {}
 
 const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
@@ -58,26 +60,9 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
         className="mb-4"
       />
 
-      <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-        {routeData.isVerifiedRoute ? (
-          <>
-            <i className="fi fi-rr-shield-trust flex text-sa-green" />
-            <span>Verified Route</span>
-          </>
-        ) : (
-          <>
-            <i className="fi fi-rr-exclamation flex text-sa-red" />
-            <span>Unverified Route</span>
-            <Link
-              to={SITE_SUGGESTION_REDIREECT}
-              target="_blank"
-              className="text-xs text-text"
-            >
-              Please Report Bugs Here*
-            </Link>
-          </>
-        )}
-      </p>
+      <RouteVerificationStatus
+        isVerified={routeData.isVerifiedRoute || false}
+      />
 
       {routeData.operator && (
         <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
@@ -86,10 +71,10 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
         </p>
       )}
 
-      {routeData.duration && (
+      {routeData?.details?.duration_mins && (
         <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
           <i className="fi fi-rr-clock flex" />
-          est: {formatTime(routeData.duration)}
+          est: {formatTime(routeData?.details?.duration_mins)}
         </p>
       )}
 
@@ -98,16 +83,6 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
       </div>
     </>
   );
-};
-
-const formatTime = (time: number) => {
-  const min = time % 60;
-  const hr = Math.floor(time / 60);
-
-  const hrStr = hr > 0 ? `${hr} hour${hr > 1 ? "s" : ""}` : "";
-  const minStr = min > 0 ? `${min} min${min > 1 ? "s" : ""}` : "";
-
-  return [hrStr, minStr].filter(Boolean).join(" ");
 };
 
 export default RouteDetails;

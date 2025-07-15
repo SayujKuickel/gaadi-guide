@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import SidebarItem from "@/components/sidebar/SidebarItem";
 import { sidebarItems } from "@/constants/sidebarItems";
 
+import logo from "@/assets/logo-192x192.png";
+
 const Sidebar: React.FC = () => {
   const location = useLocation();
 
@@ -10,7 +12,7 @@ const Sidebar: React.FC = () => {
     <aside className="bg-surface border-t-2 border-t-surface-3 border-r-0 md:border-t-0 md:border-r-2 md:border-r-surface-3 w-screen md:w-20 py-3 md:py-1">
       <Link to="/" className="hidden w-full place-items-center md:grid mt-2">
         <img
-          src="/web-app-manifest-192x192.png"
+          src={logo}
           className="w-10 aspect-square"
           width={100}
           height={100}

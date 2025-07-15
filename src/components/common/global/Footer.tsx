@@ -17,7 +17,6 @@ const Footer = () => {
           >
             Sayuj Kuickel.
           </a>
-          ,
         </p>
 
         <p className="text-xs text-on-surface/70 text-center w-fit mx-auto ">

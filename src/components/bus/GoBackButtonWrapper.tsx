@@ -17,6 +17,7 @@ const GoBackButtonSection = () => {
         title="Back"
         iconStyle="fi fi-rr-angle-small-left"
         className="text-sm"
+        variant="ghost"
       />
     </ContainerLayout>
   );

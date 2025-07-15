@@ -74,9 +74,9 @@ const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
     routingControl.addTo(map);
     routingControlRef.current = routingControl;
 
-    routingControl.on("routesfound", function (e: any) {
-      console.log("Route found:", e.routes[0]);
-    });
+    // routingControl.on("routesfound", function (e: any) {
+    //   console.log("Route found:", e.routes[0]);
+    // });
 
     routingControl.on("routingerror", function (e: any) {
       console.warn("Routing error:", e.error);

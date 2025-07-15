@@ -15,15 +15,13 @@ const BusLineTitle: React.FC<BusLineTitleProps> = ({
 }) => {
   return (
     <Heading
-      className={`text-offText flex items-start gap-1 ${className}`}
+      className={`text-offText flex items-center gap-0 ${className}`}
       level={level}
     >
-      <span className="block mt-0.5">
-        <i
-          className="fi fi-rr-circle rounded-full w-fit aspect-square grid place-items-center"
-          style={{ background: lineColor, color: lineColor }}
-        />
-      </span>
+      <i
+        className="fi fi-rr-circle rounded-full w-fit aspect-square grid place-items-center"
+        style={{ background: lineColor, color: lineColor }}
+      />
 
       <span className="ml-1 leading-tight">{name}</span>
     </Heading>

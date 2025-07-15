@@ -36,6 +36,7 @@ const BusStopMarker: React.FC<BusStopMarkerProps> = ({
 
           {showDetailedPopup && (
             <>
+              {stopId}
               <hr className="text-offText mt-1 mb-3" />
 
               <StopPopupDetails id={stopId} />

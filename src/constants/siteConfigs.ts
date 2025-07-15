@@ -7,3 +7,4 @@ export const MAP_BOUNDS_BOTTOM_RIGHT: [number, number] = [27.552274, 85.580874];
 
 export const SITE_SUGGESTION_REDIREECT: string =
   "https://garrulous-belly-2d2.notion.site/2172054224e680209d1dd7541bc86f48?pvs=105";
+export const SITE_URL = "https://sayuj.com.np";

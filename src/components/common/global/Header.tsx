@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { headerItems } from "@/constants/headerItems";
 import Button from "../Button";
+import logo from "@/assets/logo-192x192.png";
 
 const Header = () => {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
@@ -10,13 +11,13 @@ const Header = () => {
 
   return (
     <header className="bg-surface-1 sticky top-0 z-[99998] shadow-sm">
-      <div className="container mx-auto px-5 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo & Title */}
         <div className="flex items-center gap-2">
           <Link to="/" className="block w-14 aspect-square shrink-0">
-            <img src="/web-app-manifest-512x512.png" alt="logo" />
+            <img src={logo} alt="logo" />
           </Link>
-          <div className="hidden md:block leading-tight">
+          <div className="leading-tight">
             <p className="text-xl font-bold -mb-1">Kathmandu</p>
             <p>Bus Routes</p>
           </div>
@@ -54,15 +55,16 @@ const Header = () => {
       {isMobileMenuShown && (
         <aside className="fixed inset-0 z-[99999] h-screen bg-background p-4 md:hidden">
           <nav className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-4">
-              <Link to="/" className="block w-14 aspect-square">
-                <img src="/web-app-manifest-512x512.png" alt="logo" />
+            <div className="flex items-center gap-2">
+              <Link to="/" className="block w-14 aspect-square shrink-0">
+                <img src={logo} alt="logo" />
               </Link>
               <div className="leading-tight">
                 <p className="text-xl font-bold -mb-1">Kathmandu</p>
                 <p>Bus Routes</p>
               </div>
             </div>
+
             <Button
               ariaLabel="Close sidebar"
               onClick={toggleMobileMenu}
