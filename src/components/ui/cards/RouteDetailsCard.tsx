@@ -13,7 +13,7 @@ const RouteDetailsCard: React.FC<RouteDetailsCardProps> = ({
   return (
     <div className="bg-surface p-3 rounded-lg flex items-center gap-3">
       <i
-        style={{ background: `${lineColor}f1` }}
+        style={{ background: `${lineColor}5f` }}
         className={`${icon} grid place-items-center w-12 aspect-square text-offText text-2xl rounded-lg`}
       />
       <p>

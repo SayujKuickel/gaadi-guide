@@ -1,5 +1,90 @@
 [
   {
+    "id": "1db4634-to-1db5223",
+    "name": "Ringroad Loop - Mahanagar",
+    "lineColor": "#D7070D",
+    "operator": "Mahanagar Yatayat",
+    "isVerifiedRoute": true,
+    "details": {
+      "total_bus": 51,
+      "distance_meter": 2180
+    },
+    "stops": [
+      "1db4634",
+      "6d41252b",
+      "5326f2ff",
+      "1db557b",
+      "77d6572b",
+      "6d66efa8",
+      "73fc94e1",
+      "4c2d1efe",
+      "bd3d8f52cf",
+      "1db57d6",
+      "39d27783b9",
+      "de5596baf5",
+      "1dda790",
+      "ec9ae0d9be",
+      "62e8e572",
+      "c993b1379d",
+      "ee499367f1",
+      "8da154a9",
+      "635dc81f",
+      "58c5d0fe",
+      "8daf79b2",
+      "1dc8360",
+      "889530a7",
+      "1db4634"
+    ]
+  },
+  {
+    "id": "11a9cc28-to-22c80c9",
+    "name": "Thankot - Dhulikhel",
+    "lineColor": "#E8333B",
+    "operator": "Mahanagar Yatayat",
+    "isVerifiedRoute": true,
+    "details": {
+      "distance_meter": 524100,
+      "total_bus": 16
+    },
+    "stops": [
+      "11a9cc28",
+      "214ae228",
+      "7a6ef504",
+      "76a83512",
+      "1b4184bd",
+      "7c091e28",
+      "7c091e48",
+      "889530a4",
+      "889530a2",
+      "889530a5",
+      "8dfd33a2",
+      "7a418531",
+      "7a41852d",
+      "1dc8360",
+      "1db4634",
+      "6d41252b",
+      "5326f2ff",
+      "1db557b",
+      "77d6572b",
+      "6d66efa8",
+      "73fc94e1",
+      "4c2d1efe",
+      "bd3d8f52cf",
+      "39d27783b9",
+      "de5596baf5",
+      "1dda790",
+      "ec9ae0d9be",
+      "c993b1379d",
+      "ee499367f1",
+      "12b05015",
+      "55f510f820",
+      "789c59a8bc",
+      "1539b175",
+      "1539b183",
+      "22c80c9"
+    ]
+  },
+  {
     "id": "157c1d73-to-de5596baf5",
     "name": "Lagankhel - Naya buspark",
     "lineColor": "#2B3B27",
@@ -315,26 +400,6 @@
       "157fedf7",
       "f1780d0",
       "15804893"
-    ]
-  },
-  {
-    "id": "23015b",
-    "name": "Gwarko Chowk Stop to Ratna Park",
-    "lineColor": "#670f74",
-    "stops": [
-      "58c5d0fe",
-      "6d0e189b",
-      "6d0e1898",
-      "f179aab",
-      "1958751b",
-      "19587540",
-      "1958e627",
-      "700f889e",
-      "2b440c08",
-      "27f9534e",
-      "6b7ff2ef",
-      "4bf28194",
-      "3838cbe9"
     ]
   },
   {

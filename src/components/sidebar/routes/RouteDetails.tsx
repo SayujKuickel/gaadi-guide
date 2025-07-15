@@ -9,9 +9,9 @@ import type { IRoute } from "@/types/route.types";
 import Heading from "@/components/common/Heading";
 import BusLineTitle from "@/components/bus/BusLineTitle";
 import RouteStopsList from "@/components/bus/RouteStopsList";
-import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
-import { formatTime } from "@/utils/formatRouteDetails";
+import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
 import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
+import { nameToSlug } from "@/utils/nameToSlug";
 interface RouteDetailsProps {}
 
 const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
@@ -53,28 +53,42 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
 
   return (
     <>
-      <BusLineTitle
-        lineColor={routeData.lineColor}
-        name={routeData.name}
-        level={2}
-        className="mb-4"
-      />
+      <div className="mb-3">
+        <BusLineTitle
+          lineColor={routeData.lineColor}
+          name={routeData.name}
+          level={2}
+          className="mb-2"
+        />
 
-      <RouteVerificationStatus
-        isVerified={routeData.isVerifiedRoute || false}
-      />
+        <RouteVerificationStatus
+          isVerified={routeData.isVerifiedRoute || false}
+        />
+      </div>
 
       {routeData.operator && (
-        <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-          <i className="fi fi-rr-bus flex" />
-          {routeData.operator}
-        </p>
+        <Link
+          className="w-fit block"
+          to={`/operators/${nameToSlug(routeData?.operator)}`}
+        >
+          <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
+            <i className="fi fi-rr-bus flex" />
+            {routeData.operator}
+          </p>
+        </Link>
       )}
 
       {routeData?.details?.duration_mins && (
         <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-          <i className="fi fi-rr-clock flex" />
+          <i className="fi fi-rr-clock-three flex" />
           est: {formatTime(routeData?.details?.duration_mins)}
+        </p>
+      )}
+
+      {routeData?.details?.distance_meter && (
+        <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
+          <i className="fi fi-rr-map-location-track flex" />
+          {formatDistance(routeData?.details?.distance_meter)}
         </p>
       )}
 
