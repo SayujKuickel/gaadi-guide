@@ -1,6 +1,6 @@
 import Button from "@/components/common/Button";
 import stops_data from "@/data/stops_data.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface ViewRouteDetailsProps {
   stopsArray: string[];
@@ -17,6 +17,21 @@ const RouteStopsList: React.FC<ViewRouteDetailsProps> = ({
   priorityStop,
   mode = "route",
 }) => {
+  const location = useLocation();
+
+  // Merge existing URL params with new params, return as query string
+  const getMergedSearch = (extraParams: Record<string, string>) => {
+    const currentParams = new URLSearchParams(location.search);
+
+    Object.entries(extraParams).forEach(([key, value]) => {
+      if (value) {
+        currentParams.set(key, value);
+      }
+    });
+
+    return `?${currentParams.toString()}`;
+  };
+
   const reorderedStops = [
     ...(priorityStop && stopsArray.includes(priorityStop)
       ? [priorityStop]
@@ -64,8 +79,11 @@ const RouteStopsList: React.FC<ViewRouteDetailsProps> = ({
                 <Link
                   to={
                     mode === "search"
-                      ? `/search?stop=${stop.id}`
-                      : `/routes?route=${routeId}&stop=${stop.id}`
+                      ? `/search${getMergedSearch({ stop: stop.id })}`
+                      : `/routes${getMergedSearch({
+                          route: routeId,
+                          stop: stop.id,
+                        })}`
                   }
                 >
                   <Button

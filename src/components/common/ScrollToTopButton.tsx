@@ -25,7 +25,8 @@ const ScrollToTopButton = () => {
         onClick={handleScrollToTop}
         ariaLabel="Scroll to top"
         iconStyle="fi fi-rr-angle-small-up animate-in-fade text-xl"
-        className=""
+        className="text-sm"
+        variant="ghost"
       />
     </div>
   );

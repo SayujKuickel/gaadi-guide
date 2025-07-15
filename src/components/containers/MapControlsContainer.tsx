@@ -25,8 +25,8 @@ const MapControlsContainer: React.FC<MapControlsContainerProps> = ({
     useUserLocation();
 
   const [zoomFunctions, setZoomFunctions] = useState({
-    zoomIn: () => console.log("Map not ready yet"),
-    zoomOut: () => console.log("Map not ready yet"),
+    zoomIn: () => console.warn("Map not ready yet"),
+    zoomOut: () => console.warn("Map not ready yet"),
   });
 
   const handleZoomFunctionsReady = useCallback((functions: ZoomFunctions) => {

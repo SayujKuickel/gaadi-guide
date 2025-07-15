@@ -1,7 +1,7 @@
 import L from "leaflet";
 import "leaflet-routing-machine";
 import { useMap } from "react-leaflet";
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import stopsData from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
 import BusStopMarker from "../markers/BusStopMarker";
@@ -61,22 +61,18 @@ const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
             lineJoin: "round",
           },
         ],
-        extendToWaypoints: true,
-        missingRouteTolerance: 500,
+        extendToWaypoints: false,
+        missingRouteTolerance: 1000,
       },
       router: L.Routing.osrmv1({
         serviceUrl: "https://router.project-osrm.org/route/v1",
-        profile: "walking",
+        profile: "driving",
       }),
       containerClassName: "hidden",
     });
 
     routingControl.addTo(map);
     routingControlRef.current = routingControl;
-
-    // routingControl.on("routesfound", function (e: any) {
-    //   console.log("Route found:", e.routes[0]);
-    // });
 
     routingControl.on("routingerror", function (e: any) {
       console.warn("Routing error:", e.error);
@@ -102,9 +98,9 @@ const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
 
   return (
     <>
-      {waypoints.map((point) => (
+      {waypoints.map((point, i) => (
         <BusStopMarker
-          key={point.id}
+          key={`${point.id}${i}`}
           stopId={point.id}
           stopName={point.name}
           position={[point.lat, point.lng]}
@@ -116,4 +112,4 @@ const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
   );
 };
 
-export default RoutePolyLineRenderer;
+export default React.memo(RoutePolyLineRenderer);

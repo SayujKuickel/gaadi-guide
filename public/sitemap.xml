@@ -93,10 +93,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/2307b6</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/2307d8</loc>
     <priority>0.6</priority>
   </url>

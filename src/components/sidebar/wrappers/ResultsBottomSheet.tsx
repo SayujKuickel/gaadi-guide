@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface ResultsBottomSheetProps {
   children: React.ReactNode;
@@ -16,6 +16,24 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
   const [translateY, setTranslateY] = useState(0);
 
   const THRESHOLD = 100;
+
+  useEffect(() => {
+    window.history.pushState({ bottomSheet: true }, "");
+
+    const handlePopState = () => {
+      if (onClose) onClose();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+
+      if (window.history.state?.bottomSheet) {
+        window.history.back();
+      }
+    };
+  }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length !== 1) return;
@@ -83,6 +101,10 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
         onMouseDown={handleMouseDown}
       />
 
+      <span className="md:hidden absolute left-1/2 -translate-x-1/2 top-[15vh] capitalize font-bold text-black drop-shadow-md drop-shadow-white/70">
+        Tap here to close
+      </span>
+
       <div
         ref={sheetRef}
         style={{ transform: `translateY(${translateY}px)` }}
@@ -99,8 +121,7 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
         >
           <div className="w-10 h-1 bg-surface-3 rounded-full" />
         </div>
-
-        <div className="px-4 py-4 overflow-y-auto max-h-[70vh] md:max-h-96 no-scrollbar">
+        <div className="px-4 py-4 overflow-y-auto max-h-[60vh] md:max-h-96 no-scrollbar">
           {children}
         </div>
       </div>

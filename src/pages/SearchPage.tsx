@@ -81,9 +81,9 @@ const SearchPage = () => {
       <MapControlsContainer>
         {segments && (
           <>
-            {segments?.map((segment) => (
+            {segments?.map((segment, i) => (
               <RoutePolyLineRenderer
-                key={segment.id}
+                key={`${segment.id}${i}`}
                 stopIds={segment?.stops}
                 fitToScreen={false}
                 lineColor={segment?.lineColor}

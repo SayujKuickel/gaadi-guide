@@ -1948,14 +1948,6 @@
       "routeId": "22c80c9-to-6d1c3f54"
     },
     {
-      "stop": "8cad8b75",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "6b6dafdf",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "6b6dafdf",
       "routeId": "231d16"
     },
@@ -2017,11 +2009,6 @@
     },
     {
       "stop": "73fc94e1",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
       "routeId": "231d16",
       "isTransfer": true
     },
@@ -2062,11 +2049,6 @@
     },
     {
       "stop": "73fc94e1",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
       "routeId": "231d16",
       "isTransfer": true
     },
@@ -2102,11 +2084,6 @@
     },
     {
       "stop": "73fc94e1",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
       "routeId": "231d16",
       "isTransfer": true
     },
@@ -2133,41 +2110,6 @@
     {
       "stop": "73fc94e1",
       "routeId": "22c80c9-to-6d1c3f54",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231d4f",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231d7a",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231dae",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "2eddaa",
-      "isTransfer": true
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "2307b6",
       "isTransfer": true
     },
     {
@@ -9383,14 +9325,6 @@
       "routeId": "157c1d73-to-de5596baf5"
     },
     {
-      "stop": "3838cbe9",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "1d952d6",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "1d952d6",
       "routeId": "231d16"
     },
@@ -9413,26 +9347,6 @@
     {
       "stop": "12b600e7",
       "routeId": "2e346d"
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "231d9e",
-      "isTransfer": true
-    },
-    {
-      "stop": "6ba66194",
-      "routeId": "2e346d",
-      "isTransfer": true
     },
     {
       "stop": "6ba66194",
@@ -9475,30 +9389,12 @@
       "routeId": "157c1d73-to-de5596baf5"
     },
     {
-      "stop": "214afa1b",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "8cad8b75",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "8cad8b75",
       "routeId": "231d16"
     },
     {
       "stop": "214afa1b",
       "routeId": "231d16"
-    },
-    {
-      "stop": "69e6839e",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "69e6839e",
-      "routeId": "231d16",
-      "isTransfer": true
     },
     {
       "stop": "69e6839e",
@@ -9547,14 +9443,6 @@
       "routeId": "157c1d73-to-6d1c3f54"
     },
     {
-      "stop": "69e6839e",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "73fc94e1",
       "routeId": "231d16"
     },
@@ -9577,31 +9465,6 @@
     {
       "stop": "8cad8b75",
       "routeId": "157c1d73-to-6d1c3f54",
-      "isTransfer": true
-    },
-    {
-      "stop": "8cad8b75",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "8cad8b75",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "8cad8b75",
-      "routeId": "231d7a",
-      "isTransfer": true
-    },
-    {
-      "stop": "8cad8b75",
-      "routeId": "231dae",
-      "isTransfer": true
-    },
-    {
-      "stop": "8cad8b75",
-      "routeId": "2307b6",
       "isTransfer": true
     },
     {
@@ -9744,14 +9607,6 @@
       "routeId": "157c1d73-to-6d1c3f54"
     },
     {
-      "stop": "6ba66194",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "214afa1b",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "214afa1b",
       "routeId": "231d16"
     },
@@ -9774,26 +9629,6 @@
     {
       "stop": "6ba66194",
       "routeId": "2e346d"
-    },
-    {
-      "stop": "1d952d6",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "1d952d6",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "1d952d6",
-      "routeId": "231d9e",
-      "isTransfer": true
-    },
-    {
-      "stop": "1d952d6",
-      "routeId": "2e346d",
-      "isTransfer": true
     },
     {
       "stop": "1d952d6",
@@ -9867,14 +9702,6 @@
       "routeId": "22c80c9-to-6d1c3f54"
     },
     {
-      "stop": "6b6dafdf",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "6d1cb6ca",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "6d1cb6ca",
       "routeId": "231d16"
     },
@@ -9885,21 +9712,6 @@
     {
       "stop": "5206da6d",
       "routeId": "22c80c9-to-6d1c3f54",
-      "isTransfer": true
-    },
-    {
-      "stop": "5206da6d",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "5206da6d",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "5206da6d",
-      "routeId": "2307b6",
       "isTransfer": true
     },
     {
@@ -9964,14 +9776,6 @@
       "routeId": "22c80c9-to-6d1c3f54"
     },
     {
-      "stop": "5206da6d",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "6d1c3f54",
       "routeId": "231d16"
     },
@@ -9982,21 +9786,6 @@
     {
       "stop": "6d1cb6ca",
       "routeId": "22c80c9-to-6d1c3f54",
-      "isTransfer": true
-    },
-    {
-      "stop": "6d1cb6ca",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "6d1cb6ca",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "6d1cb6ca",
-      "routeId": "2307b6",
       "isTransfer": true
     },
     {
@@ -10020,10 +9809,6 @@
       "routeId": "22c80c9-to-6d1c3f54"
     },
     {
-      "stop": "6d1cb6ca",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "158080ae",
       "routeId": "231d16"
     },
@@ -10034,21 +9819,6 @@
     {
       "stop": "6d1c3f54",
       "routeId": "22c80c9-to-6d1c3f54",
-      "isTransfer": true
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "2307b6",
-      "isTransfer": true
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "231d16",
-      "isTransfer": true
-    },
-    {
-      "stop": "6d1c3f54",
-      "routeId": "2307b6",
       "isTransfer": true
     },
     {
@@ -17482,10 +17252,6 @@
   ],
   "3838cbe9": [
     {
-      "stop": "6ba66194",
-      "routeId": "2307b6"
-    },
-    {
       "stop": "4bf28194",
       "routeId": "2307d8"
     },
@@ -17511,26 +17277,6 @@
     },
     {
       "stop": "3838cbe9",
-      "routeId": "2307d8",
-      "isTransfer": true
-    },
-    {
-      "stop": "3838cbe9",
-      "routeId": "23085f",
-      "isTransfer": true
-    },
-    {
-      "stop": "3838cbe9",
-      "routeId": "2308b2",
-      "isTransfer": true
-    },
-    {
-      "stop": "3838cbe9",
-      "routeId": "2ee89a",
-      "isTransfer": true
-    },
-    {
-      "stop": "3838cbe9",
       "routeId": "23085f",
       "isTransfer": true
     },
@@ -17557,52 +17303,6 @@
     {
       "stop": "3838cbe9",
       "routeId": "2ee89a",
-      "isTransfer": true
-    }
-  ],
-  "214afa1b": [
-    {
-      "stop": "1d952d6",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "69e6839e",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "69e6839e",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "1d952d6",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "214afa1b",
-      "routeId": "231d16",
-      "isTransfer": true
-    }
-  ],
-  "6b6dafdf": [
-    {
-      "stop": "73fc94e1",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "5206da6d",
-      "routeId": "2307b6"
-    },
-    {
-      "stop": "5206da6d",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "73fc94e1",
-      "routeId": "231d16"
-    },
-    {
-      "stop": "6b6dafdf",
-      "routeId": "231d16",
       "isTransfer": true
     }
   ],
@@ -18219,6 +17919,26 @@
   "158080ae": [
     {
       "stop": "6d1c3f54",
+      "routeId": "231d16"
+    }
+  ],
+  "6b6dafdf": [
+    {
+      "stop": "5206da6d",
+      "routeId": "231d16"
+    },
+    {
+      "stop": "73fc94e1",
+      "routeId": "231d16"
+    }
+  ],
+  "214afa1b": [
+    {
+      "stop": "69e6839e",
+      "routeId": "231d16"
+    },
+    {
+      "stop": "1d952d6",
       "routeId": "231d16"
     }
   ],

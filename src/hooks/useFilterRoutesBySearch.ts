@@ -1,13 +1,12 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-// types
+// \types
 import { type IRoute } from "@/types/route.types";
 import { type IStopOption } from "@/types/stopOptions.types";
-//
+import type { IStop } from "@/types/stop.types";
+//\ data
 import stops_data from "@/data/stops_data.json";
 import route_data from "@/data/route_data.json";
-//
-import type { IStop } from "@/types/stop.types";
 
 const useFilterRoutesBySearch = () => {
   const [searchParams, setSearchParams] = useSearchParams();

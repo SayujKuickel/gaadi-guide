@@ -39,14 +39,14 @@ const BusRouteDetailsPage = ({}) => {
         {route ? (
           <>
             <section className="mb-8">
-              <div className=" flex items-end justify-between flex-wrap gap-2 mb-6">
+              <div className=" flex items-end justify-between flex-wrap gap-2 mb-4">
                 <BusLineTitle
                   lineColor={route?.lineColor}
                   name={route?.name}
                   level={1}
                 />
 
-                <div className="flex flex-col items-end gap-1">
+                <div className="flex items-center justify-between w-full md:w-fit md:flex-col md:items-end gap-1">
                   <RouteVerificationStatus
                     isVerified={route.isVerifiedRoute || false}
                     showReportText={false}
@@ -67,7 +67,7 @@ const BusRouteDetailsPage = ({}) => {
               </div>
             </section>
 
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 md:mb-4">
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               {route?.operator && (
                 <Link to={`/operators/${nameToSlug(route?.operator)}`}>
                   <RouteDetailsCard
@@ -111,6 +111,7 @@ const BusRouteDetailsPage = ({}) => {
               <Heading level={2} className="mb-3">
                 Stops
               </Heading>
+
               <RouteStopsList routeId={id} stopsArray={route?.stops} />
             </div>
           </>

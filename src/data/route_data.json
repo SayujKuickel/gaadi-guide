@@ -423,24 +423,6 @@
     ]
   },
   {
-    "id": "2307b6",
-    "name": "Ratna Park to Budhanilkantha School Blue Micro Stand",
-    "lineColor": "#17447e",
-    "stops": [
-      "3838cbe9",
-      "6ba66194",
-      "1d952d6",
-      "214afa1b",
-      "69e6839e",
-      "8cad8b75",
-      "73fc94e1",
-      "6b6dafdf",
-      "5206da6d",
-      "6d1cb6ca",
-      "6d1c3f54"
-    ]
-  },
-  {
     "id": "2307d8",
     "name": "Ratna Park to Mangalbazar",
     "lineColor": "#2d173c",
