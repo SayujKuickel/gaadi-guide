@@ -12,6 +12,7 @@ import RouteStopsList from "@/components/bus/RouteStopsList";
 import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
 import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
 import { nameToSlug } from "@/utils/nameToSlug";
+import { BusFront, Clock, Route, TriangleAlert } from "lucide-react";
 interface RouteDetailsProps {}
 
 const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
@@ -42,10 +43,13 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
 
   if (error) {
     return (
-      <Heading className="mb-3 text-center" level={2}>
-        <i className="fi fi-rr-triangle-warning block text-4xl" />
-        {error}
-      </Heading>
+      <div className="flex flex-col items-center ">
+        <TriangleAlert size={64} />
+
+        <Heading className="mt-3 text-center" level={3}>
+          {error}
+        </Heading>
+      </div>
     );
   }
 
@@ -72,7 +76,7 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
           to={`/operators/${nameToSlug(routeData?.operator)}`}
         >
           <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-            <i className="fi fi-rr-bus flex" />
+            <BusFront size={18} />
             {routeData.operator}
           </p>
         </Link>
@@ -80,14 +84,14 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
 
       {routeData?.details?.duration_mins && (
         <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-          <i className="fi fi-rr-clock-three flex" />
+          <Clock size={18} />
           est: {formatTime(routeData?.details?.duration_mins)}
         </p>
       )}
 
       {routeData?.details?.distance_meter && (
         <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-          <i className="fi fi-rr-map-location-track flex" />
+          <Route size={18} />
           {formatDistance(routeData?.details?.distance_meter)}
         </p>
       )}

@@ -24,7 +24,7 @@ This project was developed by [Sayuj Kuickel](https://sayuj.com.np/). I'm passio
 Contributors and sources that have supported this project:
 
 - [@SayujKuickel](https://github.com/SayujKuickel) – Project author and core developer
-- [@amritkarma's yatayat](https://github.com/neogeomat/yatayat) – Bus route data used with permission from this open-source project
+- [View All Contributors](https://bus-routes.sayuj.com.np/about)
 
 ## Want to Help?
 

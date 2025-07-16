@@ -1,6 +1,7 @@
 import ContainerLayout from "@/layout/ContainerLayout";
 import Button from "../common/Button";
 import { useNavigate } from "react-router-dom";
+import { ChevronLeft } from "lucide-react";
 
 const GoBackButtonSection = () => {
   const navigate = useNavigate();
@@ -10,12 +11,12 @@ const GoBackButtonSection = () => {
   }
 
   return (
-    <ContainerLayout size="sm" className="mt-2 mb-6">
+    <ContainerLayout size="sm" className="mt-4 mb-8">
       <Button
         onClick={handleGoBack}
         ariaLabel="Go back to previous page button"
         title="Back"
-        iconStyle="fi fi-rr-angle-small-left"
+        icon={<ChevronLeft size={14} />}
         className="text-sm"
         variant="ghost"
       />

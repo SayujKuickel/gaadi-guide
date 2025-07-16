@@ -1,7 +1,10 @@
+import { createElement, type ReactNode } from "react";
+import { Route, MapPinned, Search } from "lucide-react";
+
 export interface ISidebarItem {
   key: number;
   name: string;
-  icon: string;
+  icon: ReactNode;
   type?: string;
   url?: string;
 }
@@ -10,19 +13,19 @@ export const sidebarItems: ISidebarItem[] = [
   {
     key: 0,
     name: "Routes",
-    icon: "fi fi-rr-track",
+    icon: createElement(Route, { size: 20 }),
     url: "/routes",
   },
   {
     key: 2,
     name: "Stops",
-    icon: "fi fi-rr-land-layer-location",
+    icon: createElement(MapPinned, { size: 20 }),
     url: "/stops",
   },
   {
     key: 1,
     name: "Search",
-    icon: "fi fi-rr-search",
+    icon: createElement(Search, { size: 20 }),
     url: "/search",
   },
 ];

@@ -153,6 +153,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.marker-container svg {
+  width: 45%;
+  fill: #2563eb;
 }
 
 .marker-icon {

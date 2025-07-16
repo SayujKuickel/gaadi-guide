@@ -3,6 +3,7 @@ import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import stopsData from "@/data/stops_data.json";
 import useSearchByStop from "@/hooks/useSearchByStop";
+import { Loader, Search } from "lucide-react";
 
 const SearchWrapper = ({ setSegments, setShowResults }: any) => {
   const {
@@ -48,10 +49,14 @@ const SearchWrapper = ({ setSegments, setShowResults }: any) => {
       />
 
       <Button
-        iconStyle={
-          isSearchingForStops
-            ? "fi fi-rr-loading animate-spin"
-            : "fi fi-rr-search"
+        icon={
+          isSearchingForStops ? (
+            <span className="animate-spin">
+              <Loader size={16} />
+            </span>
+          ) : (
+            <Search size={16} />
+          )
         }
         title={isSearchingForStops ? "Searching..." : "Search"}
         ariaLabel="search"

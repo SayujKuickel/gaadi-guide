@@ -101,7 +101,7 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
         onMouseDown={handleMouseDown}
       />
 
-      <span className="md:hidden absolute left-1/2 -translate-x-1/2 top-[15vh] capitalize font-bold text-black drop-shadow-md drop-shadow-white/70">
+      <span className="md:hidden absolute left-1/2 -translate-x-1/2 top-[15vh] capitalize font-semibold tracking-wider text-white drop-shadow-md ">
         Tap here to close
       </span>
 

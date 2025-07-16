@@ -1,4 +1,5 @@
 import Button from "@/components/common/Button";
+import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const ScrollToTopButton = () => {
@@ -24,8 +25,8 @@ const ScrollToTopButton = () => {
       <Button
         onClick={handleScrollToTop}
         ariaLabel="Scroll to top"
-        iconStyle="fi fi-rr-angle-small-up animate-in-fade text-xl"
-        className="text-sm"
+        icon={<ChevronUp size={18} />}
+        className="text-sm animate-in-fade"
         variant="ghost"
       />
     </div>

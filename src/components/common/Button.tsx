@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
+
 interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   title?: string;
-  iconStyle?: string;
+  icon?: ReactNode;
   className?: string;
   ariaLabel: string;
   type?: "button" | "submit" | "reset";
@@ -11,7 +13,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   onClick,
   title,
-  iconStyle,
+  icon,
   className = "",
   type = "button",
   ariaLabel,
@@ -33,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       className={`flex items-center gap-1 px-2 py-2 rounded-lg cursor-pointer transition-all ${variantStyles[variant]} ${className}`}
     >
-      {iconStyle && <i className={`flex ${iconStyle}`} />}
+      {icon}
       {title && <>{title}</>}
     </button>
   );

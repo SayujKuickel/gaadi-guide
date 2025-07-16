@@ -6,14 +6,14 @@ const Footer = () => {
   return (
     <footer className="pt-4 pb-6 mt-24">
       <div className="container mx-auto px-5">
-        <p className="flex items-center gap-1 text-center mx-auto w-fit">
+        <p className="flex items-center gap-1 text-center font-semibold mx-auto w-fit">
           <span>Made with</span>
-          <i className="fi fi-rr-heart flex"></i>
+          ❤️
           <span>by</span>
           <a
             target="_blank"
             href="https://sayuj.com.np"
-            className="text-accent"
+            className="text-secondary hover:text-secondary/90"
           >
             Sayuj Kuickel.
           </a>

@@ -10,6 +10,7 @@ import { MapContainer, Polyline, useMapEvents } from "react-leaflet";
 import stops_data from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
 import BusStopMarker from "@/components/map/markers/BusStopMarker";
+import { ChevronDown, ChevronUp, Trash2, Trash2Icon } from "lucide-react";
 
 interface Errors {
   routeName?: string;
@@ -480,7 +481,7 @@ const AddNewRoutePage = () => {
                     disabled={actualIndex === 0}
                     className="px-2 py-1 bg-surface-3 hover:bg-surface-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <i className="fi fi-rr-angle-small-up flex" />
+                    <ChevronDown size={16} />
                   </button>
                   <button
                     type="button"
@@ -488,14 +489,14 @@ const AddNewRoutePage = () => {
                     disabled={actualIndex === stops.length - 1}
                     className="px-2 py-1 bg-surface-3 hover:bg-surface-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <i className="fi fi-rr-angle-small-down flex" />
+                    <ChevronUp size={16} />
                   </button>
                   <button
                     type="button"
                     onClick={() => handleDeleteStop(stop.id)}
                     className="px-2 py-1 bg-red-500 hover:bg-red-600 text-white rounded"
                   >
-                    <i className="fi fi-rr-trash-xmark flex" />
+                    <Trash2Icon size={16} />
                   </button>
                 </div>
               </li>

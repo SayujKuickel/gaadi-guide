@@ -3,6 +3,7 @@ import Heading from "@/components/common/Heading";
 import Route_data from "@/data/route_data.json";
 import ContainerLayout from "@/layout/ContainerLayout";
 import PageLayout from "@/layout/PageLayout";
+import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const BusOperatorsPage = () => {
@@ -29,6 +30,7 @@ const BusOperatorsPage = () => {
                 <span className="font-bold text-xl mr-1">{index + 1}.</span>
                 <span className="font-medium">{operator}</span>
               </span>
+
               <Link
                 to={`/operators/${operator
                   ?.split(" ")
@@ -38,7 +40,7 @@ const BusOperatorsPage = () => {
               >
                 <Button
                   title="View Routes"
-                  iconStyle="fi fi-rr-angle-small-right"
+                  icon={<ChevronRight size={16} />}
                   className="flex-row-reverse text-xs"
                   ariaLabel={`View Routes for ${operator}`}
                 />

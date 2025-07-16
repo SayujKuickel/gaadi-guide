@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../common/Button";
+import { BusFront } from "lucide-react";
 
 const TopRightFixedContainer = ({ children }: any) => {
   return (
@@ -10,7 +11,7 @@ const TopRightFixedContainer = ({ children }: any) => {
         <Button
           className="text-base md:text-xl"
           ariaLabel="Go to bus details page"
-          iconStyle="fi fi-rr-bus"
+          icon={<BusFront size={18} />}
         />
       </Link>
     </aside>

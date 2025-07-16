@@ -13,6 +13,7 @@ import ViewWrapper from "@/components/sidebar/wrappers/SidebarPanel";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
+import { Eye } from "lucide-react";
 
 const StopsPage = () => {
   const {
@@ -52,7 +53,7 @@ const StopsPage = () => {
 
             {selectedStop && !showResults && (
               <Button
-                iconStyle={"fi fi-rr-eye"}
+                icon={<Eye size={16} />}
                 title={"View Routes"}
                 ariaLabel="View Routes"
                 className="text-xs"

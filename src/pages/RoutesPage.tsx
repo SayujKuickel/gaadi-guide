@@ -16,6 +16,7 @@ import SearchableCombobox from "@/components/common/SearchableCombobox";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
+import { Eye } from "lucide-react";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -50,7 +51,7 @@ const RoutesPage = () => {
 
             {selectedRoute && !showResults && (
               <Button
-                iconStyle={"fi fi-rr-eye"}
+                icon={<Eye size={16} />}
                 title={"View Stops"}
                 ariaLabel="search"
                 className="text-xs"

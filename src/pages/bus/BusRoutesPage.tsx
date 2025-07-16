@@ -36,7 +36,7 @@ const BusRoutesPage = () => {
           </section>
 
           {filteredRoutes && filteredRoutes.length > 0 ? (
-            <>
+            <div className="space-y-10">
               {filteredRoutes.map((route) => (
                 <ViewRouteDetails
                   priorityStop={selectedStop?.id}
@@ -44,7 +44,7 @@ const BusRoutesPage = () => {
                   route={route}
                 />
               ))}
-            </>
+            </div>
           ) : (
             <p className="text-offText">Selected stop is not in any routes!</p>
           )}

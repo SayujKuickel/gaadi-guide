@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Button from "@/components/common/Button";
 import LayerToggleOptions from "./LayerSwitcherOptions";
 import Heading from "@/components/common/Heading";
+import { Layers2 } from "lucide-react";
 
 interface LayerSwitcherProps {
   setTileMapKey: (key: string) => void;
@@ -38,7 +39,7 @@ const LayerSwitcher: React.FC<LayerSwitcherProps> = ({
     <section className="relative" ref={containerRef}>
       <Button
         onClick={() => setIsOpen((prev) => !prev)}
-        iconStyle="fi fi-rr-layers"
+        icon={<Layers2 size={18} />}
         className="text-base md:text-xl"
         ariaLabel="Toggle map layers"
       />

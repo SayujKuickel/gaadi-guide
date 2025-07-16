@@ -1,4 +1,5 @@
 import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
+import { ShieldCheck, ShieldX } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface RouteVerificationStatusProps {
@@ -12,16 +13,15 @@ const RouteVerificationStatus: React.FC<RouteVerificationStatusProps> = ({
   showText = true,
   isVerified,
 }) => {
-  const isVerifiedIcon = isVerified
-    ? "fi fi-rr-shield-trust"
-    : "fi fi-rr-exclamation";
-  const isVerifiedColor = isVerified ? " text-sa-green" : "text-sa-red";
-
   return (
-    <p className="flex items-center gap-1 text-offText/80 text-xs w-fit">
-      <i className={`${isVerifiedIcon} ${isVerifiedColor} flex`} />
+    <p className="text-offText/80 text-xs w-fit">
+      <span className={` flex items-center gap-0.5 font-semibold`}>
+        <span className={`${isVerified ? "text-sa-green" : "text-sa-red"}`}>
+          {isVerified ? <ShieldCheck size={16} /> : <ShieldX size={16} />}
+        </span>
 
-      {showText && <>{isVerified ? "Verified" : "Unverified"}</>}
+        {showText && <>{isVerified ? "Verified" : "Unverified"}</>}
+      </span>
 
       {!isVerified && showReportText && (
         <Link

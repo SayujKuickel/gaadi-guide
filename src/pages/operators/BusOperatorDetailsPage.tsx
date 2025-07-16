@@ -35,11 +35,11 @@ const BusOperatorDetailsPage = () => {
                 Routes by {name?.split("-")?.join(" ")}
               </Heading>
 
-              {routes.map((route) => (
-                <>
+              <div className="space-y-10">
+                {routes.map((route) => (
                   <ViewRouteDetails key={route.id} route={route} />
-                </>
-              ))}
+                ))}
+              </div>
             </>
           ) : (
             <NotFound title="No Routes by the Operator" />

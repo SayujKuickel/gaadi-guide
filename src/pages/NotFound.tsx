@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "@/components/common/Button";
+import { Map, Route } from "lucide-react";
 
 interface NotFoundProps {
   title?: string;
@@ -15,7 +16,7 @@ const NotFound: React.FC<NotFoundProps> = ({ title }) => {
       <div className="flex items-center justify-center gap-4">
         <Link to={"/"}>
           <Button
-            iconStyle={"fi fi-rr-map"}
+            icon={<Map size={18} />}
             ariaLabel="Go to map page"
             title={"Map"}
             className={"mx-auto"}
@@ -25,7 +26,7 @@ const NotFound: React.FC<NotFoundProps> = ({ title }) => {
         <Link to={"/bus"}>
           <Button
             ariaLabel="Go to bus routes page"
-            iconStyle="fi fi-rr-track"
+            icon={<Route size={18} />}
             title={"Bus Routes"}
             className={"mx-auto"}
           />

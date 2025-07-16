@@ -19,7 +19,7 @@ const About = () => {
           This project is being actively developed and you can see the full
           feature list I plan to add in the{" "}
           <a
-            href="https://www.notion.so/2002054224e68038b8f1dd5e64f0a636?v=2002054224e681548951000c5b4845fc"
+            href="https://www.notion.so/2002054224e68038b8f1dd5e64f0a636?v=2002054224e681548951600c5b4845fc"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline"
@@ -29,20 +29,7 @@ const About = () => {
           .
         </p>
 
-        <p className="mt-4 text-base leading-7 text-offText">
-          Check out the demo{" "}
-          <a
-            href="https://bus-routes.sayuj.com.np/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold underline"
-          >
-            here
-          </a>
-          .
-        </p>
-
-        <Heading level={2} className="mt-10">
+        <Heading level={2} className="mt-16">
           Key Features
         </Heading>
 
@@ -55,7 +42,7 @@ const About = () => {
           <li>Designed for both locals and tourists</li>
         </ul>
 
-        <Heading level={2} className="mt-10">
+        <Heading level={2} className="mt-16">
           Developed By
         </Heading>
 
@@ -73,7 +60,7 @@ const About = () => {
           technologies and making public transport more navigable for everyone.
         </p>
 
-        <Heading level={2} className="mt-10">
+        <Heading level={2} className="mt-16">
           Contributors
         </Heading>
 
@@ -103,9 +90,33 @@ const About = () => {
             </a>{" "}
             – Bus route data used with permission from this open-source project
           </li>
+          <li>
+            <a
+              href="https://www.sajhayatayat.com.np/short-routes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline"
+            >
+              Sajha Yatatat
+            </a>{" "}
+            – Routes From Sajya Yatayat from their website + Photos taken by me
+            (sayuj)
+          </li>
+          <li>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.slashplus.mahanagar_plus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline"
+            >
+              Mahanagar Plus
+            </a>{" "}
+            – Routes by Mahanagar Yatayat used from their Application + Photos
+            taken by me (sayuj)
+          </li>
         </ul>
 
-        <Heading level={2} className="mt-10">
+        <Heading level={2} className="mt-16">
           Want to Help?
         </Heading>
 

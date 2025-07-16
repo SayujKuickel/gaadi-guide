@@ -1,3 +1,4 @@
+import { Circle } from "lucide-react";
 import Heading from "../common/Heading";
 
 interface BusLineTitleProps {
@@ -18,9 +19,11 @@ const BusLineTitle: React.FC<BusLineTitleProps> = ({
       className={`text-offText flex items-center gap-0 ${className}`}
       level={level}
     >
-      <i
-        className="fi fi-rr-circle rounded-full w-fit aspect-square grid place-items-center"
-        style={{ background: lineColor, color: lineColor }}
+      <Circle
+        style={{
+          fill: lineColor,
+          stroke: lineColor,
+        }}
       />
 
       <span className="ml-1 leading-tight">{name}</span>

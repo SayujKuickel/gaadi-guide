@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
+import { Trash2 } from "lucide-react";
 
 interface BaseOption {
   id: string | number;
@@ -127,7 +128,7 @@ const SearchableCombobox = <T extends BaseOption>({
                 setQuery("");
                 setIsOpen(true);
               }}
-              iconStyle="fi fi-rr-trash"
+              icon={<Trash2 size={16} />}
               variant="secondary"
               ariaLabel="Clear Select"
               className="hover:text-sa-red ml-1"

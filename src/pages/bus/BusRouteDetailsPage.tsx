@@ -17,6 +17,7 @@ import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
 import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
 import { nameToSlug } from "@/utils/nameToSlug";
 import RouteDetailsCard from "@/components/ui/cards/RouteDetailsCard";
+import { Bus, BusFront, Clock, Map, Route } from "lucide-react";
 
 const BusRouteDetailsPage = ({}) => {
   const { id } = useParams();
@@ -58,7 +59,7 @@ const BusRouteDetailsPage = ({}) => {
                   >
                     <Button
                       ariaLabel="View route map"
-                      iconStyle="fi fi-rr-map"
+                      icon={<Map size={16} />}
                       title="View in Map"
                       className="text-xs"
                     />
@@ -73,7 +74,7 @@ const BusRouteDetailsPage = ({}) => {
                   <RouteDetailsCard
                     label={"Operated By"}
                     value={route?.operator}
-                    icon={"fi fi-rr-bus-alt"}
+                    icon={<BusFront />}
                     lineColor={route?.lineColor}
                   />
                 </Link>
@@ -83,7 +84,7 @@ const BusRouteDetailsPage = ({}) => {
                 <RouteDetailsCard
                   label={"Total Duration"}
                   value={formatTime(route?.details?.duration_mins)}
-                  icon={"fi fi-rr-clock-three"}
+                  icon={<Clock />}
                   lineColor={route?.lineColor}
                 />
               )}
@@ -92,7 +93,7 @@ const BusRouteDetailsPage = ({}) => {
                 <RouteDetailsCard
                   label={"Total Distance"}
                   value={formatDistance(route?.details?.distance_meter)}
-                  icon={"fi fi-rr-map-location-track"}
+                  icon={<Route />}
                   lineColor={route?.lineColor}
                 />
               )}
@@ -101,7 +102,7 @@ const BusRouteDetailsPage = ({}) => {
                 <RouteDetailsCard
                   label={"Total Bus"}
                   value={route?.details?.total_bus}
-                  icon={"fi fi-rr-bus-alt"}
+                  icon={<Bus />}
                   lineColor={route?.lineColor}
                 />
               )}

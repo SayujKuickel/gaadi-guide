@@ -1,9 +1,9 @@
-import type { sidebarItem } from "@/constants/sidebarItems";
+import { type ISidebarItem } from "@/constants/sidebarItems";
 import type React from "react";
 import { Link } from "react-router-dom";
 
 interface SidebarItemProps {
-  item: sidebarItem;
+  item: ISidebarItem;
   isActive?: boolean;
 }
 
@@ -20,11 +20,13 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         className="w-full h-full flex flex-col items-center text-center justify-center md:py-2"
         to={item?.url ?? "/"}
       >
-        <i
-          className={`text-2xl md:text-xl mb-1 rounded-4xl py-1 w-1/2 md:w-3/5 grid place-items-center transition-all ${
-            isActive ? "bg-secondary/10" : ""
-          } ${item?.icon ?? ""}`}
-        />
+        <span
+          className={`text-2xl md:text-xl mb-1.5 rounded-4xl py-1 w-[50%] md:w-[75%] grid place-items-center transition-all ${
+            isActive ? "bg-secondary/10 text-secondary" : ""
+          } `}
+        >
+          {item?.icon}
+        </span>
 
         <span className="text-xs capitalize pointer-events-none text-inherit">
           {item?.name}

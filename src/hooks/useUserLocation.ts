@@ -35,13 +35,13 @@ export const useUserLocation = () => {
 
         sessionStorage.setItem("user-latitude", coords.latitude.toString());
         sessionStorage.setItem("user-longitude", coords.longitude.toString());
+        sessionStorage.removeItem("location-permission-denied");
 
         setIsSearchingLocation(false);
       },
       (err) => {
         console.error("Geolocation error:", err);
         setIsSearchingLocation(false);
-
         sessionStorage.setItem("location-permission-denied", "true");
 
         showToast(

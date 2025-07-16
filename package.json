@@ -16,6 +16,7 @@
     "@types/leaflet-routing-machine": "^3.2.8",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",
+    "lucide-react": "^0.525.0",
     "postcss": "^8.5.3",
     "puppeteer": "^24.7.2",
     "react": "^19.0.0-rc.1",

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { headerItems } from "@/constants/headerItems";
 import Button from "../Button";
 import logo from "@/assets/logo-192x192.png";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
@@ -43,11 +44,7 @@ const Header = () => {
           <Button
             ariaLabel="Toggle mobile menu"
             onClick={toggleMobileMenu}
-            iconStyle={
-              isMobileMenuShown
-                ? "fi fi-rr-cross-small"
-                : "fi fi-rr-menu-burger"
-            }
+            icon={isMobileMenuShown ? <X size={16} /> : <Menu size={16} />}
           />
         </div>
       </div>
@@ -68,7 +65,7 @@ const Header = () => {
             <Button
               ariaLabel="Close sidebar"
               onClick={toggleMobileMenu}
-              iconStyle="fi fi-rr-cross-small"
+              icon={<X size={16} />}
             />
           </nav>
 
@@ -81,7 +78,8 @@ const Header = () => {
                   className="flex items-center gap-2 px-4 py-3 rounded-lg border border-on-surface/25 bg-surface transition-all"
                   onClick={toggleMobileMenu}
                 >
-                  <i className={`flex ${icon}`} />
+                  {icon}
+
                   {name}
                 </Link>
               </li>

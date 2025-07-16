@@ -6,6 +6,7 @@ import type { IRoute } from "@/types/route.types";
 import BusLineTitle from "@/components/bus/BusLineTitle";
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
+import { Map } from "lucide-react";
 
 interface StopDetailsProps {
   filteredRoutes: IRoute[] | null;
@@ -42,7 +43,7 @@ const StopDetails: React.FC<StopDetailsProps> = ({ filteredRoutes }) => {
 
               <Button
                 title="View"
-                iconStyle="fi fi-rr-map"
+                icon={<Map size={16} />}
                 className="text-xs mt-2 md:hidden sm:mt-0"
                 ariaLabel={`View ${route.name} in its own page`}
               />

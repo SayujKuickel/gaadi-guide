@@ -1,4 +1,5 @@
 import Button from "@/components/common/Button";
+import { Minus, Plus } from "lucide-react";
 
 interface ZoomControlHandlerProps {
   onZoomIn: () => void;
@@ -14,13 +15,13 @@ const ZoomControlHandler: React.FC<ZoomControlHandlerProps> = ({
       <Button
         ariaLabel="Zoom in to the map"
         className="rounded-b-none border-b-[1px]"
-        iconStyle="fi fi-rr-plus-small"
+        icon={<Plus size={14} />}
         onClick={onZoomIn}
       />
       <Button
         ariaLabel="Zoom out of the map"
         className="rounded-t-none border-t-[1px]"
-        iconStyle="fi fi-rr-minus-small"
+        icon={<Minus size={14} />}
         onClick={onZoomOut}
       />
     </aside>
