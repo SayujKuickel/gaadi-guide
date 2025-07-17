@@ -6,6 +6,8 @@ import route_data from "@/data/route_data.json";
 import useRoute from "@/hooks/useSelectRoute";
 // utils
 import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
+//
+import { Helmet } from "react-helmet";
 // \components
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
@@ -16,7 +18,9 @@ import SearchableCombobox from "@/components/common/SearchableCombobox";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
+// icons
 import { Eye } from "lucide-react";
+import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -33,6 +37,13 @@ const RoutesPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {selectedRoute?.name ? selectedRoute.name : "Routes"} |{" "}
+          {SITE_BASE_TITLE}
+        </title>
+        <link rel="canonical" href={`${SITE_BASE_URL}/routes`} />
+      </Helmet>
       <SidebarViewsContainer>
         <>
           <ViewWrapper>

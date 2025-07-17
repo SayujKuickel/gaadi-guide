@@ -8,6 +8,8 @@ import Heading from "@/components/common/Heading";
 import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
+import { Helmet } from "react-helmet";
+import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
 
 const BusRoutesPage = () => {
   const { selectedStop, setSelectedStop, filteredRoutes } =
@@ -15,6 +17,11 @@ const BusRoutesPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Routes | {SITE_BASE_TITLE}</title>
+        <link rel="canonical" href={`${SITE_BASE_URL}/bus`} />
+      </Helmet>
+
       <PageLayout>
         <ContainerLayout size="xs">
           <Heading level={1} className="mb-6">

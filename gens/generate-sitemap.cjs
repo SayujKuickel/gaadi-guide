@@ -10,6 +10,7 @@ const staticRoutes = [
   "contact",
   "about",
   "bus",
+  "operators",
 ];
 
 const routeData = JSON.parse(

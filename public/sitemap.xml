@@ -29,6 +29,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bus-routes.sayuj.com.np/operators</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bus-routes.sayuj.com.np/bus/1db4634-to-1db5223</loc>
     <priority>0.6</priority>
   </url>

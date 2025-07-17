@@ -7,7 +7,7 @@ import {
   DEFAULT_ZOOM,
   MAP_CENTER,
   MAX_ZOOM_OUT,
-} from "@/constants/siteConfigs";
+} from "@/constants/mapConfigs";
 import React, { type ReactNode, memo } from "react";
 import TileLayerView from "./views/TileLayerView";
 import UserLocationMarker from "./markers/UserLocationMarker";

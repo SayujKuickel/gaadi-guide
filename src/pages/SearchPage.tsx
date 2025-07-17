@@ -10,7 +10,11 @@ import stops_data from "@/data/stops_data.json";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
 import type { IStop } from "@/types/stop.types";
 // \settings
-import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  SITE_SUGGESTION_REDIREECT,
+} from "@/constants/siteConfigs";
 // \components
 import Heading from "@/components/common/Heading";
 import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
@@ -20,6 +24,7 @@ import RoutePolyLineRenderer from "@/components/map/route/RoutePolyLineRenderer"
 import BusStopMarker from "@/components/map/markers/BusStopMarker";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 import SearchedRouteDetails from "@/components/sidebar/search/SearchedRouteDetails";
+import { Helmet } from "react-helmet";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
@@ -43,6 +48,11 @@ const SearchPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Search | {SITE_BASE_TITLE}</title>
+        <link rel="canonical" href={`${SITE_BASE_URL}/search`} />
+      </Helmet>
+
       <SidebarViewsContainer>
         <ViewWrapper>
           <SearchWrapper

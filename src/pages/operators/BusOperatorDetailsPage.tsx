@@ -7,6 +7,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "../NotFound";
 import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
+import { Helmet } from "react-helmet";
+import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+
+const toTitleCase = (str: string) => {
+  return str?.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  );
+};
 
 const BusOperatorDetailsPage = () => {
   const { name } = useParams();
@@ -27,6 +36,16 @@ const BusOperatorDetailsPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {routes
+            ? `${toTitleCase(name?.replace("-", " ") || "")}`
+            : "Invalid Operator"}{" "}
+          | {SITE_BASE_TITLE}
+        </title>
+        <link rel="canonical" href={`${SITE_BASE_URL}/operators/${name}`} />
+      </Helmet>
+
       <PageLayout>
         <ContainerLayout size="xs">
           {routes ? (

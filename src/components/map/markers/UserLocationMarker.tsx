@@ -1,4 +1,4 @@
-import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/siteConfigs";
+import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/mapConfigs";
 import L from "leaflet";
 import { MapPin } from "lucide-react";
 import { createElement, useEffect } from "react";

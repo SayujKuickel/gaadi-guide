@@ -2,7 +2,7 @@ import "leaflet/dist/leaflet.css";
 import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import TileLayerView from "@/components/map/views/TileLayerView";
-import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/siteConfigs";
+import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/mapConfigs";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { LatLng } from "leaflet";
 import { useState, useRef } from "react";
