@@ -1,5 +1,9 @@
 import Heading from "@/components/common/Heading";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 import ContainerLayout from "@/layout/ContainerLayout";
 import PageLayout from "@/layout/PageLayout";
 import { Helmet } from "react-helmet";
@@ -136,7 +140,7 @@ const About = () => {
             transport system, your help can make this app better for everyone.
             You can reach out via the{" "}
             <a
-              href="/contact"
+              href={`/${siteUrlMappings.contact}`}
               rel="noopener noreferrer"
               className="font-semibold underline"
             >

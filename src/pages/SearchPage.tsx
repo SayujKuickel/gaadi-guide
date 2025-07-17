@@ -14,6 +14,7 @@ import {
   SITE_BASE_TITLE,
   SITE_BASE_URL,
   SITE_SUGGESTION_REDIREECT,
+  siteUrlMappings,
 } from "@/constants/siteConfigs";
 // \components
 import Heading from "@/components/common/Heading";
@@ -50,7 +51,10 @@ const SearchPage = () => {
     <>
       <Helmet>
         <title>Search | {SITE_BASE_TITLE}</title>
-        <link rel="canonical" href={`${SITE_BASE_URL}/search`} />
+        <link
+          rel="canonical"
+          href={`${SITE_BASE_URL}/${siteUrlMappings.search}`}
+        />
       </Helmet>
 
       <SidebarViewsContainer>

@@ -1,6 +1,10 @@
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 import Route_data from "@/data/route_data.json";
 import ContainerLayout from "@/layout/ContainerLayout";
 import PageLayout from "@/layout/PageLayout";
@@ -19,7 +23,10 @@ const BusOperatorsPage = () => {
     <>
       <Helmet>
         <title>Operators | {SITE_BASE_TITLE}</title>
-        <link rel="canonical" href={`${SITE_BASE_URL}/operators`} />
+        <link
+          rel="canonical"
+          href={`${SITE_BASE_URL}/${siteUrlMappings.operators}`}
+        />
       </Helmet>
 
       <PageLayout>
@@ -40,7 +47,7 @@ const BusOperatorsPage = () => {
                 </span>
 
                 <Link
-                  to={`/operators/${operator
+                  to={`/${siteUrlMappings.operators}/${operator
                     ?.split(" ")
                     .join("-")
                     .toLowerCase()}`}

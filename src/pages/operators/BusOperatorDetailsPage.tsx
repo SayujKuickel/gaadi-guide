@@ -8,7 +8,11 @@ import { useParams } from "react-router-dom";
 import NotFound from "../NotFound";
 import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import { Helmet } from "react-helmet";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 
 const toTitleCase = (str: string) => {
   return str?.replace(
@@ -43,7 +47,10 @@ const BusOperatorDetailsPage = () => {
             : "Invalid Operator"}{" "}
           | {SITE_BASE_TITLE}
         </title>
-        <link rel="canonical" href={`${SITE_BASE_URL}/operators/${name}`} />
+        <link
+          rel="canonical"
+          href={`${SITE_BASE_URL}/${siteUrlMappings.operators}/${name}`}
+        />
       </Helmet>
 
       <PageLayout>

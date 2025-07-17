@@ -9,7 +9,11 @@ import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import { Helmet } from "react-helmet";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 
 const BusRoutesPage = () => {
   const { selectedStop, setSelectedStop, filteredRoutes } =
@@ -19,7 +23,10 @@ const BusRoutesPage = () => {
     <>
       <Helmet>
         <title>Routes | {SITE_BASE_TITLE}</title>
-        <link rel="canonical" href={`${SITE_BASE_URL}/bus`} />
+        <link
+          rel="canonical"
+          href={`${SITE_BASE_URL}/${siteUrlMappings.bus}`}
+        />
       </Helmet>
 
       <PageLayout>

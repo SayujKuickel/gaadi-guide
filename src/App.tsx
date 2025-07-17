@@ -5,6 +5,7 @@ import RoutesPage from "@/pages/RoutesPage";
 import MapPagesLayout from "@/layout/MapPagesLayout";
 import BusOperatorsPage from "./pages/operators/BusOperatorsPage";
 import BusOperatorDetailsPage from "./pages/operators/BusOperatorDetailsPage";
+import { siteUrlMappings } from "./constants/siteConfigs";
 
 const PageLayout = lazy(() => import("@/layout/PageLayout"));
 const BusRouteDetailsPage = lazy(
@@ -38,20 +39,24 @@ const App = () => {
       <Routes>
         <Route element={<MapPagesLayout />}>
           <Route index path="/" element={<HomePage />} />
-          <Route path="/routes" element={<RoutesPage />} />
-          <Route path="/stops" element={<StopsPage />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path={`/${siteUrlMappings.routes}`} element={<RoutesPage />} />
+          <Route path={`/${siteUrlMappings.stops}`} element={<StopsPage />} />
+          <Route path={`/${siteUrlMappings.search}`} element={<SearchPage />} />
         </Route>
 
-        <Route index path="/contact" element={<Contact />} />
-        <Route index path="/about" element={<About />} />
+        <Route
+          index
+          path={`/${siteUrlMappings.contact}`}
+          element={<Contact />}
+        />
+        <Route index path={`/${siteUrlMappings.about}`} element={<About />} />
 
-        <Route path="bus">
+        <Route path={`/${siteUrlMappings.bus}`}>
           <Route index element={<BusRoutesPage />} />
           <Route path=":id" element={<BusRouteDetailsPage />} />
         </Route>
 
-        <Route path="operators">
+        <Route path={`/${siteUrlMappings.operators}`}>
           <Route index element={<BusOperatorsPage />} />
           <Route path=":name" element={<BusOperatorDetailsPage />} />
         </Route>

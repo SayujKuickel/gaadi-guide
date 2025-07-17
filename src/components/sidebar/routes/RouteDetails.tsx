@@ -13,6 +13,7 @@ import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
 import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
 import { nameToSlug } from "@/utils/nameToSlug";
 import { BusFront, Clock, Route, TriangleAlert } from "lucide-react";
+import { siteUrlMappings } from "@/constants/siteConfigs";
 interface RouteDetailsProps {}
 
 const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
@@ -73,7 +74,9 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
       {routeData.operator && (
         <Link
           className="w-fit block"
-          to={`/operators/${nameToSlug(routeData?.operator)}`}
+          to={`/${siteUrlMappings.operators}/${nameToSlug(
+            routeData?.operator
+          )}`}
         >
           <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
             <BusFront size={18} />

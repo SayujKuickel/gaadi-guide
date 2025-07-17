@@ -1,4 +1,7 @@
-import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
+import {
+  SITE_SUGGESTION_REDIREECT,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -24,7 +27,7 @@ const Footer = () => {
           Feel free to{" "}
           <Link
             className="text-offText hover:text-white transition-all"
-            to={"/contact"}
+            to={`/${siteUrlMappings.contact}`}
           >
             Contact me
           </Link>{" "}
