@@ -3,22 +3,24 @@ import Heading from "@/components/common/Heading";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import TileLayerView from "@/components/map/views/TileLayerView";
 import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/mapConfigs";
-import ContainerLayout from "@/layout/ContainerLayout";
 import { LatLng } from "leaflet";
 import { useState, useRef } from "react";
-import { MapContainer, Polyline, useMapEvents } from "react-leaflet";
+import {
+  MapContainer,
+  Polyline,
+  useMapEvents,
+  CircleMarker,
+  Popup,
+} from "react-leaflet";
 import stops_data from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
 import BusStopMarker from "@/components/map/markers/BusStopMarker";
-import { ChevronDown, ChevronUp, Trash2, Trash2Icon } from "lucide-react";
+import { ChevronDown, ChevronUp, Trash2Icon } from "lucide-react";
 
 interface Errors {
   routeName?: string;
   routeColor?: string;
   stops?: string;
-  newStopName?: string;
-  newStopLat?: string;
-  newStopLng?: string;
 }
 
 const MapClickHandler = ({
@@ -49,21 +51,13 @@ const AddNewRoutePage = () => {
   const [stopsData, setStopsData] = useState<IStop[]>(stops_data as IStop[]);
   const [routeData, setRouteData] = useState({
     routeName: "",
-    routeColor: "#000000",
+    routeColor: "#3B82F6",
   });
   const [selectedStop, setSelectedStop] = useState<IStop | null>(null);
   const [stops, setStops] = useState<IStop[]>([]);
   const [customStops, setCustomStops] = useState<IStop[]>([]);
   const [errors, setErrors] = useState<Errors>({});
-  const [isNewStopFormShown, setIsNewStopFormShown] = useState<boolean>(false);
-  const [newStop, setNewStop] = useState<Partial<IStop>>({
-    name: "",
-    lat: undefined,
-    lng: undefined,
-  });
-  const [tempMarkerPos, setTempMarkerPos] = useState<LatLng | null>(null);
   const mapRef = useRef<L.Map | null>(null);
-  const popupMapRef = useRef<L.Map | null>(null);
 
   const handleRouteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -74,39 +68,34 @@ const AddNewRoutePage = () => {
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  const handleNewStopChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setNewStop((prev) => ({
-      ...prev,
-      [name]:
-        name === "lat" || name === "lng"
-          ? value
-            ? Number(value)
-            : undefined
-          : value,
-    }));
-    if (name === "lat" || name === "lng") {
-      const lat = name === "lat" ? Number(value) : newStop.lat;
-      const lng = name === "lng" ? Number(value) : newStop.lng;
-      if (lat !== undefined && lng !== undefined) {
-        setTempMarkerPos(new LatLng(lat, lng));
-      }
-    }
-    setErrors((prev) => ({ ...prev, [name]: undefined }));
-  };
-
   const handleMapClick = (latlng: LatLng) => {
-    setNewStop((prev) => ({
-      ...prev,
+    const stopName = prompt("Enter stop name:");
+    if (!stopName || !stopName.trim()) {
+      return;
+    }
+
+    const generatedId = generateHexId(latlng.lat, latlng.lng);
+    const newStopData: IStop = {
+      id: `new-${generatedId}`,
+      name: stopName.trim(),
       lat: latlng.lat,
       lng: latlng.lng,
-    }));
-    setTempMarkerPos(latlng);
-    setErrors((prev) => ({
-      ...prev,
-      newStopLat: undefined,
-      newStopLng: undefined,
-    }));
+    };
+
+    setCustomStops((prev) => [...prev, newStopData]);
+    setStopsData((prev) => [newStopData, ...prev]);
+    setStops((prev) => [...prev, newStopData]);
+    setErrors((prev) => ({ ...prev, stops: undefined }));
+  };
+
+  const handleAddStopFromMap = (stop: IStop, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (stops.some((s) => s.id === stop.id)) {
+      alert("This stop is already added to the route!");
+      return;
+    }
+    setStops((prev) => [...prev, stop]);
+    setErrors((prev) => ({ ...prev, stops: undefined }));
   };
 
   const handleStopSelection = (stop: IStop | null) => {
@@ -128,54 +117,6 @@ const AddNewRoutePage = () => {
 
   const handleDeleteStop = (stopId: string) => {
     setStops((prev) => prev.filter((stop) => stop.id !== stopId));
-  };
-
-  const handleAddStop = () => {
-    const newErrors: Errors = {};
-
-    if (!newStop.name?.trim()) {
-      newErrors.newStopName = "Stop name is required.";
-    }
-    if (
-      newStop.lat === undefined ||
-      isNaN(newStop.lat) ||
-      newStop.lat < -90 ||
-      newStop.lat > 90
-    ) {
-      newErrors.newStopLat = "Valid latitude (-90 to 90) is required.";
-    }
-    if (
-      newStop.lng === undefined ||
-      isNaN(newStop.lng) ||
-      newStop.lng < -180 ||
-      newStop.lng > 180
-    ) {
-      newErrors.newStopLng = "Valid longitude (-180 to 180) is required.";
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    const generatedId = generateHexId(newStop.lat!, newStop.lng!);
-
-    const newStopData: IStop = {
-      id: `new-${generatedId}`,
-      name: newStop.name!,
-      lat: newStop.lat!,
-      lng: newStop.lng!,
-    };
-
-    setCustomStops((prev) => [...prev, newStopData]);
-    setStopsData((prev) => [newStopData, ...prev]);
-
-    setStops((prev) => [...prev, newStopData]);
-
-    setNewStop({ name: "", lat: undefined, lng: undefined });
-    setTempMarkerPos(null);
-    setIsNewStopFormShown(false);
-    setErrors({});
   };
 
   const handleMoveStop = (index: number, direction: "up" | "down") => {
@@ -229,484 +170,275 @@ const AddNewRoutePage = () => {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 
-    setRouteData({ routeName: "", routeColor: "#000000" });
+    setRouteData({ routeName: "", routeColor: "#3B82F6" });
     setStops([]);
     setSelectedStop(null);
     setErrors({});
   };
 
-  const closeNewStopForm = () => {
-    setIsNewStopFormShown(false);
-    setNewStop({ name: "", lat: undefined, lng: undefined });
-    setTempMarkerPos(null);
-    setErrors({});
+  const handleClearRoute = () => {
+    if (
+      stops.length > 0 &&
+      !confirm("Are you sure you want to clear all stops?")
+    ) {
+      return;
+    }
+    setStops([]);
+    setErrors((prev) => ({ ...prev, stops: undefined }));
   };
 
-  if (!stopsData || stopsData.length === 0) {
-    return (
-      <ContainerLayout isCenter={true} size="sm">
-        <section className="space-y-4">
-          <Heading level={3}>Add Route</Heading>
-          <p className="text-red-500">
-            No stops available. Please add a new stop.
-          </p>
-          <form className="p-4 bg-background rounded-lg space-y-4">
-            <Heading level={2} className="mb-4">
-              Add New Stop
+  return (
+    <>
+      <div className="block md:hidden grid place-items-center h-screen">
+        <div className="text-center">
+          <Heading level={1}>Please View this page in desktop</Heading>
+          <p>This Page is not made for mobile view</p>
+        </div>
+      </div>
+      <div className="hidden md:block h-screen md:flex">
+        <div className="w-1/5 bg-surface-1 border-r border-surface-3 flex flex-col">
+          <div className="p-4 border-b border-surface-3">
+            <Heading level={4} className="mb-4">
+              Route Details
             </Heading>
             <div className="mb-3">
-              <label htmlFor="name" className="block text-sm font-medium">
-                Name
+              <label
+                htmlFor="routeName"
+                className="block text-sm font-medium mb-1"
+              >
+                Route Name
               </label>
               <input
+                id="routeName"
                 type="text"
-                id="name"
-                name="name"
-                value={newStop.name || ""}
-                onChange={handleNewStopChange}
-                className="w-full p-2 outline-none rounded bg-surface-3"
-                placeholder="Enter stop name"
+                name="routeName"
+                value={routeData.routeName}
+                onChange={handleRouteChange}
+                placeholder="Enter route name"
+                className="w-full p-2 text-sm outline-none rounded bg-surface-3 focus:ring-2 focus:ring-blue-500"
               />
-              {errors.newStopName && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.newStopName}
-                </p>
+              {errors.routeName && (
+                <p className="text-red-500 text-xs mt-1">{errors.routeName}</p>
               )}
             </div>
-            <div className="mb-3">
-              <label htmlFor="lat" className="block text-sm font-medium">
-                Latitude
-              </label>
-              <input
-                type="number"
-                id="lat"
-                name="lat"
-                value={newStop.lat !== undefined ? newStop.lat : ""}
-                onChange={handleNewStopChange}
-                className="w-full p-2 outline-none rounded bg-surface-3"
-                placeholder="Click map to select latitude"
-                step="any"
-              />
-              {errors.newStopLat && (
-                <p className="text-red-500 text-sm mt-1">{errors.newStopLat}</p>
-              )}
-            </div>
-            <div className="mb-3">
-              <label htmlFor="lng" className="block text-sm font-medium">
-                Longitude
-              </label>
-              <input
-                type="number"
-                id="lng"
-                name="lng"
-                value={newStop.lng !== undefined ? newStop.lng : ""}
-                onChange={handleNewStopChange}
-                className="w-full p-2 outline-none rounded bg-surface-3"
-                placeholder="Click map to select longitude"
-                step="any"
-              />
-              {errors.newStopLng && (
-                <p className="text-red-500 text-sm mt-1">{errors.newStopLng}</p>
-              )}
-            </div>
-            <div className="h-[300px] mb-3">
-              <MapContainer
-                center={MAP_CENTER}
-                zoom={DEFAULT_ZOOM}
-                zoomControl={false}
-                className="h-full w-full"
-                ref={mapRef}
+
+            <div className="mb-4">
+              <label
+                htmlFor="routeColor"
+                className="block text-sm font-medium mb-1"
               >
-                <TileLayerView tileMapKey="openstreetmap" />
-                {tempMarkerPos && (
-                  <BusStopMarker
-                    showDetailedPopup={false}
-                    position={[tempMarkerPos.lat, tempMarkerPos.lng]}
-                    stopName={newStop.name || "New Stop"}
-                    lineColor="#5F05B1"
-                  />
+                Route Color
+              </label>
+              <input
+                id="routeColor"
+                type="color"
+                name="routeColor"
+                value={routeData.routeColor}
+                onChange={handleRouteChange}
+                className="w-full h-10 outline-none rounded bg-surface-3 cursor-pointer"
+              />
+              {errors.routeColor && (
+                <p className="text-red-500 text-xs mt-1">{errors.routeColor}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="p-4 border-b border-surface-3">
+            <Heading level={5} className="mb-3">
+              Add Stops
+            </Heading>
+            <SearchableCombobox
+              label=""
+              selected={selectedStop}
+              onChange={handleStopSelection}
+              options={[...stopsData, ...customStops]}
+              placeholder="Search existing stops..."
+              className="mb-2"
+            />
+            {errors.stops && (
+              <p className="text-red-500 text-xs mt-1">{errors.stops}</p>
+            )}
+            <p className="text-xs text-gray-600 mt-2">
+              Or click on the map to add a new stop
+            </p>
+          </div>
+
+          <div className="flex-1 overflow-hidden flex flex-col">
+            <div className="p-4 border-b border-surface-3">
+              <div className="flex items-center justify-between mb-2">
+                <Heading level={5}>Stops ({stops.length})</Heading>
+                {stops.length > 0 && (
+                  <button
+                    onClick={handleClearRoute}
+                    className="text-xs px-2 py-1 text-red-600 hover:bg-red-50 rounded"
+                  >
+                    Clear All
+                  </button>
                 )}
-                <MapClickHandler onMapClick={handleMapClick} />
-              </MapContainer>
+              </div>
             </div>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={handleAddStop}
-                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
-              >
-                Save Stop
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setNewStop({ name: "", lat: undefined, lng: undefined });
-                  setTempMarkerPos(null);
-                  setErrors({});
-                }}
-                className="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg"
-              >
-                Clear
-              </button>
+
+            <div className="flex-1 overflow-y-auto p-4">
+              {stops.length === 0 ? (
+                <p className="text-sm text-gray-500 text-center py-8">
+                  No stops added yet
+                </p>
+              ) : (
+                <ul className="space-y-2">
+                  {stops.map((stop, index) => (
+                    <li
+                      key={stop.id}
+                      className="bg-surface-2 rounded p-2 text-sm"
+                    >
+                      <div className="flex items-center justify-between mb-1">
+                        <div className="flex items-center min-w-0 flex-1">
+                          <span className="w-5 h-5 bg-blue-500 text-white rounded-full text-xs flex items-center justify-center mr-2 flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="font-medium truncate">
+                            {stop.name}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs text-gray-500 truncate">
+                          {stop.id}
+                        </p>
+                        <div className="flex gap-1 ml-2">
+                          <button
+                            onClick={() => handleMoveStop(index, "up")}
+                            disabled={index === 0}
+                            className="p-1 hover:bg-surface-3 rounded disabled:opacity-30 disabled:cursor-not-allowed"
+                            title="Move up"
+                          >
+                            <ChevronUp size={12} />
+                          </button>
+                          <button
+                            onClick={() => handleMoveStop(index, "down")}
+                            disabled={index === stops.length - 1}
+                            className="p-1 hover:bg-surface-3 rounded disabled:opacity-30 disabled:cursor-not-allowed"
+                            title="Move down"
+                          >
+                            <ChevronDown size={12} />
+                          </button>
+                          <button
+                            onClick={() => handleDeleteStop(stop.id)}
+                            className="p-1 hover:bg-red-100 text-red-600 rounded"
+                            title="Remove stop"
+                          >
+                            <Trash2Icon size={12} />
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-          </form>
-        </section>
-      </ContainerLayout>
-    );
-  }
+          </div>
 
-  return (
-    <ContainerLayout
-      className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 mb-32"
-      isCenter={true}
-      size="sm"
-    >
-      <section className="space-y-4">
-        <Heading level={3}>Add Route</Heading>
-        <div>
-          <label htmlFor="routeName" className="block text-sm font-medium">
-            Route Name
-          </label>
-          <input
-            id="routeName"
-            type="text"
-            name="routeName"
-            value={routeData.routeName}
-            onChange={handleRouteChange}
-            placeholder="Enter route name"
-            className="w-full p-2 outline-none rounded bg-surface-3"
-          />
-          {errors.routeName && (
-            <p className="text-red-500 text-sm mt-1">{errors.routeName}</p>
-          )}
-        </div>
-        <div>
-          <label htmlFor="routeColor" className="block text-sm font-medium">
-            Route Color
-          </label>
-          <input
-            id="routeColor"
-            type="color"
-            name="routeColor"
-            value={routeData.routeColor}
-            onChange={handleRouteChange}
-            className="w-full h-16 outline-none rounded bg-surface-3"
-          />
-          {errors.routeColor && (
-            <p className="text-red-500 text-sm mt-1">{errors.routeColor}</p>
-          )}
+          <div className="p-4 border-t border-surface-3 space-y-2">
+            <button
+              onClick={handleSubmit}
+              className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded text-sm font-medium transition-colors"
+            >
+              Save Route
+            </button>
+          </div>
         </div>
 
-        <hr className="my-8" />
-
-        <Heading level={3}>Add Stops</Heading>
-        <SearchableCombobox
-          label="Stop"
-          selected={selectedStop}
-          onChange={handleStopSelection}
-          options={[...stopsData, ...customStops]}
-          placeholder="Select stop to add automatically"
-          className="mb-4"
-        />
-        {errors.stops && (
-          <p className="text-red-500 text-sm mt-1">{errors.stops}</p>
-        )}
-        <button
-          type="button"
-          onClick={() => setIsNewStopFormShown(true)}
-          className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
-        >
-          Add New Stop
-        </button>
-
-        <hr className="my-8" />
-
-        <button
-          type="button"
-          onClick={handleSubmit}
-          className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
-        >
-          Save Route
-        </button>
-      </section>
-
-      <section className="flex flex-col-reverse md:flex-col">
-        <div className="h-[500px] py-4">
-          <Heading level={3}>Preview</Heading>
+        <div className="flex-1 relative">
           <MapContainer
             center={MAP_CENTER}
             zoom={DEFAULT_ZOOM}
-            zoomControl={false}
+            zoomControl={true}
             className="h-full w-full"
+            ref={mapRef}
           >
-            {stops.map((stop) => (
+            <TileLayerView tileMapKey="openstreetmap" />
+
+            {[...stopsData, ...customStops].map((stop) => {
+              const isInRoute = stops.some((s) => s.id === stop.id);
+              return (
+                <CircleMarker
+                  key={`available-${stop.id}`}
+                  center={[stop.lat, stop.lng]}
+                  radius={isInRoute ? 6 : 8}
+                  fillColor={isInRoute ? routeData.routeColor : "#170D7C"}
+                  color={isInRoute ? routeData.routeColor : "#170D7C"}
+                  weight={2}
+                  opacity={0.9}
+                  fillOpacity={isInRoute ? 0.8 : 0.6}
+                >
+                  <Popup>
+                    <div className="text-center p-2">
+                      <h3 className="font-semibold text-sm mb-2">
+                        {stop.name}
+                      </h3>
+                      <p className="text-xs text-gray-600 mb-2">
+                        ID: {stop.id}
+                      </p>
+
+                      {isInRoute ? (
+                        <p className="text-xs text-green-600 font-medium">
+                          ✓ Already in route
+                        </p>
+                      ) : (
+                        <button
+                          onClick={(e) => handleAddStopFromMap(stop, e)}
+                          className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded transition-colors"
+                        >
+                          Add to Route
+                        </button>
+                      )}
+                    </div>
+                  </Popup>
+                </CircleMarker>
+              );
+            })}
+
+            {stops.map((stop, index) => (
               <BusStopMarker
-                showDetailedPopup={false}
-                key={stop.id}
+                showDetailedPopup={true}
+                key={`route-${stop.id}`}
                 position={[stop.lat, stop.lng]}
-                stopName={stop.name}
-                lineColor="#5F05B1"
+                stopName={`${index + 1}. ${stop.name}`}
+                lineColor={routeData.routeColor}
               />
             ))}
+
             {stops.length > 1 && (
               <Polyline
                 positions={stops.map((stop) => [stop.lat, stop.lng])}
-                color={routeData.routeColor || "#000000"}
+                color={routeData.routeColor}
+                weight={4}
+                opacity={0.8}
               />
             )}
-            <TileLayerView tileMapKey="openstreetmap" />
+
+            <MapClickHandler onMapClick={handleMapClick} />
           </MapContainer>
-        </div>
 
-        <ul className="space-y-2 mt-10">
-          <Heading level={2}>Stops ({stops.length})</Heading>
-          {stops.length === 0 && <p>No stops added yet.</p>}
-          {[...stops].reverse().map((stop, reversedIndex) => {
-            const actualIndex = stops.length - 1 - reversedIndex;
-            return (
-              <li
-                key={stop.id}
-                className="bg-surface-1/40 rounded-lg p-2 flex items-center justify-between"
-              >
-                <div>
-                  <p className="font-medium">{stop.name}</p>
-                  <p className="text-sm text-gray-500">
-                    Position: {actualIndex + 1} • ID: {stop.id}
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleMoveStop(actualIndex, "up")}
-                    disabled={actualIndex === 0}
-                    className="px-2 py-1 bg-surface-3 hover:bg-surface-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <ChevronDown size={16} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleMoveStop(actualIndex, "down")}
-                    disabled={actualIndex === stops.length - 1}
-                    className="px-2 py-1 bg-surface-3 hover:bg-surface-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <ChevronUp size={16} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteStop(stop.id)}
-                    className="px-2 py-1 bg-red-500 hover:bg-red-600 text-white rounded"
-                  >
-                    <Trash2Icon size={16} />
-                  </button>
-                </div>
-              </li>
-            );
-          })}
-          {stops.length > 0 && (
-            <div className="mt-4 p-2 bg-blue-50 rounded-lg">
-              <p className="text-sm text-blue-700">
-                <strong>Route ID:</strong> {generateRouteId(stops)}
-              </p>
+          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg max-w-xs">
+            <p className="text-sm text-gray-700 mb-2">
+              <strong>Click green circles</strong> to add existing stops to your
+              route
+            </p>
+            <p className="text-sm text-gray-700">
+              <strong>Click empty areas</strong> to create new stops
+            </p>
+            <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-200">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <span className="text-xs">Available stops</span>
             </div>
-          )}
-        </ul>
-      </section>
-
-      {isNewStopFormShown && (
-        <div className="fixed top-0 left-0 z-[1111] px-4 w-screen h-screen bg-surface-2/50 backdrop-blur-2xl grid place-items-center">
-          <div className="p-4 bg-background rounded-lg w-full lg:w-4/5 xl:w-3/4 max-h-[90vh] overflow-y-auto">
-            <div className="flex justify-between items-center mb-4">
-              <Heading level={2}>Add New Stop</Heading>
-              <button
-                type="button"
-                onClick={closeNewStopForm}
-                className="text-gray-500 hover:text-gray-700 text-xl"
-              >
-                ✕
-              </button>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+              <span className="text-xs">In route</span>
             </div>
-
-            <section className="grid lg:grid-cols-2 gap-6 my-8">
-              <div className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-1"
-                  >
-                    Stop Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={newStop.name || ""}
-                    onChange={handleNewStopChange}
-                    className="w-full p-3 outline-none rounded-lg bg-surface-3 focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter stop name"
-                  />
-                  {errors.newStopName && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.newStopName}
-                    </p>
-                  )}
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label
-                      htmlFor="lat"
-                      className="block text-sm font-medium mb-1"
-                    >
-                      Latitude
-                    </label>
-                    <input
-                      type="number"
-                      id="lat"
-                      name="lat"
-                      value={newStop.lat !== undefined ? newStop.lat : ""}
-                      onChange={handleNewStopChange}
-                      className="w-full p-3 outline-none rounded-lg bg-surface-3 focus:ring-2 focus:ring-blue-500"
-                      placeholder="Click map"
-                      step="any"
-                    />
-                    {errors.newStopLat && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.newStopLat}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="lng"
-                      className="block text-sm font-medium mb-1"
-                    >
-                      Longitude
-                    </label>
-                    <input
-                      type="number"
-                      id="lng"
-                      name="lng"
-                      value={newStop.lng !== undefined ? newStop.lng : ""}
-                      onChange={handleNewStopChange}
-                      className="w-full p-3 outline-none rounded-lg bg-surface-3 focus:ring-2 focus:ring-blue-500"
-                      placeholder="Click map"
-                      step="any"
-                    />
-                    {errors.newStopLng && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.newStopLng}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {newStop.lat !== undefined && newStop.lng !== undefined && (
-                  <div className="p-3 bg-blue-50 rounded-lg">
-                    <p className="text-sm text-blue-700">
-                      <strong>Generated ID:</strong> new-
-                      {generateHexId(newStop.lat, newStop.lng)}
-                    </p>
-                  </div>
-                )}
-
-                <div className="flex gap-3 pt-4">
-                  <button
-                    type="button"
-                    onClick={handleAddStop}
-                    className="flex-1 px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
-                  >
-                    Save & Add Stop
-                  </button>
-                  <button
-                    type="button"
-                    onClick={closeNewStopForm}
-                    className="px-4 py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <Heading level={5} className="mb-2">
-                    Interactive Map
-                  </Heading>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Click anywhere on the map to set coordinates
-                  </p>
-                  <div className="w-full h-[350px] rounded-lg overflow-hidden border border-surface-3">
-                    <MapContainer
-                      center={MAP_CENTER}
-                      zoom={DEFAULT_ZOOM}
-                      zoomControl={true}
-                      className="h-full w-full"
-                      ref={popupMapRef}
-                    >
-                      <TileLayerView tileMapKey="openstreetmap" />
-
-                      {/* Show existing stops */}
-                      {stops.map((stop) => (
-                        <BusStopMarker
-                          showDetailedPopup={false}
-                          key={stop.id}
-                          position={[stop.lat, stop.lng]}
-                          stopName={stop.name}
-                          lineColor="#5F05B1"
-                        />
-                      ))}
-
-                      {/* Show route line between existing stops */}
-                      {stops.length > 1 && (
-                        <Polyline
-                          positions={stops.map((stop) => [stop.lat, stop.lng])}
-                          color={routeData.routeColor || "#000000"}
-                          weight={3}
-                          opacity={0.7}
-                        />
-                      )}
-
-                      {/* Show temporary new stop marker */}
-                      {tempMarkerPos && (
-                        <BusStopMarker
-                          showDetailedPopup={false}
-                          position={[tempMarkerPos.lat, tempMarkerPos.lng]}
-                          stopName={newStop.name || "New Stop"}
-                          lineColor="#10B981"
-                        />
-                      )}
-
-                      <MapClickHandler onMapClick={handleMapClick} />
-                    </MapContainer>
-                  </div>
-                </div>
-
-                {stops.length > 0 && (
-                  <div className="bg-surface-1/40 rounded-lg p-3">
-                    <h6 className="font-medium text-sm mb-2">
-                      Current Route ({stops.length} stops)
-                    </h6>
-                    <div className="space-y-1 max-h-32 overflow-y-auto">
-                      {stops.map((stop, index) => (
-                        <div
-                          key={stop.id}
-                          className="flex items-center text-xs text-gray-600"
-                        >
-                          <span className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center text-white text-[10px] mr-2">
-                            {index + 1}
-                          </span>
-                          <span className="truncate">{stop.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </section>
           </div>
         </div>
-      )}
-    </ContainerLayout>
+      </div>
+    </>
   );
 };
 
