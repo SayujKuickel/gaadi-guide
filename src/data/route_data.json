@@ -1,8 +1,131 @@
 [
   {
+    "id": "cbaa6f8948-to-6b7ff2ef",
+    "name": "Haraharamahadev  - Thapathali Loop - Thapathali",
+    "lineColor": "#4A2C2A",
+    "operator": "Nepal Yatayat",
+    "isVerifiedRoute": true,
+    "stops": [
+      "cbaa6f8948",
+      "31903f6408",
+      "00c1d587c7",
+      "214afa1a",
+      "8dae2cb7",
+      "1dc8360",
+      "889530a7",
+      "6c4dcabd",
+      "889530a0",
+      "2ad9bbac8e",
+      "88953097",
+      "88953099",
+      "6d39bcd8",
+      "88953095",
+      "6b974192",
+      "6c5224d3",
+      "12ed277c",
+      "27f9534e",
+      "2b440c08",
+      "2ee89abdef",
+      "700f889e",
+      "1959abae",
+      "420d42d6ae",
+      "5934643f",
+      "6540902b8f",
+      "f2a703eb4f",
+      "12bf5294",
+      "adb3e87b30",
+      "6b7ff2ef",
+      "12ed277c",
+      "6c5224d3",
+      "6b974192",
+      "88953095",
+      "6d39bcd8",
+      "88953099",
+      "88953097",
+      "2ad9bbac8e",
+      "889530a0",
+      "6c4dcabd",
+      "889530a7",
+      "1dc8360",
+      "8dae2cb7",
+      "214afa1a",
+      "00c1d587c7",
+      "31903f6408",
+      "cbaa6f8948"
+    ]
+  },
+  {
+    "id": "50cfd5593d-to-4b657aefbe",
+    "name": "Tikathali Stop - Kharibot ",
+    "lineColor": "#8B5523",
+    "operator": "Nepal Yatayat",
+    "isVerifiedRoute": true,
+    "stops": [
+      "50cfd5593d",
+      "e3c62f939b",
+      "a3136c6f7c",
+      "5fd7aff864",
+      "1dc8360",
+      "889530a7",
+      "6c4dcabd",
+      "889530a0",
+      "2ad9bbac8e",
+      "7036380f",
+      "4c5de42c",
+      "6e05b90f",
+      "6d1df454",
+      "6d1df44e",
+      "6d1df464",
+      "889530a1",
+      "235fb03021",
+      "43d2980fbb",
+      "4c3f0408",
+      "ffe0d31",
+      "8cad8b75",
+      "73fc94e1",
+      "6d66efa8",
+      "5acc027a",
+      "77d6572b",
+      "1db557b",
+      "7958fd77e0",
+      "309805a107",
+      "74dc040d95",
+      "118e6e514c",
+      "4b657aefbe"
+    ]
+  },
+  {
+    "id": "809b1d514a-to-c62f3bc810",
+    "name": "Nepal Yatayat Bus Station - Bhrikuti Mandap",
+    "lineColor": "#6F4E37",
+    "operator": "Nepal Yatayat",
+    "isVerifiedRoute": true,
+    "stops": [
+      "809b1d514a",
+      "d387862aa6",
+      "bf6fbb428c",
+      "4a0a120164",
+      "87101ec43c",
+      "ca854ed6c2",
+      "6d51ad44aa",
+      "8a51555190",
+      "6d6618e8",
+      "214afa1a",
+      "8dae2cb7",
+      "889530a7",
+      "889530a0",
+      "2ad9bbac8e",
+      "7d4aeb0b2f",
+      "6b974192",
+      "889530a1",
+      "4be5e4b2",
+      "c62f3bc810"
+    ]
+  },
+  {
     "id": "1db4634-to-1db5223",
     "name": "Ringroad Loop - Mahanagar",
-    "lineColor": "#D7070D",
+    "lineColor": "#DC143C",
     "operator": "Mahanagar Yatayat",
     "isVerifiedRoute": true,
     "details": {
@@ -39,7 +162,7 @@
   {
     "id": "11a9cc28-to-22c80c9",
     "name": "Thankot - Dhulikhel",
-    "lineColor": "#E8333B",
+    "lineColor": "#FF4040",
     "operator": "Mahanagar Yatayat",
     "isVerifiedRoute": true,
     "details": {
@@ -88,7 +211,7 @@
   {
     "id": "157c1d73-to-de5596baf5",
     "name": "Lagankhel - Naya buspark",
-    "lineColor": "#2B3B27",
+    "lineColor": "#228B22",
     "operator": "Sajha Yatayat",
     "isVerifiedRoute": true,
     "stops": [
@@ -116,7 +239,7 @@
   {
     "id": "157c1d73-to-6d1c3f54",
     "name": "Lagankhel - Budhanilkantha",
-    "lineColor": "#84B65F",
+    "lineColor": "#50C878",
     "operator": "Sajha Yatayat",
     "isVerifiedRoute": true,
     "stops": [
@@ -144,7 +267,7 @@
   {
     "id": "6b7ff2ef-to-a62a2c9fb8",
     "name": "Tripureshwor - Godawari",
-    "lineColor": "#64BF1C",
+    "lineColor": "#2E8B57",
     "operator": "Sajha Yatayat",
     "isVerifiedRoute": true,
     "stops": [
@@ -167,7 +290,7 @@
   {
     "id": "f4c8421c39-to-792adc08eb",
     "name": "Lagankhel - Lamatar",
-    "lineColor": "#1d800a",
+    "lineColor": "#4CBB17",
     "operator": "Sajha Yatayat",
     "isVerifiedRoute": true,
     "stops": [
@@ -219,7 +342,7 @@
   {
     "id": "22c80c9-to-6d1c3f54",
     "name": "Thankot - Budhanilkantha",
-    "lineColor": "#03D737",
+    "lineColor": "#7FFF00",
     "operator": "Sajha Yatayat",
     "isVerifiedRoute": true,
     "stops": [
@@ -273,7 +396,7 @@
   {
     "id": "226ba49e-to-f4c8421c39",
     "name": "Sankhu - RNAC",
-    "lineColor": "#D75365",
+    "lineColor": "#9966CC",
     "isVerifiedRoute": true,
     "details": {
       "duration_mins": 105
@@ -298,27 +421,6 @@
       "88953096",
       "4bf28194",
       "f4c8421c39"
-    ]
-  },
-  {
-    "id": "6d6618e8-to-6b974192",
-    "name": "Gothatar - Maitighar",
-    "lineColor": "#ff8040",
-    "operator": "Nepal Yatayat",
-    "stops": [
-      "6d6618e8",
-      "8dae2cb7",
-      "1dc8360",
-      "889530a7",
-      "2ad9bbac8e",
-      "18c4d6c7",
-      "889530a1",
-      "6ba66195",
-      "c62f3bc810",
-      "3a45a4cc-sahidgaet",
-      "6b7ff2ef-tripureshwor",
-      "12ed277c-thapathali",
-      "6b974192"
     ]
   },
   {

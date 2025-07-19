@@ -17,7 +17,11 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/contact</loc>
+    <loc>https://bus-routes.sayuj.com.np/bus</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/operators</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -25,12 +29,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/bus</loc>
+    <loc>https://bus-routes.sayuj.com.np/contact</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bus-routes.sayuj.com.np/operators</loc>
-    <priority>0.8</priority>
+    <loc>https://bus-routes.sayuj.com.np/bus/cbaa6f8948-to-6b7ff2ef</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/50cfd5593d-to-4b657aefbe</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bus-routes.sayuj.com.np/bus/809b1d514a-to-c62f3bc810</loc>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bus-routes.sayuj.com.np/bus/1db4634-to-1db5223</loc>
@@ -70,10 +82,6 @@
   </url>
   <url>
     <loc>https://bus-routes.sayuj.com.np/bus/226ba49e-to-f4c8421c39</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/bus/6d6618e8-to-6b974192</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -225,15 +233,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bus-routes.sayuj.com.np/operators/nepal-yatayat</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bus-routes.sayuj.com.np/operators/mahanagar-yatayat</loc>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bus-routes.sayuj.com.np/operators/sajha-yatayat</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bus-routes.sayuj.com.np/operators/nepal-yatayat</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
