@@ -19,7 +19,11 @@ import { nameToSlug } from "@/utils/nameToSlug";
 import RouteDetailsCard from "@/components/ui/cards/RouteDetailsCard";
 import { Bus, BusFront, Clock, Map, Route } from "lucide-react";
 import { Helmet } from "react-helmet";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 
 const BusRouteDetailsPage = ({}) => {
   const { id } = useParams();
@@ -42,7 +46,10 @@ const BusRouteDetailsPage = ({}) => {
         <title>
           {route ? route?.name : "Route Not Found"} | {SITE_BASE_TITLE}
         </title>
-        <link rel="canonical" href={`${SITE_BASE_URL}/bus/${id}`} />
+        <link
+          rel="canonical"
+          href={`${SITE_BASE_URL}/${siteUrlMappings.bus}/${id}`}
+        />
       </Helmet>
 
       <PageLayout>
@@ -65,7 +72,7 @@ const BusRouteDetailsPage = ({}) => {
 
                     <Link
                       className="block w-fit"
-                      to={`/routes?route=${route?.id}`}
+                      to={`/${siteUrlMappings.routes}?route=${route?.id}`}
                     >
                       <Button
                         ariaLabel="View route map"
@@ -80,7 +87,11 @@ const BusRouteDetailsPage = ({}) => {
 
               <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 {route?.operator && (
-                  <Link to={`/operators/${nameToSlug(route?.operator)}`}>
+                  <Link
+                    to={`/${siteUrlMappings.operators}/${nameToSlug(
+                      route?.operator
+                    )}`}
+                  >
                     <RouteDetailsCard
                       label={"Operated By"}
                       value={route?.operator}

@@ -7,6 +7,7 @@ import BusLineTitle from "@/components/bus/BusLineTitle";
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 import { Map } from "lucide-react";
+import { siteUrlMappings } from "@/constants/siteConfigs";
 
 interface StopDetailsProps {
   filteredRoutes: IRoute[] | null;
@@ -32,7 +33,7 @@ const StopDetails: React.FC<StopDetailsProps> = ({ filteredRoutes }) => {
           >
             <Link
               className="w-full h-full block py-2 sm:flex sm:items-center sm:justify-between"
-              to={`/routes?route=${route.id}`}
+              to={`/${siteUrlMappings.routes}?route=${route.id}`}
             >
               <BusLineTitle
                 name={route.name}

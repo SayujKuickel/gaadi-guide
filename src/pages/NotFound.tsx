@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "@/components/common/Button";
 import { Map, Route } from "lucide-react";
 import { Helmet } from "react-helmet";
-import { SITE_BASE_TITLE } from "@/constants/siteConfigs";
+import { SITE_BASE_TITLE, siteUrlMappings } from "@/constants/siteConfigs";
 
 interface NotFoundProps {
   title?: string;
@@ -26,7 +26,7 @@ const NotFound: React.FC<NotFoundProps> = ({ title }) => {
             />
           </Link>
 
-          <Link to={"/bus"}>
+          <Link to={`/${siteUrlMappings.bus}`}>
             <Button
               ariaLabel="Go to bus routes page"
               icon={<Route size={18} />}

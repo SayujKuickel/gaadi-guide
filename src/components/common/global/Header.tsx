@@ -4,6 +4,7 @@ import { headerItems } from "@/constants/headerItems";
 import Button from "../Button";
 import logo from "@/assets/logo-192x192.png";
 import { Menu, X } from "lucide-react";
+import { siteUrlMappings } from "@/constants/siteConfigs";
 
 const Header = () => {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
@@ -15,7 +16,10 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo & Title */}
         <div className="flex items-center gap-2">
-          <Link to="/" className="block w-14 aspect-square shrink-0">
+          <Link
+            to={`/${siteUrlMappings.routes}`}
+            className="block w-14 aspect-square shrink-0"
+          >
             <img src={logo} alt="logo" />
           </Link>
           <div className="leading-tight">

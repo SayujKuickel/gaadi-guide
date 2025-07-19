@@ -6,6 +6,7 @@ import BusLineTitle from "./BusLineTitle";
 import RouteStopsList from "./RouteStopsList";
 import RouteVerificationStatus from "../ui/RouteVerificationStatus";
 import { Eye, Map } from "lucide-react";
+import { siteUrlMappings } from "@/constants/siteConfigs";
 
 interface ViewRouteDetailsProps {
   route: IRoute;
@@ -48,7 +49,10 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
       />
 
       <div className="flex flex-wrap items-center flex-row gap-3 mt-8">
-        <Link className="block w-fit" to={`/bus/${route?.id}`}>
+        <Link
+          className="block w-fit"
+          to={`/${siteUrlMappings.bus}/${route?.id}`}
+        >
           <Button
             ariaLabel="View All Stops"
             title="View All Stops"
@@ -58,7 +62,10 @@ const ViewRouteDetails: React.FC<ViewRouteDetailsProps> = ({
           />
         </Link>
 
-        <Link className="block w-fit" to={`/routes?route=${route?.id}`}>
+        <Link
+          className="block w-fit"
+          to={`/${siteUrlMappings.routes}?route=${route?.id}`}
+        >
           <Button
             ariaLabel="View in map"
             title="View in Map"

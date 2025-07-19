@@ -1,4 +1,5 @@
 import Button from "@/components/common/Button";
+import { siteUrlMappings } from "@/constants/siteConfigs";
 import stops_data from "@/data/stops_data.json";
 import {
   Circle,
@@ -87,8 +88,10 @@ const RouteStopsList: React.FC<ViewRouteDetailsProps> = ({
                 <Link
                   to={
                     mode === "search"
-                      ? `/search${getMergedSearch({ stop: stop.id })}`
-                      : `/routes${getMergedSearch({
+                      ? `/${siteUrlMappings.search}${getMergedSearch({
+                          stop: stop.id,
+                        })}`
+                      : `/${siteUrlMappings.routes}${getMergedSearch({
                           route: routeId,
                           stop: stop.id,
                         })}`

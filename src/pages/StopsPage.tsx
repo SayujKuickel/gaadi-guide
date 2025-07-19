@@ -15,7 +15,11 @@ import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 import { Eye } from "lucide-react";
 import { Helmet } from "react-helmet";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import {
+  SITE_BASE_TITLE,
+  SITE_BASE_URL,
+  siteUrlMappings,
+} from "@/constants/siteConfigs";
 
 const StopsPage = () => {
   const {
@@ -39,7 +43,10 @@ const StopsPage = () => {
           {selectedStop?.name ? `${selectedStop.name} Stop` : "Stops"} |{" "}
           {SITE_BASE_TITLE}
         </title>
-        <link rel="canonical" href={`${SITE_BASE_URL}/stops`} />
+        <link
+          rel="canonical"
+          href={`${SITE_BASE_URL}/${siteUrlMappings.stops}`}
+        />
       </Helmet>
 
       <SidebarViewsContainer>
