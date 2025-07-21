@@ -1,4 +1,4 @@
-export const DEFAULT_MAP_TILE = "carto-light";
+export const DEFAULT_MAP_TILE = "openstreetmap";
 
 export interface IMapLayer {
   id: string;

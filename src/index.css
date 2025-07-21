@@ -24,6 +24,11 @@
   --color-on-accent: #1e1e1e;
   --color-on-surface: #e0e0e0;
   --color-offText: #c9c8c7;
+
+  --color-input-background: #252525;
+  --color-input-border: #555555;
+  --color-input-text: #e0e0e0;
+  --color-input-placeholder: #888888;
 }
 
 :root {

@@ -23,8 +23,8 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </Link>
           <div className="leading-tight">
-            <p className="text-xl font-bold -mb-1">Kathmandu</p>
-            <p>Bus Routes</p>
+            <p className="text-xl font-bold -mb-1">Gaadi</p>
+            <p>Guide</p>
           </div>
         </div>
 
@@ -61,8 +61,8 @@ const Header = () => {
                 <img src={logo} alt="logo" />
               </Link>
               <div className="leading-tight">
-                <p className="text-xl font-bold -mb-1">Kathmandu</p>
-                <p>Bus Routes</p>
+                <p className="text-xl font-bold -mb-1">Gaadi</p>
+                <p>Guide</p>
               </div>
             </div>
 

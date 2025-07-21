@@ -21,10 +21,10 @@ const About = () => {
           <Heading level={1}>Welcome!</Heading>
 
           <p className="mt-4 text-base leading-7 text-offText">
-            Welcome to the Kathmandu Bus Routes project! This application aims
-            to provide a clear and interactive map of various bus routes across
-            Kathmandu, Nepal. I am building this app to solve the lack of
-            centralized, easily accessible route information.
+            Welcome to the Gaadi Guide! This application aims to provide a clear
+            and interactive map of various bus routes across Kathmandu, Nepal. I
+            am building this app to solve the lack of centralized, easily
+            accessible route information.
           </p>
 
           <p className="mt-4 text-base leading-7 text-offText">
@@ -148,7 +148,7 @@ const About = () => {
             </a>{" "}
             or explore the project on{" "}
             <a
-              href="https://github.com/SayujKuickel/kathmandu-bus-routes"
+              href="https://github.com/SayujKuickel/gaadi-guide"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold underline"

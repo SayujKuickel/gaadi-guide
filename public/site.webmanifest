@@ -1,44 +1,9 @@
 {
-  "name": "Kathmandu Bus Routes (Beta)",
-  "short_name": "Kathmandu Bus Routes (Beta)",
-  "description": "Navigate Kathmandu with ease! Find comprehensive bus routes, stops, and up-to-date fare information for public transport in Nepal's capital. Your essential guide for locals and tourists alike.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#007bff",
-  "scope": "/",
-  "orientation": "portrait",
-  "lang": "en-NP",
-  "dir": "ltr",
+  "name": "Gaadi Guide",
+  "short_name": "Gaadi Guide",
   "icons": [
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    },
-    {
       "src": "/web-app-manifest-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/web-app-manifest-maskable-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
@@ -47,80 +12,10 @@
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/web-app-manifest-maskable-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/web-app-manifest-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/web-app-manifest-384x384-maskable.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/web-app-manifest-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/web-app-manifest-256x256-maskable.png",
-      "sizes": "256x256",
-      "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Search Routes",
-      "short_name": "Search",
-      "description": "Quickly search for bus routes.",
-      "url": "/search"
-    },
-    {
-      "name": "View All Routes",
-      "short_name": "Routes",
-      "description": "Browse all available bus routes.",
-      "url": "/routes"
-    },
-    {
-      "name": "Find Stops",
-      "short_name": "Stops",
-      "description": "Locate bus stops.",
-      "url": "/stops"
-    },
-    {
-      "name": "Contact Us",
-      "short_name": "Contact",
-      "description": "Get in touch with us for support or inquiries.",
-      "url": "/contact"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshots/screenshot-desktop-1.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Main route search on desktop"
-    },
-    {
-      "src": "/screenshots/screenshot-mobile-1.png",
-      "sizes": "720x1280",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Mobile view of route details"
-    }
-  ],
-  "id": "/?utm_source=pwa_install"
+  "theme_color": "#024885",
+  "background_color": "#eff3f5",
+  "display": "standalone"
 }

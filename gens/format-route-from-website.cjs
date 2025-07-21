@@ -15,7 +15,7 @@ fs.readFile(routeFilePath, "utf-8", (err, routeRaw) => {
   if (err) {
     console.error("Error reading route file:", err.message);
     console.info(`Needs a route.json file 
-  This file can be generated via the https://bus-routes.sayuj.com.np/add-route
+  This file can be generated via the https://gaadiguide.sayuj.com.np/add-route
   just paste the downloaded content in the route.json file in the same directory 
   as this file`);
     return;

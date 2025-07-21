@@ -109,7 +109,7 @@ const SearchableCombobox = <T extends BaseOption>({
         <div className="flex items-center gap-1">
           <input
             type="text"
-            className="w-full px-2 py-1.5 rounded-lg bg-surface-3/50 border-2 border-surface-2 outline-0 focus:outline"
+            className="w-full px-2 py-1.5 rounded-lg bg-input-background border-2 border-input-border text-input-text outline-0 focus:outline"
             autoComplete="off"
             placeholder={placeholder}
             value={query}

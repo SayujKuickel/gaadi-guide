@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
           className="w-10 aspect-square"
           width={100}
           height={100}
-          alt="Main logo for Kathmandu Bus Routes"
+          alt="Main logo for Gaadi Guide"
         />
       </Link>
 

@@ -1,10 +1,10 @@
 # Welcome!
 
-Welcome to the Kathmandu Bus Routes project! This application aims to provide a clear and interactive map of various bus routes across Kathmandu, Nepal. I am building this app to solve the lack of centralized, easily accessible route information.
+Welcome to the Gaadi Guide project! This application aims to provide a clear and interactive map of various bus routes across Kathmandu, Nepal. I am building this app to solve the lack of centralized, easily accessible route information.
 
 This project is being actively developed and you can see the full feature list I plan to add in the [Notion page](https://www.notion.so/2002054224e68038b8f1dd5e64f0a636?v=2002054224e681548951000c5b4845fc).
 
-Check out the demo [here](https://bus-routes.sayuj.com.np/).
+Check out the demo [here](https://gaadiguide.sayuj.com.np/).
 
 ## Key Features
 
@@ -24,11 +24,11 @@ This project was developed by [Sayuj Kuickel](https://sayuj.com.np/). I'm passio
 Contributors and sources that have supported this project:
 
 - [@SayujKuickel](https://github.com/SayujKuickel) – Project author and core developer
-- [View All Contributors](https://bus-routes.sayuj.com.np/about)
+- [View All Contributors](https://gaadiguide.sayuj.com.np/about)
 
 ## Want to Help?
 
-Contributions, ideas, and feedback are very welcome! Whether you're a developer, a designer, or just someone familiar with Kathmandu's transport system, your help can make this app better for everyone. You can reach out via the [contact form](https://bus-routes.sayuj.com.np/contact) or explore the project on [GitHub](https://github.com/SayujKuickel/kathmandu-bus-routes).
+Contributions, ideas, and feedback are very welcome! Whether you're a developer, a designer, or just someone familiar with Kathmandu's transport system, your help can make this app better for everyone. You can reach out via the [contact form](https://gaadiguide.sayuj.com.np/contact) or explore the project on [GitHub](https://github.com/SayujKuickel/gaadi-guide).
 
 ## Tech Stack
 
