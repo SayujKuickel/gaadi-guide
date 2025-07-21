@@ -20,8 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = "primary",
 }) => {
   const variantStyles = {
-    primary:
-      "bg-surface-3 hover:bg-surface-2 text-on-surface text-text border-surface",
+    primary: "bg-surface-3 hover:bg-surface-2 border-surface",
     secondary:
       "outline-2 outline-surface-3 hover:border-surface-3 hover:bg-surface-2",
     error: "",

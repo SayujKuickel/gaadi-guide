@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet";
 // \components
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
-import ViewWrapper from "@/components/sidebar/wrappers/SidebarPanel";
+import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 import RouteDetails from "@/components/sidebar/routes/RouteDetails";
 import SelectedRoutePolylineView from "@/components/map/route/SelectedRoutePolylineView";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
@@ -65,7 +65,7 @@ const RoutesPage = () => {
                 icon={<Eye size={16} />}
                 title={"View Stops"}
                 ariaLabel="search"
-                className="text-xs"
+                className="text-xs text-on-surface font-[600]"
                 onClick={handleShowResults}
               />
             )}

@@ -91,7 +91,7 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
   };
 
   return (
-    <section className="fixed inset-0 z-[99999] flex items-end md:relative md:w-85 md:pl-2 md:pt-2 ">
+    <section className="fixed inset-0 z-[99999] flex items-end md:relative md:w-sm md:pl-2 md:pt-2 ">
       <div
         className="absolute inset-0 bg-black/35 backdrop-blur-[2px] transition-opacity duration-300 md:hidden"
         onClick={onClose}

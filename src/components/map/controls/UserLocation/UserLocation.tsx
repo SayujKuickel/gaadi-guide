@@ -13,7 +13,6 @@ const UserLocation: React.FC<UserLocationProps> = ({
   const locationPermissionStatus = sessionStorage.getItem(
     "location-permission-denied"
   );
-  console.log(typeof locationPermissionStatus);
 
   return (
     <Button

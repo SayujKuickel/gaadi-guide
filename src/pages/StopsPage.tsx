@@ -9,7 +9,7 @@ import Button from "@/components/common/Button";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import StopDetails from "@/components/sidebar/stops/StopDetails";
 import ShowAllStops from "@/components/map/stop/ShowAllStops";
-import ViewWrapper from "@/components/sidebar/wrappers/SidebarPanel";
+import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
@@ -73,7 +73,7 @@ const StopsPage = () => {
                 icon={<Eye size={16} />}
                 title={"View Routes"}
                 ariaLabel="View Routes"
-                className="text-xs"
+                className="text-xs text-on-surface font-[600]"
                 onClick={handleShowResults}
               />
             )}

@@ -1,10 +1,7 @@
-// \React
+import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-// \hooks
-import ViewWrapper from "@/components/sidebar/wrappers/SidebarPanel";
+import { useSearchParams } from "react-router-dom";
 // \data
-import FlyToStop from "@/components/map/stop/FlyToStop";
 import stops_data from "@/data/stops_data.json";
 // \types
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
@@ -13,10 +10,11 @@ import type { IStop } from "@/types/stop.types";
 import {
   SITE_BASE_TITLE,
   SITE_BASE_URL,
-  SITE_SUGGESTION_REDIREECT,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
 // \components
+import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
+import FlyToStop from "@/components/map/stop/FlyToStop";
 import Heading from "@/components/common/Heading";
 import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
@@ -25,7 +23,6 @@ import RoutePolyLineRenderer from "@/components/map/route/RoutePolyLineRenderer"
 import BusStopMarker from "@/components/map/markers/BusStopMarker";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 import SearchedRouteDetails from "@/components/sidebar/search/SearchedRouteDetails";
-import { Helmet } from "react-helmet";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
@@ -63,18 +60,6 @@ const SearchPage = () => {
             setShowResults={setShowResults}
             setSegments={setSegments}
           />
-
-          <span className="text-xs leading-tight block text-offText/75 mt-2">
-            This feature is under development. If you find any bugs, please
-            report{" "}
-            <Link
-              className="text-text"
-              to={SITE_SUGGESTION_REDIREECT}
-              target="_blank"
-            >
-              here.
-            </Link>
-          </span>
         </ViewWrapper>
 
         {showResults && segments && (
