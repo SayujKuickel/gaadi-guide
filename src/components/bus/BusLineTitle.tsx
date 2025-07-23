@@ -19,12 +19,14 @@ const BusLineTitle: React.FC<BusLineTitleProps> = ({
       className={`text-offText flex items-center gap-0 ${className}`}
       level={level}
     >
-      <Circle
-        style={{
-          fill: lineColor,
-          stroke: lineColor,
-        }}
-      />
+      <p>
+        <Circle
+          style={{
+            fill: lineColor,
+            stroke: lineColor,
+          }}
+        />
+      </p>
 
       <span className="ml-1 leading-tight">{name}</span>
     </Heading>

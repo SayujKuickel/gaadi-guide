@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
   return (
     <aside className="bg-surface border-t-2 border-t-surface-3 border-r-0 md:border-t-0 md:border-r-2 md:border-r-surface-3 w-screen md:w-20 py-3 md:py-1">
       <Link
-        to={`/${siteUrlMappings.routes}`}
+        to={`/${siteUrlMappings.search}`}
         className="hidden w-full place-items-center md:grid mt-2"
       >
         <img
@@ -27,13 +27,15 @@ const Sidebar: React.FC = () => {
       <hr className="hidden md:block w-2/3 mx-auto mt-4 mb-5 border-offText/35" />
 
       <ul className="flex items-center md:flex-col justify-around md:gap-2">
-        {sidebarItems.map((item) => (
-          <SidebarItem
-            key={item.url}
-            item={item}
-            isActive={location.pathname.startsWith(item.url || "")}
-          />
-        ))}
+        {sidebarItems
+          .sort((a, b) => a.key - b.key)
+          .map((item) => (
+            <SidebarItem
+              key={item.url}
+              item={item}
+              isActive={location.pathname.startsWith(item.url || "")}
+            />
+          ))}
       </ul>
     </aside>
   );

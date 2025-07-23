@@ -6,7 +6,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(`/${siteUrlMappings.routes}`, { replace: true });
+    navigate(`/${siteUrlMappings.search}`, { replace: true });
   }, [navigate]);
 
   return null;

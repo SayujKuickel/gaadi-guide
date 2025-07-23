@@ -17,7 +17,7 @@ const Header = () => {
         {/* Logo & Title */}
         <div className="flex items-center gap-2">
           <Link
-            to={`/${siteUrlMappings.routes}`}
+            to={`/${siteUrlMappings.search}`}
             className="block w-14 aspect-square shrink-0"
           >
             <img src={logo} alt="logo" />
@@ -57,7 +57,10 @@ const Header = () => {
         <aside className="fixed inset-0 z-[99999] h-screen bg-background p-4 md:hidden">
           <nav className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <Link to="/" className="block w-14 aspect-square shrink-0">
+              <Link
+                to={`/${siteUrlMappings.search}`}
+                className="block w-14 aspect-square shrink-0"
+              >
                 <img src={logo} alt="logo" />
               </Link>
               <div className="leading-tight">
