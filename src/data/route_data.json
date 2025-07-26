@@ -3,7 +3,7 @@
     "id": "cbaa6f8948-to-6b7ff2ef",
     "name": "Haraharamahadev  - Thapathali Loop - Thapathali",
     "lineColor": "#4A2C2A",
-    "operator": "Nepal Yatayat",
+    "operator": ["Nepal Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "cbaa6f8948",
@@ -58,7 +58,7 @@
     "id": "50cfd5593d-to-4b657aefbe",
     "name": "Tikathali Stop - Kharibot ",
     "lineColor": "#8B5523",
-    "operator": "Nepal Yatayat",
+    "operator": ["Nepal Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "50cfd5593d",
@@ -98,7 +98,7 @@
     "id": "809b1d514a-to-c62f3bc810",
     "name": "Nepal Yatayat Bus Station - Bhrikuti Mandap",
     "lineColor": "#6F4E37",
-    "operator": "Nepal Yatayat",
+    "operator": ["Nepal Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "809b1d514a",
@@ -126,7 +126,7 @@
     "id": "1db4634-to-1db5223",
     "name": "Ringroad Loop - Mahanagar",
     "lineColor": "#DC143C",
-    "operator": "Mahanagar Yatayat",
+    "operator": ["Mahanagar Yatayat"],
     "isVerifiedRoute": true,
     "details": {
       "total_bus": 51,
@@ -163,7 +163,7 @@
     "id": "11a9cc28-to-22c80c9",
     "name": "Thankot - Dhulikhel",
     "lineColor": "#FF4040",
-    "operator": "Mahanagar Yatayat",
+    "operator": ["Mahanagar Yatayat"],
     "isVerifiedRoute": true,
     "details": {
       "distance_meter": 524100,
@@ -212,7 +212,7 @@
     "id": "157c1d73-to-de5596baf5",
     "name": "Lagankhel - Naya buspark",
     "lineColor": "#228B22",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "157c1d73",
@@ -240,7 +240,7 @@
     "id": "157c1d73-to-6d1c3f54",
     "name": "Lagankhel - Budhanilkantha",
     "lineColor": "#50C878",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "157c1d73",
@@ -268,7 +268,7 @@
     "id": "6b7ff2ef-to-a62a2c9fb8",
     "name": "Tripureshwor - Godawari",
     "lineColor": "#2E8B57",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "6b7ff2ef",
@@ -291,7 +291,7 @@
     "id": "f4c8421c39-to-792adc08eb",
     "name": "Lagankhel - Lamatar",
     "lineColor": "#4CBB17",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "6b7ff2ef",
@@ -315,7 +315,7 @@
     "id": "22c80c9-to-1db4634",
     "name": "Thankot - Airport ",
     "lineColor": "#31AA44",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "22c80c9",
@@ -343,7 +343,7 @@
     "id": "22c80c9-to-6d1c3f54",
     "name": "Thankot - Budhanilkantha",
     "lineColor": "#7FFF00",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "22c80c9",
@@ -373,7 +373,7 @@
     "id": "12b600e7-to-367bffd8c5",
     "name": "Jamal - Lele",
     "lineColor": "#263927",
-    "operator": "Sajha Yatayat",
+    "operator": ["Sajha Yatayat"],
     "isVerifiedRoute": true,
     "stops": [
       "12b600e7",

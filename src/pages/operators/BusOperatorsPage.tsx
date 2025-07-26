@@ -12,12 +12,14 @@ import { ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-const BusOperatorsPage = () => {
-  const operators = [
-    ...new Set(Route_data.map((route) => route.operator && route.operator)),
-  ].filter((operator) => operator);
+const slugify = (str: string) => str.split(" ").join("-").toLowerCase();
 
-  if (!operators || !(operators?.length >= 0)) return;
+const BusOperatorsPage = () => {
+  const operators: string[] = [
+    ...new Set(Route_data.flatMap((route) => route.operator ?? [])),
+  ].filter(Boolean);
+
+  if (!operators || operators.length === 0) return null;
 
   return (
     <>
@@ -41,18 +43,12 @@ const BusOperatorsPage = () => {
                 key={index}
                 className="flex items-center justify-between p-4 bg-surface-1 text-on-surface rounded-lg"
               >
-                <span className="">
+                <span>
                   <span className="font-bold text-xl mr-1">{index + 1}.</span>
                   <span className="font-medium">{operator}</span>
                 </span>
 
-                <Link
-                  to={`/${siteUrlMappings.operators}/${operator
-                    ?.split(" ")
-                    .join("-")
-                    .toLowerCase()}`}
-                  className="px-3 py-1 text-sm text-blue-600 hover:text-blue-800 font-medium"
-                >
+                <Link to={`/${siteUrlMappings.operators}/${slugify(operator)}`}>
                   <Button
                     title="View Routes"
                     icon={<ChevronRight size={16} />}

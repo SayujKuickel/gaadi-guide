@@ -26,8 +26,10 @@ const BusOperatorDetailsPage = () => {
   const [routes, setRoute] = useState<IRoute[] | null>(null);
 
   useEffect(() => {
-    const operatorRoutes = route_data.filter(
-      (route) => route?.operator?.split(" ").join("-").toLowerCase() === name
+    const operatorRoutes = route_data.filter((route) =>
+      route?.operator?.some(
+        (op) => op.split(" ").join("-").toLowerCase() === name
+      )
     );
 
     if (!operatorRoutes || operatorRoutes.length === 0) {

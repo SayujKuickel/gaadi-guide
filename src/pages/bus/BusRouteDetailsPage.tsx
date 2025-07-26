@@ -87,23 +87,24 @@ const BusRouteDetailsPage = ({}) => {
 
               <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 {route?.operator && (
-                  <Link
-                    to={`/${siteUrlMappings.operators}/${nameToSlug(
-                      route?.operator
-                    )}`}
-                  >
-                    <RouteDetailsCard
-                      label={"Operated By"}
-                      value={route?.operator}
-                      icon={<BusFront />}
-                      lineColor={route?.lineColor}
-                    />
-                  </Link>
+                  <RouteDetailsCard
+                    label={"Operated By"}
+                    value={route?.operator.map((item, i) => (
+                      <Link
+                        to={`/${siteUrlMappings.operators}/${nameToSlug(item)}`}
+                      >
+                        {i > 0 && ", "}
+                        {item}
+                      </Link>
+                    ))}
+                    icon={<BusFront />}
+                    lineColor={route?.lineColor}
+                  />
                 )}
 
                 {route?.details?.duration_mins && (
                   <RouteDetailsCard
-                    label={"Total Duration"}
+                    label={"Estimated Duration"}
                     value={formatTime(route?.details?.duration_mins)}
                     icon={<Clock />}
                     lineColor={route?.lineColor}

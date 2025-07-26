@@ -72,17 +72,18 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
       </div>
 
       {routeData.operator && (
-        <Link
-          className="w-fit block"
-          to={`/${siteUrlMappings.operators}/${nameToSlug(
-            routeData?.operator
-          )}`}
-        >
-          <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
-            <BusFront size={18} />
-            {routeData.operator}
-          </p>
-        </Link>
+        <p className="flex items-center gap-1 text-offText/80 text-sm mb-1">
+          <BusFront size={18} />
+          <span>
+            {routeData?.operator.map((op, i) => (
+              <Link to={`/${siteUrlMappings.operators}/${nameToSlug(op)}`}>
+                {i > 0 && ", "}
+
+                {op}
+              </Link>
+            ))}
+          </span>
+        </p>
       )}
 
       {routeData?.details?.duration_mins && (

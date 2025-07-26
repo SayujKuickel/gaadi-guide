@@ -3,7 +3,7 @@ export interface IRoute {
   name: string;
   lineColor: string;
   stops: string[];
-  operator?: string;
+  operator?: string[];
   isVerifiedRoute?: boolean;
   details?: IRouteDetails;
 }
