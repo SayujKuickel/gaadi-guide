@@ -684,38 +684,7 @@
       "4bf28194"
     ]
   },
-  {
-    "id": "231d4f",
-    "name": "Naya Bus Park to Balaju",
-    "lineColor": "#371a7c",
-    "stops": [
-      "de5596baf5",
-      "1db57d6",
-      "4c2d1efe",
-      "73fc94e1",
-      "6d66efa8",
-      "5acc027a",
-      "77d6572b",
-      "1db557b",
-      "5326f2ff",
-      "6d41252b",
-      "8b4ad9d1",
-      "1db4634",
-      "1db5248",
-      "1dc8bca",
-      "1dc8360",
-      "8daf79b2",
-      "58c5d0fe",
-      "58c5d1a5",
-      "635dc81f",
-      "5934643f",
-      "8da154a9",
-      "157c4257",
-      "12b05015",
-      "62e8e572",
-      "1dda790"
-    ]
-  },
+
   {
     "id": "231d7a",
     "name": "Balkumari Stop to Gopi Krishna Stop",
@@ -1055,107 +1024,6 @@
       "8db96f28",
       "88953097",
       "703484de"
-    ]
-  },
-  {
-    "id": "2e158e",
-    "name": "Gothatar to Koteshwor Stop",
-    "lineColor": "#95215e",
-    "stops": ["6d6618e8", "214afa1a", "1dc8360"]
-  },
-  {
-    "id": "2ed278",
-    "name": "Kalanki to Lagankhel",
-    "lineColor": "#991092",
-    "stops": [
-      "12b05015",
-      "157c4257",
-      "8da154a9",
-      "5934643f",
-      "635dc81f",
-      "4be7bb35"
-    ]
-  },
-  {
-    "id": "2ed6b5",
-    "name": "Balkhu to Tinkune Subidhanagar",
-    "lineColor": "#a81a8b",
-    "stops": [
-      "8da154a9",
-      "12bf5294",
-      "6b7ff2ef",
-      "12ed277c",
-      "6c5224d3",
-      "6b974192",
-      "6b977374",
-      "8db96f28",
-      "88953097",
-      "6c4dcabd",
-      "889530a7"
-    ]
-  },
-  {
-    "id": "2ed931",
-    "name": "Kalanki to Balkumari Stop",
-    "lineColor": "#8b8516",
-    "stops": [
-      "12b05015",
-      "12bf5294",
-      "6b7ff2ef",
-      "12ed277c",
-      "6c5224d3",
-      "6b974192",
-      "6b977374",
-      "8db96f28",
-      "88953097",
-      "6c4dcabd",
-      "889530a7",
-      "1dc8360",
-      "8daf79b2"
-    ]
-  },
-  {
-    "id": "2ed936",
-    "name": "Kalanki to Pepsi Cola Chowk",
-    "lineColor": "#522c6b",
-    "stops": [
-      "12b05015",
-      "12bf5294",
-      "6b7ff2ef",
-      "12ed277c",
-      "6c5224d3",
-      "6b974192",
-      "6b977374",
-      "8db96f28",
-      "88953097",
-      "6c4dcabd",
-      "889530a7",
-      "1dc8360",
-      "8dae2cb7",
-      "214afa1a"
-    ]
-  },
-  {
-    "id": "2ed988",
-    "name": "kaushaltar to Nikap",
-    "lineColor": "#1d2948",
-    "stops": [
-      "7a418531",
-      "7a41852d",
-      "8dae2cb7",
-      "1dc8360",
-      "889530a7",
-      "6c4dcabd",
-      "88953097",
-      "8db96f28",
-      "6b977374",
-      "6b974192",
-      "6c5224d3",
-      "12ed277c",
-      "6b7ff2ef",
-      "12bf5294",
-      "12b05015",
-      "1539b16f"
     ]
   },
   {
