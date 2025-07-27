@@ -77,32 +77,30 @@ const SearchPage = () => {
         )}
       </SidebarViewsContainer>
 
-      <MapControlsContainer>
-        {segments && (
-          <>
-            {segments?.map((segment, i) => (
-              <RoutePolyLineRenderer
-                key={`${segment.id}${i}`}
-                stopIds={segment?.stops}
-                fitToScreen={false}
-                lineColor={segment?.lineColor}
-                showDetailedPopup={false}
-              />
-            ))}
-          </>
-        )}
+      {segments && (
+        <>
+          {segments?.map((segment, i) => (
+            <RoutePolyLineRenderer
+              key={`${segment.id}${i}`}
+              stopIds={segment?.stops}
+              fitToScreen={false}
+              lineColor={segment?.lineColor}
+              showDetailedPopup={false}
+            />
+          ))}
+        </>
+      )}
 
-        {paramsStop && !segments && (
-          <BusStopMarker
-            stopId={paramsStop.id}
-            stopName={paramsStop.name}
-            position={[paramsStop.lat, paramsStop.lng]}
-            lineColor="#bc2c36"
-          />
-        )}
+      {paramsStop && !segments && (
+        <BusStopMarker
+          stopId={paramsStop.id}
+          stopName={paramsStop.name}
+          position={[paramsStop.lat, paramsStop.lng]}
+          lineColor="#bc2c36"
+        />
+      )}
 
-        <FlyToStop />
-      </MapControlsContainer>
+      <FlyToStop />
     </>
   );
 };

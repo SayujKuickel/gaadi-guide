@@ -44,6 +44,7 @@ const RoutesPage = () => {
         </title>
         <link rel="canonical" href={`${SITE_BASE_URL}/routes`} />
       </Helmet>
+
       <SidebarViewsContainer>
         <>
           <ViewWrapper>
@@ -79,9 +80,7 @@ const RoutesPage = () => {
         </>
       </SidebarViewsContainer>
 
-      <MapControlsContainer>
-        <SelectedRoutePolylineView fitRouteToWindow={fitRouteToWindow} />
-      </MapControlsContainer>
+      <SelectedRoutePolylineView fitRouteToWindow={fitRouteToWindow} />
     </>
   );
 };

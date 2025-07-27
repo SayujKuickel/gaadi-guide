@@ -1,4 +1,5 @@
 import Sidebar from "@/components/common/global/Sidebar";
+import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -15,7 +16,9 @@ const MapPagesLayout = () => {
         <Sidebar />
 
         <div className="relative flex-1 w-full h-full">
-          <Outlet />
+          <MapControlsContainer>
+            <Outlet />
+          </MapControlsContainer>
         </div>
       </div>
     </main>

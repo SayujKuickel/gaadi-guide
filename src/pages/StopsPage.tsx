@@ -87,11 +87,9 @@ const StopsPage = () => {
         </>
       </SidebarViewsContainer>
 
-      <MapControlsContainer>
-        <ShowAllStops />
+      <ShowAllStops />
 
-        <FlyToStop />
-      </MapControlsContainer>
+      <FlyToStop />
     </>
   );
 };
