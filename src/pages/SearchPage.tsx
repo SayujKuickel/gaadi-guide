@@ -17,7 +17,6 @@ import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import Heading from "@/components/common/Heading";
 import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
-import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import RoutePolyLineRenderer from "@/components/map/route/RoutePolyLineRenderer";
 import BusStopMarker from "@/components/map/markers/BusStopMarker";
