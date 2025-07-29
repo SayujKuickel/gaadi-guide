@@ -38,3 +38,8 @@ This project is being built on React with the following tools and libraries
 - React Leaflet
 - React Routing Machine [(OSRM)](https://www.liedman.net/leaflet-routing-machine/)
 - Hosted on Vercel
+
+## License
+
+This project is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+See [LICENSE](./LICENSE.md) for details.
