@@ -16,7 +16,7 @@ import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet
 import { Eye } from "lucide-react";
 import { Helmet } from "react-helmet";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -40,8 +40,8 @@ const StopsPage = () => {
     <>
       <Helmet>
         <title>
-          {selectedStop?.name ? `${selectedStop.name} Stop` : "Stops"} |{" "}
-          {SITE_BASE_TITLE}
+          {selectedStop?.name ? `${selectedStop.name} Stop` : "Stops"}
+          {SITE_TOP_TITLE}
         </title>
         <link
           rel="canonical"

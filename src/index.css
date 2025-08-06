@@ -2,32 +2,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 
 @theme {
-  --color-text: #bcbcbc;
+  --color-text: #eaeef1;
+
   --color-sa-red: #bc2c36;
   --color-sa-green: #12a82e;
   --color-sa-blue: #024885;
   --color-sa-yellow: #d5b63e;
 
-  --color-background: #121212;
-  --color-text: #e0e0e0;
+  --color-background: #060a0c;
 
-  --color-surface: #1e1e1e;
-  --color-surface-1: #2a2a2a;
-  --color-surface-2: #333333;
-  --color-surface-3: #3d3d3d;
+  --color-surface: #0c0f11;
+  --color-surface-1: #171a1c;
+  --color-surface-2: #202324;
+  --color-surface-3: #2a2d2e;
 
   --color-primary: #bc2c36;
-  --color-secondary: #6fb3de;
-  --color-accent: #547c97;
+  --color-secondary: #255274;
+  --color-accent: #d5b63e;
 
   --color-on-primary: #ffffff;
-  --color-on-accent: #1e1e1e;
-  --color-on-surface: #e0e0e0;
-  --color-offText: #c9c8c7;
+  --color-on-accent: #060a0c;
+  --color-on-surface: #dadada;
 
-  --color-input-background: #252525;
-  --color-input-border: #555555;
-  --color-input-text: #e0e0e0;
+  --color-offText: #b7b7b7;
+
+  --color-input-background: #101314;
+  --color-input-border: #3a3a3a;
+  --color-input-text: #dadada;
   --color-input-placeholder: #888888;
 }
 
@@ -238,7 +239,7 @@ body {
 }
 
 /* --- Animation Classes --- */
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .animate-slide-up-mobile {
     animation: none;
   }

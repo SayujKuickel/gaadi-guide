@@ -8,7 +8,7 @@ import type { IRouteSegment } from "@/utils/searchRouteSegments";
 import type { IStop } from "@/types/stop.types";
 // \settings
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -47,7 +47,7 @@ const SearchPage = () => {
   return (
     <>
       <Helmet>
-        <title>Search | {SITE_BASE_TITLE}</title>
+        <title>Search {SITE_TOP_TITLE}</title>
         <link
           rel="canonical"
           href={`${SITE_BASE_URL}/${siteUrlMappings.search}`}

@@ -1,6 +1,6 @@
 import Heading from "@/components/common/Heading";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -12,7 +12,7 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About | {SITE_BASE_TITLE}</title>
+        <title>About {SITE_TOP_TITLE}</title>
         <link rel="canonical" href={`${SITE_BASE_URL}/about`} />
       </Helmet>
 

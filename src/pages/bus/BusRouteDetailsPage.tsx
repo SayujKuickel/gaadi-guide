@@ -20,7 +20,7 @@ import RouteDetailsCard from "@/components/ui/cards/RouteDetailsCard";
 import { Bus, BusFront, Clock, Map, Route } from "lucide-react";
 import { Helmet } from "react-helmet";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -44,7 +44,7 @@ const BusRouteDetailsPage = ({}) => {
     <>
       <Helmet>
         <title>
-          {route ? route?.name : "Route Not Found"} | {SITE_BASE_TITLE}
+          {route ? route?.name : "Route Not Found"} {SITE_TOP_TITLE}
         </title>
         <link
           rel="canonical"

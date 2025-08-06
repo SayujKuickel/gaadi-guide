@@ -20,7 +20,7 @@ import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 // icons
 import { Eye } from "lucide-react";
-import { SITE_BASE_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import { SITE_TOP_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -39,8 +39,8 @@ const RoutesPage = () => {
     <>
       <Helmet>
         <title>
-          {selectedRoute?.name ? selectedRoute.name : "Routes"} |{" "}
-          {SITE_BASE_TITLE}
+          {selectedRoute?.name ? selectedRoute.name : "Routes"}
+          {SITE_TOP_TITLE}
         </title>
         <link rel="canonical" href={`${SITE_BASE_URL}/routes`} />
       </Helmet>

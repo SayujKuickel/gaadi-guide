@@ -10,7 +10,7 @@ import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 import SearchableCombobox from "@/components/common/SearchableCombobox";
 import { Helmet } from "react-helmet";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -22,7 +22,7 @@ const BusRoutesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Routes | {SITE_BASE_TITLE}</title>
+        <title>Routes {SITE_TOP_TITLE}</title>
         <link
           rel="canonical"
           href={`${SITE_BASE_URL}/${siteUrlMappings.bus}`}

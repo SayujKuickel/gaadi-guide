@@ -9,7 +9,7 @@ import NotFound from "../NotFound";
 import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import { Helmet } from "react-helmet";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -47,7 +47,7 @@ const BusOperatorDetailsPage = () => {
           {routes
             ? `${toTitleCase(name?.replace("-", " ") || "")}`
             : "Invalid Operator"}{" "}
-          | {SITE_BASE_TITLE}
+          {SITE_TOP_TITLE}
         </title>
         <link
           rel="canonical"

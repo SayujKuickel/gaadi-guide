@@ -3,7 +3,7 @@ import PageLayout from "@/layout/PageLayout";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { Link } from "react-router-dom";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   SITE_SUGGESTION_REDIREECT,
 } from "@/constants/siteConfigs";
@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact | {SITE_BASE_TITLE} </title>
+        <title>Contact {SITE_TOP_TITLE} </title>
         <link rel="canonical" href={`${SITE_BASE_URL}/contact`} />
       </Helmet>
 

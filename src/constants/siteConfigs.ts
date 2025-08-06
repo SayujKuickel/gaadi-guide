@@ -4,6 +4,9 @@ export const SITE_SUGGESTION_REDIREECT =
 export const SITE_BASE_URL = "https://gaadiguide.sayuj.com.np";
 export const SITE_BASE_TITLE = "Gaadi Guide";
 
+const separator = "~";
+export const SITE_TOP_TITLE = ` ${separator} ${SITE_BASE_TITLE}`;
+
 export const siteUrlMappings = {
   routes: "routes",
   stops: "stops",

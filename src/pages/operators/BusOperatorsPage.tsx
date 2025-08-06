@@ -1,7 +1,7 @@
 import Button from "@/components/common/Button";
 import Heading from "@/components/common/Heading";
 import {
-  SITE_BASE_TITLE,
+  SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
@@ -24,7 +24,7 @@ const BusOperatorsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Operators | {SITE_BASE_TITLE}</title>
+        <title>Operators {SITE_TOP_TITLE}</title>
         <link
           rel="canonical"
           href={`${SITE_BASE_URL}/${siteUrlMappings.operators}`}

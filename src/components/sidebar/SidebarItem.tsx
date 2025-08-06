@@ -22,7 +22,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       >
         <span
           className={`text-2xl md:text-xl mb-1.5 rounded-4xl py-1 max-w-16 w-[50%] md:w-[75%] grid place-items-center transition-all ${
-            isActive ? "bg-secondary/10 text-secondary" : ""
+            isActive ? "bg-secondary/25 text-text" : ""
           } `}
         >
           {item?.icon}
