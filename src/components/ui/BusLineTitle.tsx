@@ -1,14 +1,14 @@
 import { Circle } from "lucide-react";
-import Heading from "../common/Heading";
+import { Heading } from ".";
 
-interface BusLineTitleProps {
+interface LineHeadingProps {
   lineColor: string;
   name: string;
   className?: string;
   level?: 1 | 2 | 3 | 4 | 5;
 }
 
-const BusLineTitle: React.FC<BusLineTitleProps> = ({
+const LineHeading: React.FC<LineHeadingProps> = ({
   className,
   lineColor,
   name,
@@ -33,4 +33,4 @@ const BusLineTitle: React.FC<BusLineTitleProps> = ({
   );
 };
 
-export default BusLineTitle;
+export default LineHeading;

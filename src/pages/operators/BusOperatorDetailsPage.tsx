@@ -1,18 +1,17 @@
-import Heading from "@/components/common/Heading";
 import route_data from "@/data/route_data.json";
-import ContainerLayout from "@/layout/ContainerLayout";
-import PageLayout from "@/layout/PageLayout";
 import type { IRoute } from "@/types/route.types";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "../NotFound";
-import ViewRouteDetails from "@/components/bus/ViewRouteDetails";
 import { Helmet } from "react-helmet";
 import {
   SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
+import { ContainerLayout } from "@/components/layout";
+import { Heading } from "@/components/ui";
+import ViewRouteSummary from "@/components/bus/ViewRouteSummary";
 
 const toTitleCase = (str: string) => {
   return str?.replace(
@@ -55,25 +54,23 @@ const BusOperatorDetailsPage = () => {
         />
       </Helmet>
 
-      <PageLayout>
-        <ContainerLayout size="xs">
-          {routes ? (
-            <>
-              <Heading className="mb-8 capitalize" level={1}>
-                Routes by {name?.split("-")?.join(" ")}
-              </Heading>
+      <ContainerLayout size="xs">
+        {routes ? (
+          <>
+            <Heading className="mb-8 capitalize" level={1}>
+              Routes by {name?.split("-")?.join(" ")}
+            </Heading>
 
-              <div className="space-y-10">
-                {routes.map((route) => (
-                  <ViewRouteDetails key={route.id} route={route} />
-                ))}
-              </div>
-            </>
-          ) : (
-            <NotFound title="No Routes by the Operator" />
-          )}
-        </ContainerLayout>
-      </PageLayout>
+            <div className="space-y-10">
+              {routes.map((route) => (
+                <ViewRouteSummary key={route.id} route={route} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <NotFound title="No Routes by the Operator" />
+        )}
+      </ContainerLayout>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import { Link } from "react-router-dom";
-import StopPopupDetails from "../stop/StopPopupDetails";
+import StopPopupDetails from "../../stop/StopPopupDetails";
 
 interface BusStopMarkerProps {
   position: [number, number];

@@ -1,8 +1,6 @@
-import Button from "@/components/common/Button";
 import { siteUrlMappings } from "@/constants/siteConfigs";
 import stops_data from "@/data/stops_data.json";
 import {
-  Circle,
   CircleDashed,
   CircleDot,
   EllipsisVertical,
@@ -10,8 +8,9 @@ import {
   MapPinned,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { Button } from "../ui";
 
-interface ViewRouteDetailsProps {
+interface ViewRouteSummaryProps {
   stopsArray: string[];
   itemsToShow?: number;
   routeId?: string;
@@ -19,7 +18,7 @@ interface ViewRouteDetailsProps {
   mode?: "search" | "route";
 }
 
-const RouteStopsList: React.FC<ViewRouteDetailsProps> = ({
+const RouteStopsList: React.FC<ViewRouteSummaryProps> = ({
   stopsArray,
   itemsToShow,
   routeId,

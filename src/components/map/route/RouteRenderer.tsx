@@ -4,7 +4,7 @@ import { useMap } from "react-leaflet";
 import React, { useEffect, useState, useRef } from "react";
 import stopsData from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
-import BusStopMarker from "../markers/BusStopMarker";
+import BusStopMarker from "../ui/markers/BusStopMarker";
 
 declare module "leaflet" {
   namespace Routing {
@@ -12,14 +12,14 @@ declare module "leaflet" {
   }
 }
 
-interface RoutePolyLineRendererProps {
+interface RouteRendererProps {
   stopIds: string[];
   lineColor: string;
   fitToScreen?: boolean;
   showDetailedPopup?: boolean;
 }
 
-const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
+const RouteRenderer: React.FC<RouteRendererProps> = ({
   stopIds,
   lineColor,
   fitToScreen = false,
@@ -112,4 +112,4 @@ const RoutePolyLineRenderer: React.FC<RoutePolyLineRendererProps> = ({
   );
 };
 
-export default React.memo(RoutePolyLineRenderer);
+export default React.memo(RouteRenderer);

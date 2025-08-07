@@ -1,15 +1,12 @@
-import Button from "@/components/common/Button";
+import { Button } from "@/components/ui";
 import { Minus, Plus } from "lucide-react";
 
-interface ZoomControlHandlerProps {
+interface ZoomControlsProps {
   onZoomIn: () => void;
   onZoomOut: () => void;
 }
 
-const ZoomControlHandler: React.FC<ZoomControlHandlerProps> = ({
-  onZoomIn,
-  onZoomOut,
-}) => {
+const ZoomControls: React.FC<ZoomControlsProps> = ({ onZoomIn, onZoomOut }) => {
   return (
     <aside className="fixed top-0 left-0 pl-2 pt-2 w-fit h-fit md:top-auto md:left-auto md:bottom-0 md:right-0 z-[1111] md:pl-0 md:pt-0 md:pr-2 md:pb-4">
       <Button
@@ -28,4 +25,4 @@ const ZoomControlHandler: React.FC<ZoomControlHandlerProps> = ({
   );
 };
 
-export default ZoomControlHandler;
+export default ZoomControls;

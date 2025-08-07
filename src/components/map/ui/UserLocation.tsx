@@ -1,5 +1,5 @@
-import Button from "@/components/common/Button";
-import { Loader, LocateFixedIcon, MapPin, MapPinOff } from "lucide-react";
+import { Loader, MapPin, MapPinOff } from "lucide-react";
+import { Button } from "@/components/ui";
 
 interface UserLocationProps {
   isSearchingLocation: boolean;

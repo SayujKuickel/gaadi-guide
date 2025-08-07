@@ -6,17 +6,16 @@ import RouteData from "@/data/route_data.json";
 // \type
 import type { IRoute } from "@/types/route.types";
 // \components
-import Heading from "@/components/common/Heading";
-import BusLineTitle from "@/components/bus/BusLineTitle";
 import RouteStopsList from "@/components/bus/RouteStopsList";
 import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
-import RouteVerificationStatus from "@/components/ui/RouteVerificationStatus";
 import { nameToSlug } from "@/utils/nameToSlug";
 import { BusFront, Clock, Route, TriangleAlert } from "lucide-react";
 import { siteUrlMappings } from "@/constants/siteConfigs";
-interface RouteDetailsProps {}
+import { Heading, LineHeading, VerificationBadge } from "@/components/ui";
 
-const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
+interface RouteSummaryProps {}
+
+const RouteSummary: React.FC<RouteSummaryProps> = ({}) => {
   const [searchParams] = useSearchParams();
   const [routeData, setRouteData] = useState<IRoute | null>(null);
   const [error, setError] = useState<string>("");
@@ -59,16 +58,14 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
   return (
     <>
       <div className="mb-3">
-        <BusLineTitle
+        <LineHeading
           lineColor={routeData.lineColor}
           name={routeData.name}
           level={2}
           className="mb-2"
         />
 
-        <RouteVerificationStatus
-          isVerified={routeData.isVerifiedRoute || false}
-        />
+        <VerificationBadge isVerified={routeData.isVerifiedRoute || false} />
       </div>
 
       {routeData.operator && (
@@ -107,4 +104,4 @@ const RouteDetails: React.FC<RouteDetailsProps> = ({}) => {
   );
 };
 
-export default RouteDetails;
+export default RouteSummary;

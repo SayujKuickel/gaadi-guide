@@ -1,11 +1,10 @@
-import Sidebar from "@/components/common/global/Sidebar";
-import { useEffect } from "react";
+import Sidebar from "@/components/global/Sidebar";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
-const MapPagesLayout = () => {
+const MapPagesLayout: React.FC = () => {
   useEffect(() => {
     document.body.classList.add("disable-scroll-mobile");
-
     return () => document.body.classList.remove("disable-scroll-mobile");
   }, []);
 

@@ -9,18 +9,16 @@ import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
 //
 import { Helmet } from "react-helmet";
 // \components
-import Button from "@/components/common/Button";
-import Heading from "@/components/common/Heading";
 import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import RouteDetails from "@/components/sidebar/routes/RouteDetails";
-import SelectedRoutePolylineView from "@/components/map/route/SelectedRoutePolylineView";
-import SearchableCombobox from "@/components/common/SearchableCombobox";
+import ActiveRouteRenderer from "@/components/map/route/ActiveRouteRenderer";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 // icons
 import { Eye } from "lucide-react";
 import { SITE_TOP_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
+import { Button, Heading, SearchableCombobox } from "@/components/ui";
+import RouteSummary from "@/components/sidebar/routes/RouteDetails";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -73,14 +71,14 @@ const RoutesPage = () => {
 
           {showResults && (
             <ResultsBottomSheet onClose={() => setShowResults(false)}>
-              <RouteDetails />
+              <RouteSummary />
             </ResultsBottomSheet>
           )}
         </>
       </SidebarViewsContainer>
 
       <MapControlsContainer>
-        <SelectedRoutePolylineView fitRouteToWindow={fitRouteToWindow} />
+        <ActiveRouteRenderer fitRouteToWindow={fitRouteToWindow} />
       </MapControlsContainer>
     </>
   );

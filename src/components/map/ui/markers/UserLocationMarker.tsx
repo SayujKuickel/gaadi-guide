@@ -1,7 +1,6 @@
 import { DEFAULT_FLY_TO_POSITION_ZOOM } from "@/constants/mapConfigs";
 import L from "leaflet";
-import { MapPin } from "lucide-react";
-import { createElement, useEffect } from "react";
+import { useEffect } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 
 interface UserLocationMarkerProps {

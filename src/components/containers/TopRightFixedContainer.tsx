@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Button from "../common/Button";
 import { BusFront } from "lucide-react";
 import { siteUrlMappings } from "@/constants/siteConfigs";
+import { Button } from "../ui";
 
 const TopRightFixedContainer = ({ children }: any) => {
   return (

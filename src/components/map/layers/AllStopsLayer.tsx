@@ -1,5 +1,5 @@
-import BusStopMarker from "../markers/BusStopMarker";
 import stops_data from "@/data/stops_data.json";
+import { BusStopMarker } from "../ui";
 
 function mulberry32(seed: number) {
   return function () {
@@ -20,7 +20,7 @@ function getSeededColorFromHexId(hexId: string) {
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
-const ShowAllStops = () => {
+const AllStopsLayer = () => {
   return (
     <>
       {stops_data.map((stop) => {
@@ -40,4 +40,4 @@ const ShowAllStops = () => {
   );
 };
 
-export default ShowAllStops;
+export default AllStopsLayer;

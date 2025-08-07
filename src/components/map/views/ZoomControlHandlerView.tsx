@@ -6,11 +6,11 @@ interface ZoomFunctions {
   zoomOut: () => void;
 }
 
-interface ZoomControlHandlerViewProps {
+interface ZoomControlsViewProps {
   onZoomFunctionsReady?: (functions: ZoomFunctions) => void;
 }
 
-const ZoomControlHandlerView: React.FC<ZoomControlHandlerViewProps> = ({
+const ZoomControlsView: React.FC<ZoomControlsViewProps> = ({
   onZoomFunctionsReady,
 }) => {
   const map = useMap();
@@ -37,4 +37,4 @@ const ZoomControlHandlerView: React.FC<ZoomControlHandlerViewProps> = ({
   return null;
 };
 
-export default ZoomControlHandlerView;
+export default ZoomControlsView;

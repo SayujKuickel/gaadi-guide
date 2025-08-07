@@ -15,14 +15,14 @@ import {
 // \components
 import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
 import FlyToStop from "@/components/map/stop/FlyToStop";
-import Heading from "@/components/common/Heading";
 import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
-import RoutePolyLineRenderer from "@/components/map/route/RoutePolyLineRenderer";
-import BusStopMarker from "@/components/map/markers/BusStopMarker";
+import RouteRenderer from "@/components/map/route/RouteRenderer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
 import SearchedRouteDetails from "@/components/sidebar/search/SearchedRouteDetails";
+import { Heading } from "@/components/ui";
+import { BusStopMarker } from "@/components/map/ui";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
@@ -81,7 +81,7 @@ const SearchPage = () => {
         {segments && (
           <>
             {segments?.map((segment, i) => (
-              <RoutePolyLineRenderer
+              <RouteRenderer
                 key={`${segment.id}${i}`}
                 stopIds={segment?.stops}
                 fitToScreen={false}

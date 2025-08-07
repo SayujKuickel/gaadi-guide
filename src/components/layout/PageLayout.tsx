@@ -1,20 +1,15 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import type { ReactNode } from "react";
-import Footer from "@/components/common/global/Footer";
-import Header from "@/components/common/global/Header";
-import GoBackButtonSection from "@/components/bus/GoBackButtonWrapper";
+import { Outlet, useLocation } from "react-router-dom";
+import Footer from "@/components/global/Footer";
+import Header from "@/components/global/Header";
+import GoBackButtonSection from "@/components/sections/GoBackButtonSection";
 import ScrollToTopButton from "@/components/common/ScrollToTopButton";
 
 interface PageLayoutProps {
-  children: ReactNode;
   showBackBtn?: boolean;
 }
 
-const PageLayout: React.FC<PageLayoutProps> = ({
-  children,
-  showBackBtn = true,
-}) => {
+const PageLayout: React.FC<PageLayoutProps> = ({ showBackBtn = true }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -33,7 +28,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
       {showBackBtn && <GoBackButtonSection />}
 
-      <article className="relative">{children}</article>
+      <article className="relative">
+        <Outlet />
+      </article>
 
       <Footer />
     </main>

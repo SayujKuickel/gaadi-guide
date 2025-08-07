@@ -1,6 +1,4 @@
-import Button from "@/components/common/Button";
-import Heading from "@/components/common/Heading";
-import SearchableCombobox from "@/components/common/SearchableCombobox";
+import { Button, Heading, SearchableCombobox } from "@/components/ui";
 import stopsData from "@/data/stops_data.json";
 import useSearchByStop from "@/hooks/useSearchByStop";
 import { Loader, Search } from "lucide-react";

@@ -1,7 +1,7 @@
-import ContainerLayout from "@/layout/ContainerLayout";
-import Button from "../common/Button";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
+import { ContainerLayout } from "../layout";
+import { Button } from "../ui";
 
 const GoBackButtonSection = () => {
   const navigate = useNavigate();

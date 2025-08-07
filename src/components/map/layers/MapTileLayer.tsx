@@ -4,11 +4,11 @@ import {
   tileLayerOptions,
 } from "@/constants/tileLayerOptions";
 
-interface TileLayerViewProps {
+interface MapTileLayerProps {
   tileMapKey: string;
 }
 
-const TileLayerView: React.FC<TileLayerViewProps> = ({ tileMapKey }) => {
+const MapTileLayer: React.FC<MapTileLayerProps> = ({ tileMapKey }) => {
   const mapOverlayDetails =
     tileLayerOptions[tileMapKey] ?? tileLayerOptions[DEFAULT_MAP_TILE];
 
@@ -20,4 +20,4 @@ const TileLayerView: React.FC<TileLayerViewProps> = ({ tileMapKey }) => {
   );
 };
 
-export default TileLayerView;
+export default MapTileLayer;

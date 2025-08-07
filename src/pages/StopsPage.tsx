@@ -4,22 +4,25 @@ import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 import stops_data from "@/data/stops_data.json";
 // \components
 import FlyToStop from "@/components/map/stop/FlyToStop";
-import Heading from "@/components/common/Heading";
-import Button from "@/components/common/Button";
 import MapControlsContainer from "@/components/containers/MapControlsContainer";
-import StopDetails from "@/components/sidebar/stops/StopDetails";
-import ShowAllStops from "@/components/map/stop/ShowAllStops";
+import AllStopsLayer from "@/components/map/layers/AllStopsLayer";
 import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import SearchableCombobox from "@/components/common/SearchableCombobox";
 import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
 import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
-import { Eye } from "lucide-react";
+import { Eye, Map } from "lucide-react";
 import { Helmet } from "react-helmet";
 import {
   SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
+import {
+  Button,
+  Heading,
+  LineHeading,
+  SearchableCombobox,
+} from "@/components/ui";
+import { Link } from "react-router-dom";
 
 const StopsPage = () => {
   const {
@@ -81,14 +84,46 @@ const StopsPage = () => {
 
           {showResults && (
             <ResultsBottomSheet onClose={() => setShowResults(false)}>
-              <StopDetails filteredRoutes={filteredRoutes} />
+              <div className="">
+                <Heading className="mb-3" level={2}>
+                  Routes for this stop.
+                </Heading>
+
+                <ul className="overflow-auto scrollbar-sa">
+                  {filteredRoutes?.map((route, i) => (
+                    <li
+                      key={i}
+                      className="border-y border-y-surface-3/75 hover:bg-surface-3/25 first:border-t-0 last:border-b-0"
+                    >
+                      <Link
+                        className="w-full h-full block py-2 sm:flex sm:items-center sm:justify-between"
+                        to={`/${siteUrlMappings.routes}?route=${route.id}`}
+                      >
+                        <LineHeading
+                          name={route.name}
+                          lineColor={route.lineColor}
+                          level={5}
+                          className=""
+                        />
+
+                        <Button
+                          title="View"
+                          icon={<Map size={16} />}
+                          className="text-xs mt-2 md:hidden sm:mt-0"
+                          ariaLabel={`View ${route.name} in its own page`}
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </ResultsBottomSheet>
           )}
         </>
       </SidebarViewsContainer>
 
       <MapControlsContainer>
-        <ShowAllStops />
+        <AllStopsLayer />
 
         <FlyToStop />
       </MapControlsContainer>

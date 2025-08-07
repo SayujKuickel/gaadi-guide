@@ -1,8 +1,8 @@
 import TopRightFixedContainer from "@/components/containers/TopRightFixedContainer";
 import BaseMapLayer from "@/components/map/BaseMapLayer";
-import LayerSwitcher from "@/components/map/controls/LayerSwitcher/LayerSwitcher";
-import UserLocation from "@/components/map/controls/UserLocation/UserLocation";
-import ZoomControlHandler from "@/components/map/controls/ZoomControlHandler/ZoomControlHandler";
+import LayerSwitcher from "@/components/map/ui/LayerSwitcher";
+import UserLocation from "@/components/map/ui/UserLocation";
+import ZoomControls from "@/components/map/ui/ZoomControls";
 import FlyToStop from "@/components/map/stop/FlyToStop";
 import useTileMap from "@/hooks/useTileMap";
 import { useUserLocation } from "@/hooks/useUserLocation";
@@ -43,7 +43,7 @@ const MapControlsContainer: React.FC<MapControlsContainerProps> = ({
         />
       </TopRightFixedContainer>
 
-      <ZoomControlHandler
+      <ZoomControls
         onZoomIn={zoomFunctions.zoomIn}
         onZoomOut={zoomFunctions.zoomOut}
       />

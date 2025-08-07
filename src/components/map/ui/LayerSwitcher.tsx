@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import Button from "@/components/common/Button";
 import LayerToggleOptions from "./LayerSwitcherOptions";
-import Heading from "@/components/common/Heading";
+import { Button, Heading } from "@/components/ui";
+
 import { Layers2 } from "lucide-react";
 
 interface LayerSwitcherProps {

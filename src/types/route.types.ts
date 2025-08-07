@@ -5,10 +5,10 @@ export interface IRoute {
   stops: string[];
   operator?: string[];
   isVerifiedRoute?: boolean;
-  details?: IRouteDetails;
+  details?: IRouteSummary;
 }
 
-interface IRouteDetails {
+interface IRouteSummary {
   distance_meter?: number;
   total_bus?: number;
   duration_mins?: number;

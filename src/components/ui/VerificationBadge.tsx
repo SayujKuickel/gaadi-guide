@@ -2,13 +2,13 @@ import { SITE_SUGGESTION_REDIREECT } from "@/constants/siteConfigs";
 import { ShieldCheck, ShieldX } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface RouteVerificationStatusProps {
+interface VerificationBadgeProps {
   isVerified: boolean;
   showText?: boolean;
   showReportText?: boolean;
 }
 
-const RouteVerificationStatus: React.FC<RouteVerificationStatusProps> = ({
+const VerificationBadge: React.FC<VerificationBadgeProps> = ({
   showReportText = true,
   showText = true,
   isVerified,
@@ -35,4 +35,4 @@ const RouteVerificationStatus: React.FC<RouteVerificationStatusProps> = ({
     </p>
   );
 };
-export default RouteVerificationStatus;
+export default VerificationBadge;

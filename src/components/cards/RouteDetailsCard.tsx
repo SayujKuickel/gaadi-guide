@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 
-interface RouteDetailsCardProps {
+interface RouteSummaryCardProps {
   label: string;
   value: any;
   icon: ReactNode;
   lineColor: string;
 }
-const RouteDetailsCard: React.FC<RouteDetailsCardProps> = ({
+const RouteSummaryCard: React.FC<RouteSummaryCardProps> = ({
   label,
   value,
   icon,
@@ -34,4 +34,4 @@ const RouteDetailsCard: React.FC<RouteDetailsCardProps> = ({
   );
 };
 
-export default RouteDetailsCard;
+export default RouteSummaryCard;

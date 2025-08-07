@@ -1,23 +1,26 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import HomePage from "@/pages/HomePage";
-import RoutesPage from "@/pages/RoutesPage";
-import MapPagesLayout from "@/layout/MapPagesLayout";
-import BusOperatorsPage from "./pages/operators/BusOperatorsPage";
-import BusOperatorDetailsPage from "./pages/operators/BusOperatorDetailsPage";
 import { siteUrlMappings } from "./constants/siteConfigs";
+import { MapPagesLayout, PageLayout } from "./components/layout";
 
-const PageLayout = lazy(() => import("@/layout/PageLayout"));
-const BusRouteDetailsPage = lazy(
-  () => import("@/pages/bus/BusRouteDetailsPage")
-);
-const BusRoutesPage = lazy(() => import("@/pages/bus/BusRoutesPage"));
+import HomePage from "@/pages/HomePage";
+const RoutesPage = lazy(() => import("@/pages/RoutesPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));
 const StopsPage = lazy(() => import("@/pages/StopsPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const AddNewRoutePage = lazy(() => import("@/pages/AddNewRoutePage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const BusRoutesPage = lazy(() => import("@/pages/bus/BusRoutesPage"));
+const BusRouteDetailsPage = lazy(
+  () => import("@/pages/bus/BusRouteDetailsPage")
+);
+const BusOperatorsPage = lazy(
+  () => import("./pages/operators/BusOperatorsPage")
+);
+const BusOperatorDetailsPage = lazy(
+  () => import("./pages/operators/BusOperatorDetailsPage")
+);
 
 const App = () => {
   return (
@@ -44,33 +47,28 @@ const App = () => {
           <Route path={`/${siteUrlMappings.search}`} element={<SearchPage />} />
         </Route>
 
-        <Route
-          index
-          path={`/${siteUrlMappings.contact}`}
-          element={<Contact />}
-        />
-        <Route index path={`/${siteUrlMappings.about}`} element={<About />} />
+        <Route element={<PageLayout />}>
+          <Route
+            index
+            path={`/${siteUrlMappings.contact}`}
+            element={<Contact />}
+          />
+          <Route index path={`/${siteUrlMappings.about}`} element={<About />} />
 
-        <Route path={`/${siteUrlMappings.bus}`}>
-          <Route index element={<BusRoutesPage />} />
-          <Route path=":id" element={<BusRouteDetailsPage />} />
+          <Route path={`/${siteUrlMappings.bus}`}>
+            <Route index element={<BusRoutesPage />} />
+            <Route path=":id" element={<BusRouteDetailsPage />} />
+          </Route>
+
+          <Route path={`/${siteUrlMappings.operators}`}>
+            <Route index element={<BusOperatorsPage />} />
+            <Route path=":name" element={<BusOperatorDetailsPage />} />
+          </Route>
+
+          <Route path="/add-route" element={<AddNewRoutePage />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
-
-        <Route path={`/${siteUrlMappings.operators}`}>
-          <Route index element={<BusOperatorsPage />} />
-          <Route path=":name" element={<BusOperatorDetailsPage />} />
-        </Route>
-
-        <Route path="/add-route" element={<AddNewRoutePage />} />
-
-        <Route
-          path="*"
-          element={
-            <PageLayout>
-              <NotFound />
-            </PageLayout>
-          }
-        />
       </Routes>
     </Suspense>
   );

@@ -1,3 +1,4 @@
+import type React from "react";
 import type { ReactNode } from "react";
 
 interface HeadingProps {
@@ -6,7 +7,11 @@ interface HeadingProps {
   className?: string;
 }
 
-const Heading = ({ level = 1, children, className = "" }: HeadingProps) => {
+const Heading: React.FC<HeadingProps> = ({
+  level = 1,
+  children,
+  className = "",
+}) => {
   const headingClass = `heading-${level} ${className}`;
 
   if (level === 1) return <h1 className={headingClass}>{children}</h1>;

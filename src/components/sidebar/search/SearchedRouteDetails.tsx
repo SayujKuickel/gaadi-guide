@@ -1,14 +1,14 @@
-import BusLineTitle from "@/components/bus/BusLineTitle";
+import LineHeading from "@/components/ui/BusLineTitle";
 import RouteStopsList from "@/components/bus/RouteStopsList";
 import type { IRouteSegment } from "@/utils/searchRouteSegments";
 import React from "react";
 
-interface SearchedRouteDetailsProps {
+interface SearchedRouteSummaryProps {
   segments: IRouteSegment[];
   headingLevel?: 1 | 2 | 3 | 4 | 5;
   mode: "search";
 }
-const SearchedRouteDetails: React.FC<SearchedRouteDetailsProps> = ({
+const SearchedRouteSummary: React.FC<SearchedRouteSummaryProps> = ({
   segments,
   headingLevel,
   mode,
@@ -17,7 +17,7 @@ const SearchedRouteDetails: React.FC<SearchedRouteDetailsProps> = ({
     <ul className="space-y-4 overflow-auto scrollbar-sa">
       {segments.map((segment: IRouteSegment, i) => (
         <div key={i} className="mb-4">
-          <BusLineTitle
+          <LineHeading
             name={segment.name}
             level={headingLevel ? headingLevel : 4}
             lineColor={segment.lineColor}
@@ -35,4 +35,4 @@ const SearchedRouteDetails: React.FC<SearchedRouteDetailsProps> = ({
   );
 };
 
-export default SearchedRouteDetails;
+export default SearchedRouteSummary;

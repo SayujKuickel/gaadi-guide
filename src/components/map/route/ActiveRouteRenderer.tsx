@@ -2,13 +2,13 @@ import type { IRoute } from "@/types/route.types";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Route_data from "@/data/route_data.json";
-import RoutePolyLineRenderer from "./RoutePolyLineRenderer";
+import RouteRenderer from "./RouteRenderer";
 
-interface SelectedRoutePolylineViewProps {
+interface ActiveRouteRendererProps {
   fitRouteToWindow?: boolean;
 }
 
-const SelectedRoutePolylineView: React.FC<SelectedRoutePolylineViewProps> = ({
+const ActiveRouteRenderer: React.FC<ActiveRouteRendererProps> = ({
   fitRouteToWindow,
 }) => {
   const [searchParams] = useSearchParams();
@@ -18,7 +18,6 @@ const SelectedRoutePolylineView: React.FC<SelectedRoutePolylineViewProps> = ({
     const routekey = searchParams.get("route");
 
     if (!routekey) {
-      console.warn("No route selected.");
       setRouteData(null);
       return;
     }
@@ -26,7 +25,7 @@ const SelectedRoutePolylineView: React.FC<SelectedRoutePolylineViewProps> = ({
     const route = Route_data.find((rt) => rt.id === routekey);
 
     if (!route) {
-      console.warn("Route not found.");
+      console.warn("Invalid Route Id found in the url");
       setRouteData(null);
       return;
     }
@@ -37,7 +36,7 @@ const SelectedRoutePolylineView: React.FC<SelectedRoutePolylineViewProps> = ({
   if (!routeData) return null;
 
   return (
-    <RoutePolyLineRenderer
+    <RouteRenderer
       stopIds={routeData?.stops}
       fitToScreen={fitRouteToWindow}
       lineColor={routeData?.lineColor}
@@ -45,4 +44,4 @@ const SelectedRoutePolylineView: React.FC<SelectedRoutePolylineViewProps> = ({
   );
 };
 
-export default SelectedRoutePolylineView;
+export default ActiveRouteRenderer;

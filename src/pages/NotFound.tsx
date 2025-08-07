@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Button from "@/components/common/Button";
 import { Map, Route } from "lucide-react";
 import { siteUrlMappings } from "@/constants/siteConfigs";
+import { Button } from "@/components/ui";
 
 interface NotFoundProps {
   title?: string;
