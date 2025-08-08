@@ -6,7 +6,7 @@ import {
   SITE_SUGGESTION_REDIREECT,
 } from "@/constants/siteConfigs";
 import { Helmet } from "react-helmet";
-import { ContainerLayout, PageLayout } from "@/components/layout";
+import { ContainerLayout } from "@/components/layouts";
 
 const Contact = () => {
   const [loading, setLoading] = useState(true);

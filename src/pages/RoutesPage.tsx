@@ -8,17 +8,22 @@ import useRoute from "@/hooks/useSelectRoute";
 import { checkIfNeedsTofit } from "@/utils/checkIfNeedsTofit";
 //
 import { Helmet } from "react-helmet";
-// \components
-import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import ActiveRouteRenderer from "@/components/map/route/ActiveRouteRenderer";
-import MapControlsContainer from "@/components/containers/MapControlsContainer";
-import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
-import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
+
 // icons
 import { Eye } from "lucide-react";
 import { SITE_TOP_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
-import { Button, Heading, SearchableCombobox } from "@/components/ui";
-import RouteSummary from "@/components/sidebar/routes/RouteDetails";
+import {
+  Button,
+  Heading,
+  ResultsBottomSheet,
+  SearchableCombobox,
+  ViewWrapper,
+} from "@/components/ui";
+import { SidebarLayout } from "@/components/layouts";
+import MapRendererLayer from "@/components/map/MapRendererLayer";
+import { ActiveRouteRenderer } from "@/components/map/renderer";
+import { BusStopsSummary } from "@/components/features/bus";
+import { RouteStopsSummary } from "@/components/features/routes";
 
 const RoutesPage = () => {
   const [searchParams] = useSearchParams();
@@ -42,44 +47,42 @@ const RoutesPage = () => {
         </title>
         <link rel="canonical" href={`${SITE_BASE_URL}/routes`} />
       </Helmet>
-      <SidebarViewsContainer>
-        <>
-          <ViewWrapper>
-            <Heading className="mb-3" level={2}>
-              Routes
-            </Heading>
+      <SidebarLayout>
+        <ViewWrapper>
+          <Heading className="mb-3" level={2}>
+            Routes
+          </Heading>
 
-            <SearchableCombobox
-              label="Route"
-              options={route_data.map((rt) => ({ id: rt.id, name: rt.name }))}
-              selected={selectedRoute}
-              onChange={(opt) => handleRouteSelect(opt)}
-              placeholder="e.g. Ratna Park to Mangalbazar"
-              className="mb-4"
+          <SearchableCombobox
+            label="Route"
+            options={route_data.map((rt) => ({ id: rt.id, name: rt.name }))}
+            selected={selectedRoute}
+            onChange={(opt) => handleRouteSelect(opt)}
+            placeholder="e.g. Ratna Park to Mangalbazar"
+            className="mb-4"
+          />
+
+          {selectedRoute && !showResults && (
+            <Button
+              icon={<Eye size={16} />}
+              title={"View Stops"}
+              ariaLabel="search"
+              className="text-xs text-on-surface font-[600]"
+              onClick={handleShowResults}
             />
-
-            {selectedRoute && !showResults && (
-              <Button
-                icon={<Eye size={16} />}
-                title={"View Stops"}
-                ariaLabel="search"
-                className="text-xs text-on-surface font-[600]"
-                onClick={handleShowResults}
-              />
-            )}
-          </ViewWrapper>
-
-          {showResults && (
-            <ResultsBottomSheet onClose={() => setShowResults(false)}>
-              <RouteSummary />
-            </ResultsBottomSheet>
           )}
-        </>
-      </SidebarViewsContainer>
+        </ViewWrapper>
 
-      <MapControlsContainer>
+        {showResults && (
+          <ResultsBottomSheet onClose={() => setShowResults(false)}>
+            <RouteStopsSummary />
+          </ResultsBottomSheet>
+        )}
+      </SidebarLayout>
+
+      <MapRendererLayer>
         <ActiveRouteRenderer fitRouteToWindow={fitRouteToWindow} />
-      </MapControlsContainer>
+      </MapRendererLayer>
     </>
   );
 };

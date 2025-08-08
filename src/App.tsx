@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { siteUrlMappings } from "./constants/siteConfigs";
-import { MapPagesLayout, PageLayout } from "./components/layout";
+import { MapPagesLayout, PageLayout } from "./components/layouts";
 
 import HomePage from "@/pages/HomePage";
 const RoutesPage = lazy(() => import("@/pages/RoutesPage"));
@@ -41,7 +41,6 @@ const App = () => {
     >
       <Routes>
         <Route element={<MapPagesLayout />}>
-          <Route index path="/" element={<HomePage />} />
           <Route path={`/${siteUrlMappings.routes}`} element={<RoutesPage />} />
           <Route path={`/${siteUrlMappings.stops}`} element={<StopsPage />} />
           <Route path={`/${siteUrlMappings.search}`} element={<SearchPage />} />

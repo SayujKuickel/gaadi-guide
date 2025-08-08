@@ -10,7 +10,7 @@ export const SITE_TOP_TITLE = ` ${separator} ${SITE_BASE_TITLE}`;
 export const siteUrlMappings = {
   routes: "routes",
   stops: "stops",
-  search: "search",
+  search: "",
   bus: "bus",
   operators: "operators",
   about: "about",

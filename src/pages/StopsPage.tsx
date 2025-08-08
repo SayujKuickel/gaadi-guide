@@ -3,12 +3,11 @@ import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 // \data
 import stops_data from "@/data/stops_data.json";
 // \components
-import FlyToStop from "@/components/map/stop/FlyToStop";
-import MapControlsContainer from "@/components/containers/MapControlsContainer";
+import FlyToStopHandler from "@/components/map/handers/FlyToStopHandler";
 import AllStopsLayer from "@/components/map/layers/AllStopsLayer";
-import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
-import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
+import ViewWrapper from "@/components/ui/modals/ViewWrapper";
+import SidebarLayout from "@/components/layouts/SidebarLayout";
+import ResultsBottomSheet from "@/components/ui/modals/ResultsBottomSheet";
 import { Eye, Map } from "lucide-react";
 import { Helmet } from "react-helmet";
 import {
@@ -23,6 +22,7 @@ import {
   SearchableCombobox,
 } from "@/components/ui";
 import { Link } from "react-router-dom";
+import MapRendererLayer from "@/components/map/MapRendererLayer";
 
 const StopsPage = () => {
   const {
@@ -52,7 +52,7 @@ const StopsPage = () => {
         />
       </Helmet>
 
-      <SidebarViewsContainer>
+      <SidebarLayout>
         <>
           <ViewWrapper>
             <Heading className="mb-3" level={2}>
@@ -120,13 +120,13 @@ const StopsPage = () => {
             </ResultsBottomSheet>
           )}
         </>
-      </SidebarViewsContainer>
+      </SidebarLayout>
 
-      <MapControlsContainer>
+      <MapRendererLayer>
         <AllStopsLayer />
 
-        <FlyToStop />
-      </MapControlsContainer>
+        <FlyToStopHandler />
+      </MapRendererLayer>
     </>
   );
 };

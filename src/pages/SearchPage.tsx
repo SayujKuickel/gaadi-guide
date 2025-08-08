@@ -13,16 +13,16 @@ import {
   siteUrlMappings,
 } from "@/constants/siteConfigs";
 // \components
-import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import FlyToStop from "@/components/map/stop/FlyToStop";
-import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
-import MapControlsContainer from "@/components/containers/MapControlsContainer";
-import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
-import RouteRenderer from "@/components/map/route/RouteRenderer";
-import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
-import SearchedRouteDetails from "@/components/sidebar/search/SearchedRouteDetails";
-import { Heading } from "@/components/ui";
+import { Heading, ResultsBottomSheet, ViewWrapper } from "@/components/ui";
 import { BusStopMarker } from "@/components/map/ui";
+import { SidebarLayout } from "@/components/layouts";
+import {
+  SearchForm,
+  SearchRouteSegmentsList,
+} from "@/components/features/search";
+import MapRendererLayer from "@/components/map/MapRendererLayer";
+import { RouteRenderer } from "@/components/map/renderer";
+import { FlyToStopHandler } from "@/components/map/handers";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
@@ -54,9 +54,9 @@ const SearchPage = () => {
         />
       </Helmet>
 
-      <SidebarViewsContainer>
+      <SidebarLayout>
         <ViewWrapper>
-          <SearchWrapper
+          <SearchForm
             setShowResults={setShowResults}
             setSegments={setSegments}
           />
@@ -68,16 +68,16 @@ const SearchPage = () => {
               Follow the Route!
             </Heading>
 
-            <SearchedRouteDetails
+            <SearchRouteSegmentsList
               mode="search"
               headingLevel={3}
               segments={segments}
             />
           </ResultsBottomSheet>
         )}
-      </SidebarViewsContainer>
+      </SidebarLayout>
 
-      <MapControlsContainer>
+      <MapRendererLayer>
         {segments && (
           <>
             {segments?.map((segment, i) => (
@@ -101,8 +101,8 @@ const SearchPage = () => {
           />
         )}
 
-        <FlyToStop />
-      </MapControlsContainer>
+        <FlyToStopHandler />
+      </MapRendererLayer>
     </>
   );
 };

@@ -1,17 +1,17 @@
-// data
-import stopsData from "@/data/stops_data.json";
-
-// components
-import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
 import { Helmet } from "react-helmet";
+// \hooks
+import useFilterRoutesBySearch from "@/hooks/useFilterRoutesBySearch";
+// \extra
+import stopsData from "@/data/stops_data.json";
 import {
   SITE_TOP_TITLE,
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
-import { ContainerLayout, PageLayout } from "@/components/layout";
+// \components
+import { ContainerLayout } from "@/components/layouts";
 import { Heading, SearchableCombobox } from "@/components/ui";
-import ViewRouteSummary from "@/components/bus/ViewRouteSummary";
+import { BusStopsSummary } from "@/components/features/bus";
 
 const BusRoutesPage = () => {
   const { selectedStop, setSelectedStop, filteredRoutes } =
@@ -49,7 +49,7 @@ const BusRoutesPage = () => {
         {filteredRoutes && filteredRoutes.length > 0 ? (
           <div className="space-y-10">
             {filteredRoutes.map((route) => (
-              <ViewRouteSummary
+              <BusStopsSummary
                 priorityStop={selectedStop?.id}
                 key={route.id}
                 route={route}

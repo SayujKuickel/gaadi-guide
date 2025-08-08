@@ -11,7 +11,7 @@ import {
 import React, { type ReactNode, memo } from "react";
 import { UserLocationMarker } from "./ui";
 import MapTileLayer from "./layers/MapTileLayer";
-import ZoomControlsView from "./views/ZoomControlHandlerView";
+import MapZoomHandler from "./handers/MapZoomHandler";
 
 interface ZoomFunctions {
   zoomIn: () => void;
@@ -47,7 +47,7 @@ const BaseMapLayerStatic: React.FC<BaseMapLayerStaticProps> = memo(
 
       <MapTileLayer tileMapKey={tileMapKey} />
 
-      <ZoomControlsView onZoomFunctionsReady={onZoomFunctionsReady} />
+      <MapZoomHandler onZoomFunctionsReady={onZoomFunctionsReady} />
 
       {children}
     </MapContainer>

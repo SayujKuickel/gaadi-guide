@@ -9,9 +9,9 @@ import {
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
-import { ContainerLayout } from "@/components/layout";
+import { ContainerLayout } from "@/components/layouts";
 import { Heading } from "@/components/ui";
-import ViewRouteSummary from "@/components/bus/ViewRouteSummary";
+import { BusStopsSummary } from "@/components/features/bus";
 
 const toTitleCase = (str: string) => {
   return str?.replace(
@@ -63,7 +63,7 @@ const BusOperatorDetailsPage = () => {
 
             <div className="space-y-10">
               {routes.map((route) => (
-                <ViewRouteSummary key={route.id} route={route} />
+                <BusStopsSummary key={route.id} route={route} />
               ))}
             </div>
           </>

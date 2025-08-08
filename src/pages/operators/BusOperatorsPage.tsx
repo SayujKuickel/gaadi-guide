@@ -1,4 +1,4 @@
-import { ContainerLayout } from "@/components/layout";
+import { ContainerLayout } from "@/components/layouts";
 import { Button, Heading } from "@/components/ui";
 import {
   SITE_TOP_TITLE,

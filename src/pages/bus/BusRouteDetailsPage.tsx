@@ -11,7 +11,7 @@ import {
   LineHeading,
   VerificationBadge,
 } from "@/components/ui";
-import RouteStopsList from "@/components/bus/RouteStopsList";
+import BusStopsList from "@/components/features/bus/BusStopsList";
 import { nameToSlug } from "@/utils/nameToSlug";
 import { Bus, BusFront, Clock, Map, Route } from "lucide-react";
 import { Helmet } from "react-helmet";
@@ -20,12 +20,12 @@ import {
   SITE_BASE_URL,
   siteUrlMappings,
 } from "@/constants/siteConfigs";
-import { ContainerLayout } from "@/components/layout";
+import { ContainerLayout } from "@/components/layouts";
 import NotFound from "../NotFound";
-import RouteSummaryCard from "@/components/cards/RouteDetailsCard";
+import BusDetailsCards from "@/components/features/bus/BusDetailsCards";
 import { formatDistance, formatTime } from "@/utils/formatRouteDetails";
 
-const BusRouteSummaryPage = ({}) => {
+const BusBusStopsSummaryPage = ({}) => {
   const { id } = useParams();
   const [route, setRoute] = useState<IRoute | null>(null);
 
@@ -86,7 +86,7 @@ const BusRouteSummaryPage = ({}) => {
 
             <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               {route?.operator && (
-                <RouteSummaryCard
+                <BusDetailsCards
                   label={"Operated By"}
                   value={route?.operator.map((item, i) => (
                     <Link
@@ -102,7 +102,7 @@ const BusRouteSummaryPage = ({}) => {
               )}
 
               {route?.details?.duration_mins && (
-                <RouteSummaryCard
+                <BusDetailsCards
                   label={"Estimated Duration"}
                   value={formatTime(route?.details?.duration_mins)}
                   icon={<Clock />}
@@ -111,7 +111,7 @@ const BusRouteSummaryPage = ({}) => {
               )}
 
               {route?.details?.distance_meter && (
-                <RouteSummaryCard
+                <BusDetailsCards
                   label={"Total Distance"}
                   value={formatDistance(route?.details?.distance_meter)}
                   icon={<Route />}
@@ -120,7 +120,7 @@ const BusRouteSummaryPage = ({}) => {
               )}
 
               {route?.details?.total_bus && (
-                <RouteSummaryCard
+                <BusDetailsCards
                   label={"Total Bus"}
                   value={route?.details?.total_bus}
                   icon={<Bus />}
@@ -134,7 +134,7 @@ const BusRouteSummaryPage = ({}) => {
                 Stops
               </Heading>
 
-              <RouteStopsList routeId={id} stopsArray={route?.stops} />
+              <BusStopsList routeId={id} stopsArray={route?.stops} />
             </div>
           </>
         ) : (
@@ -145,4 +145,4 @@ const BusRouteSummaryPage = ({}) => {
   );
 };
 
-export default BusRouteSummaryPage;
+export default BusBusStopsSummaryPage;

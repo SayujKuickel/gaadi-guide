@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
-import { ContainerLayout } from "../layout";
+import { ContainerLayout } from "../layouts";
 import { Button } from "../ui";
 
 const GoBackButtonSection = () => {

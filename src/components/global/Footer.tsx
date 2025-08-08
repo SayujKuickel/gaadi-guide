@@ -5,7 +5,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="pt-4 pb-6 mt-24">
       <div className="container mx-auto px-5">

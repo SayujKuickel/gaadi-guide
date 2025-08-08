@@ -20,7 +20,7 @@ function getSeededColorFromHexId(hexId: string) {
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
-const AllStopsLayer = () => {
+const AllStopsLayer: React.FC = () => {
   return (
     <>
       {stops_data.map((stop) => {
