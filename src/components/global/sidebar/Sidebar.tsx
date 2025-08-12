@@ -33,7 +33,11 @@ const Sidebar: React.FC = () => {
             <SidebarNavLink
               key={item.url}
               item={item}
-              isActive={location.pathname.startsWith(item.url || "")}
+              isActive={
+                item.url === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(item.url || "")
+              }
             />
           ))}
       </ul>

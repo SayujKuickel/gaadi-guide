@@ -15,9 +15,9 @@ import { SITE_TOP_TITLE, SITE_BASE_URL } from "@/constants/siteConfigs";
 import {
   Button,
   Heading,
-  ResultsBottomSheet,
+  BottomSheet,
   SearchableCombobox,
-  ViewWrapper,
+  ContentPanel,
 } from "@/components/ui";
 import { SidebarLayout } from "@/components/layouts";
 import MapRendererLayer from "@/components/map/MapRendererLayer";
@@ -48,7 +48,7 @@ const RoutesPage = () => {
         <link rel="canonical" href={`${SITE_BASE_URL}/routes`} />
       </Helmet>
       <SidebarLayout>
-        <ViewWrapper>
+        <ContentPanel>
           <Heading className="mb-3" level={2}>
             Routes
           </Heading>
@@ -71,12 +71,12 @@ const RoutesPage = () => {
               onClick={handleShowResults}
             />
           )}
-        </ViewWrapper>
+        </ContentPanel>
 
         {showResults && (
-          <ResultsBottomSheet onClose={() => setShowResults(false)}>
+          <BottomSheet onClose={() => setShowResults(false)}>
             <RouteStopsSummary />
-          </ResultsBottomSheet>
+          </BottomSheet>
         )}
       </SidebarLayout>
 

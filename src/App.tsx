@@ -3,7 +3,6 @@ import { lazy, Suspense } from "react";
 import { siteUrlMappings } from "./constants/siteConfigs";
 import { MapPagesLayout, PageLayout } from "./components/layouts";
 
-import HomePage from "@/pages/HomePage";
 const RoutesPage = lazy(() => import("@/pages/RoutesPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const About = lazy(() => import("@/pages/About"));

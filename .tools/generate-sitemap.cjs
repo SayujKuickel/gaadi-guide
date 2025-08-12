@@ -27,16 +27,22 @@ routeData.forEach((route) => {
   xml += `  <url>\n    <loc>${SITE_BASE_URL}/${siteUrlMappings.routes}?route=${route.id}</loc>\n    <priority>0.4</priority>\n  </url>\n`;
 });
 
-let operators = [...new Set(routeData.map((route) => route?.operator))].filter(
-  (op) => op
-);
+let operators = [
+  ...new Set(
+    routeData.map((route) => {
+      const operatorName = String(route?.operator || "")
+        .trim()
+        .toLowerCase();
+      return operatorName;
+    })
+  ),
+].filter((op) => op);
 
 operators.forEach((operator) => {
   xml += `  <url>\n    <loc>${SITE_BASE_URL}/operators/${operator
-    .replace(" ", "-")
+    .replace(/\s/g, "-")
     .toLowerCase()}</loc>\n    <priority>0.6</priority>\n  </url>\n`;
 });
-
 xml += `</urlset>`;
 
 const outputPath = path.join(__dirname, "../public", "sitemap.xml");

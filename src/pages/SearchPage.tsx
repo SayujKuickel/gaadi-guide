@@ -13,7 +13,7 @@ import {
   siteUrlMappings,
 } from "@/constants/siteConfigs";
 // \components
-import { Heading, ResultsBottomSheet, ViewWrapper } from "@/components/ui";
+import { Heading, BottomSheet, ContentPanel } from "@/components/ui";
 import { BusStopMarker } from "@/components/map/ui";
 import { SidebarLayout } from "@/components/layouts";
 import {
@@ -55,15 +55,15 @@ const SearchPage = () => {
       </Helmet>
 
       <SidebarLayout>
-        <ViewWrapper>
+        <ContentPanel>
           <SearchForm
             setShowResults={setShowResults}
             setSegments={setSegments}
           />
-        </ViewWrapper>
+        </ContentPanel>
 
         {showResults && segments && (
-          <ResultsBottomSheet onClose={() => setShowResults(false)}>
+          <BottomSheet onClose={() => setShowResults(false)}>
             <Heading className="mb-4" level={2}>
               Follow the Route!
             </Heading>
@@ -73,7 +73,7 @@ const SearchPage = () => {
               headingLevel={3}
               segments={segments}
             />
-          </ResultsBottomSheet>
+          </BottomSheet>
         )}
       </SidebarLayout>
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import { headerItems } from "@/constants/headerItems";
+import { headerItems } from "@/constants/headers";
 import logo from "@/assets/logo-192x192.png";
 import { Menu, X } from "lucide-react";
 import { siteUrlMappings } from "@/constants/siteConfigs";

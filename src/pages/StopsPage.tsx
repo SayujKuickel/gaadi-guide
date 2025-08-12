@@ -5,9 +5,7 @@ import stops_data from "@/data/stops_data.json";
 // \components
 import FlyToStopHandler from "@/components/map/handers/FlyToStopHandler";
 import AllStopsLayer from "@/components/map/layers/AllStopsLayer";
-import ViewWrapper from "@/components/ui/modals/ViewWrapper";
 import SidebarLayout from "@/components/layouts/SidebarLayout";
-import ResultsBottomSheet from "@/components/ui/modals/ResultsBottomSheet";
 import { Eye, Map } from "lucide-react";
 import { Helmet } from "react-helmet";
 import {
@@ -16,7 +14,9 @@ import {
   siteUrlMappings,
 } from "@/constants/siteConfigs";
 import {
+  BottomSheet,
   Button,
+  ContentPanel,
   Heading,
   LineHeading,
   SearchableCombobox,
@@ -54,7 +54,7 @@ const StopsPage = () => {
 
       <SidebarLayout>
         <>
-          <ViewWrapper>
+          <ContentPanel>
             <Heading className="mb-3" level={2}>
               Stops
             </Heading>
@@ -80,10 +80,10 @@ const StopsPage = () => {
                 onClick={handleShowResults}
               />
             )}
-          </ViewWrapper>
+          </ContentPanel>
 
           {showResults && (
-            <ResultsBottomSheet onClose={() => setShowResults(false)}>
+            <BottomSheet onClose={() => setShowResults(false)}>
               <div className="">
                 <Heading className="mb-3" level={2}>
                   Routes for this stop.
@@ -117,7 +117,7 @@ const StopsPage = () => {
                   ))}
                 </ul>
               </div>
-            </ResultsBottomSheet>
+            </BottomSheet>
           )}
         </>
       </SidebarLayout>

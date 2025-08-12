@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sitemap": "node ./gens/generate-sitemap.cjs",
-    "graph": "node ./gens/generate-graph.cjs"
+    "sitemap": "node ./.tools/generate-sitemap.cjs",
+    "graph": "node ./.tools/generate-graph.cjs"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.7",

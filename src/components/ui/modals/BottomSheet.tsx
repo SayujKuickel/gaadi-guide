@@ -1,14 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
-interface ResultsBottomSheetProps {
+interface BottomSheetProps {
   children: React.ReactNode;
   onClose?: () => void;
 }
 
-const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
-  children,
-  onClose,
-}) => {
+const BottomSheet: React.FC<BottomSheetProps> = ({ children, onClose }) => {
   const sheetRef = useRef<HTMLDivElement>(null);
   const startY = useRef<number | null>(null);
   const currentY = useRef(0);
@@ -91,7 +88,7 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
   };
 
   return (
-    <section className="fixed inset-0 z-[99999] flex items-end md:relative md:w-sm md:pl-2 md:pt-2 ">
+    <section className="fixed inset-0 z-[99999] flex items-end md:relative md:w-xs lg:w-sm md:pl-2 md:pt-2 ">
       <div
         className="absolute inset-0 bg-black/35 backdrop-blur-[2px] transition-opacity duration-300 md:hidden"
         onClick={onClose}
@@ -129,4 +126,4 @@ const ResultsBottomSheet: React.FC<ResultsBottomSheetProps> = ({
   );
 };
 
-export default ResultsBottomSheet;
+export default BottomSheet;

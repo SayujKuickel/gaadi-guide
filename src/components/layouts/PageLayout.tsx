@@ -28,7 +28,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ showBackBtn = true }) => {
 
       {showBackBtn && <GoBackButtonSection />}
 
-      <article className="relative">
+      <article className="relative bg0re">
         <Outlet />
       </article>
 
