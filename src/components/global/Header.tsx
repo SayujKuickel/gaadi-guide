@@ -22,7 +22,7 @@ const Header = () => {
           >
             <img src={logo} alt="logo" />
           </Link>
-          <div className="leading-tight">
+          <div className="leading-tight text-text">
             <p className="text-xl font-bold -mb-1">Gaadi</p>
             <p>Guide</p>
           </div>
@@ -35,7 +35,7 @@ const Header = () => {
               <Link
                 to={path}
                 target={newTab ? "_blank" : undefined}
-                className="block hover:underline transition-all"
+                className="block hover:underline transition-all hover:text-text"
               >
                 {name}
               </Link>

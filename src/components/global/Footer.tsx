@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
           </a>
         </p>
 
-        <p className="text-xs text-on-surface/70 text-center w-fit mx-auto ">
+        <p className="text-xs text-offText text-center w-fit mx-auto ">
           This site is under development. Data may be incomplete/wrong. <br />{" "}
           Feel free to{" "}
           <Link
-            className="text-offText hover:text-white transition-all"
+            className="underline decoration-secondary hover:text-white transition-all"
             to={`/${siteUrlMappings.contact}`}
           >
             Contact me
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           <Link
             to={SITE_SUGGESTION_REDIREECT}
             target="_blank"
-            className="text-offText hover:text-white transition-all"
+            className="underline decoration-secondary hover:text-white transition-all"
           >
             Report any bugs here.
           </Link>

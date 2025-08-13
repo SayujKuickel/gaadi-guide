@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { createElement } from "react";
 import { MessageSquareText, Map, Route, User } from "lucide-react";
-import { siteUrlMappings } from "./siteConfigs";
+import { SITE_SUGGESTION_REDIREECT, siteUrlMappings } from "./siteConfigs";
 
 export interface IHeaderItem {
   name: string;
@@ -28,7 +28,8 @@ export const headerItems: IHeaderItem[] = [
   },
   {
     name: "Message",
-    path: `/${siteUrlMappings.contact}`,
+    path: `${SITE_SUGGESTION_REDIREECT}`,
+    newTab: true,
     icon: createElement(MessageSquareText, { size: 16 }),
   },
 ];
