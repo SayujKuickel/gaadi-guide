@@ -8,9 +8,9 @@ const separator = "~";
 export const SITE_TOP_TITLE = ` ${separator} ${SITE_BASE_TITLE}`;
 
 export const siteUrlMappings = {
+  search: "",
   routes: "routes",
   stops: "stops",
-  search: "search",
   bus: "bus",
   operators: "operators",
   about: "about",

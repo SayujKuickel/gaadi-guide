@@ -1,7 +1,4 @@
 import "leaflet/dist/leaflet.css";
-import Heading from "@/components/common/Heading";
-import SearchableCombobox from "@/components/common/SearchableCombobox";
-import TileLayerView from "@/components/map/views/TileLayerView";
 import { DEFAULT_ZOOM, MAP_CENTER } from "@/constants/mapConfigs";
 import { LatLng } from "leaflet";
 import { useState, useRef } from "react";
@@ -14,8 +11,10 @@ import {
 } from "react-leaflet";
 import stops_data from "@/data/stops_data.json";
 import type { IStop } from "@/types/stop.types";
-import BusStopMarker from "@/components/map/markers/BusStopMarker";
 import { ChevronDown, ChevronUp, Trash2Icon } from "lucide-react";
+import { Heading, SearchableCombobox } from "@/components/ui";
+import MapTileLayer from "@/components/map/layers/MapTileLayer";
+import { BusStopMarker } from "@/components/map/ui";
 
 interface Errors {
   routeName?: string;
@@ -355,7 +354,7 @@ const AddNewRoutePage = () => {
             className="h-full w-full"
             ref={mapRef}
           >
-            <TileLayerView tileMapKey="openstreetmap" />
+            <MapTileLayer tileMapKey="openstreetmap" />
 
             {[...stopsData, ...customStops].map((stop) => {
               const isInRoute = stops.some((s) => s.id === stop.id);

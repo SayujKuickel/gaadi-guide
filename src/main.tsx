@@ -5,11 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import { ToastProvider } from "./context/ToastContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <>
-    <BrowserRouter>
-      <ToastProvider>
-        <App />
-      </ToastProvider>
-    </BrowserRouter>
-  </>
+  <BrowserRouter>
+    <ToastProvider>
+      <App />
+    </ToastProvider>
+  </BrowserRouter>
 );

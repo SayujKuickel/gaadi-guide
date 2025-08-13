@@ -13,16 +13,16 @@ import {
   siteUrlMappings,
 } from "@/constants/siteConfigs";
 // \components
-import ViewWrapper from "@/components/sidebar/wrappers/ViewWrapper";
-import FlyToStop from "@/components/map/stop/FlyToStop";
-import Heading from "@/components/common/Heading";
-import SearchWrapper from "@/components/sidebar/search/SearchWrapper";
-import MapControlsContainer from "@/components/containers/MapControlsContainer";
-import SidebarViewsContainer from "@/components/containers/SidebarViewsContainer";
-import RoutePolyLineRenderer from "@/components/map/route/RoutePolyLineRenderer";
-import BusStopMarker from "@/components/map/markers/BusStopMarker";
-import ResultsBottomSheet from "@/components/sidebar/wrappers/ResultsBottomSheet";
-import SearchedRouteDetails from "@/components/sidebar/search/SearchedRouteDetails";
+import { Heading, BottomSheet, ContentPanel } from "@/components/ui";
+import { BusStopMarker } from "@/components/map/ui";
+import { SidebarLayout } from "@/components/layouts";
+import {
+  SearchForm,
+  SearchRouteSegmentsList,
+} from "@/components/features/search";
+import MapRendererLayer from "@/components/map/MapRendererLayer";
+import { RouteRenderer } from "@/components/map/renderer";
+import { FlyToStopHandler } from "@/components/map/handers";
 
 const SearchPage = () => {
   const [segments, setSegments] = useState<IRouteSegment[] | null>(null);
@@ -54,34 +54,34 @@ const SearchPage = () => {
         />
       </Helmet>
 
-      <SidebarViewsContainer>
-        <ViewWrapper>
-          <SearchWrapper
+      <SidebarLayout>
+        <ContentPanel>
+          <SearchForm
             setShowResults={setShowResults}
             setSegments={setSegments}
           />
-        </ViewWrapper>
+        </ContentPanel>
 
         {showResults && segments && (
-          <ResultsBottomSheet onClose={() => setShowResults(false)}>
+          <BottomSheet onClose={() => setShowResults(false)}>
             <Heading className="mb-4" level={2}>
               Follow the Route!
             </Heading>
 
-            <SearchedRouteDetails
+            <SearchRouteSegmentsList
               mode="search"
               headingLevel={3}
               segments={segments}
             />
-          </ResultsBottomSheet>
+          </BottomSheet>
         )}
-      </SidebarViewsContainer>
+      </SidebarLayout>
 
-      <MapControlsContainer>
+      <MapRendererLayer>
         {segments && (
           <>
             {segments?.map((segment, i) => (
-              <RoutePolyLineRenderer
+              <RouteRenderer
                 key={`${segment.id}${i}`}
                 stopIds={segment?.stops}
                 fitToScreen={false}
@@ -101,8 +101,8 @@ const SearchPage = () => {
           />
         )}
 
-        <FlyToStop />
-      </MapControlsContainer>
+        <FlyToStopHandler />
+      </MapRendererLayer>
     </>
   );
 };

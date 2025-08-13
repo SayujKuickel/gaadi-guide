@@ -2,34 +2,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 
 @theme {
-  --color-text: #eaeef1;
+  --color-sa-red: #e03a45;
+  --color-sa-green: #198754;
+  --color-sa-blue: #0864af;
+  --color-sa-yellow: #f2c94c;
 
-  --color-sa-red: #bc2c36;
-  --color-sa-green: #12a82e;
-  --color-sa-blue: #024885;
-  --color-sa-yellow: #d5b63e;
+  --color-background: #0f0f0f;
+  --color-text: #e4e4e7;
+  --color-offText: #a1a1aa;
 
-  --color-background: #060a0c;
-
-  --color-surface: #0c0f11;
-  --color-surface-1: #171a1c;
-  --color-surface-2: #202324;
-  --color-surface-3: #2a2d2e;
+  --color-surface: #171717;
+  --color-surface-1: #1f1f23;
+  --color-surface-2: #27272a;
+  --color-surface-3: #2f2f35;
 
   --color-primary: #bc2c36;
+  /* --color-secondary: #8b5cf6; */
   --color-secondary: #255274;
   --color-accent: #d5b63e;
 
-  --color-on-primary: #ffffff;
-  --color-on-accent: #060a0c;
-  --color-on-surface: #dadada;
+  --color-on-primary: #f8fafc;
+  --color-on-accent: #f0f9ff;
+  --color-on-surface: #fafafa;
 
-  --color-offText: #b7b7b7;
-
-  --color-input-background: #101314;
-  --color-input-border: #3a3a3a;
-  --color-input-text: #dadada;
-  --color-input-placeholder: #888888;
+  --color-input-background: #18181b;
+  --color-input-border: #3f3f46;
+  --color-input-text: #f4f4f5;
+  --color-input-placeholder: #71717a;
 }
 
 :root {

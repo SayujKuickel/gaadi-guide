@@ -9,7 +9,7 @@ import { useUserLocation } from "./useUserLocation";
 const useSearchByStop = () => {
   const { showToast } = useToast();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { userLocation, getUserLocation } = useUserLocation();
+  // const { userLocation, getUserLocation } = useUserLocation();
 
   const [selectedStartStop, setSelectedStartStop] =
     useState<IStopOption | null>(null);
@@ -72,26 +72,26 @@ const useSearchByStop = () => {
     }
   }, [searchParams, findStopById, showToast, setSearchParams]);
 
-  useEffect(() => {
-    const lat = sessionStorage.getItem("user-latitude");
-    const lng = sessionStorage.getItem("user-longitude");
-    const permissionDenied = sessionStorage.getItem(
-      "location-permission-denied"
-    );
+  // useEffect(() => {
+  //   const lat = sessionStorage.getItem("user-latitude");
+  //   const lng = sessionStorage.getItem("user-longitude");
+  //   const permissionDenied = sessionStorage.getItem(
+  //     "location-permission-denied"
+  //   );
 
-    if (permissionDenied === "true") return;
+  //   if (permissionDenied === "true") return;
 
-    if (!lat || !lng) {
-      getUserLocation();
-      return;
-    }
+  //   if (!lat || !lng) {
+  //     getUserLocation();
+  //     return;
+  //   }
 
-    if (userLocation && !selectedStartStop) {
-      const [latitude, longitude] = userLocation;
-      const closest = getClosestStop(latitude, longitude);
-      if (closest) setSelectedStartStop(closest);
-    }
-  }, [userLocation, getUserLocation, selectedStartStop, getClosestStop]);
+  //   if (userLocation && !selectedStartStop) {
+  //     const [latitude, longitude] = userLocation;
+  //     const closest = getClosestStop(latitude, longitude);
+  //     if (closest) setSelectedStartStop(closest);
+  //   }
+  // }, [userLocation, getUserLocation, selectedStartStop, getClosestStop]);
 
   const handleSearchByStop = useCallback(async () => {
     if (!selectedStartStop || !selectedDestinationStop) {

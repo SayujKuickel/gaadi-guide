@@ -9,9 +9,9 @@ import {
   MAX_ZOOM_OUT,
 } from "@/constants/mapConfigs";
 import React, { type ReactNode, memo } from "react";
-import TileLayerView from "./views/TileLayerView";
-import UserLocationMarker from "./markers/UserLocationMarker";
-import ZoomControlHandlerView from "./views/ZoomControlHandlerView";
+import { UserLocationMarker } from "./ui";
+import MapTileLayer from "./layers/MapTileLayer";
+import MapZoomHandler from "./handers/MapZoomHandler";
 
 interface ZoomFunctions {
   zoomIn: () => void;
@@ -45,9 +45,9 @@ const BaseMapLayerStatic: React.FC<BaseMapLayerStaticProps> = memo(
         <UserLocationMarker flyToPos={flyToPos} position={userLocation} />
       )}
 
-      <TileLayerView tileMapKey={tileMapKey} />
+      <MapTileLayer tileMapKey={tileMapKey} />
 
-      <ZoomControlHandlerView onZoomFunctionsReady={onZoomFunctionsReady} />
+      <MapZoomHandler onZoomFunctionsReady={onZoomFunctionsReady} />
 
       {children}
     </MapContainer>
