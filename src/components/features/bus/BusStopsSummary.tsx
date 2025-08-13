@@ -16,7 +16,7 @@ const BusStopsSummary: React.FC<BusStopsSummaryProps> = ({
   priorityStop,
 }) => {
   return (
-    <section className="p-4 rounded-lg bg-surface-1/25">
+    <section className="p-4 rounded-lg bg-surface/75">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8">
         <LineHeading lineColor={route?.lineColor} name={route?.name} />
 
@@ -36,19 +36,6 @@ const BusStopsSummary: React.FC<BusStopsSummaryProps> = ({
       <div className="flex flex-wrap items-center flex-row gap-3 mt-8">
         <Link
           className="block w-fit"
-          to={`/${siteUrlMappings.bus}/${route?.id}`}
-        >
-          <Button
-            ariaLabel="View All Stops"
-            title="View All Stops"
-            className="text-xs"
-            icon={<Eye size={16} />}
-            variant="secondary"
-          />
-        </Link>
-
-        <Link
-          className="block w-fit"
           to={`/${siteUrlMappings.routes}?route=${route?.id}`}
         >
           <Button
@@ -56,6 +43,19 @@ const BusStopsSummary: React.FC<BusStopsSummaryProps> = ({
             title="View in Map"
             className="text-xs"
             icon={<Map size={16} />}
+            variant="accent"
+          />
+        </Link>
+
+        <Link
+          className="block w-fit"
+          to={`/${siteUrlMappings.bus}/${route?.id}`}
+        >
+          <Button
+            ariaLabel="View All Stops"
+            title="View All Stops"
+            className="text-xs"
+            icon={<Eye size={16} />}
             variant="secondary"
           />
         </Link>

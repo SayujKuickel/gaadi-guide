@@ -7,7 +7,7 @@ interface ButtonProps {
   className?: string;
   ariaLabel: string;
   type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary" | "error" | "ghost";
+  variant?: "primary" | "secondary" | "error" | "ghost" | "accent" | "outline";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,11 +20,14 @@ const Button: React.FC<ButtonProps> = ({
   variant = "primary",
 }) => {
   const variantStyles = {
-    primary: "bg-surface-3 hover:bg-surface-2 border-surface",
+    primary: "bg-surface-2 hover:bg-surface-3 text-text",
     secondary:
-      "outline-2 outline-surface-3 hover:border-surface-3 hover:bg-surface-2",
-    error: "",
-    ghost: "bg-surface hover:bg-surface-1",
+      "bg-transparent hover:bg-surface-1 text-text border border-surface-3",
+    error: "bg-red-600/10 hover:bg-red-600/20 text-red-400",
+    ghost: "bg-transparent hover:bg-surface-1 text-text",
+    accent: "bg-sa-blue/15 hover:bg-sa-blue/50 text-on-accent",
+    outline:
+      "bg-transparent hover:bg-surface text-text border border-input-border",
   };
 
   return (

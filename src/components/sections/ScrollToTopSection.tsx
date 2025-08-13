@@ -27,7 +27,7 @@ const ScrollToTopSection = () => {
         ariaLabel="Scroll to top"
         icon={<ChevronUp size={18} />}
         className="text-sm animate-in-fade"
-        variant="ghost"
+        variant="outline"
       />
     </div>
   );

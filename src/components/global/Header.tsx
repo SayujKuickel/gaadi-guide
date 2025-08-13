@@ -12,7 +12,7 @@ const Header = () => {
   const toggleMobileMenu = () => setIsMobileMenuShown((prev) => !prev);
 
   return (
-    <header className="bg-surface-1 sticky top-0 z-[99998] shadow-sm">
+    <header className="bg-surface-2 sticky top-0 z-[99998] shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo & Title */}
         <div className="flex items-center gap-2">

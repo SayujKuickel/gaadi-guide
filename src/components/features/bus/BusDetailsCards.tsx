@@ -16,7 +16,7 @@ const BusDetailsCards: React.FC<BusDetailsCardsProps> = ({
     <div className="bg-surface p-3 rounded-lg flex items-center gap-3">
       <span
         style={{ background: `${lineColor}5f` }}
-        className={` grid place-items-center w-12 aspect-square text-offText text-2xl rounded-lg flex-shrink-0`}
+        className={` grid place-items-center w-12 aspect-square text-text text-2xl rounded-lg flex-shrink-0`}
       >
         {icon}
       </span>

@@ -78,6 +78,7 @@ const BusBusStopsSummaryPage = ({}) => {
                       icon={<Map size={16} />}
                       title="View in Map"
                       className="text-xs"
+                      variant={"accent"}
                     />
                   </Link>
                 </div>
@@ -90,6 +91,7 @@ const BusBusStopsSummaryPage = ({}) => {
                   label={"Operated By"}
                   value={route?.operator.map((item, i) => (
                     <Link
+                      className="text-text"
                       to={`/${siteUrlMappings.operators}/${nameToSlug(item)}`}
                     >
                       {i > 0 && ", "}

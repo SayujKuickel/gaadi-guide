@@ -27,7 +27,6 @@ const BusStopsList: React.FC<ViewBusStopsSummaryProps> = ({
 }) => {
   const location = useLocation();
 
-  // Merge existing URL params with new params, return as query string
   const getMergedSearch = (extraParams: Record<string, string>) => {
     const currentParams = new URLSearchParams(location.search);
 
@@ -76,7 +75,7 @@ const BusStopsList: React.FC<ViewBusStopsSummaryProps> = ({
               </p>
 
               <p
-                className={`flex-1 flex items-center gap-1 justify-between ml-2 px-2 py-1.5 bg-surface-1/25 border border-neutral-100/20 rounded-lg text-neutral-100/80 whitespace-nowrap overflow-x-scroll no-scrollbar ${
+                className={`flex-1 flex items-center gap-1 justify-between ml-2 px-2 py-1.5 bg-surface border border-neutral-100/20 rounded-lg text-neutral-100/80 whitespace-nowrap overflow-x-scroll no-scrollbar ${
                   priorityStop === stop.id && "outline outline-green-600/30"
                 }`}
               >
@@ -98,7 +97,7 @@ const BusStopsList: React.FC<ViewBusStopsSummaryProps> = ({
                 >
                   <Button
                     icon={<Eye size={16} />}
-                    variant="secondary"
+                    variant="outline"
                     ariaLabel={`Navigate to ${stop.name}`}
                   />
                 </Link>

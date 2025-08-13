@@ -4,6 +4,8 @@ import Footer from "@/components/global/Footer";
 import Header from "@/components/global/Header";
 import GoBackButtonSection from "@/components/sections/GoBackButtonSection";
 import ScrollToTopSection from "@/components/sections/ScrollToTopSection";
+import { Button } from "../ui";
+import ContainerLayout from "./ContainerLayout";
 
 interface PageLayoutProps {
   showBackBtn?: boolean;

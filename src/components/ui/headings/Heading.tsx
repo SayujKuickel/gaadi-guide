@@ -12,7 +12,7 @@ const Heading: React.FC<HeadingProps> = ({
   children,
   className = "",
 }) => {
-  const headingClass = `heading-${level} ${className}`;
+  const headingClass = `text-text heading-${level} ${className}`;
 
   if (level === 1) return <h1 className={headingClass}>{children}</h1>;
 

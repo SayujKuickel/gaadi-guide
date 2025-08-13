@@ -10,7 +10,7 @@ import {
 } from "@/constants/siteConfigs";
 // \components
 import { ContainerLayout } from "@/components/layouts";
-import { Heading, SearchableCombobox } from "@/components/ui";
+import { Button, Heading, SearchableCombobox } from "@/components/ui";
 import { BusStopsSummary } from "@/components/features/bus";
 
 const BusRoutesPage = () => {

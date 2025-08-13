@@ -18,7 +18,7 @@ const GoBackButtonSection = () => {
         title="Back"
         icon={<ChevronLeft size={14} />}
         className="text-sm"
-        variant="ghost"
+        variant="outline"
       />
     </ContainerLayout>
   );
